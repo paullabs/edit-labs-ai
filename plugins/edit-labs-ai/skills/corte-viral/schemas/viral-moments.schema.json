@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "viral-moments.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "moments"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "moments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "start",
+          "end",
+          "quote",
+          "trigger",
+          "profile",
+          "context_needed",
+          "payoff_candidate"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end": {
+            "type": "number",
+            "minimum": 0
+          },
+          "quote": {
+            "type": "string"
+          },
+          "trigger": {
+            "type": "string"
+          },
+          "profile": {
+            "type": "string"
+          },
+          "context_needed": {
+            "type": "string"
+          },
+          "payoff_candidate": {
+            "type": "string"
+          },
+          "visual_hook": {
+            "type": "string"
+          },
+          "distortion_risk": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

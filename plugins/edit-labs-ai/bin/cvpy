@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Python do ambiente da corte-viral (faster-whisper, opencv-contrib, numpy)
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+[ -x "$CV_PY" ] || precisa_setup
+exec "$CV_PY" "$@"

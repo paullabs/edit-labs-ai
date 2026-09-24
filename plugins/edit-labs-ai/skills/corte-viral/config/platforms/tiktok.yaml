@@ -1,0 +1,15 @@
+name: tiktok
+aspect_ratio: "9:16"
+width: 1080
+height: 1920
+caption_safe_zone:
+  left_px: 90
+  right_px: 190
+  top_px: 150
+  bottom_px: 320
+creative_defaults:
+  hook_window_seconds: 1.5
+  proposition_window_seconds: 3.0
+  sound_expected: true
+notes:
+  - "Valores de safe zone são conservadores e configuráveis, não especificação imutável do aplicativo."

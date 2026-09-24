@@ -1,0 +1,13 @@
+name: conflict
+label: Conflito e risco
+recommended_duration_seconds: [25, 75]
+hard_max_duration_seconds: 100
+orientation_max_seconds: 2.0
+stakes_max_seconds: 4.0
+first_turn_max_seconds: 10.0
+max_seconds_without_new_value: 9.0
+preferred_structure:
+  - consequence_or_risk
+  - opposing_forces
+  - escalation
+  - decision_or_resolution

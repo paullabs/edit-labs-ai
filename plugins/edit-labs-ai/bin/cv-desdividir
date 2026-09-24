@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# corte-viral · desfaz a tela dividida (layout split) de um vertical, sem mexer em tempo nem áudio
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+[ -x "$CV_PY" ] || precisa_setup
+exec "$CV_PY" "$CV_SKILL/ferramentas/desdividir.py" "$@"

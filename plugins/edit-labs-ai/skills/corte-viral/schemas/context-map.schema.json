@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "context-map.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "video_summary",
+    "context_units"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "video_summary": {
+      "type": "object",
+      "required": [
+        "main_topics",
+        "speakers"
+      ],
+      "properties": {
+        "main_topics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "speakers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "premise": {
+          "type": "string"
+        },
+        "overall_arc": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "stories": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "context_units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "start",
+          "end",
+          "topic",
+          "summary"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end": {
+            "type": "number",
+            "minimum": 0
+          },
+          "topic": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "speakers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "setups": {
+            "type": "array"
+          },
+          "payoffs": {
+            "type": "array"
+          },
+          "visual_events": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

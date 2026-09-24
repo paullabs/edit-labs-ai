@@ -1,0 +1,14 @@
+name: story
+label: História
+recommended_duration_seconds: [35, 90]
+hard_max_duration_seconds: 120
+orientation_max_seconds: 2.0
+stakes_max_seconds: 5.0
+first_turn_max_seconds: 12.0
+max_seconds_without_new_value: 10.0
+preferred_structure:
+  - consequence_or_stakes
+  - minimum_context
+  - obstacle
+  - turn
+  - resolution

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# corte-viral · OUVIDO: Whisper em 3,5 s começa/termina na palavra certa?
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+[ -x "$CV_PY" ] || precisa_setup
+exec "$CV_PY" "$CV_SKILL/ferramentas/testar_borda.py" "$@"

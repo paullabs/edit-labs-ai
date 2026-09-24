@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Confere as duas skills do plugin (corte-viral e motion-vox) com os ambientes certos.
+set -uo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+[ -x "$CV_PY" ] && [ -x "$MV_PY" ] || precisa_setup
+st=0
+"$CV_PY" "$CV_SKILL/verificar.py" || st=1
+( cd "$MV_SKILL" && "$MV_PY" verificar.py ) || st=1
+[ $st = 0 ] && echo "Edit Labs AI: tudo pronto." || echo "Edit Labs AI: veja os itens acima."
+echo "Lembrete: a geração de imagem usa o Higgsfield conectado ao Claude (claude.ai → Configurações → Conectores)."
+exit $st

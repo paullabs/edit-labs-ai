@@ -1,0 +1,13 @@
+name: opinion
+label: Opinião forte
+recommended_duration_seconds: [15, 55]
+hard_max_duration_seconds: 75
+orientation_max_seconds: 1.5
+proposition_max_seconds: 2.5
+first_reason_max_seconds: 7.0
+max_seconds_without_new_value: 7.0
+preferred_structure:
+  - clear_position
+  - reason
+  - example_or_counterargument
+  - implication

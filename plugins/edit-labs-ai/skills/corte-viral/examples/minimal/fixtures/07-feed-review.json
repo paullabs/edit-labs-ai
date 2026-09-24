@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "reviews": [
+    {
+      "clip_id": "clip-001",
+      "status": "PASS",
+      "scores": {
+        "orientation": 9,
+        "hook": 9,
+        "proposition_clarity": 9,
+        "first_value_speed": 9,
+        "context_efficiency": 9,
+        "stakes": 7,
+        "curiosity_integrity": 9,
+        "progression": 8,
+        "payoff": 9,
+        "closure": 9,
+        "self_contained": 9,
+        "shareability": 8,
+        "visual_opportunity": 6,
+        "novelty": 8,
+        "editability": 9,
+        "truthfulness": 10
+      },
+      "events": {
+        "orientation_at": 0.0,
+        "proposition_at": 0.4,
+        "first_value_at": 2.8,
+        "payoff_at": 9.0,
+        "closure_at": 11.8
+      },
+      "context_debt": 1,
+      "promise_payoff_integrity": 9,
+      "semantic_beats": [
+        {"at": 0.0, "type": "contradiction", "description": "nega velocidade como causa"},
+        {"at": 3.0, "type": "mechanism", "description": "tempo até compreensão"},
+        {"at": 9.0, "type": "payoff", "description": "resposta cedo organiza a explicação"}
+      ],
+      "problems": [],
+      "rebuild_instructions": []
+    }
+  ]
+}

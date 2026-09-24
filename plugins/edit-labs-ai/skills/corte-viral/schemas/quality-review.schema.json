@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quality-review.schema.json",
+  "type": "object",
+  "required": ["schema_version", "reviews"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["clip_id", "decision", "hard_fails", "warnings", "reasons"],
+        "properties": {
+          "clip_id": {"type": "string"},
+          "decision": {"enum": ["PASS", "REBUILD", "REJECT"]},
+          "hard_fails": {"type": "array", "items": {"type": "string"}},
+          "warnings": {"type": "array", "items": {"type": "string"}},
+          "reasons": {"type": "array", "items": {"type": "string"}},
+          "required_changes": {"type": "array", "items": {"type": "string"}},
+          "truthfulness_confirmed": {"type": "boolean"},
+          "output_plan_valid": {"type": "boolean"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

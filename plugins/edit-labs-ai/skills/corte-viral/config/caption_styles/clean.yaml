@@ -1,0 +1,15 @@
+name: clean
+font_name: Arial
+font_size: 68
+primary_colour: "&H00FFFFFF"
+secondary_colour: "&H00FFFFFF"
+outline_colour: "&H00101010"
+back_colour: "&H64000000"
+bold: true
+italic: false
+outline: 5
+shadow: 1
+alignment: 2
+margin_l: 90
+margin_r: 170
+margin_v: 330

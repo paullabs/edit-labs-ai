@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "moments": [
+    {
+      "id": "moment-001",
+      "start": 3.0,
+      "end": 9.0,
+      "quote": "Mas o problema real não é a velocidade. É quanto tempo o espectador demora para entender o valor.",
+      "trigger": "contradicao",
+      "profile": "contrarian",
+      "context_needed": "A crença comum é acelerar com cortes.",
+      "payoff_candidate": "Resposta cedo transforma o restante em explicação.",
+      "visual_hooks": [],
+      "risk_of_distortion": "baixo",
+      "confidence": 0.95
+    }
+  ]
+}

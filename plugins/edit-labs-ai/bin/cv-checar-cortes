@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# corte-viral · bordas em cima da fala, pela energia do áudio
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+[ -x "$CV_PY" ] || precisa_setup
+exec "$CV_PY" "$CV_SKILL/ferramentas/checar_cortes.py" "$@"

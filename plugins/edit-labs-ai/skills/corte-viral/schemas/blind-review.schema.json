@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "blind-review.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "reviews"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "clip_id",
+          "decision",
+          "would_continue_after_3s",
+          "makes_sense_alone",
+          "promise_delivered",
+          "problems"
+        ],
+        "properties": {
+          "clip_id": {
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "PASS",
+              "REBUILD",
+              "REJECT"
+            ]
+          },
+          "would_continue_after_1s": {
+            "type": "boolean"
+          },
+          "would_continue_after_3s": {
+            "type": "boolean"
+          },
+          "would_continue_after_8s": {
+            "type": "boolean"
+          },
+          "makes_sense_alone": {
+            "type": "boolean"
+          },
+          "promise_delivered": {
+            "type": "boolean"
+          },
+          "ending_feels_final": {
+            "type": "boolean"
+          },
+          "problems": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rebuild_instructions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

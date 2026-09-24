@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:03,000
+Todo mundo tenta acelerar o vídeo com cortes.
+
+2
+00:00:03,000 --> 00:00:06,000
+Mas o problema real não é a velocidade.
+
+3
+00:00:06,000 --> 00:00:09,000
+É quanto tempo o espectador demora para entender o valor.
+
+4
+00:00:09,000 --> 00:00:12,000
+Quando a resposta chega cedo, o restante vira explicação.

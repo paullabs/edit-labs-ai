@@ -1,0 +1,14 @@
+name: contrarian
+label: Contradição
+recommended_duration_seconds: [20, 60]
+hard_max_duration_seconds: 75
+orientation_max_seconds: 1.5
+proposition_max_seconds: 2.5
+first_value_max_seconds: 8.0
+max_seconds_without_new_value: 7.0
+preferred_structure:
+  - common_belief
+  - contradiction
+  - mechanism
+  - evidence
+  - new_rule

@@ -1,0 +1,14 @@
+# Obrigatorias
+pyyaml>=6.0
+jsonschema>=4.0
+
+# Opcional: transcricao automatica quando nao ha legenda pronta
+faster-whisper>=1.0
+
+# Opcional: enquadramento por locutor ativo (autoframe).
+# O pin nao e capricho - 5.0.0 removeu cv2.dnn.readNetFromCaffe e quebra o detector.
+opencv-contrib-python==4.10.0.84
+numpy>=1.24
+
+# Opcional: utilidades de imagem
+Pillow>=10.0

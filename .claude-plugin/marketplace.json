@@ -1,0 +1,15 @@
+{
+  "name": "edit-labs-ai",
+  "owner": {
+    "name": "edit-labs-ai"
+  },
+  "description": "Edit Labs AI: edição completa com o Claude Code, do link do podcast ao vertical pronto (corte, motion, B-roll, legenda, verificação).",
+  "plugins": [
+    {
+      "name": "edit-labs-ai",
+      "source": "./plugins/edit-labs-ai",
+      "description": "Do link do podcast ao vertical pronto, com o Claude Code: 3 skills (edit-labs-ai, corte-viral, motion-vox), 5 agentes e os comandos de apoio. Exige o Higgsfield conectado.",
+      "version": "1.0.0"
+    }
+  ]
+}

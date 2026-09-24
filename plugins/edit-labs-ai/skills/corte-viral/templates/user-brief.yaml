@@ -1,0 +1,19 @@
+audience: ""
+platforms:
+  - tiktok
+  - instagram-reels
+language: pt-BR
+priority_topics: []
+forbidden_topics: []
+preferred_durations_seconds: [20, 60]
+maximum_clips: 0
+caption_style: clean
+caption_mode: phrase
+known_speakers: []
+required_spellings: {}
+allowed_cta: ""
+editing_restrictions:
+  no_external_broll: true
+  no_quote_rewriting: true
+  preserve_material_disclaimers: true
+notes: ""

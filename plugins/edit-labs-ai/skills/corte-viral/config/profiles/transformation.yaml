@@ -1,0 +1,13 @@
+name: transformation
+label: Transformação
+recommended_duration_seconds: [25, 75]
+hard_max_duration_seconds: 100
+orientation_max_seconds: 1.5
+proposition_max_seconds: 3.0
+first_value_max_seconds: 8.0
+max_seconds_without_new_value: 8.0
+preferred_structure:
+  - before_after
+  - turning_point
+  - process
+  - meaning

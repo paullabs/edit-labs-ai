@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Monta um projeto da motion-vox na pasta indicada (padrão: a atual): motor, fontes, kit, templates e pastas.
+#   mv-novo-projeto PROJETO/motion/01-slug
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+DEST="${1:-.}"
+mkdir -p "$DEST"; cd "$DEST"
+if [ -e compose.py ] && [ "${2:-}" != "--forcar" ]; then
+  echo "Já existe compose.py em $(pwd): é um projeto em andamento. Para recopiar só o motor: mv-novo-projeto . --forcar" >&2
+  exit 2
+fi
+mkdir -p 00_brief 05_motion 06_transitions 07_assets/raw 07_assets/cutout 07_assets/sfx 08_images/frames \
+         09_plates 10_sequences 11_qa 12_master
+cp "$MV_SKILL"/lib/*.py .
+rm -rf fontes && cp -R "$MV_SKILL/fontes" fontes
+cp "$MV_SKILL"/assets/*.png "$MV_SKILL"/assets/*.npy 07_assets/cutout/ 2>/dev/null || true
+mv -f 07_assets/cutout/BG_PAPER.png 07_assets/raw/ 2>/dev/null || true
+[ -e compose.py ] || cp "$MV_SKILL/lib/compose_template.py" compose.py
+[ -e render.py ] || cp "$MV_SKILL/lib/render_template.py" render.py
+echo "Projeto de motion pronto em $(pwd)"
+echo "Agora: 00_brief/fonte.mp4 (o vertical), 00_brief/cortes.json e 00_brief/passagem.json; depois"
+echo "       mvpy transcrever.py 00_brief/fonte.mp4 00_brief/transcript_palavras.json && mvpy conferir_emendas.py"

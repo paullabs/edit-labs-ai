@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "reviews": [
+    {
+      "clip_id": "clip-001",
+      "decision": "PASS",
+      "hard_fails": [],
+      "warnings": [],
+      "reasons": ["Contexto, promessa, payoff, causalidade e plano de saída conferidos."],
+      "required_changes": [],
+      "truthfulness_confirmed": true,
+      "output_plan_valid": true
+    }
+  ]
+}

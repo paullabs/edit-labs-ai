@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# Task 1 do Edit Labs AI: consulta e baixa um vídeo do YouTube para a pasta do projeto.
+#
+#   editlabs-baixar "<link>" PROJETO/00_fonte [idioma]      # idioma da legenda automática, padrão: pt
+#
+# Baixa: vídeo H.264 até 1080p (não AV1: o enquadramento automático lê pelo OpenCV, que em geral não abre AV1),
+# o melhor áudio m4a sem a versão "-drc" (dinâmica comprimida pelo YouTube), a legenda AUTOMÁTICA "<idioma>-orig"
+# (traz tempo por palavra: dispensa transcrever o vídeo inteiro com Whisper) e os metadados (.info.json, onde
+# estão título, canal e descrição — de onde saem os nomes dos participantes).
+# Precisa de yt-dlp e de um runtime JavaScript (Deno) — o yt-dlp usa para o YouTube.
+set -euo pipefail
+
+LINK="${1:?uso: editlabs-baixar \"<link>\" <pasta-destino> [idioma]}"
+DEST="${2:-00_fonte}"
+IDIOMA="${3:-pt}"
+mkdir -p "$DEST"
+
+echo "== consulta (sem baixar)"
+INFO="$(mktemp)"
+yt-dlp --dump-single-json --skip-download --no-warnings "$LINK" > "$INFO"
+python3 - "$INFO" "$IDIOMA" <<'PY'
+import json, sys
+d = json.load(open(sys.argv[1], encoding="utf-8"))
+idioma = sys.argv[2]
+dur = d.get("duration") or 0
+auto = sorted(k for k in (d.get("automatic_captions") or {}) if k.startswith(idioma))
+titulo, canal = d.get("title"), d.get("channel")
+h, m, s = int(dur // 3600), int(dur % 3600 // 60), int(dur % 60)
+print(f"  {titulo} — {canal}")
+print(f"  duração {h}h{m:02d}m{s:02d}s · legendas automáticas: {', '.join(auto) or 'NENHUMA'}")
+if not auto:
+    print("  ⚠️ sem legenda automática: a corte-viral vai transcrever com Whisper (bem mais lento)")
+PY
+rm -f "$INFO"
+
+echo "== download"
+yt-dlp \
+  -f "bv*[vcodec^=avc1][height<=1080]+ba[ext=m4a][format_id!*=drc]/bv*[vcodec^=avc1][height<=1080]+ba[ext=m4a]/b[ext=mp4]" \
+  --merge-output-format mp4 \
+  --write-auto-subs --sub-langs "${IDIOMA}-orig,${IDIOMA}" --sub-format vtt \
+  --write-info-json --restrict-filenames \
+  -o "$DEST/%(title)s-%(id)s.%(ext)s" \
+  "$LINK"
+
+echo "== conferência"
+for f in "$DEST"/*.mp4; do
+  ffprobe -v error -show_entries format=duration:stream=codec_name,width,height,r_frame_rate \
+    -of compact=p=0:nk=1 "$f" | sed "s|^|  $(basename "$f"): |"
+done
+ls -1 "$DEST"/*.vtt 2>/dev/null | sed 's|^|  legenda: |' || echo "  ⚠️ nenhuma legenda .vtt baixada"

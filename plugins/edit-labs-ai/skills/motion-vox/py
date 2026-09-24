@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Lançador Python da motion-vox: usa a venv da skill (.venv, criada na instalação) e, sem ela, o python3 do PATH.
+# Rode os scripts do projeto assim:  ~/.claude/skills/motion-vox/py compose.py M1
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -x "$ROOT/.venv/bin/python" ]; then
+    exec "$ROOT/.venv/bin/python" "$@"
+fi
+exec python3 "$@"

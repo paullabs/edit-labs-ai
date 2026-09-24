@@ -1,0 +1,14 @@
+name: tutorial
+label: Tutorial e aplicação
+recommended_duration_seconds: [20, 75]
+hard_max_duration_seconds: 100
+orientation_max_seconds: 1.5
+proposition_max_seconds: 2.5
+first_value_max_seconds: 5.0
+first_action_max_seconds: 8.0
+max_seconds_without_new_value: 7.0
+preferred_structure:
+  - result_or_answer
+  - critical_action
+  - demonstration
+  - limit_or_next_step

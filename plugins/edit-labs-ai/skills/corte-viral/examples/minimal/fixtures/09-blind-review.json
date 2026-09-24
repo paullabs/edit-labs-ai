@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "reviews": [
+    {
+      "clip_id": "clip-001",
+      "decision": "PASS",
+      "would_continue_after_1s": true,
+      "would_continue_after_3s": true,
+      "would_continue_after_8s": true,
+      "makes_sense_alone": true,
+      "promise_delivered": true,
+      "ending_feels_final": true,
+      "problems": [],
+      "rebuild_instructions": []
+    }
+  ]
+}

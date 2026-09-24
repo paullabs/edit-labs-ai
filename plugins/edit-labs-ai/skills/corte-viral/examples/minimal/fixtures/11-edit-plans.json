@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "plans": [
+    {
+      "clip_id": "clip-001",
+      "output_slug": "clip-001-o-problema-nao-e-a-velocidade",
+      "primary_context": "contradicao",
+      "timeline": [
+        {"source_start": 3.0, "source_end": 9.0, "order": 1, "crop_anchor_x": 0.5, "zoom": 1.06, "transition_in": "cut", "preserve_pause": false},
+        {"source_start": 0.0, "source_end": 3.0, "order": 2, "crop_anchor_x": 0.5, "zoom": 1.0, "transition_in": "time_return", "preserve_pause": false},
+        {"source_start": 9.0, "source_end": 12.0, "order": 3, "crop_anchor_x": 0.5, "zoom": 1.03, "transition_in": "cut", "preserve_pause": true}
+      ],
+      "captions": {"mode": "phrase", "style": "clean", "emphasis_terms": ["problema real", "entender o valor"]},
+      "audio": {"loudness_lufs": -14, "music": null},
+      "cards": [],
+      "optional_assets": [],
+      "editor_notes": "Teste sintético de render; usar cortes secos."
+    }
+  ]
+}

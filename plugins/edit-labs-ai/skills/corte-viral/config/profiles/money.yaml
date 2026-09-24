@@ -1,0 +1,14 @@
+name: money
+label: Dinheiro e escala
+recommended_duration_seconds: [20, 60]
+hard_max_duration_seconds: 90
+orientation_max_seconds: 1.5
+proposition_max_seconds: 3.0
+first_value_max_seconds: 7.0
+mechanism_max_seconds: 10.0
+max_seconds_without_new_value: 8.0
+preferred_structure:
+  - number_or_scale
+  - comparison
+  - mechanism
+  - consequence

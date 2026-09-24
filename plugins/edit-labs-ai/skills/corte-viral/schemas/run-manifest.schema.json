@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "run-manifest.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "created_at",
+    "mode",
+    "status",
+    "inputs",
+    "stages"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "analyze",
+        "verify",
+        "render",
+        "full"
+      ]
+    },
+    "status": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "capabilities": {
+      "type": "object"
+    },
+    "stages": {
+      "type": "object"
+    },
+    "artifacts": {
+      "type": "array"
+    },
+    "errors": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

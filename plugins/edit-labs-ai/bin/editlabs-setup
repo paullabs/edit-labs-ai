@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# Prepara o Edit Labs AI neste computador: confere dependências, cria os dois ambientes Python FORA da pasta do
+# plugin (sobrevivem a atualização), copia a biblioteca de assets e verifica.
+#   editlabs-setup                   # primeira vez, ou para conferir
+#   editlabs-setup --baixar-whisper  # já baixa o modelo do Whisper (~1,6 GB)
+#   editlabs-setup --refazer         # recria os ambientes do zero
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+BAIXAR=0; REFAZER=0
+for a in "$@"; do case "$a" in --baixar-whisper) BAIXAR=1;; --refazer) REFAZER=1;; esac; done
+ok() { printf "  ✓ %s\n" "$*"; }; ruim() { printf "  ✗ %s\n" "$*"; }
+
+echo "1. Dependências"
+FALTA=()
+for c in ffmpeg ffprobe yt-dlp deno; do
+  if command -v "$c" >/dev/null 2>&1; then ok "$c"; else ruim "$c ausente"; FALTA+=("$c"); fi
+done
+PY=""
+for c in python3.12 python3.11 python3.10 python3; do
+  p="$(command -v "$c" 2>/dev/null || true)"; [ -n "$p" ] || continue
+  if "$p" -c 'import sys; sys.exit(0 if (3,10) <= sys.version_info[:2] <= (3,12) else 1)' 2>/dev/null; then PY="$p"; break; fi
+done
+if [ -n "$PY" ]; then ok "Python $("$PY" -c 'import platform; print(platform.python_version())')"; else ruim "Python 3.10–3.12 ausente (o kit fixa numpy 2.0.2, sem pacote para 3.13+)"; FALTA+=("python@3.12"); fi
+if [ ${#FALTA[@]} -gt 0 ]; then
+  p="${FALTA[*]}"; p="${p//ffprobe/}"
+  echo; echo "Falta instalar: brew install $p   (sem Homebrew: https://brew.sh). Depois rode editlabs-setup de novo."
+  exit 1
+fi
+
+echo "2. Ambientes Python em $EDITLABS_DATA (na primeira vez, instala os pacotes)"
+mkdir -p "$EDITLABS_DATA"
+[ "$REFAZER" = 1 ] && rm -rf "$EDITLABS_DATA/venv-corte" "$EDITLABS_DATA/venv-motion"
+if [ ! -x "$CV_PY" ]; then
+  "$PY" -m venv "$EDITLABS_DATA/venv-corte"
+  "$CV_PY" -m pip install -q --upgrade pip
+  "$CV_PY" -m pip install -q -r "$CV_SKILL/requirements.txt" faster-whisper
+fi
+ok "corte-viral: $EDITLABS_DATA/venv-corte"
+if [ ! -x "$MV_PY" ]; then
+  "$PY" -m venv "$EDITLABS_DATA/venv-motion"
+  "$MV_PY" -m pip install -q --upgrade pip
+  "$MV_PY" -m pip install -q -r "$MV_SKILL/requirements.txt"
+fi
+ok "motion-vox: $EDITLABS_DATA/venv-motion"
+
+echo "3. Biblioteca de assets (persistente)"
+if [ ! -d "$MOTION_VOX/biblioteca" ]; then mkdir -p "$MOTION_VOX"; cp -R "$MV_SKILL/biblioteca" "$MOTION_VOX/biblioteca"; fi
+ok "$MOTION_VOX/biblioteca"
+
+if [ "$BAIXAR" = 1 ]; then
+  echo "4. Modelo do Whisper (~1,6 GB)"
+  "$MV_PY" -c "from faster_whisper import WhisperModel; WhisperModel('mobiuslabsgmbh/faster-whisper-large-v3-turbo', device='cpu', compute_type='int8')"
+  ok "large-v3-turbo"
+fi
+
+echo "5. Higgsfield"
+echo "   O plugin exige o Higgsfield conectado ao Claude (claude.ai → Configurações → Conectores)."
+echo "   Sem conta? Crie por este link: https://higgsfield.ai/s/claude-opus-5-5-yt-canal-labs-RygxQf"
+
+echo "6. Verificação"
+exec "$ROOT/bin/editlabs-verificar"

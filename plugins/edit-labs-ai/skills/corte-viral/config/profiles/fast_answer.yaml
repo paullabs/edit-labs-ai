@@ -1,0 +1,13 @@
+name: fast_answer
+label: Resposta rápida
+recommended_duration_seconds: [15, 45]
+hard_max_duration_seconds: 60
+orientation_max_seconds: 1.5
+proposition_max_seconds: 2.5
+first_value_max_seconds: 6.0
+max_seconds_without_new_value: 6.0
+preferred_structure:
+  - answer_or_result
+  - mechanism
+  - proof_or_example
+  - implication_or_limit

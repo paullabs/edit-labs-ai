@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-index.schema.json",
+  "type": "object",
+  "required": ["schema_version", "source", "periodic_frames", "scene_frames", "warnings"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "source": {"type": "string"},
+    "periodic_interval_seconds": {"type": "number", "minimum": 0},
+    "scene_threshold": {"type": "number", "minimum": 0},
+    "periodic_frames": {"type": "array"},
+    "scene_frames": {"type": "array"},
+    "contact_sheets": {"type": "array"},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

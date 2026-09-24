@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "clips": [
+    {
+      "id": "clip-001",
+      "title": "O problema não é a velocidade",
+      "status": "REBUILD",
+      "primary_context": "contradicao",
+      "profile": "contrarian",
+      "tags": ["retenção", "edição"],
+      "segments": [
+        {"source_start": 3.0, "source_end": 9.0, "role": "highlight", "order": 1},
+        {"source_start": 0.0, "source_end": 3.0, "role": "context", "order": 2},
+        {"source_start": 9.0, "source_end": 12.0, "role": "payoff", "order": 3}
+      ],
+      "scores": {
+        "hook": 9,
+        "proposition_clarity": 9,
+        "first_value_speed": 9,
+        "context_efficiency": 9,
+        "curiosity_integrity": 9,
+        "progression": 8,
+        "payoff": 9,
+        "self_contained": 9,
+        "shareability": 8,
+        "visual_opportunity": 6,
+        "novelty": 8,
+        "editability": 9,
+        "truthfulness": 10
+      },
+      "hard_fails": [],
+      "estimated_final_duration_seconds": 12.0,
+      "reconstructed_transcript": "Mas o problema real não é a velocidade. É quanto tempo o espectador demora para entender o valor. Todo mundo tenta acelerar o vídeo com cortes. Quando a resposta chega cedo, o restante vira explicação.",
+      "editor_notes": "Abrir pela contradição e voltar apenas três segundos para a crença comum.",
+      "why_it_can_work": "A quebra é imediata e o mecanismo aparece na mesma frase.",
+      "truthfulness_notes": "A remontagem preserva a oposição e a conclusão originais."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# corte-viral · procura QR code visível num vídeo (sai com código 1 se achar)
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+[ -x "$CV_PY" ] || precisa_setup
+exec "$CV_PY" "$CV_SKILL/ferramentas/conferir_qr.py" "$@"

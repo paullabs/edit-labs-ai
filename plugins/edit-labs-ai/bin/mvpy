@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Python do ambiente da motion-vox (versões fixadas do kit). Rode da pasta do projeto: mvpy compose.py M1
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+[ -x "$MV_PY" ] || precisa_setup
+exec "$MV_PY" "$@"

@@ -1,0 +1,13 @@
+name: humor
+label: Humor
+recommended_duration_seconds: [10, 40]
+hard_max_duration_seconds: 60
+orientation_max_seconds: 2.0
+setup_max_seconds: 4.0
+max_seconds_without_new_value: 8.0
+preserve_reaction: true
+preferred_structure:
+  - setup
+  - expectation
+  - rupture
+  - reaction

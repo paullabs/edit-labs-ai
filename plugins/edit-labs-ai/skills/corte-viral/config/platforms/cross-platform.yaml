@@ -1,0 +1,15 @@
+name: cross-platform
+platforms: [tiktok, instagram-reels]
+aspect_ratio: "9:16"
+width: 1080
+height: 1920
+minimum_resolution: "1080x1920"
+caption_safe_zone:
+  left_px: 96
+  right_px: 180
+  top_px: 170
+  bottom_px: 330
+notes:
+  - "Preset conservador para usar o mesmo master nas duas plataformas."
+  - "Interfaces mudam; valide a safe zone em aparelho real antes de publicar em escala."
+  - "Não colocar informação essencial no extremo direito ou na faixa inferior."

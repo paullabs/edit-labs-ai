@@ -1,0 +1,15 @@
+name: instagram-reels
+aspect_ratio: "9:16"
+width: 1080
+height: 1920
+caption_safe_zone:
+  left_px: 90
+  right_px: 150
+  top_px: 180
+  bottom_px: 340
+creative_defaults:
+  hook_window_seconds: 1.5
+  proposition_window_seconds: 3.0
+  sound_expected: true
+notes:
+  - "Preset conservador; a interface pode variar por dispositivo e atualização."

@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "feed-review.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "reviews"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "clip_id",
+          "status",
+          "scores",
+          "events",
+          "context_debt",
+          "promise_payoff_integrity"
+        ],
+        "properties": {
+          "clip_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "REBUILD",
+              "REJECT"
+            ]
+          },
+          "scores": {
+            "type": "object",
+            "properties": {
+              "orientation": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "hook": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "proposition_clarity": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "first_value_speed": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "context_efficiency": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "stakes": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "curiosity_integrity": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "progression": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "payoff": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "closure": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "self_contained": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "shareability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "visual_opportunity": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "novelty": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "editability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "truthfulness": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              }
+            },
+            "additionalProperties": true
+          },
+          "events": {
+            "type": "object"
+          },
+          "context_debt": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10
+          },
+          "promise_payoff_integrity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 10
+          },
+          "semantic_beats": {
+            "type": "array"
+          },
+          "problems": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rebuild_instructions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

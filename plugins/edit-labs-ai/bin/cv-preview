@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# corte-viral · preview emendado de cada corte
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+[ -x "$CV_PY" ] || precisa_setup
+exec "$CV_PY" "$CV_SKILL/ferramentas/preview.py" "$@"

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Lanchador da skill corte-viral.
+#
+# Existe por um motivo concreto: em muitos Macs o `python3` do sistema e 3.9,
+# e o pacote exige 3.10+. Sem este wrapper, o pipeline morre no preflight
+# ("Analise: AUSENTE") depois de o usuario ja achar que instalou tudo.
+#
+#   vch preflight
+#   vch init VIDEO.mp4 --workspace PROJETO/runs
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV="$ROOT/.venv/bin/python"
+
+if [ -x "$VENV" ]; then
+    exec "$VENV" "$ROOT/scripts/vch.py" "$@"
+fi
+
+# Sem venv: procura o primeiro interpretador >= 3.10 disponivel.
+for candidato in python3.14 python3.13 python3.12 python3.11 python3.10 python3; do
+    caminho="$(command -v "$candidato" 2>/dev/null || true)"
+    [ -n "$caminho" ] || continue
+    if "$caminho" -c 'import sys; sys.exit(0 if sys.version_info >= (3,10) else 1)' 2>/dev/null; then
+        exec "$caminho" "$ROOT/scripts/vch.py" "$@"
+    fi
+done
+
+echo "ERRO: nenhum Python 3.10+ encontrado, e a venv da skill nao existe." >&2
+echo "      Crie com:  python3.11 -m venv $ROOT/.venv" >&2
+echo "                 $ROOT/.venv/bin/python -m pip install -r $ROOT/requirements.txt" >&2
+echo "      Ver $ROOT/INSTALAR.md" >&2
+exit 2

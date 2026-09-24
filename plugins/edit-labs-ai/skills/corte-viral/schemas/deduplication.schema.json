@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deduplication.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "decisions"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "group_id",
+          "clip_ids",
+          "winner",
+          "reason"
+        ],
+        "properties": {
+          "group_id": {
+            "type": "string"
+          },
+          "clip_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2
+          },
+          "winner": {
+            "type": "string"
+          },
+          "duplicates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reason": {
+            "type": "string"
+          },
+          "semantic_similarity": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

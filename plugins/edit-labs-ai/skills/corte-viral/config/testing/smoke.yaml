@@ -1,0 +1,87 @@
+project:
+  name: corte-viral-smoke
+  version: 1.0.0
+  language: pt-BR
+pipeline:
+  max_rebuild_attempts: 1
+  max_clips: 1
+  preserve_intermediate_files: true
+selection:
+  minimum_publishability_score: 7.5
+  minimum_critical_score: 7.0
+  maximum_highlight_repetition_approved: 0.30
+  maximum_duplicate_overlap_approved: 0.50
+  truthfulness_gate: 9.0
+scoring_weights:
+  hook: 0.10
+  proposition_clarity: 0.10
+  first_value_speed: 0.09
+  context_efficiency: 0.10
+  curiosity_integrity: 0.08
+  progression: 0.10
+  payoff: 0.13
+  self_contained: 0.10
+  shareability: 0.08
+  visual_opportunity: 0.04
+  novelty: 0.04
+  editability: 0.04
+transcription:
+  backend: auto
+  model: small
+  language: pt
+  device: auto
+  compute_type: auto
+  vad_filter: true
+visual_index:
+  interval_seconds: 4.0
+  scene_threshold: 1.0
+  jpeg_quality: 5
+  contact_sheet_columns: 4
+  contact_sheet_width: 800
+silence:
+  detect: false
+  noise_db: -36
+  minimum_duration_seconds: 0.55
+captions:
+  scale_style_to_render: true
+  style: clean
+  min_words: 2
+  max_words: 6
+  min_duration_seconds: 0.55
+  target_max_duration_seconds: 2.2
+  max_words_per_second: 10.0
+render:
+  width: 360
+  height: 640
+  video_codec: libx264
+  audio_codec: aac
+  audio_sample_rate: 48000
+  crf: 26
+  preset: ultrafast
+  pixel_format: yuv420p
+  fps: 24
+  crop_anchor_x: 0.5
+  loudness_lufs: -14
+  true_peak_db: -1.0
+  loudness_range: 11
+  # A skill entrega o vertical limpo; a queima e da motion-vox.
+  make_captioned_version: false
+  make_preview_image: true
+
+quality_control:
+  captions_required: true
+  verify_safe_zone: true
+  caption_end_tolerance_seconds: 0.30
+  duration_tolerance_seconds: 0.75
+  duration_tolerance_ratio: 0.02
+  clean_captioned_duration_tolerance_seconds: 0.12
+  minimum_file_size_bytes: 10000
+  detect_black_frames: true
+  black_min_duration_seconds: 0.15
+  black_pixel_threshold: 0.10
+  boundary_black_warning_seconds: 0.15
+  boundary_black_hard_fail_seconds: 0.75
+  black_ratio_warning: 0.10
+  analyze_audio: true
+  silent_mean_volume_db: -65.0
+  clipping_warning_db: -0.10

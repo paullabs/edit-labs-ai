@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "video_summary": {
+    "premise": "Velocidade de edição não substitui clareza de valor.",
+    "main_topics": ["retenção", "clareza"],
+    "speakers": ["UNKNOWN"]
+  },
+  "context_units": [
+    {
+      "id": "ctx-001",
+      "start": 0.0,
+      "end": 12.0,
+      "topic": "clareza antes de velocidade",
+      "summary": "Contrasta cortes rápidos com tempo até compreensão.",
+      "speakers": ["UNKNOWN"],
+      "setups": ["Todo mundo tenta acelerar o vídeo com cortes."],
+      "payoffs": ["Quando a resposta chega cedo, o restante vira explicação."],
+      "visual_events": []
+    }
+  ],
+  "entities": [],
+  "stories": [],
+  "questions": [],
+  "references": []
+}

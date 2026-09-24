@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "output-verification.schema.json",
+  "type": "object",
+  "required": ["schema_version", "valid", "checks"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "valid": {"type": "boolean"},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["clip_id", "directory", "valid", "missing", "errors", "warnings"],
+        "properties": {
+          "clip_id": {"type": "string"},
+          "directory": {"type": "string"},
+          "valid": {"type": "boolean"},
+          "missing": {"type": "array", "items": {"type": "string"}},
+          "errors": {"type": "array", "items": {"type": "string"}},
+          "warnings": {"type": "array", "items": {"type": "string"}},
+          "media": {"type": ["object", "null"]},
+          "clean_media": {"type": ["object", "null"]},
+          "black_intervals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["start", "end", "duration"],
+              "properties": {
+                "start": {"type": "number", "minimum": 0},
+                "end": {"type": "number", "minimum": 0},
+                "duration": {"type": "number", "minimum": 0}
+              },
+              "additionalProperties": false
+            }
+          },
+          "audio_metrics": {"type": "object"},
+          "caption_metrics": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

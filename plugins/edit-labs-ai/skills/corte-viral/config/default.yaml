@@ -1,0 +1,164 @@
+project:
+  name: corte-viral
+  version: 1.0.0
+  language: pt-BR
+
+pipeline:
+  max_rebuild_attempts: 3
+  max_clips: 0             # 0 = sem meta/teto global
+  preserve_intermediate_files: true
+  blind_reviewer_tools: false
+  fail_on_schema_error: true
+  fail_on_truthfulness_risk: true
+
+selection:
+  minimum_publishability_score: 7.5
+  minimum_critical_score: 7.0
+  maximum_context_debt: 3
+  maximum_unjustified_seconds_without_new_value: 8.0
+  maximum_highlight_repetition_approved: 0.30
+  maximum_duplicate_overlap_approved: 0.50
+  containment_threshold: 0.95
+  allow_long_clip: true
+  truthfulness_gate: 9.0
+
+scoring_weights:
+  hook: 0.10
+  proposition_clarity: 0.10
+  first_value_speed: 0.09
+  context_efficiency: 0.10
+  curiosity_integrity: 0.08
+  progression: 0.10
+  payoff: 0.13
+  self_contained: 0.10
+  shareability: 0.08
+  visual_opportunity: 0.04
+  novelty: 0.04
+  editability: 0.04
+
+transcription:
+  backend: auto
+  model: small
+  language: pt
+  device: auto
+  compute_type: auto
+  word_timestamps: true
+  vad_filter: true
+  diarization: false
+
+visual_index:
+  interval_seconds: 5.0
+  scene_threshold: 0.32
+  candidate_interval_seconds: 0.5
+  jpeg_quality: 3
+  contact_sheet_columns: 4
+  contact_sheet_width: 1600
+
+silence:
+  detect: true
+  noise_db: -36
+  minimum_duration_seconds: 0.55
+  candidate_only: true
+
+captions:
+  scale_style_to_render: true
+  style: clean
+  mode: phrase
+  min_words: 2
+  max_words: 6
+  max_lines: 2
+  min_duration_seconds: 0.55
+  target_max_duration_seconds: 2.2
+  max_words_per_second: 10.0
+  prefer_syntactic_boundaries: true
+  highlight_max_words: 3
+  safe_zone:
+    left_px: 90
+    right_px: 170
+    top_px: 160
+    bottom_px: 310
+  font_name: Arial
+  font_size: 68
+  outline: 5
+  shadow: 1
+  alignment: 2
+  margin_v: 330
+
+render:
+  # ESCOPO: esta skill entrega o vertical LIMPO. A legenda queimada e do
+  # motion-vox, que compoe motion e legenda no mesmo passe. Os arquivos
+  # captions.srt/.ass continuam sendo gerados como DECUPAGEM (timing por
+  # palavra) - e o que a motion-vox usa para ancorar evento na fala.
+  # Para publicar direto sem motion, ligue make_captioned_version.
+  layout: cover              # único layout: o vertical nunca divide a tela
+  width: 1080
+  height: 1920
+  video_codec: libx264
+  audio_codec: aac
+  audio_sample_rate: 48000
+  crf: 18
+  preset: medium
+  pixel_format: yuv420p
+  fps: source
+  crop_mode: cover
+  crop_anchor_x: 0.5
+  loudness_lufs: -14
+  true_peak_db: -1.0
+  loudness_range: 11
+  faststart: true
+  make_clean_version: true
+  make_captioned_version: false
+  make_preview_image: true
+
+quality_control:
+  captions_required: true
+  verify_safe_zone: true
+  caption_end_tolerance_seconds: 0.30
+  duration_tolerance_seconds: 0.75
+  duration_tolerance_ratio: 0.02
+  clean_captioned_duration_tolerance_seconds: 0.12
+  minimum_file_size_bytes: 10000
+  detect_black_frames: true
+  black_min_duration_seconds: 0.15
+  black_pixel_threshold: 0.10
+  boundary_black_warning_seconds: 0.15
+  boundary_black_hard_fail_seconds: 0.75
+  black_ratio_warning: 0.10
+  analyze_audio: true
+  silent_mean_volume_db: -65.0
+  clipping_warning_db: -0.10
+
+output:
+  organize_by_primary_context: true
+  primary_contexts:
+    - dinheiro
+    - contradicao
+    - resposta-rapida
+    - historia
+    - revelacao
+    - opiniao
+    - humor
+    - autoridade
+    - transformacao
+    - tutorial
+    - conflito
+    - long-clip
+    - outro
+
+# Enquadramento automatico por LOCUTOR ATIVO (scripts/autoframe.py).
+# Preenche crop_anchor_x/zoom por subsegmento antes do render.
+autoframe:
+  enabled: true
+  model: models/face_detection_yunet_2023mar.onnx
+  sample_fps: 5.0            # amostragem de frames para deteccao/movimento de boca
+  window_s: 2.0              # janela de decisao de locutor
+  switch_margin: 0.28        # margem que o desafiante precisa vencer para trocar
+  switch_hold_windows: 3     # ...sustentada por N janelas seguidas
+  switch_min_abs: 0.18       # correlacao minima propria do desafiante
+  min_shot_for_switch_s: 6.0 # planos curtos: decisao global e final
+  closeup_face_width: 0.085  # fracao da largura do frame que caracteriza close
+  max_zoom: 1.45             # teto de punch-in (fonte 1080p borra acima disso)
+  target_face_height: 0.16   # altura de rosto desejada na saida
+  deadzone_px: 55            # so move o enquadramento se sair desta faixa
+  max_speed_px_s: 150        # teto de velocidade do movimento
+  exclude_zones: []          # [[x0,y0,x1,y1]] normalizado: telas/paineis do cenario

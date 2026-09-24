@@ -1,0 +1,40 @@
+{
+  "clip_id": "clip-001",
+  "output_slug": "clip-001-a-margem-escondida-no-frete",
+  "primary_context": "dinheiro",
+  "timeline": [
+    {
+      "source_start": 842.0,
+      "source_end": 852.0,
+      "crop_anchor_x": 0.5,
+      "zoom": 1.08,
+      "transition_in": "cut"
+    },
+    {
+      "source_start": 803.0,
+      "source_end": 842.0,
+      "crop_anchor_x": 0.45,
+      "zoom": 1.0,
+      "transition_in": "time_return"
+    },
+    {
+      "source_start": 852.0,
+      "source_end": 862.0,
+      "crop_anchor_x": 0.5,
+      "zoom": 1.05,
+      "transition_in": "cut"
+    }
+  ],
+  "captions": {
+    "mode": "phrase",
+    "style": "clean",
+    "emphasis_terms": [
+      "trinta por cento"
+    ]
+  },
+  "audio": {
+    "loudness_lufs": -14,
+    "music": null
+  },
+  "optional_assets": []
+}

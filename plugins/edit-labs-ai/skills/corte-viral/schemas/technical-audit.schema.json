@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "technical-audit.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "clips",
+    "pairwise_overlap"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "clips": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "clip_id",
+          "duration_seconds",
+          "valid_timestamps",
+          "highlight_repetition_ratio",
+          "hard_fails"
+        ],
+        "properties": {
+          "clip_id": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "valid_timestamps": {
+            "type": "boolean"
+          },
+          "highlight_repetition_ratio": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "speech_words_per_second": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "silence_seconds": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "hard_fails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "pairwise_overlap": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "clip_a",
+          "clip_b",
+          "overlap_seconds",
+          "ratio_a",
+          "ratio_b",
+          "contained"
+        ],
+        "properties": {
+          "clip_a": {
+            "type": "string"
+          },
+          "clip_b": {
+            "type": "string"
+          },
+          "overlap_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "ratio_a": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "ratio_b": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "contained": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

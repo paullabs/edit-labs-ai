@@ -1,0 +1,10 @@
+name: long_clip
+label: Long clip
+recommended_duration_seconds: [90, 180]
+hard_max_duration_seconds: 240
+orientation_max_seconds: 2.5
+proposition_max_seconds: 5.0
+first_value_max_seconds: 10.0
+max_seconds_without_new_value: 12.0
+minimum_semantic_beats: 8
+requires_internal_chapters: true

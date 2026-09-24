@@ -1,0 +1,303 @@
+{
+ "schema": "motion-vox-biblioteca/1",
+ "assets": [
+  {
+   "nome": "MAO_PILHA_v1",
+   "arquivo": "png/MAO_PILHA_v1.png",
+   "o_que": "mão entrando pela esquerda segurando uma pilha grossa de folhas em branco, vista de cima",
+   "tags": [
+    "mão",
+    "pessoa",
+    "papel",
+    "pilha",
+    "folhas",
+    "prompt",
+    "documento",
+    "segurar",
+    "pegar"
+   ],
+   "prompt": "Single isolated subject centered on a completely flat plain neutral medium gray backdrop hex #8A8A8A. A real human\nhand entering from the left edge of the frame, holding a thick stack of loose blank off-white paper sheets, fingers\ngripping the side of the stack as if picking it up, photographed straight from directly overhead, perfect top-down\nview. Natural skin texture, slightly worn uncoated paper with visible fiber, a few sheets slightly offset and uneven\nat the edges. The sheets are completely blank, no printing. Even soft diffuse light, no cast shadow on the backdrop,\nsubject fully within frame except the wrist at the left edge, clear separation from background. Muted desaturated\ncolor, matte finish, no glossy highlights. Documentary object photograph. No text, no letters, no numbers, no\nsymbols, no brand, no logo anywhere. No glossy 3D render, no neon, no glow, no gradients, no HDR, no AI-polished look.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "FOLHA_A4_v2",
+   "arquivo": "png/FOLHA_A4_v2.png",
+   "o_que": "folha A4 de papel envelhecido com um canto levantado, em branco",
+   "tags": [
+    "papel",
+    "folha",
+    "documento",
+    "pagina",
+    "a4",
+    "impresso",
+    "prompt"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray backdrop hex #8A8A8A. A single sheet of\nslightly worn uncoated off-white A4 paper, lying flat with one corner gently curling up, photographed straight from\ndirectly overhead, perfect top-down view. Visible paper fiber, soft uneven light across the fold. The sheet is\ncompletely blank, no printing. Even soft diffuse light, no cast shadow on the backdrop, object fully within frame,\nclear separation from background. Muted desaturated color, matte finish, no glossy highlights. Documentary object\nphotograph. No text, no letters, no numbers, no symbols, no brand, no logo anywhere. No glossy 3D render, no neon,\nno glow, no gradients, no HDR, no AI-polished look.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "RESMA_IMPRESSA_v1",
+   "arquivo": "png/RESMA_IMPRESSA_v1.png",
+   "o_que": "resma alta de folhas A4 soltas vista de três-quartos, em branco",
+   "tags": [
+    "papel",
+    "pilha",
+    "resma",
+    "volume",
+    "documento",
+    "muito",
+    "quantidade"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray backdrop hex #8A8A8A. A tall thick\nstack of loose off-white A4 paper sheets, a few sheets slightly offset, photographed from a low three-quarter angle\nso the thickness of the stack is clearly visible. Slightly worn uncoated paper with visible fiber and uneven edges.\nAll sheets completely blank, no printing. Even soft diffuse light, no cast shadow on the backdrop, object fully\nwithin frame, clear separation from background. Muted desaturated color, matte finish, no glossy highlights.\nDocumentary object photograph. No text, no letters, no numbers, no symbols, no brand, no logo anywhere. No glossy 3D\nrender, no neon, no glow, no gradients, no HDR, no AI-polished look.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "FICHA_PAUTADA_v1",
+   "arquivo": "png/FICHA_PAUTADA_v1.png",
+   "o_que": "ficha pautada de papel (index card), linhas azuis e uma vermelha, em branco",
+   "tags": [
+    "papel",
+    "ficha",
+    "cartao",
+    "lista",
+    "nota",
+    "passo",
+    "estudo"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray backdrop hex #8A8A8A. One plain\noff-white ruled index card lying flat, faint pale blue horizontal rule lines and one faint red top line, slightly\nworn corners, photographed straight from directly overhead, perfect top-down view. Nothing written on it. Even soft\ndiffuse light, no cast shadow on the backdrop, object fully within frame, clear separation from background. Muted\ndesaturated color, matte finish, no glossy highlights. Documentary object photograph. No text, no letters, no numbers,\nno symbols, no brand, no logo anywhere. No glossy 3D render, no neon, no glow, no gradients, no HDR, no AI-polished look.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "ETIQUETA_PRECO_v2",
+   "arquivo": "png/ETIQUETA_PRECO_v2.png",
+   "o_que": "etiqueta kraft de preço com barbante de algodão, em branco",
+   "tags": [
+    "preco",
+    "etiqueta",
+    "barato",
+    "caro",
+    "dinheiro",
+    "custo",
+    "gratis",
+    "valor"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray backdrop hex #8A8A8A. A small kraft\npaper price tag with a reinforced punched hole and a loose natural cotton string, lying flat, photographed straight\nfrom directly overhead, perfect top-down view. Soft brown kraft fiber, slightly worn edges. The tag is completely\nblank, no printing. Even soft diffuse light, no cast shadow on the backdrop, object fully within frame, clear\nseparation from background. Muted desaturated color, matte finish, no glossy highlights. Documentary object\nphotograph. No text, no letters, no numbers, no symbols, no brand, no logo anywhere. No glossy 3D render, no neon,\nno glow, no gradients, no HDR, no AI-polished look.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "MANUAL_ESPIRAL_v1",
+   "arquivo": "png/MANUAL_ESPIRAL_v1.png",
+   "o_que": "caderno espiral aberto, páginas pautadas em branco",
+   "tags": [
+    "caderno",
+    "manual",
+    "passos",
+    "instrucao",
+    "estudo",
+    "anotacao",
+    "livro"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray backdrop hex #8A8A8A. An open\nspiral-bound notebook lying flat, dark metal spiral in the middle, two facing pages of off-white paper with faint\nruled lines, photographed straight from directly overhead, perfect top-down view. Slightly worn cover edges visible.\nThe pages are completely blank, nothing written. Even soft diffuse light, no cast shadow on the backdrop, object\nfully within frame, clear separation from background. Muted desaturated color, matte finish, no glossy highlights.\nDocumentary object photograph. No text, no letters, no numbers, no symbols, no brand, no logo anywhere. No glossy 3D\nrender, no neon, no glow, no gradients, no HDR, no AI-polished look.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "TIRAS_PAPEL_v1",
+   "arquivo": "png/TIRAS_PAPEL_v1.png",
+   "o_que": "seis tiras de papel rasgadas, em branco",
+   "tags": [
+    "papel",
+    "tiras",
+    "itens",
+    "lista",
+    "pedaços",
+    "prompts",
+    "bilhetes"
+   ],
+   "prompt": "Single isolated subject centered on a completely flat plain neutral medium gray backdrop hex #8A8A8A. Six narrow\nstrips of off-white paper torn from a sheet, laid loosely side by side, torn fibrous edges, photographed straight\nfrom directly overhead, perfect top-down view. All strips completely blank, no printing. Even soft diffuse light, no\ncast shadow on the backdrop, subject fully within frame, clear separation from background. Muted desaturated color,\nmatte finish, no glossy highlights. Documentary object photograph. No text, no letters, no numbers, no symbols, no\nbrand, no logo anywhere. No glossy 3D render, no neon, no glow, no gradients, no HDR, no AI-polished look.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "POST_IT_v1",
+   "arquivo": "png/POST_IT_v1.png",
+   "o_que": "post-it amarelo-pálido com um canto levantado, em branco",
+   "tags": [
+    "nota",
+    "post-it",
+    "bilhete",
+    "lembrete",
+    "recado",
+    "palavra"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray backdrop hex #8A8A8A. One square paper\nsticky note in a muted pale yellow, lying flat with the bottom corner slightly lifting, photographed straight from\ndirectly overhead, perfect top-down view. Soft paper texture, faint adhesive strip shade at the top. Completely blank,\nnothing written. Even soft diffuse light, no cast shadow on the backdrop, object fully within frame, clear separation\nfrom background. Muted desaturated color, matte finish, no glossy highlights. Documentary object photograph. No text,\nno letters, no numbers, no symbols, no brand, no logo anywhere. No glossy 3D render, no neon, no glow, no gradients,\nno HDR, no AI-polished look.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "MAOS_TECLADO_v1",
+   "arquivo": "png/MAOS_TECLADO_v1.png",
+   "o_que": "duas mãos digitando num teclado gasto, vista de cima",
+   "tags": [
+    "mãos",
+    "pessoa",
+    "teclado",
+    "digitar",
+    "escrever",
+    "comentar",
+    "trabalhar",
+    "computador"
+   ],
+   "prompt": "Single isolated subject centered on a completely flat plain neutral light gray backdrop hex #D8D8D8. Two real human\nhands typing on a worn dark computer keyboard, the wrists entering from the bottom edge of the frame, photographed\nstraight from directly overhead, perfect top-down view. Natural skin texture; the key legends worn away to the point\nof being illegible smudges. Even soft diffuse light, no cast shadow on the backdrop, subject fully within frame\nexcept the wrists at the bottom edge, clear separation from background. Muted desaturated color, matte finish, no\nglossy highlights. Documentary object photograph. No text, no letters, no numbers, no symbols, no brand, no logo\nanywhere. No glossy 3D render, no neon, no glow, no gradients, no HDR, no AI-polished look.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "MAO_PDF_v2",
+   "arquivo": "png/MAO_PDF_v2.png",
+   "o_que": "mão empurrando um bloco grampeado de folhas impressas, vista de cima",
+   "tags": [
+    "mão",
+    "pessoa",
+    "papel",
+    "documento",
+    "pdf",
+    "enviar",
+    "empurrar"
+   ],
+   "prompt": "Single isolated subject centered on a completely flat plain neutral medium gray #8A8A8A backdrop. A real human hand\nentering from the left edge of the frame, flat palm down, pushing a thick stapled stack of printed A4 sheets across\nthe surface towards the right, photographed straight from directly overhead, perfect top-down view. Natural skin\ntexture, short clean nails, slightly worn uncoated paper with visible fiber, the top sheet completely blank.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "FRAGMENTOS_TEXTO_v2",
+   "arquivo": "png/FRAGMENTOS_TEXTO_v2.png",
+   "o_que": "punhado de pedacinhos de papel recortados com uma linha de texto impresso cada, três queimados",
+   "tags": [
+    "papel",
+    "texto",
+    "token",
+    "pedaço",
+    "recorte",
+    "gastar",
+    "queimar"
+   ],
+   "prompt": "Single isolated subject centered on a completely flat plain neutral medium gray #8A8A8A backdrop. A loose scatter\nof about twenty small paper fragments cut from a printed page, each strip carrying one short line of tiny\nillegible printed grey text, the cut edges rough and slightly frayed, three of the fragments charred dark brown\nalong one edge, photographed straight from directly overhead, perfect top-down view. Slightly worn uncoated paper\nwith visible fiber.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "PAGINA_DENSA_v1",
+   "arquivo": "png/PAGINA_DENSA_v1.png",
+   "o_que": "folha A4 impressa com quarenta linhas de texto miúdo, de ponta a ponta",
+   "tags": [
+    "papel",
+    "folha",
+    "texto",
+    "denso",
+    "ler",
+    "documento"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray #8A8A8A backdrop. A single A4 sheet\nof a printed document seen straight from directly overhead, perfect top-down view, the whole sheet filled with about\nforty dense rows of tiny illegible printed grey text, the lines packed close together from the top edge to the bottom\nedge, far too small to read. Slightly worn uncoated paper with visible fiber and one softly curling corner.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "TABELA_IMPRESSA_v1",
+   "arquivo": "png/TABELA_IMPRESSA_v1.png",
+   "o_que": "folha impressa com grade vazia de linhas e colunas",
+   "tags": [
+    "papel",
+    "tabela",
+    "planilha",
+    "grade",
+    "dados"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray #8A8A8A backdrop. A single printed\nsheet showing an empty ruled grid of rows and columns, thin grey rules only, every cell completely blank with no\nnumbers and no writing, photographed straight from directly overhead, perfect top-down view. Slightly worn uncoated\npaper with visible fiber and a soft fold line across one corner.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "RESMA_20_v2",
+   "arquivo": "png/RESMA_20_v2.png",
+   "o_que": "pilha baixa de umas vinte folhas A4 soltas, bordas à mostra",
+   "tags": [
+    "papel",
+    "pilha",
+    "resma",
+    "páginas",
+    "volume"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray #8A8A8A backdrop. A short neat stack\nof about twenty loose A4 sheets, slightly fanned so the individual edges are visible along one side, photographed\nstraight from directly overhead, perfect top-down view. Slightly worn uncoated paper with visible fiber, soft\nuneven edges, all surfaces completely blank with no printing.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "ETIQUETA_GRATIS_v2",
+   "arquivo": "png/ETIQUETA_GRATIS_v2.png",
+   "o_que": "etiqueta kraft grande deitada, olhal e rolo de barbante ao lado",
+   "tags": [
+    "etiqueta",
+    "preço",
+    "kraft",
+    "barbante",
+    "grátis",
+    "tag"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray #8A8A8A backdrop. One large kraft\npaper price tag lying on its side, a reinforced eyelet at one end and a coil of loose cotton string beside it,\nphotographed straight from directly overhead, perfect top-down view. Slightly worn brown kraft card with visible\nfiber and soft rounded corners, the face of the tag completely blank.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "PASTA_MANILA_v1",
+   "arquivo": "png/PASTA_MANILA_v1.png",
+   "o_que": "pasta manilha fechada com aba, folhas espiando",
+   "tags": [
+    "pasta",
+    "arquivo",
+    "manilha",
+    "documento",
+    "formato"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral medium gray #8A8A8A backdrop. One manila card\nstock file folder lying closed with the tab at the top right, slightly open along the fold so a couple of blank\nsheets peek out, photographed straight from directly overhead, perfect top-down view. Worn buff-coloured card with\nvisible fiber, soft frayed corners and a faint crease, the tab completely blank.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "LAPTOP_FECHADO_v1",
+   "arquivo": "png/LAPTOP_FECHADO_v1.png",
+   "o_que": "laptop fechado visto de cima, tampa grafite sem marca",
+   "tags": [
+    "laptop",
+    "computador",
+    "eletrônico",
+    "programa",
+    "desktop"
+   ],
+   "prompt": "Single isolated object centered on a completely flat plain neutral light gray #D8D8D8 backdrop. A closed laptop\nseen from directly overhead, perfect top-down view, the lid a plain muted graphite panel with worn edges and a\nfaint scuff, no badge and no marking of any kind on the lid, the hinge visible along one side.",
+   "d1": "pendente",
+   "usos": []
+  },
+  {
+   "nome": "MAO_CABO_v1",
+   "arquivo": "png/MAO_CABO_v1.png",
+   "o_que": "mão entrando pela esquerda com um cabo trançado e conector metálico",
+   "tags": [
+    "mão",
+    "pessoa",
+    "cabo",
+    "conector",
+    "conectar",
+    "servidor"
+   ],
+   "prompt": "Single isolated subject centered on a completely flat plain neutral medium gray #8A8A8A backdrop. A real human hand\nentering from the left edge of the frame, holding a braided grey cable by its plain metal connector and pushing it\ntowards the right, photographed straight from directly overhead, perfect top-down view. Natural skin texture, short\nclean nails, the cable sleeve slightly frayed with honest signs of use, the connector unmarked.",
+   "d1": "pendente",
+   "usos": []
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+name: authority
+label: Autoridade e prova social
+recommended_duration_seconds: [20, 60]
+hard_max_duration_seconds: 80
+orientation_max_seconds: 1.5
+proposition_max_seconds: 3.0
+first_value_max_seconds: 7.0
+max_seconds_without_new_value: 8.0
+preferred_structure:
+  - who_or_why_credible
+  - claim_or_observation
+  - evidence_or_example
+  - implication
