@@ -2,7 +2,7 @@
 """
 Camada 7 — som. Voz + trilha por baixo + efeitos presos aos eventos do plano, master a -14 LUFS.
 
-    python3 mixar.py <projeto> <video.mp4> <saida.mp4>
+    mvpy mixar.py <projeto> <video.mp4> <saida.mp4>
         [--trilha <música.wav|mp3> | pad_documental | pad_dados | pad_explicador | grave_808 | nenhuma]
         [--trilha-inicio <s>] [--abaixo <dB>] [--sem-efeitos] [--lufs -14] [--biblioteca <pasta>] [--mapa <json>]
 

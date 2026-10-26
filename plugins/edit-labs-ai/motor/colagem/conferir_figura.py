@@ -12,9 +12,9 @@ camadas (o boneco de terno que acena é o caso de estudo).
 
 Cada função devolve [(quadro, problema, área em px)] e grava uma imagem com o defeito marcado em magenta.
 
-    python3 -I conferir_figura.py buracos <pasta com cor_q_*.png> <ref.png>
-    python3 -I conferir_figura.py composto <pasta com q*.png>
-    python3 -I conferir_figura.py lascas <pasta com cor_*.png>"""
+    clpy conferir_figura.py buracos <pasta com cor_q_*.png> <ref.png>
+    clpy conferir_figura.py composto <pasta com q*.png>
+    clpy conferir_figura.py lascas <pasta com cor_*.png>"""
 import sys
 from pathlib import Path
 

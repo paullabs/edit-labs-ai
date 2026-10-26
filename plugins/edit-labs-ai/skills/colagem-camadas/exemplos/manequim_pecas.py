@@ -4,7 +4,7 @@ Os 12 estados foram fotografados na mesma posição, tirando uma peça por vez. 
 i+1 é a DIFERENÇA entre as duas fotos: recortamos essa região da foto i e ela vira uma peça de verdade, que pode
 levantar e mostrar a foto i+1 por baixo (que é exatamente o que havia embaixo dela no boneco).
 
-    python3 manequim_pecas.py     ->  manequim/estado_XX.png (figura recortada) e manequim/peca_XX.png (+ folha)"""
+    clpy manequim_pecas.py     ->  manequim/estado_XX.png (figura recortada) e manequim/peca_XX.png (+ folha)"""
 import os
 import sys
 import json
@@ -70,7 +70,7 @@ def rgba(bgr, al):
 
 
 def main():
-    OUT.mkdir(exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=True)
     nomes = [f"c{i}.jpg" for i in range(10, 22)]
     ims = [carrega(n) for n in nomes]
     sil = silhueta(ims[0])                                     # todas as fotos têm a mesma silhueta (IoU > 0,99)

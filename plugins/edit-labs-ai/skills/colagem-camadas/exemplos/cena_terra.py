@@ -3,9 +3,9 @@ separam).
 
 Antes: preparar.py terra (terra_blender.py + blender_giro.py).
 
-    python3 cena_terra.py              quadros de conferência em previa/terra/
-    python3 cena_terra.py --video      previa/terra.mp4
-    python3 cena_terra.py --som        previa/terra_som.mp4"""
+    clpy cena_terra.py              quadros de conferência em previa/terra/
+    clpy cena_terra.py --video      previa/terra.mp4
+    clpy cena_terra.py --som        previa/terra_som.mp4"""
 import os
 import sys
 from pathlib import Path

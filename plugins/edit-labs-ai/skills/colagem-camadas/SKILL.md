@@ -30,7 +30,7 @@ Reels, material, movimento, som, crédito e "pode"). Aqui está só o que é esp
 | o quê | onde |
 | --- | --- |
 | motor (câmera, camadas, mecânicas, peças de papel, som) | `${CLAUDE_PLUGIN_ROOT}/motor/colagem/` (`LEIA.md`, `GUIA_OLHO.md`) |
-| exemplos completos (manequim, luva, crânio, estalar, corpo humano, Terra, teste rápido) | `${CLAUDE_SKILL_DIR}/exemplos/` |
+| exemplos completos (manequim, luva, crânio, estalar, corpo humano, espirro, subsolo, mapa, Terra, teste rápido) | `${CLAUDE_SKILL_DIR}/exemplos/` |
 | preparo 3D dos exemplos (monta o .blend e renderiza as camadas) | `${CLAUDE_SKILL_DIR}/exemplos/preparar.py` + `exemplos/cfg/` |
 | objetos 3D próprios (bloco do pré-sal, refinaria, moeda, maço, petroleiro em corte) | `${CLAUDE_SKILL_DIR}/modelos/` |
 | técnica, quebras e como não repetir | `referencias/TECNICA.md` |
@@ -51,7 +51,8 @@ sys.path.insert(0, os.environ.get("EDITLABS_MOTOR", str(RAIZ / "motor" / "colage
 
 O trabalho do projeto vai para `./colagem-trabalho/` na pasta do usuário (ou `COLAGEM_TRABALHO`); os assets grandes,
 para `~/.local/share/edit-labs-ai/colagem/` (`EDITLABS_DATA`). Teste a instalação com
-`python3 ${CLAUDE_SKILL_DIR}/exemplos/teste_rapido.py` (não precisa de nenhum asset).
+`clpy ${CLAUDE_SKILL_DIR}/exemplos/teste_rapido.py` (não precisa de nenhum asset). `clpy` é o lançador do plugin
+que roda o Python do ambiente da colagem com o motor já importável; use-o para todo script do motor e dos exemplos.
 
 ## 1. Perguntas (no máximo 4, múltipla escolha, recomendada em primeiro)
 
@@ -76,7 +77,7 @@ Pule o que o pedido já respondeu. Depois disso, nada técnico: fps, nível de s
    papel, a luz, a borda) e pergunte: aprovar, ajustar ou trocar. Só depois monte o resto.
 5. **Peças registradas.** 3D: `.blend` com prefixo por camada + `blender_giro.py` (mesma câmera, `px_por_m`) +
    `papelizar(registrado=True)`. Foto: peça = diferença entre fotos (`manequim_pecas.py`) ou `registrar()` (ECC).
-6. **Conferir a figura** antes de qualquer vídeo: `python3 -I ${CLAUDE_PLUGIN_ROOT}/motor/colagem/conferir_figura.py
+6. **Conferir a figura** antes de qualquer vídeo: `clpy ${CLAUDE_PLUGIN_ROOT}/motor/colagem/conferir_figura.py
    lascas|buracos|cortados|composto ...`. Zero problemas, ou cada achado explicado.
 7. **Cena.** Uma figura central; camadas na ordem de empilhar; mecânicas por palavra (com voz: `q(t) = 10 + 24·t`);
    câmera por planos lentos com `C.quadro(caixa, regiao=M.REGIAO_REELS)`; um mecanismo por vez.
@@ -115,6 +116,8 @@ Todas andam em degraus de 7 qps (stop-motion); a câmera anda a 14. Cada uma já
 | `K.explode(camadas, q0, q1, passo=(0, 260), volta=q2, desloc=[...])` | vista explodida (ou grade) e volta | as cascas da Terra se separam (`cena_terra.py`) |
 | `K.pulsa(camada, q0, q1, padrao, periodo)` | vida: a escala pulsa sem mexer nas chaves de movimento | coração a 70 bpm `[1.07, 1.03, 1, 1, 1, 1]`; pulmão em senoide lenta |
 | `K.giro(nome, vistas, x, y, chaves_ang)` (vistas do `blender_giro.py`) | objeto 3D girando a **7 qps**, como recorte girado à mão; a vista 0 é igual à peça parada | o crânio e o cérebro girando (`cena_cranio.py`) |
+| descida em camadas (`cena_subsolo.py`: `onda`, sonda + `quando`, `revela`, `gotas`) | a câmera desce junto com uma sonda; o nome de cada camada entra preso à tela quando a ponta passa por ela, um por vez | mar → pós-sal → sal → pré-sal |
+| mapa com alfinete e painel (`mapa_papel.py`: `Pais`, `alfinete`, `painel` + `brota` + `encolhe`, `lider`, `rota`) | o assunto brota do alfinete num canto vazio, mostra 1 rótulo + 1 número e encolhe de volta; o mapa nunca acumula etiquetas | três pontos num mapa (`cena_mapa.py`) |
 | `K.pilha`, `K.cortar_alfa`, `K.registrar`, `K.papelizar`, `K.apara_lascas`, `K.fecha_vazados` | encaixe, recorte sem perder o lugar, alinhamento ECC, render 3D → gravura, limpeza do alfa | todos os exemplos |
 
 Peças e cena: `PC.recorte` (borda de tesoura), `PC.cartao` (foto com fita), `PC.etiqueta`, `PC.carimbo`,
@@ -128,13 +131,16 @@ Peças e cena: `PC.recorte` (borda de tesoura), `PC.cartao` (foto com fita), `PC
 | manequim de 1890 (a referência) | fotos reais em camadas | pacote de pranchas; `preparar.py manequim` | `cena_manequim.py` |
 | luva de boxe | Z-Anatomy + luva CC BY 3.0 | pacote Z-Anatomy; `preparar.py luva` | `cena_luva.py` |
 | crânio e cérebro boiando | Z-Anatomy + BodyParts3D | Z-Anatomy + BodyParts3D; `preparar.py cranio` | `cena_cranio.py` |
-| estalar os dedos (com voz) | Z-Anatomy + junta própria | `preparar.py luva` e `preparar.py estalar`; sua narração em `estalar/voz.mp3` | `cena_estalar.py` |
-| corpo humano (homem de terno) | foto CC0 + Z-Anatomy + BodyParts3D | `preparar.py homem`, a foto recortada, `homem3_pecas.py`, `homem3_poses_ia.py` | `cena_homem3.py` |
+| estalar os dedos (com voz) | Z-Anatomy + junta própria | `preparar.py luva` e `preparar.py estalar` (a narração de exemplo já vem em `dados/estalar/`) | `cena_estalar.py` |
+| corpo humano (homem de terno) | foto CC0 + Z-Anatomy + BodyParts3D | pacotes Z-Anatomy, BodyParts3D e `colagem-homem3` (recorte e poses); `preparar.py homem`, `homem3_pecas.py` | `cena_homem3.py` |
+| espirro preso (medicina, sem voz) | foto CC0 + garganta do Z-Anatomy + papel e caneta | pacotes `colagem-zanatomy-garganta` e `colagem-homem3`; `preparar.py espirro` | `cena_espirro.py` |
+| camadas do subsolo de um poço | 3D próprio (bloco geológico) | `preparar.py subsolo` | `cena_subsolo.py` |
+| três pontos num mapa | Natural Earth (no plugin) | nada | `cena_mapa.py` |
 | Terra | 3D próprio | `preparar.py terra` | `cena_terra.py` |
 | teste rápido | nada | — | `teste_rapido.py` |
 
 Cada cena roda assim: sem argumento = quadros de conferência em `colagem-trabalho/previa/<nome>/`; `--video` = vídeo
-sem som; `--som` = mix e vídeo final. A legenda de fala vem desligada (`COLAGEM_LEGENDAS=1` liga, só para estudo);
+sem som; `--som` = mix e vídeo final. Rode da pasta do projeto: `clpy ${CLAUDE_SKILL_DIR}/exemplos/<cena>.py`. A legenda de fala vem desligada (`COLAGEM_LEGENDAS=1` liga, só para estudo);
 a trilha é sua (`COLAGEM_TRILHA=<arquivo>`, `COLAGEM_TRILHA_LICENCA="..."`) ou a cama gerada pelo motor.
 
 ## 5. Lições do que não funcionou (regras)

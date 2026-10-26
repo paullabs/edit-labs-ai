@@ -3,7 +3,7 @@
 Confere a instalacao e renderiza um quadro de cada tipo de plano num projeto sintetico
 (assets de mentira gerados aqui: nenhum download, nenhum credito).
 
-    python3 verificar.py
+    mvpy verificar.py
 """
 import importlib, json, shutil, subprocess, sys, tempfile
 from pathlib import Path
@@ -24,7 +24,7 @@ for m in ("numpy", "cv2", "PIL", "faster_whisper"):
     try:
         importlib.import_module(m); conf(m, True)
     except Exception:
-        conf(m, False, "pip install numpy opencv-python pillow faster-whisper")
+        conf(m, False, "rode editlabs-setup (ou: mvpy -m pip install -r requirements.txt)")
 print("programas")
 conf("ffmpeg", shutil.which("ffmpeg"), "instale o ffmpeg")
 conf("swift (cursor do sistema)", shutil.which("swift"), "xcode-select --install (opcional)")
@@ -39,7 +39,7 @@ for k in ("moldura.png", "moldura_furo.npy", "papel_amassado.png"):
     conf(k, (RAIZ / "motor" / "kit" / k).exists())
 import os  # noqa: E402
 sfx = sorted((RAIZ / "motor" / "kit" / "sfx").glob("*.wav"))
-conf(f"efeitos sintetizados ({len(sfx)})", len(sfx) >= 13, "rode: python3 motor/som.py")
+conf(f"efeitos sintetizados ({len(sfx)})", len(sfx) >= 13, "rode: mvpy motor/som.py")
 sons = os.environ.get("EDITLABS_SONS")
 print("  info  pasta de sons do usuário: " + (sons if sons else "não definida (EDITLABS_SONS) — o mixador usa os sintetizados"))
 

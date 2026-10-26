@@ -1,7 +1,9 @@
 """Reel narrado: "O que acontece quando você estala os dedos?" (exemplo com voz).
 
-Voz grave de narrador (35 s). As palavras com tempo (faster-whisper) estão em dados/estalar/palavras_bruto.json; a sua
-narração vai em <trabalho>/estalar/voz.mp3 (ou $COLAGEM_VOZ) e as suas palavras em <trabalho>/estalar/palavras_bruto.json.
+Voz grave de narrador (35 s). A narração do exemplo (voz sintética gerada por IA, sem metadados) e as palavras com tempo
+(faster-whisper) vêm em dados/estalar/voz.mp3 e dados/estalar/palavras_bruto.json, então o --som roda sem nada seu.
+Para usar a sua narração: <trabalho>/estalar/voz.mp3 (ou $COLAGEM_VOZ) e as suas palavras em
+<trabalho>/estalar/palavras_bruto.json (as duas juntas: os tempos da cena saem das palavras).
 Os quadros estão no relógio de autoria de 24 qps; a voz entra no quadro 10: q(t) = 10 + 24·t, com t em segundos da voz.
 Fontes científicas do roteiro: Kawchuk et al., PLoS ONE 10(4): e0119470 (2015); D. L. Unger, Arthritis & Rheumatism
 (1998).
@@ -12,9 +14,9 @@ Imagem: a mão do atlas (Z-Anatomy, CC BY-SA 4.0) em 2×, a pele rasga numa jane
 baixo, a junta feita no Blender com os ossos reais da mão (junta_blender.py): os ossos se afastam, nasce a bolha de gás.
 A junta é registrada com a mão pelo ponto da articulação (medido no Blender) e a rotação de 14° (medida na sobreposição).
 
-    python3 cena_estalar.py              quadros de conferência em previa/estalar/
-    python3 cena_estalar.py --video      previa/estalar.mp4 (sem som)
-    python3 cena_estalar.py --som        mix (voz + trilha + efeitos + estalo) e entrega em previa/estalar_som.mp4"""
+    clpy cena_estalar.py              quadros de conferência em previa/estalar/
+    clpy cena_estalar.py --video      previa/estalar.mp4 (sem som)
+    clpy cena_estalar.py --som        mix (voz + trilha + efeitos + estalo) e entrega em previa/estalar_som.mp4"""
 import os
 import sys
 import json
@@ -83,7 +85,7 @@ def cam_em(z, wx, wy):
 
 
 def cache_png(nome, faz):
-    CACHE.mkdir(exist_ok=True)
+    CACHE.mkdir(parents=True, exist_ok=True)
     out = CACHE / f"{nome}.png"
     if not out.exists():
         im = faz()
@@ -483,6 +485,8 @@ def mixar(camadas, cam, info, refazer=False):
                 pequenos.append(tq / 24)
     faixa_estalos(pasta / "estalos.wav", grandes, sorted(pequenos), FIM / 24)
     voz = Path(os.environ.get("COLAGEM_VOZ", str(EST / "voz.mp3")))
+    if not voz.exists() and not (EST / "palavras_bruto.json").exists():
+        voz = CM.EXEMPLOS / "dados" / "estalar" / "voz.mp3"            # a narração do exemplo, casada com as palavras
     CM.exige(voz, como="grave a narração (ou gere com 'pode' do usuário) e salve como estalar/voz.mp3")
     delay = int(round(q(0.0) / 24 * 1000))
     dur = FIM / 24

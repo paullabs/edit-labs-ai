@@ -2,8 +2,8 @@
 """
 Acha cenas iguais (ou quase) entre vídeos e dentro do mesmo vídeo, para não entregar repetição.
 
-    python3 cenas_iguais.py <saida_dir> <nome>=<video.mp4>:<plano.json> [...] [--limite 0.15]
-    python3 cenas_iguais.py <saida_dir> <nome>=<pasta_do_projeto> [...]      (sem render: quadros direto do motor)
+    mvpy cenas_iguais.py <saida_dir> <nome>=<video.mp4>:<plano.json> [...] [--limite 0.15]
+    mvpy cenas_iguais.py <saida_dir> <nome>=<pasta_do_projeto> [...]      (sem render: quadros direto do motor)
 
 Para cada plano: dois quadros (50% e 85% do plano) → o conteúdo sem o fundo (cinza menos o fundo borrado) e a cor
 grossa. Distância de duas cenas = 1 − correlação, a menor entre os pares de quadros (0 = idênticas).

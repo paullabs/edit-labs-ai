@@ -1,5 +1,5 @@
 """Gráfico do som de um reel: nível da música (RMS de 1 s), picos dos efeitos e o master.
-    python3 -I grafico_som.py <pasta do reel>/som saida.png"""
+    clpy grafico_som.py <pasta do reel>/som saida.png"""
 import sys
 import json
 from pathlib import Path

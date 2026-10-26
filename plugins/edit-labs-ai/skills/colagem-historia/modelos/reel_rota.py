@@ -1,8 +1,9 @@
 """Modelo enxuto de reel de curiosidade histórica: "a viagem que mudou a história" (rota num mapa antigo).
 
-≈ 22 s, 9:16 (1080×1920), sem voz, colagem de papel antigo. É o esqueleto dos reels de rota (Santos-Dumont e o
-relógio, Dom Pedro e o telefone, a Mona Lisa até Florença). Copie para PROJETO/ferramentas/reel.py e troque só o bloco
-"1. O QUE TROCAR". As fotos vêm de PROJETO/pecas/ (veja modelos/LEIA.md da skill).
+≈ 22 s, 9:16 (1080×1920), sem voz, colagem de papel antigo. Serve a qualquer história de viagem (um voo que vira
+recorde, alguém que cruza o oceano para ver uma invenção, uma obra que volta para casa). Copie para
+PROJETO/ferramentas/reel.py e troque só o bloco "1. O QUE TROCAR". As fotos vêm de PROJETO/pecas/ (veja modelos/LEIA.md
+da skill). Este modelo não tem fotos de exemplo: os textos de exemplo seguem a história do telefone de 1876.
 
     clpy ferramentas/reel.py --folha | --quadros 10,120 | --margens | --video | --som  [--sem-texto]
 
@@ -92,7 +93,7 @@ AX, BX, CX, DX = 1100, 3500, 5900, 8000     # centros das áreas
 Y0 = 1500
 
 
-TEXTO_FINAL = ("LEG", "c_", "RAJ_", "RESP")      # camadas de texto que entram por último (--sem-texto)
+TEXTO_FINAL = ("LEG", "c_", "RAJ_", "RESP", "ET_")   # camadas de texto que entram por último (--sem-texto)
 
 
 def conferir_pecas():

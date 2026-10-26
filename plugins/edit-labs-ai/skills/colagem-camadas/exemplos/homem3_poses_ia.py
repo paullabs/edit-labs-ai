@@ -12,7 +12,12 @@ continuam sendo os pixels da foto original (o rosto nunca é gerado).
 3. corte: entra da gerada a figura dela FORA do corpo original sem o braço (a manga levantada, o ombro, a lateral
    do paletó que o braço cobria); o corpo original sem o braço fica por cima, com a costura suavizada.
 
-    python3 homem3_poses_ia.py     grava homem3/poses/{repouso,meio,alto}.png (px do recorte + margem) e uma folha"""
+As poses prontas e as imagens geradas vêm no pacote colagem-homem3 da release (assets/homem3/poses e assets/homem3/ia);
+este script só é preciso para refazer as poses ou fazer poses de OUTRA foto. O prompt e o passo a passo estão no
+LEIA.md do pacote ("Poses novas para outra foto"). Entrada: <trabalho>/homem3/ia/ se existir, senão a do pacote.
+
+    clpy homem3_poses_ia.py     grava <trabalho>/homem3/poses/{repouso,meio,alto}.png (px do recorte + margem) e uma
+                                folha; as cenas passam a usar estas poses no lugar das do pacote"""
 import os
 import sys
 from pathlib import Path
@@ -30,7 +35,7 @@ AQUI = CM.TRABALHO                                                # pasta de tra
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import homem3_quadros as HQ
 
-IA = AQUI / "homem3" / "ia"
+IA = CM.homem3("ia")                                                  # a sua (trabalho) ou a do pacote
 SAIDA = AQUI / "homem3" / "poses"
 # a entrada da IA: o recorte (0..2232, 0..4700) colado em (ML, MT) numa tela cinza e reduzido por K
 ML, MT, K = 1300, 300, 2048 / 5000
@@ -101,8 +106,9 @@ def compoe(A_ger_ent, gerada, m_ger, base, m_base, braco):
 
 
 def main():
-    SAIDA.mkdir(exist_ok=True)
-    rec = HQ.ajusta_foto(Image.open(HQ.H3 / "recorte" / "foto3_recorte.png").convert("RGBA"))
+    SAIDA.mkdir(parents=True, exist_ok=True)
+    (AQUI / "previa" / "homem3_quadros").mkdir(parents=True, exist_ok=True)
+    rec = HQ.ajusta_foto(Image.open(CM.homem3("recorte/foto3_recorte.png")).convert("RGBA"))
     tam = (rec.width + MARGEM[0], rec.height + MARGEM[1])
     base = Image.new("RGBA", tam, (0, 0, 0, 0))
     base.alpha_composite(rec, MARGEM)

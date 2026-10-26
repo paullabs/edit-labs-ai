@@ -239,6 +239,19 @@ def perto(C, prof):
     return C if prof == 1.0 else afim(prof, 0, (W / 2, H / 2), (W / 2, H / 2)) @ C
 
 
+def _desce(a, d):
+    """desloca a máscara d px para baixo (d < 0: para cima) SEM dar a volta: com np.roll, a sombra de uma peça que
+    passa da borda de baixo da tela reaparecia como uma faixa cinza no alto do quadro"""
+    if d == 0:
+        return a
+    out = np.zeros_like(a)
+    if d > 0:
+        out[d:] = a[:-d]
+    else:
+        out[:d] = a[-d:]
+    return out
+
+
 def compor(base, cam, f, camadas, so=None, C=None, passo=None):
     """base: float32 HxWx3 (sRGB 0-1). Desenha as camadas ativas no quadro f, na ordem da lista (de baixo para cima).
     so="mundo" ou "tela" filtra as camadas; C força a matriz da câmera (as transições compõem o mundo duas vezes)"""
@@ -297,7 +310,7 @@ def compor(base, cam, f, camadas, so=None, C=None, passo=None):
             dy, blur, op = dy * p["sdy"], blur * p["sbl"], op * p["sop"]
             esc = escala_de(Cl) if L.mundo else 1.0
             sa = cv2.GaussianBlur(warp[..., 3], (0, 0), max(0.5, blur * esc / 2))
-            sa = np.roll(sa, int(round(dy * esc)), axis=0) * op * p["op"]
+            sa = _desce(sa, int(round(dy * esc))) * op * p["op"]
             base *= (1 - sa[..., None] * 0.85)
         base[:] = base * (1 - alfa) + cor
     return base

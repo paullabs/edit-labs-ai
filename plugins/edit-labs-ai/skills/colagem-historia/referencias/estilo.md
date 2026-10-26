@@ -106,6 +106,6 @@ saindo e a câmera em `q1` entrando.
 1. `--margens`: objetos cortados ou fora da região segura.
 2. `M.ajustar_texto` (roda sozinho): aumenta a etiqueta ou o carimbo que ficar menor que 50–58 px na tela e lista o
    que mudou.
-3. Folha de quadros a cada 1,5 s com as perguntas do REGRAS.md §9.
+3. Folha de quadros a cada 1,5 s com as perguntas do REGRAS.md §10.
 4. `conferir.py <projeto> previa/sem_som.mp4`: desenhos borrados fora das transições e texto ainda pequeno. Os únicos
    alarmes aceitáveis são o cartão virando (ele estreita de propósito) e a legenda entrando.

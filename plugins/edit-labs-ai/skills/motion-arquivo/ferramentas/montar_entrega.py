@@ -3,7 +3,7 @@
 Video lado a lado (referencia | nosso) com o audio do projeto, e duas pranchas de quadros
 do meio de cada plano. So quando ha referencia; sem ela, a entrega e o render + tripticos.
 
-    python3 montar_entrega.py <quadros_ref_720> <quadros_nosso_720> <projeto>
+    mvpy montar_entrega.py <quadros_ref_720> <quadros_nosso_720> <projeto>
 """
 import _caminho  # noqa: F401
 import json, subprocess, sys

@@ -10,7 +10,7 @@ O que as referências do estilo fazem (medido):
 É a reserva do mixador quando o usuário não tem pasta de sons (EDITLABS_SONS): nada aqui vem de biblioteca de
 terceiros, então tudo pode ser redistribuído com o plugin.
 
-    python3 som.py            grava os efeitos em kit/sfx (as trilhas saem na hora, em mixar.py)
+    mvpy som.py            grava os efeitos em kit/sfx (as trilhas saem na hora, em mixar.py)
 """
 import math
 from pathlib import Path

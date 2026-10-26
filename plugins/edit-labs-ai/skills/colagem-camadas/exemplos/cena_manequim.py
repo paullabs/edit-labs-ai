@@ -6,9 +6,9 @@ voltam, em ordem inversa, e o boneco se monta de novo.
 
 Antes: manequim_pecas.py (precisa do pacote de pranchas da release).
 
-    python3 cena_manequim.py              quadros de conferência em previa/manequim/
-    python3 cena_manequim.py --video      previa/manequim.mp4 (sem som)
-    python3 cena_manequim.py --som        mix e entrega em previa/manequim_som.mp4"""
+    clpy cena_manequim.py              quadros de conferência em previa/manequim/
+    clpy cena_manequim.py --video      previa/manequim.mp4 (sem som)
+    clpy cena_manequim.py --som        mix e entrega em previa/manequim_som.mp4"""
 import os
 import sys
 from pathlib import Path

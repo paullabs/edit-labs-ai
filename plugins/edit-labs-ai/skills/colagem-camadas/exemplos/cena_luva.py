@@ -6,9 +6,9 @@ Camadas registradas pela mesma câmera do Blender (mao_blender.py + blender_giro
 
 Antes: preparar.py luva (monta mao.blend e renderiza as camadas e o giro).
 
-    python3 cena_luva.py              quadros de conferência em previa/luva/
-    python3 cena_luva.py --video      previa/luva.mp4 (sem som)
-    python3 cena_luva.py --som        mix e entrega em previa/luva_som.mp4"""
+    clpy cena_luva.py              quadros de conferência em previa/luva/
+    clpy cena_luva.py --video      previa/luva.mp4 (sem som)
+    clpy cena_luva.py --som        mix e entrega em previa/luva_som.mp4"""
 import os
 import sys
 import json
@@ -54,7 +54,7 @@ def img_px(xm, zm, borda=10):
 
 
 def papel(nome, semente, vistas=VM, arquivo="v_000", cor=0.85, tinge=None):
-    PAP.mkdir(exist_ok=True)
+    PAP.mkdir(parents=True, exist_ok=True)
     out = PAP / f"{vistas.name}_{nome}_{arquivo}{'_t' if tinge else ''}_c16.png"     # a pasta entra no nome: o giro e a cena têm camadas com o mesmo nome
     if out.exists():
         return Image.open(out).convert("RGBA")

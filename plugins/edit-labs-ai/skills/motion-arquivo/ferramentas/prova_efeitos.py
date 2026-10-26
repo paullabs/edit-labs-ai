@@ -4,7 +4,7 @@ Prova de escuta dos efeitos: para cada papel do mixador (clique, baque, obturado
 alternativas que casam com o mesmo padrão na pasta de sons do usuário, cada um já recortado (o trecho que o
 mixador usaria), com o mesmo pico, em <saida>/<papel>/NN_(ESCOLHIDO|alt)_<arquivo>.mp3, mais indice.md.
 
-    python3 prova_efeitos.py <saida_dir> [<pasta_de_sons>] [--alt 3] [--escolha <escolha.json>]
+    mvpy prova_efeitos.py <saida_dir> [<pasta_de_sons>] [--alt 3] [--escolha <escolha.json>]
 
 <pasta_de_sons> padrão: $EDITLABS_SONS. Nada é copiado para o plugin. A escolha final é de ouvido: depois de
 ouvir, fixe o arquivo do papel num escolha.json (modelo em motor/kit/som_escolha.modelo.json) e rode

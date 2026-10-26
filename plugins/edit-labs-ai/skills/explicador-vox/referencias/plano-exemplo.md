@@ -1,8 +1,9 @@
-# Plano de batidas do exemplo: "Por que um soco no queixo apaga uma pessoa?"
+# Exemplo do estilo: "Por que um soco no queixo apaga uma pessoa?"
 
-Explicador de 29,9 s em 9:16: só narração, sem rosto, o vídeo inteiro é motion. O plano completo, com cada
-chave, está em `${CLAUDE_SKILL_DIR}/exemplo/plano.json` (gerado por `ferramentas/gera_plano.py exemplo`). As peças
-prontas estão em `exemplo/pecas/`; a transcrição palavra a palavra, em `exemplo/palavras.json`.
+Um plano completo de explicador Vox, para servir de modelo: 29,9 s em 9:16, só narração, sem rosto, o vídeo inteiro
+é motion. Copie a forma (ideia em uma frase, elenco, mapa de batidas, orçamento, legenda, som), não o assunto. O
+plano com cada chave está em `${CLAUDE_SKILL_DIR}/exemplo/plano.json` (gerado por `ferramentas/gera_plano.py
+exemplo`); as peças, em `exemplo/pecas/`; a transcrição palavra a palavra, em `exemplo/palavras.json`.
 
 > Por que um soco no queixo apaga uma pessoa? Um soco reto, no meio do rosto, só empurra a cabeça para trás. Já o
 > gancho, de lado no queixo, passa longe do eixo. A cabeça não recua, gira. O queixo fica longe do eixo. Vira
@@ -134,17 +135,17 @@ o fecho fica seco. Sem som no pino de propósito (nenhum clique servia).
 Os efeitos do exemplo vieram de um banco de efeitos com licença que **não permite redistribuir**: eles não vêm no
 plugin. Monte o seu banco com `som.py banco` a partir de sons que você tem direito de usar.
 
-## 7. O que a revisão contra a régua achou (e a regra que ficou)
+## 7. Cuidados do estilo
 
-| achado | regra |
+| cuidado | regra |
 | --- | --- |
-| a borda reta do recorte da gravura virava diagonal quando o crânio girava | peça que gira não pode ter borda reta de recorte: feche em arco (no exemplo, a nuca foi refeita espelhando a frente) |
-| a legenda caía sobre os ombros no zoom da fita | em cada beat de câmera, confira onde a parte de baixo do assunto cai em relação à faixa da legenda |
-| a câmera andava fluida e o desenho a 12 qps | a câmera também anda em degraus de 2 quadros |
-| um marcador em inglês sobre a palavra "força" pedia explicação | cartão de fonte limpo: só a citação, sem sublinhar o que a voz não diz |
-| silêncio digital sob o título | se o fecho for seco, decida na escuta; senão estenda a trilha com fade até o fim |
-| o limitador cortava até 8 dB nos picos da voz | compressor leve na voz (3:1, ataque 5 ms) antes do limitador do master |
-| a pessoa ficou ~10% menor que a régua | objeto principal com 630–680 px de largura |
+| peça que gira | não pode ter borda reta de recorte: ela vira diagonal no giro. Feche em arco (no exemplo, a nuca espelha a frente) |
+| zoom e legenda | em cada beat de câmera, confira onde a parte de baixo do assunto cai em relação à faixa da legenda |
+| ritmo da câmera | se o desenho anda a 12 qps, a câmera também anda em degraus de 2 quadros |
+| cartão de fonte | só a citação, limpa; não sublinhe nem marque o que a voz não diz |
+| fecho | silêncio digital sob o título só se for escolha de escuta; senão a trilha segue com fade até o fim |
+| picos da voz | compressor leve na voz (3:1, ataque 5 ms) antes do limitador do master, para o limitador não cortar a fala |
+| tamanho do assunto | objeto principal com 630–680 px de largura; menor que isso perde força no celular |
 
 ## 8. Fontes das peças (para refazer com `pecas.py exemplo`)
 

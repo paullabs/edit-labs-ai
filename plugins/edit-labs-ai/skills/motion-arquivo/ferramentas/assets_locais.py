@@ -2,10 +2,10 @@
 """
 Assets REAIS que ja estao na maquina — antes de baixar, gerar ou desenhar qualquer coisa.
 
-    python3 assets_locais.py apps                          lista aplicativos com icone
-    python3 assets_locais.py icone "Adobe After Effects" <projeto> [--doc aep]
-    python3 assets_locais.py cursores                      lista cursores do sistema
-    python3 assets_locais.py cursor pointinghand <projeto>
+    mvpy assets_locais.py apps                          lista aplicativos com icone
+    mvpy assets_locais.py icone "Adobe After Effects" <projeto> [--doc aep]
+    mvpy assets_locais.py cursores                      lista cursores do sistema
+    mvpy assets_locais.py cursor pointinghand <projeto>
 
 icone   o .icns do proprio aplicativo instalado (o do app ou o de um tipo de documento:
         --doc aep pega o icone do arquivo .aep), em PNG 1024 -> assets/reais/
@@ -69,7 +69,7 @@ def icone(nome_app, proj, doc=None):
 def cursor(nome, proj, escala=12):
     pdf = CURSORES / nome / "cursor.pdf"
     if not pdf.exists():
-        sys.exit(f"cursor '{nome}' nao existe; veja: python3 assets_locais.py cursores")
+        sys.exit(f"cursor '{nome}' nao existe; veja: mvpy assets_locais.py cursores")
     info = plistlib.loads((CURSORES / nome / "info.plist").read_bytes())
     dst = Path(proj) / "assets" / "reais"; dst.mkdir(parents=True, exist_ok=True)
     png = dst / f"cursor_{nome}.png"

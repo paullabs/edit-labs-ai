@@ -4,8 +4,8 @@
 da grade em que vai aparecer.
 
 ```bash
-python3 ferramentas/transcrever.py <projeto>/audio/narracao.wav <projeto>/transcricao.json pt
-python3 ferramentas/batidas.py <projeto>
+mvpy ${CLAUDE_SKILL_DIR}/ferramentas/transcrever.py <projeto>/audio/narracao.wav <projeto>/transcricao.json pt
+mvpy ${CLAUDE_SKILL_DIR}/ferramentas/batidas.py <projeto>
 ```
 
 - O tempo vem do **áudio**, nunca do roteiro. Timestamp de roteiro é descartado.

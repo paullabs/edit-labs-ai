@@ -93,11 +93,11 @@ ferramentas/             transcrever · batidas · assets_locais · buscar_asset
                          compor_trilha · prova_efeitos · ouvir_trilha · recorte.swift · pdf_png.swift · comparar ·
                          montar_entrega · cenas_iguais · zona_segura · folha_quadros
 referencias/             gramatica · planos · assets · texto · som · armadilhas · rubricas-diretor · medir-referencia
-exemplo/                 hedy/ (a reprodução medida) e plano_teste_pipeline.json (o formato mínimo)
+exemplo/                 hedy/ (estudo de medida de uma referência) e plano_teste_pipeline.json (o formato mínimo)
 ```
 
-Rode as ferramentas com o Python do plugin, a partir de `${CLAUDE_SKILL_DIR}/ferramentas/` (ou com o caminho
-completo); elas acham o motor sozinhas. O projeto do usuário fica na pasta onde ele abriu o Claude Code.
+Rode as ferramentas com `mvpy` (o Python do ambiente da motion-vox, que já tem o `faster_whisper` da transcrição):
+`mvpy ${CLAUDE_SKILL_DIR}/ferramentas/<script>.py ...`. Elas acham o motor sozinhas. O projeto do usuário fica na pasta onde ele abriu o Claude Code.
 
 ## Som do usuário
 
@@ -105,7 +105,7 @@ O plugin não traz efeitos nem músicas de terceiros. Com uma pasta de sons pró
 
 ```bash
 export EDITLABS_SONS="<pasta de efeitos do usuário>"
-python3 ${CLAUDE_SKILL_DIR}/ferramentas/som_biblioteca.py          # mapa em $EDITLABS_DATA/motion-arquivo/
+mvpy ${CLAUDE_SKILL_DIR}/ferramentas/som_biblioteca.py          # mapa em $EDITLABS_DATA/motion-arquivo/
 ```
 
 Sem pasta, o `mixar.py` usa os 13 efeitos sintetizados de `motor/som.py` e os pads/camas compostos em código.
@@ -113,7 +113,7 @@ Detalhes em `referencias/som.md`.
 
 ## Requisitos
 
-Dependências em `requirements.txt` (o `editlabs-setup` instala). Rode `python3 verificar.py` antes do primeiro
+Dependências em `requirements.txt` (o `editlabs-setup` instala). Rode `mvpy ${CLAUDE_SKILL_DIR}/verificar.py` antes do primeiro
 projeto: confere bibliotecas, ffmpeg, swift, fontes, kit e renderiza um quadro de cada tipo. A grotesca do gancho é
 a Arial Bold do sistema (macOS/Windows) ou a Liberation Sans Bold (Linux, mesma métrica); sem nenhuma, o gancho cai
 na Inter 800. Nenhuma fonte de sistema vai no pacote. Instalação manual: `INSTALAR.md`.
@@ -126,7 +126,8 @@ antes da fase 2.
 
 ## Referências estudadas (crédito; nenhuma mídia delas vem no plugin)
 
-- Família A: um reel curto sobre Hedy Lamarr e a invenção do salto de frequência (medido quadro a quadro).
+- Família A: um reel curto sobre Hedy Lamarr e a invenção do salto de frequência (medido quadro a quadro como
+  estudo de medida; os direitos do vídeo são do autor original).
 - Galeria documental: a abertura do vídeo "Netflix In 2022", do canal "Viral Instagram Growth Tips".
 - Explicador claro e preto com régua: os vídeos "Priming" e "Outreach", usados só como régua de look e de som.
 

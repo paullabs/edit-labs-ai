@@ -2,7 +2,7 @@
 """
 Transcricao -> batidas ancoradas na grade de 10 qps + rascunho do plano.
 
-    python3 batidas.py <projeto>
+    mvpy batidas.py <projeto>
 
 Le <projeto>/transcricao.json e escreve:
   <projeto>/batidas.md           tabela legivel: batida, palavras, quadro de cada palavra

@@ -2,7 +2,7 @@
 """
 "Escuta" a biblioteca de efeitos do usuário por medida e por nome, e grava o que cada som é.
 
-    python3 catalogar_efeitos.py [<pasta_de_sons>] [<saida.json>] [<saida.md>]
+    mvpy catalogar_efeitos.py [<pasta_de_sons>] [<saida.json>] [<saida.md>]
 
 <pasta_de_sons> padrão: $EDITLABS_SONS. <saida.json> padrão: $EDITLABS_DATA/motion-arquivo/som_catalogo.json (fora
 do plugin; o formato está em motor/kit/som_catalogo.modelo.json).

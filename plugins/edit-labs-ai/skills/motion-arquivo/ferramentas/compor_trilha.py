@@ -3,7 +3,7 @@
 Compõe, em código, camas de música para voz explicativa (sem direitos autorais, sem depender de biblioteca):
 pad quente + baixo + pluck leve (+ chiado de prato e bumbo suave nos estilos com pulso), reverb de cauda longa.
 
-    python3 compor_trilha.py <saida_dir> [estilo ...] [--dur 96] [--semente 7]
+    mvpy compor_trilha.py <saida_dir> [estilo ...] [--dur 96] [--semente 7]
 
 estilos: curioso · dados · tensao · claro   (padrão: todos)
 Saída: <saida_dir>/<estilo>.wav (48 kHz, estéreo, ~-24 dBFS RMS) — pronto para `mixar.py --trilha`.

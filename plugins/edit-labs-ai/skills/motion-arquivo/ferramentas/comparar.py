@@ -3,7 +3,7 @@
 Mesma regua nos dois: cortes, cadencia e luz/cor/layout por plano. So faz sentido quando ha
 uma REFERENCIA (reproduzir um video) — num projeto novo, a regua e o triptico + o Diretor.
 
-    python3 comparar.py <quadros_ref_720> <quadros_nosso_720> <projeto>
+    mvpy comparar.py <quadros_ref_720> <quadros_nosso_720> <projeto>
 
 Os quadros sao PNG 720x1280 numerados de 0000; o nosso SEMPRE extraido de um render que
 passou pela mesma entrega do original (720p, x264 ~1,26 Mbps). Os cortes vem do plano.json.

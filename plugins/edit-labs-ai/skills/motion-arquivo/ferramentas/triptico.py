@@ -3,7 +3,7 @@
 Triptico de estado por plano: INICIO / MEIO / FIM, ja com o acabamento — o material da
 revisao do Diretor (D2/D3). Um PNG por plano e uma prancha geral.
 
-    python3 triptico.py <projeto> [plano1,plano2,...]
+    mvpy triptico.py <projeto> [plano1,plano2,...]
 
 Sem triptico o plano nao vai para o render inteiro: e nele que se ve se a entrada, a
 permanencia e a saida contam a ideia da batida.

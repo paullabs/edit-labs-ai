@@ -2,7 +2,7 @@
 """
 Mede as músicas da biblioteca do usuário e prepara a prova de escuta (nada é copiado para a skill).
 
-    python3 catalogar_trilhas.py <saida_dir> <pasta_de_musicas> [<outra pasta> ...] [--clipes N] [--janela 25]
+    mvpy catalogar_trilhas.py <saida_dir> <pasta_de_musicas> [<outra pasta> ...] [--clipes N] [--janela 25]
 
 Por faixa: duração, estabilidade (desvio do nível em janelas de 0,5 s), pulso (força da batida), andamento,
 centróide, parte de grave (<250 Hz) e de agudo (>4 kHz), e a janela mais estável de `--janela` s.

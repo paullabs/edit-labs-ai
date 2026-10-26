@@ -6,14 +6,14 @@ Na ordem — e só o que a lista aprovada da fase 2 permite:
 
 1. **Real local** — sem download:
    ```bash
-   python3 ferramentas/assets_locais.py icone "After Effects" <projeto> --doc aep
-   python3 ferramentas/assets_locais.py cursor pointinghand <projeto>
+   mvpy ${CLAUDE_SKILL_DIR}/ferramentas/assets_locais.py icone "After Effects" <projeto> --doc aep
+   mvpy ${CLAUDE_SKILL_DIR}/ferramentas/assets_locais.py cursor pointinghand <projeto>
    ```
    Arquivos do usuário (logo, print, foto): copiar para `assets/reais/` e registrar.
 2. **Acervo** — buscar mostra só metadados; baixar só o aprovado:
    ```bash
-   python3 ferramentas/buscar_assets.py commons "termo" --n 10
-   python3 ferramentas/baixar_asset.py <url> <projeto> --nome x.jpg --licenca "PD" --pagina <url>
+   mvpy ${CLAUDE_SKILL_DIR}/ferramentas/buscar_assets.py commons "termo" --n 10
+   mvpy ${CLAUDE_SKILL_DIR}/ferramentas/baixar_asset.py <url> <projeto> --nome x.jpg --licenca "PD" --pagina <url>
    ```
    Print de site: navegador (screenshot da página real), salvar em `assets/reais/`.
 3. **Gerar** — Higgsfield, só a lista aprovada, receitas em `referencias/assets.md`.

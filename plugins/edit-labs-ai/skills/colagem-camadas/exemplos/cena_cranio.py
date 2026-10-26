@@ -17,10 +17,10 @@ Regras aplicadas (TECNICA.md):
 
 Antes: preparar.py cranio (monta cranio.blend e renderiza camadas, giros e a luva do soco).
 
-    python3 cena_cranio.py              quadros de conferência em previa/cranio/
-    python3 cena_cranio.py --conferir   só a figura sobre magenta + conferir_figura (buraco, borda branca, lascas)
-    python3 cena_cranio.py --video      previa/cranio.mp4 (sem som)
-    python3 cena_cranio.py --som        mix e entrega em previa/cranio_som.mp4"""
+    clpy cena_cranio.py              quadros de conferência em previa/cranio/
+    clpy cena_cranio.py --conferir   só a figura sobre magenta + conferir_figura (buraco, borda branca, lascas)
+    clpy cena_cranio.py --video      previa/cranio.mp4 (sem som)
+    clpy cena_cranio.py --som        mix e entrega em previa/cranio_som.mp4"""
 import os
 import sys
 import json
@@ -62,7 +62,7 @@ VOLTA = (378, 404)                # volta e assenta
 
 
 def papel(pasta, nome, semente, sil=None, chave=""):
-    PAP.mkdir(exist_ok=True)
+    PAP.mkdir(parents=True, exist_ok=True)
     out = PAP / f"{pasta.name}_{nome}{chave}.png"
     if not out.exists():
         cor = K.apara_lascas(Image.open(pasta / nome / "cor_v_000.png"))
@@ -79,7 +79,7 @@ def papel(pasta, nome, semente, sil=None, chave=""):
 def papel_giro(pasta, nome, i, semente, px_m):
     """vista do giro papelizada na densidade da vista A: amplia até o px/m da A, papeliza (traço, pontilhado e borda do
     mesmo tamanho que nas camadas) e volta ao tamanho do giro. Sem isso o traço engrossava 1,5x na troca."""
-    PAP.mkdir(exist_ok=True)
+    PAP.mkdir(parents=True, exist_ok=True)
     out = PAP / f"{pasta.name}_{nome}_v_{i:03d}.png"
     if not out.exists():
         s = PXM_A / px_m
@@ -97,7 +97,7 @@ def papel_giro(pasta, nome, i, semente, px_m):
 
 def papel_rgba(rgba, semente, nome):
     """papel de uma imagem montada aqui (o anel do líquor), com cache atômico"""
-    PAP.mkdir(exist_ok=True)
+    PAP.mkdir(parents=True, exist_ok=True)
     out = PAP / f"{nome}.png"
     if not out.exists():
         im = K.papelizar(Image.fromarray(rgba), registrado=True, semente=semente, cor=1.0, borda=BORDA, contraste=1.6)
@@ -109,7 +109,7 @@ def papel_rgba(rgba, semente, nome):
 
 def luva_soco():
     """a luva de boxe de J-Toastie (CC BY 3.0) de perfil, polegar em cima, o punho apontando para a esquerda"""
-    PAP.mkdir(exist_ok=True)
+    PAP.mkdir(parents=True, exist_ok=True)
     out = PAP / "luva_soco.png"
     if not out.exists():
         pasta = CR / "luva" / "vistas_soco" / "luva"

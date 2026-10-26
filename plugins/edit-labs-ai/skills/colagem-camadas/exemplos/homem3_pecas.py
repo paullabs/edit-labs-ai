@@ -3,8 +3,9 @@
 Foto: "Photographic postcard of an unidentified man in a suit", 1926–1940s, NMAAHC 2013.46.29.86 (Smithsonian Open
 Access, CC0): https://nmaahc.si.edu/object/nmaahc_2013.46.29.86 (arquivo NMAAHC-2013_46_29_86_001.jpg; confira a
 licença CC0 na página e baixe você mesmo).
-Recorte do homem com motor/colagem/recorte.swift (macOS) ou removendo o fundo no Higgsfield; salve o PNG com alfa em
-<trabalho>/homem3/recorte/foto3_recorte.png.
+O recorte pronto vem no pacote colagem-homem3 da release (assets/homem3/recorte/foto3_recorte.png). Para outra foto:
+recorte com motor/colagem/recorte.swift (macOS) ou removendo o fundo no Higgsfield e salve o PNG com alfa em
+<trabalho>/homem3/recorte/foto3_recorte.png (o seu vale mais que o do pacote).
 
 Peças (no px do recorte, que é o da foto deslocado pela caixa do recorte):
 - corpo: tudo menos o braço direito dele (à esquerda de quem olha); fica com o "boné" do ombro (disco em volta do
@@ -14,7 +15,7 @@ Peças (no px do recorte, que é o da foto deslocado pela caixa do recorte):
 
 A costura entre a manga e o paletó (a faixa escura em x ≈ 470–490) é a linha que separa o braço do corpo.
 
-    python3 homem3_pecas.py      grava homem3/pecas/{corpo,braco,antebraco}.png e pecas.json"""
+    clpy homem3_pecas.py      grava homem3/pecas/{corpo,braco,antebraco}.png e pecas.json"""
 import os
 import sys
 import json
@@ -53,7 +54,7 @@ def disco(w, h, c, r):
 
 
 def main():
-    rec = np.asarray(Image.open(H3 / "recorte" / "foto3_recorte.png").convert("RGBA"))
+    rec = np.asarray(Image.open(CM.homem3("recorte/foto3_recorte.png")).convert("RGBA"))
     h, w = rec.shape[:2]
     a = rec[..., 3] > 0
     braco_todo = a & lado_braco(w, h)
@@ -68,7 +69,7 @@ def main():
     corpo = a & ~(braco_todo & ~bone)          # o boné do ombro fica no corpo
 
     out = H3 / "pecas"
-    out.mkdir(exist_ok=True)
+    out.mkdir(parents=True, exist_ok=True)
     for nome, m in (("corpo", corpo), ("braco", braco_todo & ~antebraco), ("antebraco", antebraco)):
         img = rec.copy()
         img[..., 3] = np.where(m, rec[..., 3], 0)

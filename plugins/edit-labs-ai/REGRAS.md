@@ -16,7 +16,17 @@ Uma skill pode declarar **exceções explícitas** do próprio estilo (com o mot
 5. **Valide o estilo antes do vídeo inteiro.** Mostre 1 quadro-chave (ou um plano de 3 s) no estilo final e só
    então monte o resto. Corrigir no começo custa um quadro; no fim, o vídeo todo.
 
-## 2. Ordem da produção
+## 2. Gancho e roteiro
+
+- **Ofereça 5 ganchos de uma linha** para o usuário escolher antes de pesquisar.
+- O gancho é um **caso real e absurdo na 1ª frase**, em até ~14 palavras. Gancho de voz e gancho de imagem
+  juntos nos primeiros 3 s. Teste: os 3 primeiros segundos sem som ainda prendem?
+- Depois do gancho, **uma pergunta que fica martelando** ("Como é que…?"), e só então o contexto, curto e direto.
+- Formatos que funcionam: "E se…?" e "Níveis" (abre pelo caso mais absurdo; 3–4 níveis).
+- Todo número tem fonte (2 fontes ou a primária) e vem com uma referência do dia a dia.
+- Escreva como se fala: frases curtas, sem enfeite, sem cara de texto gerado.
+
+## 3. Ordem da produção
 
 1. Pergunta e gancho → 2. roteiro com fontes → 3. estilo (um principal e no máximo um de apoio) → 4. quadro-chave
 aprovado → 5. peças e assets → 6. cena/motion/B-roll → 7. quadros de conferência → 8. voz e decupagem (se houver)
@@ -26,22 +36,26 @@ aprovado → 5. peças e assets → 6. cena/motion/B-roll → 7. quadros de conf
 mudança anterior obriga a recalcular as janelas. Nunca queime legenda antes de motion, B-roll e som estarem
 fechados.
 
-## 3. Texto na tela
+## 4. Texto na tela
 
 - Legenda de fala depende do estilo: os de colagem narrada (camadas, história, arquivo) vão **sem legenda**, só
   imagem e voz; cortes de podcast e o explicador Vox usam legenda. Créditos de 2,3 s no fim, em todos.
 - Onde houver texto: no máximo **1 rótulo curto** (1–2 palavras, preso ao objeto) e **1 número** por plano.
 - Corpo mínimo na tela: 50–58 px num quadro 1080×1920. Nada pequeno.
 - Texto sobre fundo ocupado vai numa tira de papel. Texto entra **depois** da imagem que ele explica.
+- Ao tirar um texto, dê ao olho um gesto no lugar (uma seta, um círculo de caneta, um objeto que acende).
+- Série "só imagem e voz": nem rótulo nem número; a exceção precisa estar declarada na skill do estilo.
 
-## 4. Composição (vertical 1080×1920)
+## 5. Composição (vertical 1080×1920)
 
 - **Margem segura do Reels/TikTok/Shorts:** x 80–960, y 260–1420. Confira com o verificador antes do render.
 - **Uma coisa por vez:** um objeto grande (≥ 600 px) e um mecanismo por plano. Objeto minúsculo é erro.
 - O olho já está onde a próxima ação começa. A camada de baixo tem que ser mais interessante que a de cima.
 - O vertical nunca divide a tela: um crop só, em quem fala.
+- **Mapa e comparação:** um mundo só, com a câmera viajando por ele; alfinete numerado e o painel brota dele;
+  "o dobro" vira uma pilha-fantasma sobre a menor; o rótulo vale por frase.
 
-## 5. Material
+## 6. Material
 
 - **Foto real recortada ou 3D próprio "papelizado".** Clip-art vetorial desenhado em código fica amador.
 - **Não misture fontes visuais sem um objeto central em camadas** (silhueta + fotos geradas + desenhos soltos =
@@ -55,7 +69,7 @@ fechados.
 - **Toda imagem tem origem e licença anotadas** (`CREDITOS.md` do projeto) e entra nos créditos quando a licença
   pede.
 
-## 6. Movimento
+## 7. Movimento
 
 - Câmera com intenção: deriva lenta, ou parada de propósito enquanto a ação acontece no quadro; giro de zoom de
   8–12 quadros entre planos; tremor só em impacto. Nada de zoom de 0,3 s nem câmera que vai e volta.
@@ -63,26 +77,29 @@ fechados.
 - Boil lento (3,5 trocas/s, ≤ 1 px na tela). Desenho a 12–14 qps; objetos 3D girando a 7 qps.
 - Fecha montando: o que saiu volta ao lugar, em ordem inversa.
 
-## 7. Voz, decupagem e som
+## 8. Voz, decupagem e som
 
 - Voz: ofereça **3 amostras** e deixe escolher. Gerar voz gasta crédito: só com "pode" explícito.
+- Assunto pesado (guerra, economia, polêmica) pede **voz grave de estúdio**, tom de documentário; assunto leve, voz
+  natural de conversa.
 - Transcrição palavra a palavra (faster-whisper). Cada evento cai na palavra que o dispara.
 - **Com voz:** voz −16 LUFS; trilha ~18 dB abaixo com ducking; efeitos 15–19 dB abaixo da voz; master −14 LUFS,
   pico ≤ −1,2 dBTP.
-- **Sem voz:** master ≈ −20 LUFS; efeito no máximo +3 a +6 dB acima da música.
+- **Sem voz:** master ≈ −20 LUFS; efeito no máximo +3 a +6 dB acima da música; o carimbo cai na batida da trilha.
 - Um efeito por ação, cada ocorrência diferente. Traço de caneta = som contínuo, não clique.
 - Música e efeitos de bancos com licença que proíbe redistribuir (Mixkit, Artlist e afins) nunca vão junto com o
   plugin nem com o projeto compartilhado: cite o link.
 - Quem gera o som mede, mas não escuta: declare a escuta humana como pendente.
 
-## 8. Crédito, custo e dados
+## 9. Crédito, custo e dados
 
 - **Gastar crédito ou baixar arquivo só com "pode" explícito**, mostrando custo, tamanho e origem antes.
+  "Continue", "segue" ou "cria" **não** autorizam gasto: pergunte com o valor.
 - Imagem aprovada não autoriza vídeo: cada geração tem proposta e autorização próprias.
 - Nunca apague: o que sai vai para `_removidos/`.
 - O projeto do usuário fica na pasta dele. Nada de dados pessoais em arquivos que possam ser compartilhados.
 
-## 9. Qualidade antes de entregar
+## 10. Qualidade antes de entregar
 
 - Conferir a figura (lascas, buracos, cortes) antes de gerar o vídeo.
 - Folha de quadros a cada 1,5 s respondendo: o espectador entende o que vê? há algo estranho? algo pequeno demais?

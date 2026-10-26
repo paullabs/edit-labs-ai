@@ -18,6 +18,8 @@ texto de fala embaixo; rótulo preso ao objeto.
 
 ## Geologia, petróleo e pré-sal
 - **Objeto único:** o bloco geológico em corte (modelo próprio `modelos/presal_blender.py`) com a plataforma em cima.
+  Exemplo pronto da descida: `exemplos/cena_subsolo.py` (`preparar.py subsolo`); lugares no mapa com alfinete e painel:
+  `exemplos/cena_mapa.py`.
 - **Camadas (descendo):** mar → pós-sal (areia, folhelho, marga) → sal → reservatório → óleo na crista → embasamento.
   A câmera DESCE junto com a sonda (um rótulo por vez); o óleo sobe pelo cano.
 - **3D:** o bloco, o petroleiro em corte (casco, tanques, carga que enche; `modelos/objetos_blender.py`), a maquete da

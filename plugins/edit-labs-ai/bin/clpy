@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Python do motor de colagem (estilos colagem-camadas, colagem-historia, explicador-vox, motion-arquivo).
+# Python do motor de colagem (colagem-camadas, colagem-historia, explicador-vox). A motion-arquivo usa o mvpy.
 # Rode da pasta do projeto: clpy cena.py --quadros   (o motor já fica importável por EDITLABS_MOTOR)
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"

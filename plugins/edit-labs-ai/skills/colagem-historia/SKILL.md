@@ -1,6 +1,6 @@
 ---
 name: colagem-historia
-description: Reel curto de curiosidade histórica em colagem de papel antigo (9:16, 20–32 s, sem voz por padrão). Usa fotos reais de época recortadas, um mundo de papel em escala real e um traço de caneta vermelha que mede, contorna ou traça a rota, com a câmera seguindo a ponta. Tem cartões que viram, objetos que se multiplicam, transições variadas e pouquíssimo texto. Use para "reel de história", "curiosidade histórica", "mito × fato", "fulano não era…", "a viagem que…", "no estilo do Napoleão / Mona Lisa / Santos-Dumont / Einstein / Dom Pedro / Cleópatra", "colagem de papel antigo", "estilo Vox sem voz", e para continuar ou ajustar um desses reels. Não use para explicar algo por dentro em camadas (colagem-camadas), explicador narrado longo (explicador-vox), documentário de arquivo narrado (motion-arquivo) nem corte de podcast (corte-viral).
+description: Reel curto de curiosidade histórica em colagem de papel antigo (9:16, 20–32 s, sem voz por padrão). Usa fotos reais de época recortadas, um mundo de papel em escala real e um traço de caneta vermelha que mede, contorna ou traça a rota, com a câmera seguindo a ponta. Tem cartões que viram, objetos que se multiplicam, transições variadas e pouquíssimo texto. Use para "reel de história", "curiosidade histórica", "mito × fato", "fulano não era…", "a viagem que…", "a altura de Napoleão", "Cleópatra e a Lua", "linha do tempo em escala", "régua do tempo", "colagem de papel antigo", "estilo Vox sem voz", e para continuar ou ajustar um desses reels. Não use para explicar algo por dentro em camadas (colagem-camadas), explicador narrado longo (explicador-vox), documentário de arquivo narrado (motion-arquivo) nem corte de podcast (corte-viral).
 ---
 
 # Colagem de história: um fato, uma caneta, fotos de verdade
@@ -17,13 +17,16 @@ detalhadas ficam em `${CLAUDE_SKILL_DIR}/referencias/`:
 | `referencias/guia-do-olho.md` | ao planejar a câmera e o texto |
 | `referencias/som-sem-voz.md` | na fase de som |
 | `referencias/pesquisa-e-licencas.md` | na pesquisa e na busca de fotos |
-| `referencias/exemplos.md` | para escolher a mecânica (os 6 reels de referência) |
+| `referencias/exemplos.md` | para escolher a mecânica (exemplos: assunto → mecânica → cuidado de fato) |
 | `modelos/LEIA.md` | ao copiar e adaptar um modelo |
 
 ## Antes de começar
 
-- O motor de colagem é do plugin: `${CLAUDE_PLUGIN_ROOT}/motor/colagem/`. Se `clpy` disser que falta, rode
-  `editlabs-setup --colagem`.
+- O motor de colagem é do plugin: `${CLAUDE_PLUGIN_ROOT}/motor/colagem/`. Rode tudo com `clpy` (nunca `python3`);
+  se ele disser que falta, rode `editlabs-setup --colagem`.
+- **Fotos de exemplo** (opcional, para ver o estilo antes de pesquisar): `editlabs-assets colagem-historia-fotos`
+  (~31 MB, domínio público, CC0, CC BY e CC BY-SA; mostre nome, tamanho e licença e espere o "pode"). Com elas, os
+  moldes `reel_napoleao.py` e `reel_regua_tempo.py` rodam num projeto sem `pecas/`. Créditos no `LEIA.md` do pacote.
 - Projeto numa pasta do usuário (onde ele abriu o Claude Code):
 
 ```text
@@ -44,7 +47,7 @@ PROJETO/
    (b) você escreve a sua.
 3. **Voz:** (a) sem voz, com legenda curta *(recomendado: é o estilo)*; (b) com voz narrada (gasta crédito, só com
    "pode"; as regras de voz e som com voz estão no REGRAS.md).
-4. **Duração:** (a) 30 s *(recomendado)*; (b) 20 s, com uma mecânica só (como a Cleópatra); (c) 45 s.
+4. **Duração:** (a) 30 s *(recomendado)*; (b) 20 s, com uma mecânica só (ex.: a régua do tempo); (c) 45 s.
 
 A mecânica (medir, traçar rota, contornar, estender um fio, linha do tempo) é decisão sua: proponha no roteiro.
 
@@ -72,10 +75,12 @@ Cada fase termina num resultado conferível. As fases com 👤 param e esperam o
    - **Transições:** cada passagem tem uma diferente (íris, mergulho, rasgo, empurra, flash) e sai do ponto onde o
      olho está.
    - **Papel carvão** (`C.papel_area`) só nos momentos dramáticos, preso à área dele.
+   - **Carimbo cai na batida da trilha (reel sem voz):** meça a batida com `--batidas` (no `reel_regua_tempo.py`) e
+     puxe os carimbos e os pousos principais para ela (`na_batida`).
    - Monte com `--sem-texto`: o texto entra no fim.
 5. **Quadros de conferência.** Rode `--margens` e depois `--quadros` a cada 1,5 s (de 36 em 36 quadros) e
    `clpy "${CLAUDE_PLUGIN_ROOT}/motor/colagem/folha_quadros.py" previa/quadros previa/folha_quadros.jpg 6`.
-   Responda as perguntas do REGRAS.md §9. 👤 aprovar a folha.
+   Responda as perguntas do REGRAS.md §10. 👤 aprovar a folha.
 6. **Vídeo:** `--video --sem-texto`.
 7. **Som:** trilha calma escolhida por medida (veja `referencias/som-sem-voz.md`), efeitos lidos da própria cena e
    `--som`. A escuta humana fica pendente: diga isso.

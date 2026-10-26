@@ -1,9 +1,9 @@
 """Render local do explicador Vox: lê o plano.json, monta as camadas no motor de colagem e renderiza a 24 qps com o
 desenho a 12 qps (cada desenho dura 2 quadros).
 
-    python previa.py --plano plano.json --pecas pecas/ --saida previa/ [--audio mix.wav] [--sem-legenda]
-    python previa.py ... --quadros 0,120,330      -> previa/quadros/qNNNN.png (olhar antes do vídeo inteiro)
-    python previa.py --exemplo                    -> o "soco no queixo" do exemplo, sem áudio, em ./previa_exemplo/
+    clpy previa.py --plano plano.json --pecas pecas/ --saida previa/ [--audio mix.wav] [--sem-legenda]
+    clpy previa.py ... --quadros 0,120,330      -> previa/quadros/qNNNN.png (olhar antes do vídeo inteiro)
+    clpy previa.py --exemplo                    -> o "soco no queixo" do exemplo, sem áudio, em ./previa_exemplo/
 
 O mesmo plano (camada, âncora, chaves) é o que invideo_ops.py traduz para a timeline do invideo.
 O motor vem de ${CLAUDE_PLUGIN_ROOT}/motor/colagem (ou da variável EDITLABS_MOTOR)."""

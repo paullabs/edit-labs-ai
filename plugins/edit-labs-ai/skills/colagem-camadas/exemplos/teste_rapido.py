@@ -2,9 +2,9 @@
 revelam com janela, descasca e levanta, e voltam ao lugar. Serve para conferir a instalação do motor, não é referência
 de estilo (a referência é o manequim de 1890: objeto real em camadas).
 
-    python3 teste_rapido.py              3 quadros de conferência em <trabalho>/previa/teste_rapido/
-    python3 teste_rapido.py --video      <trabalho>/previa/teste_rapido.mp4 (6 s)
-    python3 teste_rapido.py --som        + som sintetizado: <trabalho>/previa/teste_rapido_som.mp4"""
+    clpy teste_rapido.py              3 quadros de conferência em <trabalho>/previa/teste_rapido/
+    clpy teste_rapido.py --video      <trabalho>/previa/teste_rapido.mp4 (6 s)
+    clpy teste_rapido.py --som        + som sintetizado: <trabalho>/previa/teste_rapido_som.mp4"""
 import os
 import sys
 from pathlib import Path

@@ -5,14 +5,14 @@ régua, o explicador de dados) têm trilha por baixo, efeito no evento e master 
 ao lado delas. As regras gerais de som estão em `${CLAUDE_PLUGIN_ROOT}/REGRAS.md`; aqui fica o que é deste estilo.
 
 ```bash
-python3 ferramentas/mixar.py <projeto> saida/render_1080.mp4 saida/final.mp4 --trilha "<música>"
+mvpy ${CLAUDE_SKILL_DIR}/ferramentas/mixar.py <projeto> saida/render_1080.mp4 saida/final.mp4 --trilha "<música>"
 ```
 
 ## De onde vem o som (o plugin não traz biblioteca de terceiros)
 
 | fonte | o que é | como ligar |
 | --- | --- | --- |
-| **a sua pasta de efeitos** | qualquer pasta com .wav/.mp3/.aif/.flac de que você tem licença | `export EDITLABS_SONS="<pasta>"` (ou `--biblioteca <pasta>`), depois `python3 ferramentas/som_biblioteca.py` uma vez |
+| **a sua pasta de efeitos** | qualquer pasta com .wav/.mp3/.aif/.flac de que você tem licença | `export EDITLABS_SONS="<pasta>"` (ou `--biblioteca <pasta>`), depois `mvpy ${CLAUDE_SKILL_DIR}/ferramentas/som_biblioteca.py` uma vez |
 | **reserva sintetizada** | 13 efeitos feitos em código (`motor/som.py`, gravados em `motor/kit/sfx/`) | automático: sem pasta, sem mapa ou sem arquivo para um papel |
 | **trilha** | a sua pasta de músicas, ou as camas compostas em código (`compor_trilha.py`) e os pads (`--trilha pad_documental`) | `--trilha <arquivo>` ou o nome do pad |
 

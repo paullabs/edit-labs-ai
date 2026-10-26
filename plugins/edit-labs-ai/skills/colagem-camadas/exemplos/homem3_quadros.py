@@ -1,7 +1,7 @@
 """Homem de foto real: quadros-chave parados para aprovar o visual ANTES de animar (regra: revisão de espectador antes
 de qualquer vídeo).
 
-    python3 homem3_quadros.py     grava previa/homem3_quadros/*.png e uma folha"""
+    clpy homem3_quadros.py     grava previa/homem3_quadros/*.png e uma folha"""
 import os
 import sys
 import json
@@ -63,7 +63,7 @@ def matriz_atlas():
 
 def anat(nome, semente, tam):
     """camada do atlas em gravura de papel, já no px do recorte da foto"""
-    PAP.mkdir(exist_ok=True)
+    PAP.mkdir(parents=True, exist_ok=True)
     out = PAP / f"anat_{nome}_{tam[0]}x{tam[1]}_{JUG_FOTO[0]:.0f}.png"     # o registro depende do tamanho e da margem
     if not out.exists():
         im = K.papelizar(VAN / nome / "cor_q_001.png", luz=VAN / nome / "luz_q_001.png", registrado=True,

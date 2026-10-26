@@ -57,7 +57,7 @@ arquivos lá. Trilhas: passe o caminho do arquivo para `mixar_auto`; sem trilha,
 ## Teste rápido
 
 ```bash
-python3 -I - <<'EOF'
+clpy - <<'EOF'
 import sys; sys.path.insert(0, "motor/colagem")
 import motor as M, pecas as PC, cena as C
 fundo = PC.papel_mundo(M.W, M.H)

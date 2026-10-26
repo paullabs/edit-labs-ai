@@ -4,8 +4,8 @@
 Diretor. 👤 portão.
 
 ```bash
-python3 ferramentas/triptico.py <projeto>            # todos
-python3 ferramentas/triptico.py <projeto> 3,7        # só os que mudaram
+mvpy ${CLAUDE_SKILL_DIR}/ferramentas/triptico.py <projeto>            # todos
+mvpy ${CLAUDE_SKILL_DIR}/ferramentas/triptico.py <projeto> 3,7        # só os que mudaram
 ```
 
 O Diretor responde a rubrica inteira (`referencias/rubricas-diretor.md`), por escrito, mesmo

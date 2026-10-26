@@ -36,7 +36,7 @@ No motor: `som_auto.mixar_auto(..., alvo_lufs=-20, trilha_lufs=-24)` e as tabela
   onde chega.
 - **Cada ocorrência soa diferente:** fatias novas dos áudios de papel, carimbo e caneta sintetizados com altura e
   nível sorteados e uma lista de amostras que gira.
-- **Poucos:** de 19 a 26 efeitos em 30 s, de uns 10 tipos. Antes eram de 27 a 54, e isso cansava.
+- **Poucos:** de 19 a 26 efeitos em 30 s, de uns 10 tipos. Mais que isso cansa.
 - **A caneta** faz um som contínuo do tamanho do traço, e não um clique de 0,3 s. **O relógio** faz tique-taque a
   2 Hz enquanto o contador corre, e não um tique por pedaço.
 - **Sem biblioteca de efeitos**, o motor sintetiza os sons em código. Com biblioteca, ela fica em

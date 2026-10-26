@@ -5,6 +5,7 @@
                   release (Z-Anatomy, BodyParts3D, pranchas). Ver ../assets/RELEASE.md
     ASSETS_SKILL  <skill>/assets: o que é pequeno e livre e vem no plugin (luvas CC BY 3.0, crânio CC0)
     TRABALHO      $COLAGEM_TRABALHO, ou ./colagem-trabalho na pasta onde você rodou: renders, cache de papel, prévias
+    homem3(rel)   o homem de foto (recorte e poses): o seu em <trabalho>/homem3/, senão o do pacote colagem-homem3
     trilha()      $COLAGEM_TRILHA (um arquivo de música seu) ou None (cama sintetizada pelo motor)
     LEGENDAS      $COLAGEM_LEGENDAS=1 liga a legenda de fala dos exemplos (desligada por padrão: REGRAS.md)"""
 import os
@@ -40,6 +41,17 @@ def asset_3d(rel):
             return p
     raise SystemExit(f"Falta o asset 3D '{rel}'. Baixe o pacote da release e descompacte em {DADOS} "
                      f"(instruções em {SKILL / 'assets' / 'RELEASE.md'}).")
+
+
+def homem3(rel):
+    """arquivo do homem de foto: o que você gerou em <trabalho>/homem3/<rel> vale mais; senão, o do pacote
+    colagem-homem3 da release ($EDITLABS_DATA/colagem/assets/homem3/<rel>: recorte da foto CC0 e poses do tchau)"""
+    for base in (TRABALHO / "homem3", ASSETS / "homem3"):
+        p = base / rel
+        if p.exists():
+            return p
+    raise SystemExit(f"Falta 'homem3/{rel}'. Baixe o pacote colagem-homem3 da release (editlabs-assets colagem-homem3) "
+                     f"ou gere o seu (ver {SKILL / 'exemplos' / 'homem3_poses_ia.py'}).")
 
 
 def exige(*caminhos, como=""):

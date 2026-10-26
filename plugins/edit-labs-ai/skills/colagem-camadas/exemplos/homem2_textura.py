@@ -5,7 +5,7 @@ bolsos e o punho branco da camisa na ponta da manga.
 camisa.png: branca com listra azul fina, gravata vinho listrada com nó, pontas da gola, botões da carcela, cinto com
 fivela e a calça (aparecem quando o paletó abre).
 
-    python3 homem2_textura.py  ->  homem2/paleto.png e homem2/camisa.png"""
+    clpy homem2_textura.py  ->  homem2/paleto.png e homem2/camisa.png"""
 import os
 import sys
 from pathlib import Path
@@ -125,7 +125,7 @@ def camisa():
 
 
 if __name__ == "__main__":
-    (AQUI / "homem2").mkdir(exist_ok=True)
+    (AQUI / "homem2").mkdir(parents=True, exist_ok=True)
     t = paleto()
     t.save(AQUI / "homem2" / "paleto.png")
     manga(t).save(AQUI / "homem2" / "manga.png")

@@ -14,7 +14,7 @@
    "fim": 32,
    "foto": "hedy_1940_clarence_bull.jpg",
    "base": "corda_veludo.png",
-   "rotulo": "her beauty",
+   "rotulo": "a beleza dela",
    "lado": "dir",
    "camera": {
     "zoom": [
@@ -33,7 +33,7 @@
    "fim": 47,
    "foto": "hedy_1940_clarence_bull.jpg",
    "base": "corda_veludo.png",
-   "rotulo": "her beauty",
+   "rotulo": "a beleza dela",
    "lado": "esq",
    "camera": {
     "zoom": [
@@ -268,7 +268,7 @@
    "inicio": 407,
    "fim": 449,
    "objeto": "torpedo.png",
-   "rotulo": "jamming torpedoes"
+   "rotulo": "bloquear torpedos"
   },
   {
    "tipo": "amassar_lixeira",

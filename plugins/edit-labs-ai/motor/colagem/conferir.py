@@ -1,6 +1,6 @@
 """Conferência final de um reel: borrão fora das transições e texto pequeno.
 
-    python3 -I conferir.py <pasta do projeto> <video.mp4>
+    clpy conferir.py <pasta do projeto> <video.mp4>
 
 Convenção: o projeto tem ferramentas/reel.py com pecas(), montar(pecas) -> (camadas, cam, {"trans": [...]}) e FIM
 (último quadro, relógio de 24). Assim a conferência sabe onde estão as transições e as camadas."""

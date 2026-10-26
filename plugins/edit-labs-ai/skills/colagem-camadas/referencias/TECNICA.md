@@ -16,6 +16,9 @@ Motor: `${CLAUDE_PLUGIN_ROOT}/motor/colagem/` (ver o `LEIA.md` de lá). Exemplos
 | crânio (`cena_cranio.py`) | 3D | `giro` do crânio, a tampa descola e sai voando, o líquor enche como água, o cérebro `destaca` + `giro` + `pousa`, tranco do soco com o cérebro atrasado, a tampa volta e encaixa | Z-Anatomy (crânio) + BodyParts3D (cérebro) |
 | estalar os dedos (`cena_estalar.py`) | 3D + voz | mão com esqueleto (dedos que dobram), `janela` na pele sobre o nó, a junta com a bolha que nasce, rajada e estalo no mesmo quadro | Z-Anatomy + junta própria |
 | corpo humano (`cena_homem3.py`) | foto real + 3D | foto de arquivo recortada em peças, tchau com poses geradas a partir da própria foto, `janela_forma` no tronco, anatomia encaixada, coração que sai, gira e volta | foto CC0 + Z-Anatomy + BodyParts3D |
+| espirro preso (`cena_espirro.py`) | foto real + 3D | homem de foto que abre e fecha; a garganta em camadas registradas em 4 patamares de escala (mesma câmera, mesmo mundo), `descasca` pele e músculo, o ar como personagem de bolinhas, manômetro na tela, rolha e tampa, o bolsinho que rompe | foto CC0 + Z-Anatomy (garganta) + papel e caneta |
+| subsolo de um poço (`cena_subsolo.py`) | 3D próprio | tiras de mar que balançam, a câmera desce com a sonda, um nome de camada por vez preso à tela, o óleo `revela` na crista, `gotas` que sobem, vista aberta com 1 número | bloco geológico próprio |
+| três pontos num mapa (`cena_mapa.py`) | mapa de papel | alfinetes que caem, rota tracejada, painel que `brota` do alfinete com 1 rótulo + 1 número calculado e `encolhe` de volta | Natural Earth (domínio público) |
 | Terra (`cena_terra.py`) | 3D próprio | `giro` a 7 qps, a fatia `levanta`, as cascas se separam (`explode`) | modelo próprio, sem licença de terceiros |
 | teste rápido (`teste_rapido.py`) | código | `janela`, `levanta`, `pousa`, `pulsa`, carimbo | nada (confere a instalação) |
 
@@ -137,6 +140,7 @@ de verdade).
 | V serrilhado | a curva que escolhia as faces era outra que a reta do corte | cortar na mesma reta que escolhe as faces | `lascas` |
 | lascas na barra, no punho e embaixo do braço | corte reto feito ANTES de alisar e afastar a malha | o corte reto é sempre o ÚLTIMO passo da forma; `apara_lascas` no alfa antes do papel | `lascas` |
 | peça passando por trás da roupa | a peça que viaja estava na profundidade dela | o que viaja é uma cópia por cima; a original some enquanto isso | olho |
+| faixa cinza de ~15 px no alto do quadro (luva, q120 e q380) | a sombra da peça que passa da borda de BAIXO da tela era deslocada com `np.roll` e dava a volta para o alto | deslocar a sombra sem dar a volta (`motor._desce`); peça cortada na borda da tela é normal, a sombra dela não pode reaparecer do outro lado | olho na borda de cima dos quadros |
 | traço que engrossa na troca do giro para as camadas | o giro tinha outro px/m | papelizar o giro na densidade das camadas; centro do giro MEDIDO por casamento de alfa (IoU ≥ 0,99) | casamento de alfa |
 | dente na borda da porta aberta | a manga era tirada da porta pixel a pixel | a borda de fora segue a manga e desce em reta; só a peça principal fica | máscara isolada |
 | "image file is truncated" | dois renders escreviam o mesmo cache | gravar num temporário e renomear (atômico) | — |
@@ -155,7 +159,7 @@ Antes de entregar, montar a folha de quadros no tamanho da tela (um a cada ~1,5 
 (`portao-de-qualidade.md`).
 
 Ordem de conferência de uma figura nova:
-1. `python3 -I conferir_figura.py lascas <pasta dos renders>`, `buracos` (com o repouso de referência) e `cortados`.
+1. `clpy conferir_figura.py lascas <pasta dos renders>`, `buracos` (com o repouso de referência) e `cortados`.
 2. A cena com `--conferir` (quando houver): só a figura sobre magenta, nos quadros de risco (abrir, fechar, tchau,
    troca de camada).
 3. Os quadros de risco do vídeo pronto em resolução cheia. O olho é a última palavra, mas só olha depois das checagens.

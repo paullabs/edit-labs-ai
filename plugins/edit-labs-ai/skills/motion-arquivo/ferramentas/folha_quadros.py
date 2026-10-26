@@ -2,7 +2,7 @@
 """
 Folha de quadros escolhidos do projeto, já com o acabamento, com a zona segura do Reels por cima (opcional).
 
-    python3 folha_quadros.py <projeto> <q1,q2,...> <saida.png> [--zona] [--escala 0.25] [--colunas 6]
+    mvpy folha_quadros.py <projeto> <q1,q2,...> <saida.png> [--zona] [--escala 0.25] [--colunas 6]
 
 Cada quadro vira o degrau da grade que o render mostra. É a conferência rápida de texto, desenho e enquadramento sem
 renderizar o vídeo inteiro (zona_segura.py mede; esta folha mostra).

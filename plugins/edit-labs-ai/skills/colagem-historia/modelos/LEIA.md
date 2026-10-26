@@ -1,21 +1,28 @@
 # Modelos de reel de história
 
-Dois moldes prontos. Eles rodam no motor de colagem do plugin e leem as fotos da pasta `pecas/` do projeto.
+Três moldes prontos. Eles rodam no motor de colagem do plugin (sempre com `clpy`) e leem as fotos da pasta `pecas/`
+do projeto.
 
 | modelo | história | mundo | duração |
 | --- | --- | --- | --- |
 | `reel_napoleao.py` | **a medida desmente o mito:** régua em escala real, a pessoa com a sola no chão, a imagem do mito que vira, a medida errada riscada, a resposta que se monta | 7000×5000, 3 áreas, 10 px = 1 cm | 31 s |
+| `reel_regua_tempo.py` | **a régua do tempo:** linha vertical de anos em escala (ex.: 0,8 px/ano), a caneta mede dois intervalos com o contador de anos correndo junto, e o carimbo com a resposta cai na batida da trilha | 3000 × ~4600, régua + coluna de marcos | 19,5 s |
 | `reel_rota.py` | **a viagem que mudou a história:** a foto vira o documento, a rota no mapa antigo com o veículo na ponta e a câmera seguindo, o papel carvão, os objetos que se multiplicam, o fecho | 9000×3200, 4 áreas lado a lado | 22 s |
 
 **Fotos não vêm no plugin.** Elas são de terceiros, com licenças diferentes (algumas pedem crédito, outras vêm de
-acervos que cobram reuso comercial). Você baixa as suas, confere a licença e anota no `CREDITOS.md` do projeto. A
-lista do exemplo do Napoleão está no fim deste arquivo.
+acervos que cobram reuso comercial). Num projeto seu, você baixa as suas, confere a licença e anota no `CREDITOS.md`.
+
+**Fotos de exemplo (para rodar de fábrica):** o pacote `colagem-historia-fotos` da release
+(`editlabs-assets colagem-historia-fotos`, ~31 MB) traz as fotos do Napoleão e da régua do tempo, todas em domínio
+público, CC0, CC BY ou CC BY-SA, com origem, licença e linha de crédito no `LEIA.md` do pacote. Se o projeto **não
+tiver** a pasta `pecas/`, `reel_napoleao.py` e `reel_regua_tempo.py` usam essas fotos sozinhos (e avisam). Criou
+`pecas/`, valem as suas. `reel_rota.py` não tem fotos de exemplo.
 
 ## Começar
 
 ```bash
 mkdir -p ferramentas pecas
-cp "${CLAUDE_SKILL_DIR}/modelos/reel_rota.py" ferramentas/reel.py      # ou reel_napoleao.py
+cp "${CLAUDE_SKILL_DIR}/modelos/reel_rota.py" ferramentas/reel.py      # ou reel_napoleao.py, reel_regua_tempo.py
 # ponha as fotos em pecas/ com os nomes de ARQ (ou troque os nomes em ARQ)
 clpy ferramentas/reel.py --folha                    # todas as peças sobre azul: confira os recortes
 clpy ferramentas/reel.py --quadros 10 --sem-texto   # o 1º quadro-chave
@@ -34,9 +41,11 @@ O modelo acha sozinho o motor (`EDITLABS_MOTOR`, que o `clpy` já define) e o pr
    - `reel_napoleao.py`: `MITO2_ALVO` (o que a caneta circula), `DOC_CAIXA` (o pedaço da página), `DOC_SUBLINHA`,
      `DOC_FOCO` e `REGUA_CERTA_CIRCULO`.
    - Para achar um ponto, abra a foto, ache o pixel e divida pela largura e pela altura.
-3. **Escala real (Napoleão):** em `ALTURA_CM` vai a altura de cada pessoa. Em `TOPO_SOLA` vai o y do topo da cabeça
-   e da sola no recorte **de entrada**. Use `None` para usar a caixa do alfa; ajuste quando há chapéu ou gorro (o
-   topo da cabeça fica abaixo dele). `MEDIDAS` traz as três marcas da régua: a errada (que é riscada), a média e a
+3. **Escala real (Napoleão):** em `ALTURA_CM` vai a altura de cada pessoa. O topo da cabeça e a sola saem sozinhos
+   da caixa do alfa do recorte, e isso serve para qualquer foto. **Só quando o alfa não começa na cabeça** (chapéu,
+   gorro, penacho) dê o valor à mão em `TOPO_SOLA`: `(topo, sola)` em px da imagem de entrada ou, melhor, em fração da
+   altura (0–1), que não quebra se você trocar a imagem por outra de outro tamanho. Valor em px medido numa foto
+   **não vale** para outra: trocou a foto, meça de novo ou apague a chave. `MEDIDAS` traz as três marcas da régua: a errada (que é riscada), a média e a
    resposta.
 4. **Texto:** `LEGENDAS` (≤ 8 palavras cada, ≈ 40 no total, com `*palavra*` em vermelho), `TEMPOS_LEG`,
    `ETIQUETAS`, `CARIMBOS` e `RESPOSTA`. Deixe o texto para o fim: monte e confira com `--sem-texto`.
@@ -56,9 +65,23 @@ O modelo acha sozinho o motor (`EDITLABS_MOTOR`, que o `clpy` já define) e o pr
   - fundo: `papel_area`.
 - Use **uma transição diferente** por passagem: `iris`, `mergulho`, `rasgo`, `empurra` ou `flash`.
 - **Para outra mecânica:**
-  - linha do tempo (como a Cleópatra): a régua do Napoleão em anos, em vez de cm;
-  - contador de relógio (como o Santos-Dumont): `C.contador` andando junto com o `Traco`;
-  - fio (como o Dom Pedro): um `Traco` com `suave=True` entre dois objetos.
+  - linha do tempo: `reel_regua_tempo.py` (troque `ANOS`, `MEDE`, `REGUA_ANOS` e `PX_ANO`; a régua se desenha sozinha);
+  - contador de relógio: `C.contador` andando junto com o `Traco` (o mesmo do contador de anos);
+  - fio entre dois objetos: um `Traco` com `suave=True`.
+
+## A régua do tempo e a batida (`reel_regua_tempo.py`)
+
+- **Escala:** `PX_ANO` px do mundo por ano. Escolha para o intervalo mais longo caber em ~2.000 px (0,8 px/ano dá
+  2.500 anos). A régua vai de `REGUA_ANOS[0]` a `REGUA_ANOS[1]`, com traço a cada `MARCA_PEQ` anos e número a cada
+  `MARCA_GRANDE`; anos negativos saem como "a.C.".
+- **Contas:** `anos_entre` já tira o ano zero que não existe. O contador mostra o número exato; o carimbo, o
+  arredondado ("≈ 2.000 ANOS").
+- **Batida:** sem voz, a batida da trilha é o relógio. `clpy ferramentas/reel.py --batidas` lista os golpes medidos
+  e sugere `BATIDA` (período) e `BATIDA_INI` (a 1ª batida); confira de ouvido. Os carimbos e os pousos dos marcos são
+  puxados para a batida mais perto (`na_batida`), e os recuos de câmera terminam antes do carimbo. `BATIDA = None`
+  desliga o encaixe.
+- **Etiquetas** só vivem nos planos de perto. No recuo e no plano geral quem fala é o carimbo (a etiqueta ficaria
+  pequena demais e o `ajustar_texto` a incharia).
 
 ## Conferir e entregar
 
@@ -77,13 +100,13 @@ Uma etiqueta passando pela borda durante um movimento é normal no `--margens`; 
 
 ## As fotos do exemplo do Napoleão (onde achar e licença)
 
-Para reproduzir o exemplo, baixe estas imagens (confira a licença na página antes) e ponha em `pecas/` com os nomes
-de `ARQ`. Os recortes (pessoas e objetos) saem com o `recorte.swift` do motor.
+Estas imagens já vêm no pacote `colagem-historia-fotos` (menos o contraste). Para montar você mesmo, baixe-as (confira
+a licença na página antes) e ponha em `pecas/` com os nomes de `ARQ`. Os recortes (pessoas e objetos) saem com o `recorte.swift` do motor.
 
 | peça | o que é | onde | licença e crédito |
 | --- | --- | --- | --- |
 | `pessoa_em_pe.png` | *The Emperor Napoleon in His Study at the Tuileries*, J.-L. David, 1812 (recorte) | Commons: `Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg` | domínio público; cortesia: National Gallery of Art, Washington |
-| `contraste_em_pe.png` | granadeiro da Guarda Imperial, estampa da série *Troupes Françaises* (recorte) | Commons: `Garde_Impériale_Grenadiers_(à_pied)_-_estampe_-_btv1b6941036w.jpg` | domínio público, **mas é digitalização da BnF/Gallica (reuso comercial cobrado)**: para post comercial, troque por uma estampa equivalente de acervo com Open Access |
+| `contraste_em_pe.png` (opcional) | um granadeiro da Guarda Imperial (recorte de estampa de época) | busque em acervo com Open Access; **não use** digitalização da BnF/Gallica (reuso comercial cobrado) | sem essa peça, o molde roda sem o contraste; ela não vem no pacote de exemplo |
 | `mito.jpg` | *Maniac-raving's – or – Little Boney in a strong fit*, J. Gillray, 1803 | Library of Congress, item 94509079 | domínio público |
 | `mito2.jpg` | *The King of Brobdingnag and Gulliver*, J. Gillray, 1803 | The Met, Open Access, 17.3.888-313 | CC0 |
 | `lugar.jpg` | *Geological plan and elevation of the Island of St Helena* (1816) | Wellcome Collection, L0069644 | Public Domain Mark |

@@ -2,7 +2,7 @@
 """
 Baixa UM asset ja APROVADO pelo usuario e registra a origem em assets/FONTES.md.
 
-    python3 baixar_asset.py <url> <projeto> --nome arquivo.jpg --licenca "PD" [--autor "..."] [--pagina URL]
+    mvpy baixar_asset.py <url> <projeto> --nome arquivo.jpg --licenca "PD" [--autor "..."] [--pagina URL]
 
 Vai para <projeto>/assets/baixados/ (pasta propria: arquivo baixado e dado nao confiavel).
 Nao rode sem a aprovacao da lista (arquivo, fonte, tamanho, licenca).

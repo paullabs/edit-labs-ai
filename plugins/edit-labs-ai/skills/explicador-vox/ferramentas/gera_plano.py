@@ -1,8 +1,8 @@
 """Plano de batidas do explicador Vox: escreve o plano.json (câmera, camadas com chaves, fundos, sons, legenda,
 título) e confere orçamento de tela, degrau de 12 qps, zona segura e sincronia com a fala.
 
-    python gera_plano.py exemplo  <saida/plano.json> [palavras.json]   -> o plano do exemplo "soco no queixo"
-    python gera_plano.py conferir <plano.json> <palavras.json>          -> só confere um plano existente
+    clpy gera_plano.py exemplo  <saida/plano.json> [palavras.json]   -> o plano do exemplo "soco no queixo"
+    clpy gera_plano.py conferir <plano.json> <palavras.json>          -> só confere um plano existente
 
 Para um vídeo novo: copie este arquivo para a pasta do projeto, troque o conteúdo de plano_exemplo() pelo seu
 (mesmos auxiliares K, S, lay, caminho) e rode "exemplo" de novo. O plano.json é a fonte da verdade para a prévia

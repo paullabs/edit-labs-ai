@@ -2,7 +2,7 @@
 """
 Zona segura do Reels: acha todo texto que cai embaixo da interface do Instagram.
 
-    python3 zona_segura.py <projeto> [--passo 6] [--folha saida.png] [--json saida.json]
+    mvpy zona_segura.py <projeto> [--passo 6] [--folha saida.png] [--json saida.json]
 
 Como mede: cada degrau é montado duas vezes, com e sem texto (o ImageDraw.text do PIL vira nada na segunda
 montagem). A diferença entre as duas é a tinta de TODO texto do quadro, de qualquer tipo de plano, já depois da

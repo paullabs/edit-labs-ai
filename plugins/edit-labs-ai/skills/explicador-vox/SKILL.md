@@ -110,16 +110,17 @@ confere com `capture()` contra os quadros da prévia e entrega o link.
 ### Render local
 
 ```
-python ${CLAUDE_SKILL_DIR}/ferramentas/previa.py --plano time/plano.json --pecas pecas/ --saida previa/ \
+clpy ${CLAUDE_SKILL_DIR}/ferramentas/previa.py --plano time/plano.json --pecas pecas/ --saida previa/ \
        [--audio som/previa.wav] [--sem-legenda] [--quadros 0,120,330]
 ```
 
 Usa o motor de colagem do plugin (`${CLAUDE_PLUGIN_ROOT}/motor/colagem/`) a 24 qps com 12 desenhos por segundo.
-Para ver o exemplo: `previa.py --exemplo` (sem áudio; fundos e grades saem do `pecas.py base`).
+Para ver o exemplo: `clpy ${CLAUDE_SKILL_DIR}/ferramentas/previa.py --exemplo` (sem áudio; fundos e grades saem do `pecas.py base`).
 
 ## Ferramentas (`${CLAUDE_SKILL_DIR}/ferramentas/`)
 
-Rode com o Python do ambiente do plugin (`requirements.txt` desta pasta) e o ffmpeg no PATH.
+Rode com `clpy` (o Python do motor de colagem do plugin, que já põe o motor no caminho; dependências em
+`requirements.txt` desta pasta) e o ffmpeg no PATH: `clpy ${CLAUDE_SKILL_DIR}/ferramentas/<script>.py ...`.
 
 | script | faz |
 | --- | --- |

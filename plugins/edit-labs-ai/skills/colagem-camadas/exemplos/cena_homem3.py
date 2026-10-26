@@ -12,11 +12,11 @@ Regras que saíram da revisão de espectador:
 - tronco sem cabeça → o rosto fica sempre na tela;
 - a janela nunca passa da borda do corpo do atlas (senão abria um buraco preto).
 
-Antes: preparar.py homem (texturas, .blend do atlas, renders), homem3_pecas.py e homem3_poses_ia.py.
+Antes: o pacote colagem-homem3 (recorte e poses) e preparar.py homem (texturas, .blend do atlas, renders).
 
-    python3 cena_homem3.py              quadros de conferência em previa/homem3/
-    python3 cena_homem3.py --video      previa/homem3.mp4
-    python3 cena_homem3.py --som        previa/homem3_som.mp4"""
+    clpy cena_homem3.py              quadros de conferência em previa/homem3/
+    clpy cena_homem3.py --video      previa/homem3.mp4
+    clpy cena_homem3.py --som        previa/homem3_som.mp4"""
 import os
 import sys
 import json
@@ -43,7 +43,7 @@ VCOR = H3 / "coracao" / "vistas_coracao"
 FIM = 866
 F = 0.45                                    # resolução de trabalho: 45% da foto (a tela nunca pede mais)
 CAIXA = (-1300, -300, 2312, 5700)           # recorte da foto usado (px do recorte), com margem para o braço levantado
-POSES = H3 / "poses"                        # repouso, meio e alto (homem3_poses_ia.py): a foto + o braço gerado
+# as poses (repouso, meio, alto): CM.homem3("poses/...") = <trabalho>/homem3/poses ou o pacote colagem-homem3
 MARGEM_POSES = (1300, 300)
 TAM = (round((CAIXA[2] - CAIXA[0]) * F), round((CAIXA[3] - CAIXA[1]) * F))
 A0, A1 = 150, 760                           # o interior existe enquanto a janela está aberta
@@ -55,7 +55,7 @@ def w(px, py):
 
 
 def cache_png(nome, faz):
-    CACHE.mkdir(exist_ok=True)
+    CACHE.mkdir(parents=True, exist_ok=True)
     out = CACHE / f"{nome}.png"
     if not out.exists():
         im = faz()
@@ -108,7 +108,7 @@ def peca(img, nome, **kw):
 def pose_trab(nome):
     """a pose (px do recorte + MARGEM_POSES) no px de trabalho, com a borda branca de tesoura em volta da figura"""
     def faz():
-        im = Image.open(POSES / f"{nome}.png").convert("RGBA")
+        im = Image.open(CM.homem3(f"poses/{nome}.png")).convert("RGBA")
         dx, dy = CAIXA[0] + MARGEM_POSES[0], CAIXA[1] + MARGEM_POSES[1]
         A = np.array([[F, 0, -dx * F], [0, F, -dy * F]], np.float32)
         t = Image.fromarray(cv2.warpAffine(np.asarray(im), A, TAM, flags=cv2.INTER_AREA, borderValue=(0, 0, 0, 0)))

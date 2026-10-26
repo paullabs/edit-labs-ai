@@ -1,12 +1,12 @@
 """Som do explicador Vox: banco de efeitos num WAV só, medida EBU R128 e ganho de cada efeito 15-19 dB abaixo
 da voz, trilha num nível fixo e prévia do mix a -14 LUFS.
 
-    python som.py banco  <lista.json> <saida_dir>
+    clpy som.py banco  <lista.json> <saida_dir>
         lista.json: [{"nome", "arquivo", "ss", "dur", "fi", "fo", "espelho"?, "origem", "licenca"}]
         -> banco.wav (48 kHz estéreo, um som por espaço de 1 s, pico de cada som em -3 dBFS) + banco.json
-    python som.py medir  <voz> <banco.wav> <banco.json>
+    clpy som.py medir  <voz> <banco.wav> <banco.json>
         -> niveis.json ao lado do banco (voz: integrado e momentâneo mediano; efeito: M400, M200, M100)
-    python som.py mixar  --plano plano.json --voz voz.wav --banco banco.wav --saida som/ [--trilha t.wav --trilha-queda 21]
+    clpy som.py mixar  --plano plano.json --voz voz.wav --banco banco.wav --saida som/ [--trilha t.wav --trilha-queda 21]
         -> som/som.json (cada efeito com quadro de início, trecho do banco e ganho), efeitos_so.wav, previa.wav
 
 O plano traz os sons: [{"id", "efeito" (nome no banco), "quadro" (o GOLPE, a 24 qps), "classe", "acao"}].

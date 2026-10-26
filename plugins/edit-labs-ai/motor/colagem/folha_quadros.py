@@ -1,4 +1,4 @@
-"""Folha de conferência dos quadros: python3 -I folha_quadros.py <pasta com qNNNN.png> <saida.jpg> [colunas]"""
+"""Folha de conferência dos quadros: clpy folha_quadros.py <pasta com qNNNN.png> <saida.jpg> [colunas]"""
 import sys
 from pathlib import Path
 from PIL import Image, ImageDraw

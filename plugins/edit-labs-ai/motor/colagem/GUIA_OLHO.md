@@ -36,5 +36,5 @@ lá pela caneta ou pela câmera. Muita gente enxerga mal no celular, então nada
 
 - `motor.checar_margens(camadas, cam, quadros)`: objetos cortados ou fora da margem.
 - `motor.ajustar_texto(...)`: texto pequeno; corrige sozinho e lista o que mudou.
-- `python3 -I conferir.py <pasta do projeto> <video>`: no vídeo pronto, aponta desenhos borrados fora das transições e
+- `clpy conferir.py <pasta do projeto> <video>`: no vídeo pronto, aponta desenhos borrados fora das transições e
   textos que ainda ficaram pequenos.

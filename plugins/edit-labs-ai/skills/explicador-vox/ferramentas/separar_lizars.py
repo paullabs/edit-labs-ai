@@ -2,7 +2,7 @@
 e o crânio (anel de osso, dura, couro cabeludo e orelhas, tingidos de osso). Feito para a prancha do crânio aberto de
 W. H. Lizars (c. 1826, Wellcome Collection V0008410, CC BY 4.0: crédito obrigatório e mudança declarada).
 
-    python separar_lizars.py <prancha.jpg> <pasta_saida>
+    clpy separar_lizars.py <prancha.jpg> <pasta_saida>
         -> cerebro_cima.png, cranio_inteiro.png, cranio_anel.png e _mascara_prova.jpg (confira antes de usar)
 
 Os números (região do papel, elipse do cérebro, cortes em y, letras a apagar, linha da nuca) foram medidos nessa

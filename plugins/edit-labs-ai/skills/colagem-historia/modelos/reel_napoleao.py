@@ -2,7 +2,8 @@
 
 31 s, 9:16 (1080×1920), sem voz, colagem de papel antigo. Copie este arquivo para PROJETO/ferramentas/reel.py e troque
 só o bloco "1. O QUE TROCAR". As fotos vêm de PROJETO/pecas/ (veja modelos/LEIA.md da skill: o que baixar e com
-que licença).
+que licença). Sem pecas/ no projeto, o modelo usa as fotos de exemplo da release (pacote colagem-historia-fotos, em
+$EDITLABS_DATA/colagem/assets/historia/napoleao), se estiverem baixadas: assim o exemplo roda "de fábrica".
 
     clpy ferramentas/reel.py --folha            -> previa/folha_pecas.jpg (todas as peças sobre azul)
     clpy ferramentas/reel.py --quadros 10,120   -> previa/quadros/qNNNN.png (quadros de conferência)
@@ -11,8 +12,7 @@ que licença).
     clpy ferramentas/reel.py --som              -> som/mix.wav + entrega/<NOME>.mp4 (depois do --video)
     --sem-texto                                 -> sem legendas e carimbos (o texto entra por último)
 
-clpy é o Python do motor de colagem do plugin (editlabs-setup --colagem). Sem ele: python3 com numpy, Pillow e
-OpenCV, e EDITLABS_MOTOR=<raiz do plugin>/motor/colagem.
+Rode sempre com clpy, o Python do motor de colagem do plugin (se ele disser que falta: editlabs-setup --colagem).
 
 Mundo de papel 7000×5000, em ESCALA REAL na régua: 10 px do mundo = 1 cm, chão em y=3000.
   K (alto à direita): o objeto real que abre o vídeo.
@@ -58,8 +58,22 @@ import pecas as PC         # noqa: E402  cartão com fita, recorte com borda de 
 import cena as C           # noqa: E402  cai, desliza, vira, traço de caneta, carimbo, câmera por planos
 # som e som_auto só entram no --som (precisam da biblioteca de efeitos configurada no motor)
 
+def _achar_pecas(exemplo):
+    """PROJETO/pecas > as fotos de exemplo da release ($EDITLABS_ASSETS/historia/<exemplo>), se o projeto não tiver pecas/"""
+    proprio = PROJ / "pecas"
+    if proprio.is_dir():
+        return proprio
+    dados = Path(os.environ.get("EDITLABS_DATA", "~/.local/share/edit-labs-ai")).expanduser()
+    ex = Path(os.environ.get("EDITLABS_ASSETS", str(dados / "colagem" / "assets"))).expanduser() / "historia" / exemplo
+    if ex.is_dir():
+        print(f"Sem pecas/ no projeto: usando as fotos de exemplo em {ex} (créditos no LEIA.md do pacote)")
+        return ex
+    return proprio
+
+
 PROJ = _achar_projeto()
-P = PROJ / "pecas"
+EXEMPLO = "napoleao"                         # pasta das fotos de exemplo (pacote colagem-historia-fotos)
+P = _achar_pecas(EXEMPLO)
 
 # =====================================================================================================================
 # 1. O QUE TROCAR
@@ -78,7 +92,7 @@ TRILHA_LICENCA = "trilha: veja CREDITOS.md do projeto"
 # arquivos em PROJETO/pecas/ (PNG = recorte com alfa; JPG = foto que vira cartão)
 ARQ = {
     "pessoa": "pessoa_em_pe.png",           # a pessoa em pé, corpo inteiro (o retrato de David, 1812)
-    "contraste": "contraste_em_pe.png",     # quem a fazia parecer menor (o granadeiro da Guarda Imperial)
+    "contraste": "contraste_em_pe.png",     # OPCIONAL: quem a fazia parecer menor (um granadeiro da Guarda Imperial)
     "mito": "mito.jpg",                     # a imagem do mito, que vira no lugar da pessoa (caricatura, 1803)
     "mito2": "mito2.jpg",                   # a 2ª imagem do mito, que entra embaixo (o rei e o Napoleão minúsculo)
     "lugar": "lugar.jpg",                   # o lugar do momento dramático (mapa de Santa Helena)
@@ -90,10 +104,15 @@ ARQ = {
     "regua_certa": "regua_certa.png",       # a unidade certa (a régua do rei, em polegada francesa)
 }
 
-# altura real (cm) e onde ficam o topo da cabeça e a sola no recorte de ENTRADA (px); None = caixa do alfa
+OPCIONAIS = {"contraste"}                   # se o arquivo faltar, a cena sai sem essa peça (e avisa)
+
+# altura real (cm) de cada pessoa recortada
 ALTURA_CM = {"pessoa": 169, "contraste": 178}
-# (os valores abaixo são dos recortes do exemplo; com outro recorte, meça de novo ou use None)
-TOPO_SOLA = {"pessoa": (40, 4404), "contraste": (250, 1660)}   # o granadeiro: topo da cabeça sob o gorro
+# topo da cabeça e sola no recorte de ENTRADA. Padrão (sem a chave): a caixa do alfa, que serve para qualquer foto.
+# Dê o valor à mão só quando o topo do alfa não é o topo da cabeça (chapéu, gorro, penacho): (topo, sola) em px da
+# imagem de entrada, ou em fração da altura (0–1), que não quebra se a imagem for trocada por outra de outro tamanho.
+# Ex.: um granadeiro de gorro alto -> TOPO_SOLA = {"contraste": (0.146, 0.97)}
+TOPO_SOLA = {}
 
 # pontos dentro das imagens, em fração (0–1) da foto
 MITO2_ALVO = (0.215, 0.46)                  # onde está o Napoleão minúsculo na 2ª caricatura (círculo de caneta)
@@ -142,11 +161,18 @@ def _arq(chave):
     return P / ARQ[chave]
 
 
-TEXTO_FINAL = ("LEG", "c_", "RAJ_", "RESP")      # camadas de texto que entram por último (--sem-texto)
+TEXTO_FINAL = ("LEG", "c_", "RAJ_", "RESP", "ET_")   # camadas de texto que entram por último (--sem-texto)
+
+
+def tem(chave):
+    return (P / ARQ[chave]).exists()
 
 
 def conferir_pecas():
-    falta = [f"pecas/{v}" for v in ARQ.values() if not (P / v).exists()]
+    falta = [f"pecas/{v}" for k, v in ARQ.items() if not (P / v).exists() and k not in OPCIONAIS]
+    for k in sorted(OPCIONAIS):
+        if not tem(k):
+            print(f"aviso: sem pecas/{ARQ[k]} ({k}): a cena sai sem essa peça")
     if falta:
         sys.exit("Faltam peças em " + str(P) + ":\n  " + "\n  ".join(falta) + "\nVeja modelos/LEIA.md.")
 
@@ -163,6 +189,8 @@ def recorte_em_escala(chave, semente, **kw):
     im = Image.open(_arq(chave)).convert("RGBA")
     bx0, by0, bx1, by1 = im.getchannel("A").getbbox()
     topo, sola = TOPO_SOLA.get(chave) or (by0, by1)
+    if max(topo, sola) <= 1.0:                       # em fração da altura da imagem
+        topo, sola = topo * im.height, sola * im.height
     escala = ALTURA_CM[chave] * PXCM / (sola - topo)
     borda = kw.get("borda", 12)
     alt = round((by1 - by0 + 2 * (borda + 4)) * escala)
@@ -174,7 +202,9 @@ def pecas():
     conferir_pecas()
     p = {}
     p["pessoa"], p["m_pessoa"], p["topo_p"], p["sola_p"], p["xc_p"] = recorte_em_escala("pessoa", 11, envelhece=True)
-    p["contraste"], p["m_contraste"], p["topo_c"], p["sola_c"], p["xc_c"] = recorte_em_escala("contraste", 12)
+    p["contraste"] = None
+    if tem("contraste"):
+        p["contraste"], p["m_contraste"], p["topo_c"], p["sola_c"], p["xc_c"] = recorte_em_escala("contraste", 12)
     p["regua"], p["regua_anc"] = regua_altura()
     p["regua_certa"] = PC.recorte(_arq("regua_certa"), larg=500, semente=13, envelhece=True)
     p["mito2_px"] = Image.open(_arq("mito2")).size
@@ -192,7 +222,8 @@ def pecas():
     p["obj_drama"] = PC.recorte(_arq("obj_drama"), alt=560, envelhece=True, semente=83, borda=10)
     p["regua_errada"] = PC.recorte(_arq("regua_errada"), alt=900, envelhece=True, semente=84, borda=8)
     p["et_pessoa"] = PC.etiqueta(ETIQUETAS["pessoa"], semente=31)
-    p["et_contraste"] = PC.etiqueta(ETIQUETAS["contraste"], semente=32)
+    if p["contraste"] is not None:
+        p["et_contraste"] = PC.etiqueta(ETIQUETAS["contraste"], semente=32)
     p["et_obj_abre"] = PC.etiqueta(ETIQUETAS["obj_abre"], corpo=(36, 26), semente=88)
     p["et_obj_drama"] = PC.etiqueta(ETIQUETAS["obj_drama"], semente=85)
     p["et_regua_errada"] = PC.etiqueta(ETIQUETAS["regua_errada"], corpo=(36, 28), semente=86)
@@ -250,7 +281,7 @@ def montar(p):
     KX, KY = 4400, 650
     c.append(C.fixo("GRADE_K", PC.grade(1400, 1400, passo=70), KX, KY, boil=None, sombra=None))
     c.append(C.cai("OBJ_ABRE", p["obj_abre"], -2, KX, KY, rot=-3, de_y=-180, sombra=(16, 28, 0.35)))
-    c.append(C.cai("ET_OBJ_ABRE", p["et_obj_abre"], 14, KX - 120, KY + 300, rot=2, **et))
+    c.append(C.cai("ET_OBJ_ABRE", p["et_obj_abre"], 14, KX, KY + 300, rot=2, **et))
     # ---- H: a régua em escala real, a pessoa com a sola no chão, quem a fazia parecer menor
     c.append(C.fixo("REGUA", p["regua"], RX, CHAO, ancora=p["regua_anc"], sombra=(4, 10, 0.18), boil="paper"))
     pes = p["pessoa"]
@@ -259,25 +290,26 @@ def montar(p):
     NY = CHAO - ysola + pes.height / 2
     CAB = pos(pes, p["m_pessoa"], (NX, NY), (p["xc_p"], p["topo_p"]))
     c.append(C.fixo("PESSOA", pes, NX, NY, ini=0, fim=120, sombra=(16, 26, 0.3)))
-    c.append(C.cai("ET_PESSOA", p["et_pessoa"], 70, NX + 330, y_cm(118), rot=3, fim=120, **et))
+    c.append(C.cai("ET_PESSOA", p["et_pessoa"], 70, NX + 200, y_cm(118), rot=3, fim=120, **et))
     # o mito: o retrato vira a caricatura e volta (cartão que vira)
     c += C.vira("V1", pes, p["mito"], 120, NX, NY, ini=120, fim=210, esc_v=0.95)
     c += C.vira("V2", p["mito"], pes, 210, NX, NY, ini=210, esc_f=0.95)
-    c.append(C.cai("ET_PESSOA2", p["et_pessoa"], 222, NX + 290, y_cm(118), rot=3, **et))
+    c.append(C.cai("ET_PESSOA2", p["et_pessoa"], 222, NX + 290, y_cm(118), rot=3, fim=420, **et))   # o fecho tem as medidas
     # a caneta sobe pela régua até a cabeça (a medida é a assinatura do reel)
     medir = C.Traco("MEDE", [(RX, CHAO - 10), (RX, y_cm(ALTURA_CM["pessoa"]))], 66, 100, espessura=20, tremor=1.0)
     c.append(medir.camada)
     c.append(C.carimbo("c_pergunta", p["c_pergunta"], 104, RX - 40, y_cm(184), -8, esc=0.9, fim=120))
     c.append(C.rajada("RAJ_Q", RX - 40, y_cm(184), 104, raio=300, cor=PC.VERMELHO))
-    ct = p["contraste"]
-    _, ysg = p["m_contraste"](p["xc_c"], p["sola_c"])
     GX = 2520
-    GY = CHAO - ysg + ct.height / 2
-    TOPO_C = pos(ct, p["m_contraste"], (GX, GY), (p["xc_c"], p["topo_c"]))
-    c.append(C.desliza("CONTRASTE", ct, 218, (GX + 1600, GY), (GX, GY), dur=12, sombra=(16, 26, 0.3), fim=300))
-    c.append(C.cai("ET_CONTRASTE", p["et_contraste"], 232, GX - 160, y_cm(52), rot=-3, fim=300, **et))
-    c.append(C.Traco("LINHA_ALTURA", [(TOPO_C[0] + 60, TOPO_C[1]), (CAB[0] - 120, TOPO_C[1])], 244, 260, espessura=14,
-                     tracejado=(34, 22), curva="out", fim=420).camada)
+    ct = p["contraste"]
+    if ct is not None:                                       # peça opcional
+        _, ysg = p["m_contraste"](p["xc_c"], p["sola_c"])
+        GY = CHAO - ysg + ct.height / 2
+        TOPO_C = pos(ct, p["m_contraste"], (GX, GY), (p["xc_c"], p["topo_c"]))
+        c.append(C.desliza("CONTRASTE", ct, 218, (GX + 1600, GY), (GX, GY), dur=12, sombra=(16, 26, 0.3), fim=300))
+        c.append(C.cai("ET_CONTRASTE", p["et_contraste"], 232, GX - 160, y_cm(52), rot=-3, fim=300, **et))
+        c.append(C.Traco("LINHA_ALTURA", [(TOPO_C[0] + 60, TOPO_C[1]), (CAB[0] - 120, TOPO_C[1])], 244, 260,
+                         espessura=14, tracejado=(34, 22), curva="out", fim=420).camada)
     # a 2ª imagem do mito entra embaixo (empilhadas, as duas cabem grandes)
     BX, BY = NX, NY + 760
     c.append(M.Camada("MITO2", p["mito2"], 128, 220, boil="obj", sombra=(10, 22, 0.28), chaves={
@@ -289,17 +321,18 @@ def montar(p):
     c.append(C.carimbo("c_mito", p["c_mito"], 142, NX + 60, NY + 300, -6, esc=0.55, fim=210))
     # ---- S: o momento dramático no papel carvão (fica preso à área, longe das vizinhas)
     SX, SY = 5900, 3900
-    c.append(C.papel_area("PAPEL_S", (SX - 1600, SY - 1750, SX + 1600, SY + 2900)))
+    c.append(C.papel_area("PAPEL_S", (SX - 1600, SY - 1750, SX + 1600, SY + 4300)))
     c.append(C.fixo("LUGAR", p["lugar"], SX + 300, SY - 780, rot=5))
     c.append(C.desliza("OBJ_CHEGA", p["obj_chega"], 316, (SX - 1500, SY - 880), (SX - 300, SY - 900), dur=18,
                        sombra=(12, 20, 0.3)))
-    c.append(C.carimbo("c_lugar", p["c_lugar"], 340, SX + 260, SY - 430, -7, esc=0.55))
-    c.append(C.rajada("RAJ_LUGAR", SX + 260, SY - 430, 340, raio=380))
-    MKX, MKY = SX - 420, SY + 120
+    c.append(C.carimbo("c_lugar", p["c_lugar"], 340, SX - 20, SY - 430, -7, esc=0.55))
+    c.append(C.rajada("RAJ_LUGAR", SX - 20, SY - 430, 340, raio=380))
+    # o objeto do drama e a página ficam bem abaixo do lugar: cada plano mostra só a sua parte, nada cortado na borda
+    MKX, MKY = SX - 420, SY + 1020
     c.append(C.cai("OBJ_DRAMA", p["obj_drama"], 348, MKX, MKY, rot=-6, de_y=-200, sombra=(16, 26, 0.35)))
-    c.append(C.cai("ET_OBJ_DRAMA", p["et_obj_drama"], 356, MKX + 260, MKY + 330, rot=2, fim=380, **et))
-    PGX, PGY = SX + 260, SY + 980
-    c.append(C.fixo("PAG", p["pag"], PGX, PGY, rot=-2))
+    c.append(C.cai("ET_OBJ_DRAMA", p["et_obj_drama"], 356, SX + 40, MKY + 340, rot=2, fim=380, **et))
+    PGX, PGY = SX + 260, SY + 2400
+    c.append(C.cai("PAG", p["pag"], 374, PGX, PGY, rot=-2, de_y=-160))
 
     def na_pag(rel):
         return em_cartao((PGX, PGY), p["pag"], 1100, p["pag_px"], rel)
@@ -313,31 +346,36 @@ def montar(p):
     def marca(nome, cm, q0, q1, **kw):
         return C.Traco(nome, [(RX - 60, y_cm(cm)), (NX + 250, y_cm(cm))], q0, q1, espessura=14, curva="out", **kw)
     c.append(marca("M0", cm0, 436, 450, tracejado=(30, 18)).camada)
-    c.append(C.cai("ET_M0", p["m0"], 450, RX - 230, y_cm(cm0), rot=-3, **et))
-    c.append(C.Traco("X0a", [(RX - 320, y_cm(cm0) - 50), (RX - 140, y_cm(cm0) + 50)], 466, 472, espessura=20,
-                     curva="out").camada)
-    c.append(C.Traco("X0b", [(RX - 140, y_cm(cm0) - 50), (RX - 320, y_cm(cm0) + 50)], 472, 478, espessura=20,
-                     curva="out").camada)
-    PX_, PY_ = RX - 230, y_cm(112)
-    IX, IY = RX - 640, y_cm(98)
-    c.append(C.desliza("REGUA_ERRADA", p["regua_errada"], 496, (IX - 1200, IY), (IX, IY), rot=-4, dur=10,
+    # no fecho a pessoa aparece INTEIRA ao lado da régua; as etiquetas das medidas ficam numa coluna à direita dela
+    # (LX), empilhadas na ordem da altura (1,69 em cima de 1,65), sem encostar na régua nem na legenda
+    LX = NX + 660
+    c.append(C.cai("ET_M0", p["m0"], 450, LX, y_cm(cm0), rot=-3, fim=496, **et))      # sai antes das unidades
+    c.append(C.Traco("X0a", [(LX - 230, y_cm(cm0) - 70), (LX + 70, y_cm(cm0) + 70)], 466, 472, espessura=30,
+                     curva="out", fim=496).camada)
+    c.append(C.Traco("X0b", [(LX + 70, y_cm(cm0) - 70), (LX - 230, y_cm(cm0) + 70)], 472, 478, espessura=30,
+                     curva="out", fim=496).camada)
+    # as duas unidades, deitadas e empilhadas, na área livre à direita da pessoa (onde estava o contraste)
+    UX, U0 = NX + 1050, y_cm(170)
+    IX, IY = UX, U0 + 133                                    # a régua inglesa, deitada
+    PX_, PY_ = UX, U0 + 720                                  # a régua do rei
+    c.append(C.desliza("REGUA_ERRADA", p["regua_errada"], 496, (IX + 1400, IY), (IX, IY), rot=-88, dur=10,
                        sombra=(10, 18, 0.3), fim=572))
-    c.append(C.cai("ET_REGUA_ERRADA", p["et_regua_errada"], 506, IX + 10, IY + 520, rot=-3, fim=572, **et))
-    c.append(C.cai("REGUA_CERTA", p["regua_certa"], 512, PX_, PY_, rot=-6, de_y=-200, sombra=(10, 18, 0.3), fim=572))
-    c.append(C.cai("ET_REGUA_CERTA", p["et_regua_certa"], 520, PX_ + 40, PY_ + 220, rot=3, fim=572, **et))
+    c.append(C.cai("ET_REGUA_ERRADA", p["et_regua_errada"], 506, UX, U0 + 420, rot=-2, fim=572, **et))
+    c.append(C.cai("REGUA_CERTA", p["regua_certa"], 512, PX_, PY_, rot=-3, de_y=-200, sombra=(10, 18, 0.3), fim=572))
+    c.append(C.cai("ET_REGUA_CERTA", p["et_regua_certa"], 520, UX, U0 + 1020, rot=2, fim=572, **et))
     pdw, pdh = p["regua_certa"].size
     fx, fy = REGUA_CERTA_CIRCULO
-    c.append(C.circulo("CIRC_UNIDADE", PX_ + pdw * (fx - 0.5), PY_ + pdh * (fy - 0.5), 105, 52, 530, 544, rot=-8,
+    c.append(C.circulo("CIRC_UNIDADE", PX_ + pdw * (fx - 0.5), PY_ + pdh * (fy - 0.5), 105, 52, 530, 544, rot=-5,
                        espessura=18, fim=572))
     c.append(marca("M1", cm1, 572, 586).camada)
-    c.append(C.cai("ET_M1", p["m1"], 586, NX + 390, y_cm(cm1) + 62, rot=2, **et))
+    c.append(C.cai("ET_M1", p["m1"], 586, LX, y_cm(cm2) + 600, rot=2, **et))
     c.append(marca("M2", cm2, 646, 660).camada)
-    c.append(C.cai("ET_M2", p["m2"], 660, NX + 390, y_cm(cm2) - 74, rot=-2, **et))
+    c.append(C.cai("ET_M2", p["m2"], 660, LX, y_cm(cm2) + 190, rot=-2, **et))
     c.append(C.Traco("VISTO", [(CAB[0] + 150, y_cm(cm2 + 7)), (CAB[0] + 190, y_cm(cm2 + 2)),
                                (CAB[0] + 270, y_cm(cm2 + 14))], 670, 680, espessura=20, curva="out").camada)
     c.append(C.rajada("RAJ_RESP", CAB[0], y_cm(cm2 + 2), 662, raio=380, cor=PC.VERMELHO))
     c.append(C.carimbo("c_fecho", p["c_fecho"], 694, 540, 1320, -4, esc=0.72, mundo=False))   # no lugar da legenda
-    c += C.letras("RESP", RESPOSTA, 652, 540, 400, corpo=170, cor=PC.VERMELHO, passo=2)        # a resposta, no alto
+    c += C.letras("RESP", RESPOSTA, 652, 645, 400, corpo=170, cor=PC.VERMELHO, passo=2)   # a resposta, no alto (à direita da régua)
     # ---- legendas (sempre no mesmo lugar: y 1320)
     for i, (a, b) in enumerate(TEMPOS_LEG[:len(LEGENDAS)]):
         c.append(C.legenda(f"LEG{i}", p[f"leg{i}"], a, b, rot=1.0 if i % 2 else -1.2))
@@ -346,13 +384,14 @@ def montar(p):
     K1 = Q((KX - 500, KY - 380, KX + 500, KY + 420))
     H_PES = Q((RX - 330, y_cm(198), NX + 440, CHAO + 40), REGIAO_SEM_LEG)
     H_MITO = Q((NX - 470, NY - 420, NX + 470, BY + 360))
-    H_ALL = Q((RX - 260, y_cm(212), GX + 420, CHAO + 40))
+    H_ALL = Q((RX - 260, y_cm(212), (GX + 420) if ct is not None else (NX + 440), CHAO + 40))   # sem contraste: a pessoa
     S1a = Q((SX - 880, SY - 1360, SX + 760, SY - 380))
-    S1b = Q((SX - 760, SY - 260, SX + 940, SY + 1100))
-    S2 = (1.0, FOCO_PAG[0] - 40, FOCO_PAG[1] + 350, 0.0)            # mergulho na linha da medida
-    H_CAB = Q((RX - 360, y_cm(205), NX + 540, y_cm(95)))
-    RG = Q((IX - 330, y_cm(160), PX_ + 380, y_cm(40)))
-    H_FIM = Q((RX - 360, y_cm(196), NX + 540, y_cm(80)), (80, 470, 960, 1420))   # o alto fica para a resposta
+    S1b = Q((SX - 760, SY + 640, SX + 940, SY + 1600))
+    pw_, ph_ = p["pag"].size
+    S2 = Q((PGX - pw_ / 2, PGY - ph_ / 2, PGX + pw_ / 2, PGY + ph_ / 2))   # a página inteira, com a medida sublinhada
+    H_CAB = Q((RX - 340, y_cm(185), NX + 1140, CHAO + 40))                 # a pessoa inteira e a coluna das medidas
+    RG = Q((UX - 520, U0 - 20, UX + 520, U0 + 1150))
+    H_FIM = Q((RX - 340, y_cm(185), NX + 1140, CHAO + 40), (80, 450, 960, 1190))   # alto: resposta; embaixo: carimbo
 
     def deriva(z, f=1.03):
         return (z[0] * f,) + z[1:]
@@ -363,7 +402,7 @@ def montar(p):
            .plano(226, H_ALL, "lin").plano(300, deriva(H_ALL), "segura")
            .plano(318, S1a, "lin").plano(346, deriva(S1a), "io")
            .plano(360, S1b, "lin").plano(370, S1b, "io")
-           .plano(382, S2, "lin").plano(418, deriva(S2, 1.04), "segura")
+           .plano(382, S2, "lin").plano(418, deriva(S2, 1.02), "segura")
            .plano(434, H_CAB, "lin").plano(494, deriva(H_CAB, 1.02), "io")
            .plano(508, RG, "lin").plano(560, deriva(RG), "io")
            .plano(574, H_CAB, "lin").plano(646, deriva(H_CAB), "io")

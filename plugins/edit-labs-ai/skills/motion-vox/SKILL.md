@@ -423,7 +423,8 @@ contando: a ação, o lugar, gente fazendo algo. Guia completo, com a geração 
 
 ## 8. Render e montagem
 
-Use `lib/render.py`. **Base de vídeo por CONCATENAÇÃO** (fonte + cutaways, blocos
+Use o `render.py` do projeto (o `mv-novo-projeto` o copia de `lib/render_template.py`; rode com
+`mvpy render.py`). **Base de vídeo por CONCATENAÇÃO** (fonte + cutaways, blocos
 discretos, um atrás do outro) — **não** overlay condicional encadeado. A legenda
 continua overlay (RGBA, sempre ativa, por cima de tudo).
 

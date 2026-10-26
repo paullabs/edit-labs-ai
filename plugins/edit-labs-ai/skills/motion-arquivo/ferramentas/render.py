@@ -2,7 +2,7 @@
 """
 Projeto -> mp4 1080x1920 com a narracao.
 
-    python3 render.py <projeto> [saida.mp4] [--de Q] [--ate Q] [--crf 14]
+    mvpy render.py <projeto> [saida.mp4] [--de Q] [--ate Q] [--crf 14]
 
 Cada quadro mostra o estado do ultimo degrau da grade de 10 qps; o estado e montado uma
 vez e reaproveitado nos tres quadros (o grao congela junto, como no original). Audio:
@@ -27,6 +27,9 @@ de = int(a[a.index("--de") + 1]) if "--de" in a else cena.INICIO
 ate = int(a[a.index("--ate") + 1]) if "--ate" in a else cena.FIM
 Path(saida).parent.mkdir(parents=True, exist_ok=True)
 aud = cena.audio
+if not Path(aud).is_file():
+    sys.exit(f"falta o audio da cena: {aud}\n(o campo \"audio\" do plano.json aponta para ele; grave ou copie a "
+             f"narracao para esse caminho antes de renderizar)")
 inteira = de == cena.INICIO == 0 and ate == cena.FIM
 if inteira and aud.suffix.lower() in (".mp4", ".m4a", ".aac", ".mov"):
     ent_a, cod_a = ["-i", str(aud)], ["-c:a", "copy"]

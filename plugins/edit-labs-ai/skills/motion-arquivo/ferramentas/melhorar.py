@@ -2,12 +2,12 @@
 """
 Melhora um asset para a cena. Entrada em qualquer pasta do projeto; saida em assets/prontos/.
 
-    python3 melhorar.py recorte     <entrada> <saida.png> [--tol 22] [--tudo]
-    python3 melhorar.py recorte-ceu <entrada> <saida.png>            (fundo em degrade + chao)
-    python3 melhorar.py pb-cor      <entrada> <saida.png> --faixa 170,8 [--faixa 35,85] [--sat 70]
-    python3 melhorar.py casar-cor   <entrada> <saida.png> --de R,G,B:R,G,B --para R,G,B:R,G,B
-    python3 melhorar.py ampliar     <entrada> <saida.png> --fator 2
-    python3 melhorar.py grao        <entrada> <saida.png> [--forca 5.0]
+    mvpy melhorar.py recorte     <entrada> <saida.png> [--tol 22] [--tudo]
+    mvpy melhorar.py recorte-ceu <entrada> <saida.png>            (fundo em degrade + chao)
+    mvpy melhorar.py pb-cor      <entrada> <saida.png> --faixa 170,8 [--faixa 35,85] [--sat 70]
+    mvpy melhorar.py casar-cor   <entrada> <saida.png> --de R,G,B:R,G,B --para R,G,B:R,G,B
+    mvpy melhorar.py ampliar     <entrada> <saida.png> --fator 2
+    mvpy melhorar.py grao        <entrada> <saida.png> [--forca 5.0]
 
 Receitas e porques em referencias/assets.md.
 """

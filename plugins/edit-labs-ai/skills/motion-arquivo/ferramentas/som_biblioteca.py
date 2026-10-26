@@ -4,7 +4,7 @@ Recorta, da pasta de efeitos do PRÓPRIO usuário, o trecho útil de cada som qu
 cauda) e grava o mapa em JSON. Não copia nada: o mapa guarda só o caminho relativo, o recorte e a âncora
 (referencias/som.md). Sem pasta de sons, o mixador usa os efeitos sintetizados de motor/som.py.
 
-    python3 som_biblioteca.py [<pasta_de_sons>] [<saida.json>] [--escolha <escolha.json>]
+    mvpy som_biblioteca.py [<pasta_de_sons>] [<saida.json>] [--escolha <escolha.json>]
 
 <pasta_de_sons>  padrão: $EDITLABS_SONS. Qualquer organização de subpastas serve.
 <saida.json>     padrão: $EDITLABS_SONS_MAPA ou $EDITLABS_DATA/motion-arquivo/som_biblioteca.json (fora do plugin).

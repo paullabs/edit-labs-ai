@@ -1,10 +1,10 @@
 """Peças do explicador Vox no tamanho planejado do plano.json, em resolução R x (R = 2: o mundo aguenta o
 mergulho de 2x da câmera sem borrar). Toda peça que gira tem o pivô no centro do arquivo.
 
-    python pecas.py base <pasta_pecas>
+    clpy pecas.py base <pasta_pecas>
         -> fundo_papel, fundo_carvao, grade_papel, grade_escuro, vinheta (servem para qualquer vídeo do estilo)
 
-    python pecas.py exemplo --reais <pasta> --gerados <pasta> --lizars <pasta> --saida <pasta_pecas>
+    clpy pecas.py exemplo --reais <pasta> --gerados <pasta> --lizars <pasta> --saida <pasta_pecas>
         -> as receitas do exemplo "soco no queixo" (pessoa de cima, luva, pino, fita, chave, crânio e cérebro,
            foto em cartão, cartão do artigo). Use como modelo: as coordenadas foram medidas nas imagens daquele
            vídeo (ver os comentários) e mudam com as suas.

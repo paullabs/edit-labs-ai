@@ -1,6 +1,6 @@
 """Conferência do vídeo pronto: quadros borrados fora do lugar e saltos bruscos.
 
-    python3 -I qa.py video.mp4 [inicio-fim de transição em s, ...]
+    clpy qa.py video.mp4 [inicio-fim de transição em s, ...]
 
 Mede a nitidez (variância do Laplaciano) de cada desenho em resolução reduzida e aponta os desenhos com menos de 45% da
 nitidez mediana do segundo em volta, fora das janelas de transição informadas."""

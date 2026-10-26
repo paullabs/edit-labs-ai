@@ -1,5 +1,5 @@
 {
- "titulo": "Teste do pipeline (voz sintetica do macOS so para tempo)",
+ "titulo": "Teste do pipeline (narracao do usuario em audio/narracao.wav)",
  "audio": "audio/narracao.wav",
  "planos": [
   {"tipo": "gancho_digitado", "inicio": 0, "fim": 35, "texto": "NINGUÉM"},
@@ -11,7 +11,7 @@
    "palavras": [{"texto": "o arquivo", "quadro": 242}, {"texto": "virou", "quadro": 254}, {"texto": "movimento.", "quadro": 263}]},
   {"tipo": "lista_ui", "inicio": 290, "fim": 347, "saida_desde": 335,
    "itens": [{"texto": "Ícone", "quadro": 290}, {"texto": "Cursor", "quadro": 308}, {"texto": "Site", "quadro": 326}]},
-  {"tipo": "icone_cursor", "inicio": 347, "fim": 410, "icone": "icone_adobe_after_effects_2026_aep.png",
+  {"tipo": "icone_cursor", "inicio": 347, "fim": 410, "icone": "icone_app.png",
    "cursor": "cursor_pointinghand.png"}
  ]
 }

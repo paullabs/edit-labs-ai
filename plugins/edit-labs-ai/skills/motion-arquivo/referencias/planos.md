@@ -105,7 +105,7 @@ Opcionais: `moldura` (do kit), `ponto`, `zoom_foto`, `largura_legenda` 484,5, `y
 Ícone REAL (`assets_locais.py icone`) e cursor REAL (`assets_locais.py cursor pointinghand`);
 câmera abre 2,43 → 1; o dedo chega, agarra e arrasta nos 4 últimos degraus.
 ```json
-{"tipo": "icone_cursor", "inicio": 845, "fim": 905, "icone": "icone_adobe_after_effects_2026_aep.png",
+{"tipo": "icone_cursor", "inicio": 845, "fim": 905, "icone": "icone_app.png",
  "cursor": "cursor_pointinghand.png"}
 ```
 Opcionais: `cor_icone` (mapa por canal de `melhorar.py casar-cor`), `largura_icone` 120,

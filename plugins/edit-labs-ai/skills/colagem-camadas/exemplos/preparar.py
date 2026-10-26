@@ -1,11 +1,13 @@
 """Prepara os insumos de cada exemplo (monta o .blend e renderiza as camadas pela mesma câmera) na pasta de trabalho.
 
-    python3 preparar.py manequim     peças por diferença entre fotos (pacote de pranchas da release)
-    python3 preparar.py luva         mao.blend (Z-Anatomy + luva) e as vistas da mão e do giro dos ossos
-    python3 preparar.py cranio       cranio.blend (Z-Anatomy + BodyParts3D), camadas, giros e a luva do soco
-    python3 preparar.py estalar      mão em 2×, junta com a bolha, mão com esqueleto (precisa do passo luva antes)
-    python3 preparar.py homem        texturas do terno, homem2.blend (Z-Anatomy + BodyParts3D), anatomia e coração
-    python3 preparar.py terra        terra.blend (modelo próprio) e as 36 vistas
+    clpy preparar.py manequim     peças por diferença entre fotos (pacote de pranchas da release)
+    clpy preparar.py luva         mao.blend (Z-Anatomy + luva) e as vistas da mão e do giro dos ossos
+    clpy preparar.py cranio       cranio.blend (Z-Anatomy + BodyParts3D), camadas, giros e a luva do soco
+    clpy preparar.py estalar      mão em 2×, junta com a bolha, mão com esqueleto (precisa do passo luva antes)
+    clpy preparar.py homem        texturas do terno, homem2.blend (Z-Anatomy + BodyParts3D), anatomia e coração
+    clpy preparar.py terra        terra.blend (modelo próprio) e as 36 vistas
+    clpy preparar.py espirro      garganta.blend (pacote Z-Anatomy da garganta) e os 4 patamares (+ o ouvido, se você montou)
+    clpy preparar.py subsolo      subsolo.blend (bloco geológico próprio) e as vistas das camadas (exemplo cena_subsolo.py)
 
 Variáveis: BLENDER (executável do Blender 4.x/5.x; padrão "blender"), EDITLABS_DATA (onde estão os assets da
 release), COLAGEM_TRABALHO (pasta de trabalho; padrão ./colagem-trabalho). Nada é baixado aqui: os pacotes da release
@@ -80,7 +82,7 @@ def cranio():
 
 def estalar():
     mao = T / "luva" / "mao.blend"
-    CM.exige(mao, como="python3 preparar.py luva")
+    CM.exige(mao, como="clpy preparar.py luva")
     for p in ("mao", "junta", "rig"):
         (T / "estalar" / p).mkdir(parents=True, exist_ok=True)
     render("estalar/cfg_mao2x.json")
@@ -98,8 +100,8 @@ def homem():
     blender(EX / "homem2_blender.py", camadas, T / "homem2", T / "homem2" / "homem2.blend", pele_bp)
     render("homem/cfg_anat.json")
     render("homem/cfg_coracao.json")
-    print("Agora a foto: recorte em homem3/recorte/foto3_recorte.png, depois homem3_pecas.py e homem3_poses_ia.py "
-          "(ver o cabeçalho de cada um).")
+    CM.homem3("poses/repouso.png")                                    # o recorte e as poses: pacote colagem-homem3
+    print("A foto e as poses vêm do pacote colagem-homem3 (homem3_poses_ia.py só para refazer as poses).")
 
 
 def terra():
@@ -108,7 +110,26 @@ def terra():
     render("terra/cfg.json")
 
 
-PASSOS = {"manequim": manequim, "luva": luva, "cranio": cranio, "estalar": estalar, "homem": homem, "terra": terra}
+def espirro():
+    glb = CM.asset_3d("z-anatomy-garganta/zanatomy_garganta.glb")
+    CM.homem3("poses/repouso.png")                                    # o homem de foto: pacote colagem-homem3
+    gar = T / "espirro" / "garganta"
+    gar.mkdir(parents=True, exist_ok=True)
+    if not (gar / "garganta.blend").exists():
+        blender(EX / "garganta_glb.py", glb, gar / "garganta.blend")
+    pats = ["base", "meio", "peito", "alto"] + (["ouvido"] if (gar / "ouvido.blend").exists() else [])
+    python(EX / "garganta_render.py", *pats)
+
+
+def subsolo():
+    (T / "subsolo").mkdir(parents=True, exist_ok=True)
+    blender(CM.SKILL / "modelos" / "presal_blender.py", T / "subsolo" / "subsolo.blend")
+    render("subsolo/cfg.json")
+    python(EX / "subsolo_pecas.py")
+
+
+PASSOS = {"manequim": manequim, "luva": luva, "cranio": cranio, "estalar": estalar, "homem": homem, "terra": terra,
+          "espirro": espirro, "subsolo": subsolo}
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] not in PASSOS:

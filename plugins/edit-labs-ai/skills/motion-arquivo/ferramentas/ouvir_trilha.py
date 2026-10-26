@@ -2,7 +2,7 @@
 """
 "Ouve" uma trilha antes de usar: mede se ela serve de fundo para voz dramática e onde ela muda.
 
-    python3 ouvir_trilha.py <saida.json> <música> [<música> ...] [--sem-voz]
+    mvpy ouvir_trilha.py <saida.json> <música> [<música> ...] [--sem-voz]
 
 Por faixa:
   andamento (bpm) e pulso    força da batida (pico da autocorrelação do fluxo espectral sobre o fundo)

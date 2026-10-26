@@ -2,3 +2,7 @@
 colagem-pranchas            207MB  pranchas antigas com abas (manequim de 1890, Witkowski, Albinus) — domínio público e CC BY 4.0
 colagem-zanatomy-camadas    33MB   camadas 3D de anatomia do Z-Anatomy (pele, músculos, órgãos, esqueleto, crânio, coração, mão) — CC BY-SA 4.0
 colagem-bodyparts3d         68MB   cérebro e partes do BodyParts3D alinhados ao Z-Anatomy — CC BY-SA 2.1 JP
+colagem-zanatomy-garganta   11MB   a garganta do Z-Anatomy em camadas num GLB (exemplo do espirro) — CC BY-SA 4.0
+colagem-homem3              77MB   homem de terno da foto NMAAHC recortado e as poses do tchau (braço gerado por IA) — CC0
+colagem-historia-fotos      31MB   fotos e recortes livres dos exemplos de história (Napoleão, régua do tempo) — domínio público, CC0 e CC BY/BY-SA com crédito
+colagem-trilhas-cc-by       31MB   4 trilhas-leito de Kevin MacLeod em MP3 — CC BY 3.0/4.0 (crédito obrigatório)

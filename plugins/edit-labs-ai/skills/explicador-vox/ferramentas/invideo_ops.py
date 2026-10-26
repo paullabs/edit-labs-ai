@@ -1,12 +1,12 @@
 """Traduz o plano.json (as mesmas camadas da prévia local) em operações do edit_timeline do invideo.
 
-    python invideo_ops.py bin     --plano plano.json --pecas pecas/ --pasta invideo/
+    clpy invideo_ops.py bin     --plano plano.json --pecas pecas/ --pasta invideo/
         -> invideo/bin.json com a lista do que subir; preencha os ids de mídia depois do add_media
-    python invideo_ops.py criar   --plano plano.json --pecas pecas/ --pasta invideo/ [--som som.json]
+    clpy invideo_ops.py criar   --plano plano.json --pecas pecas/ --pasta invideo/ [--som som.json]
         -> invideo/ops/criar_T2.json (MUNDO), criar_T1.json (TELA), criar_audio.json
-    python invideo_ops.py reg     --pasta invideo/ <criar_XX.json> '<json do "created" que o invideo devolveu>'
+    clpy invideo_ops.py reg     --pasta invideo/ <criar_XX.json> '<json do "created" que o invideo devolveu>'
         -> casa os ids criados com as camadas (invideo/estado.json)
-    python invideo_ops.py chaves  --plano plano.json --pecas pecas/ --pasta invideo/
+    clpy invideo_ops.py chaves  --plano plano.json --pecas pecas/ --pasta invideo/
         -> invideo/ops/chaves.json: estáticos, faixas de chave e pontos (precisa do estado.json)
 
 Regras medidas no invideo (ver referencias/invideo.md):

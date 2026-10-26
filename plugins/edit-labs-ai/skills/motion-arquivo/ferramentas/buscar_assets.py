@@ -3,9 +3,9 @@
 Busca assets REAIS em acervos abertos — so METADADOS (titulo, licenca, autor, tamanho, URL).
 Nao baixa nada: a lista vai para o usuario aprovar, e so entao baixar_asset.py baixa.
 
-    python3 buscar_assets.py commons  "Hedy Lamarr 1940" [--n 10]
-    python3 buscar_assets.py openverse "radio tower vintage" [--n 10]
-    python3 buscar_assets.py nasa "apollo 11 launch" [--n 10]
+    mvpy buscar_assets.py commons  "Hedy Lamarr 1940" [--n 10]
+    mvpy buscar_assets.py openverse "radio tower vintage" [--n 10]
+    mvpy buscar_assets.py nasa "apollo 11 launch" [--n 10]
 
 commons    Wikimedia Commons (arquivos), licenca do extmetadata
 openverse  agregador de imagens CC (Flickr, museus...) — so licencas de uso comercial

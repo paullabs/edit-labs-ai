@@ -2,7 +2,7 @@
 """
 Narracao -> palavras com inicio e fim (faster-whisper large-v3-turbo).
 
-    python3 transcrever.py <audio-ou-video> <projeto>/transcricao.json [idioma]
+    mvpy transcrever.py <audio-ou-video> <projeto>/transcricao.json [idioma]
 
 O tempo vem do AUDIO, nunca do roteiro. Modelo menor erra o inicio da palavra em ate
 ~0,15 s — meio degrau da grade de 10 qps; nao trocar.
