@@ -1,0 +1,23 @@
+{
+ "modelo": "{LUVA_GLB}",
+ "lente": 0,
+ "elevacao": 12.0,
+ "giro_inicial": 0.0,
+ "motor": "WORKBENCH",
+ "cor_tipo": "MATERIAL",
+ "passes": [
+  "cor",
+  "luz"
+ ],
+ "saida": "{TRABALHO}/cranio/luva/vistas_soco",
+ "vistas": 1,
+ "res": [
+  1600,
+  1600
+ ],
+ "camadas": {
+  "luva": [
+   ".*"
+  ]
+ }
+}

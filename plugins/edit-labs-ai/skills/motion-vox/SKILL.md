@@ -13,7 +13,7 @@ description: >-
 
 # Motion editorial sobre footage
 
-Insere cenas de motion no estilo `VOX-EXPLAINER-LABS` dentro de um clipe vertical que
+Insere cenas de motion no estilo Vox explainer dentro de um clipe vertical que
 **já existe**. A fala e seus tempos são preservados: não reescrever ou cortar palavras
 para encaixar motion. Efeitos sonoros pedidos entram em uma camada separada, com seleção,
 recorte e ganho por evento; ver `referencias/som-local.md`.
@@ -423,7 +423,8 @@ contando: a ação, o lugar, gente fazendo algo. Guia completo, com a geração 
 
 ## 8. Render e montagem
 
-Use `lib/render.py`. **Base de vídeo por CONCATENAÇÃO** (fonte + cutaways, blocos
+Use o `render.py` do projeto (o `mv-novo-projeto` o copia de `lib/render_template.py`; rode com
+`mvpy render.py`). **Base de vídeo por CONCATENAÇÃO** (fonte + cutaways, blocos
 discretos, um atrás do outro) — **não** overlay condicional encadeado. A legenda
 continua overlay (RGBA, sempre ativa, por cima de tudo).
 

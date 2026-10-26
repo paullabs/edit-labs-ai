@@ -1,0 +1,25 @@
+{
+ "modelo": "{TRABALHO}/luva/mao.blend",
+ "saida": "{TRABALHO}/luva/vistas_giro",
+ "vistas": 36,
+ "res": [
+  1100,
+  1100
+ ],
+ "lente": 0,
+ "elevacao": 0,
+ "motor": "WORKBENCH",
+ "cor_tipo": "MATERIAL",
+ "passes": [
+  "cor",
+  "luz"
+ ],
+ "camadas": {
+  "ossos_mao": [
+   "^osso__(?!(Radius|Ulna))"
+  ]
+ },
+ "enquadrar": [
+  "ossos_mao"
+ ]
+}

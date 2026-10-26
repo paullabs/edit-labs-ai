@@ -1,0 +1,8 @@
+# motion-arquivo — dependências Python (o editlabs-setup instala no ambiente do plugin).
+# Mesmo ambiente da motion-vox serve: versões compatíveis com ela.
+numpy>=1.24,<2.3
+opencv-python>=4.8
+Pillow>=10.0
+faster-whisper>=1.1
+# Programas fora do pip: ffmpeg (com libx264) no PATH; no macOS, swift (xcode-select --install) para o cursor do
+# sistema e a máscara do sujeito (opcional).

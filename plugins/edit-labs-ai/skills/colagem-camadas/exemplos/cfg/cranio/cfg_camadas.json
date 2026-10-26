@@ -1,0 +1,77 @@
+{
+ "modelo": "{TRABALHO}/cranio/cranio.blend",
+ "lente": 0,
+ "elevacao": 12.0,
+ "giro_inicial": 35.0,
+ "motor": "WORKBENCH",
+ "cor_tipo": "MATERIAL",
+ "passes": [
+  "cor",
+  "luz"
+ ],
+ "saida": "{TRABALHO}/cranio/vistas_camadas",
+ "vistas": 1,
+ "res": [
+  1504,
+  2000
+ ],
+ "ajuste": "caixa",
+ "caixa_mundo": [
+  -0.09309,
+  1.48585,
+  0.07472,
+  1.70898
+ ],
+ "camadas": {
+  "base": [
+   "^base__(?!.*cartilag)"
+  ],
+  "tampa": [
+   "^tampa__(?!.*cartilag)"
+  ],
+  "cerebro": [
+   "^(cer|cbl)__"
+  ],
+  "liquido": [
+   "^liq__"
+  ],
+  "cranio": [
+   "^(base|tampa)__(?!.*cartilag)"
+  ],
+  "encaixe": [
+   "^base__(?!.*cartilag)",
+   "^(cer|cbl)__"
+  ],
+  "encaixe_liquido": [
+   "^base__(?!.*cartilag)",
+   "^liq__"
+  ]
+ },
+ "marcos": {
+  "centro_cerebro": [
+   -0.0,
+   0.00819,
+   1.62751
+  ],
+  "centro_cranio": [
+   -5e-05,
+   -0.0062,
+   1.60088
+  ],
+  "centro_tampa": [
+   -5e-05,
+   0.00818,
+   1.65272
+  ],
+  "tampa_topo": [
+   0.00015,
+   0.01192,
+   1.70545
+  ],
+  "corte_testa": [
+   0.0,
+   -0.087,
+   1.633
+  ]
+ }
+}

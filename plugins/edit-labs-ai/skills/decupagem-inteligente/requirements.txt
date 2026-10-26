@@ -1,0 +1,9 @@
+# decupagem-inteligente — roda no venv-corte do Edit Labs AI ($EDITLABS_DATA/venv-corte), o mesmo da corte-viral.
+# Tudo abaixo já vem com a corte-viral; instalar este arquivo no venv-corte é só uma conferência.
+# OpenCV: usa o opencv-contrib-python fixado pela corte-viral (não instale opencv-python-headless junto: os dois brigam pelo cv2).
+faster-whisper>=1.1
+numpy>=1.24
+Pillow>=10
+opencv-contrib-python==4.10.0.84
+pyyaml>=6
+jsonschema>=4

@@ -1,7 +1,9 @@
 # Edit Labs AI — plugin para o Claude Code
 
-Do link de um podcast ao vertical pronto para Reels, TikTok e Shorts: corte, enquadramento, motion design,
-B-roll em vídeo, legenda queimada e verificação. O Claude Code faz o trabalho; você decide nos portões.
+Vídeo vertical pronto para Reels, TikTok e Shorts, em vários estilos: **cortes editados de podcast** (corte,
+enquadramento, motion, B-roll, legenda), **explicador em colagem com camadas** (corpo humano e objetos por
+dentro), **curiosidade histórica** em colagem, **explicador Vox** com voz, **documentário de arquivo** e
+**decupagem do bruto ao master**. O Claude Code faz o trabalho, pergunta pouco e você decide nos portões.
 
 ## Antes de instalar: Higgsfield
 
@@ -30,7 +32,8 @@ brew install ffmpeg yt-dlp deno python@3.12
 Pelo terminal: `claude plugin marketplace add paullabs/edit-labs-ai` e `claude plugin install edit-labs-ai@edit-labs-ai`.
 Sem GitHub, a partir de uma pasta com este repositório: `/plugin marketplace add /caminho/para/a/pasta`.
 
-**3. Reinicie o Claude Code** e peça: *"roda o editlabs-setup"*. Ele confere os programas, cria os ambientes
+**3. Reinicie o Claude Code** e peça: *"roda o editlabs-setup"* (para os estilos de colagem e o explicador Vox:
+*"roda o editlabs-setup --colagem"*). Ele confere os programas, cria os ambientes
 Python em `~/.local/share/edit-labs-ai/`, fora do plugin para sobreviverem às atualizações, e verifica tudo.
 
 **4. Confira o Higgsfield**: o Claude checa o conector no começo de cada projeto e, se ele não estiver ligado,
@@ -38,7 +41,10 @@ para e manda o link acima.
 
 ## Usar
 
-Abra o Claude Code numa pasta vazia e peça, um por vez:
+Abra o Claude Code numa pasta vazia e diga que vídeo quer: a porta de entrada (`edit-labs-ai`) pergunta o mínimo
+e escolhe o estilo. Os estilos e as regras estão em `plugins/edit-labs-ai/README.md` e `plugins/edit-labs-ai/REGRAS.md`.
+
+Para cortes de um vídeo longo, peça, um por vez:
 
 1. "Baixa esse vídeo para a pasta do projeto: [link]"
 2. "Acha os melhores momentos" → **você escolhe**

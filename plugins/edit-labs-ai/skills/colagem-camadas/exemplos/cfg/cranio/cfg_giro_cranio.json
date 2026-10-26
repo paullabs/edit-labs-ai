@@ -1,0 +1,32 @@
+{
+ "modelo": "{TRABALHO}/cranio/cranio.blend",
+ "lente": 0,
+ "elevacao": 12.0,
+ "giro_inicial": 35.0,
+ "motor": "WORKBENCH",
+ "cor_tipo": "MATERIAL",
+ "passes": [
+  "cor",
+  "luz"
+ ],
+ "saida": "{TRABALHO}/cranio/vistas_giro_cranio",
+ "vistas": 36,
+ "res": [
+  2000,
+  2000
+ ],
+ "enquadrar": [
+  "cranio"
+ ],
+ "camadas": {
+  "cranio": [
+   "^(base|tampa)__(?!.*cartilag)"
+  ],
+  "base": [
+   "^base__(?!.*cartilag)"
+  ],
+  "tampa": [
+   "^tampa__(?!.*cartilag)"
+  ]
+ }
+}

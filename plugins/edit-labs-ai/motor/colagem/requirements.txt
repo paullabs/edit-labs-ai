@@ -1,0 +1,6 @@
+# motor de colagem — versões do ambiente de referência (as mesmas da motion-vox).
+# Também precisa do ffmpeg no PATH (render e som). O Blender (4.x/5.x) só para os passos 3D (blender_giro.py e os
+# *_blender.py das skills); ele usa o Python próprio dele, não este ambiente.
+numpy==2.0.2
+opencv-python==4.10.0.84
+Pillow==11.3.0

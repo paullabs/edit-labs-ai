@@ -1,0 +1,76 @@
+# Régua da decupagem-inteligente — MODELO (vem com o plugin; nunca se grava aqui).
+#
+# Para que serve: preferência que o usuário já respondeu NÃO se pergunta de novo. Cada item abaixo é uma pergunta
+# de múltipla escolha, com as opções e o padrão recomendado. Enquanto `literal` estiver vazio, o item está em
+# aberto: vai UMA vez na mensagem do portão (saída na F0; os itens de motion no portão do corte, F3), junto das
+# outras perguntas, com o padrão marcado. "vai" = aceita os padrões.
+#
+# Onde ficam as respostas: `di portao responder --chave saida|regua.<item> --resposta "<opção escolhida>"` grava a
+# resposta no projeto E na régua do usuário, fora do plugin:
+#   $EDITLABS_DATA/decupagem-inteligente/regua.yaml   (padrão ~/.local/share/edit-labs-ai/decupagem-inteligente/)
+# O código lê este modelo e cobre com as respostas de lá. Todo projeto novo herda. Para valer só num projeto:
+# `--so-projeto`. Para voltar a perguntar um item: apague-o do arquivo do usuário.
+#
+# Campos: `pergunta` e `opcoes` (o texto da pergunta), `padrao` (a opção recomendada, sempre a primeira),
+# `literal` (a resposta do usuário, palavra por palavra), `valor` (o que o código usa).
+# `valor: decidir_vendo` = o piloto sai nas duas variantes, lado a lado, e o usuário escolhe vendo.
+# Outras skills do plugin (explicador-vox, motion-arquivo, time-motion) leem a mesma régua para não repetir perguntas.
+respondido_em: null
+
+saida:
+  pergunta: "Em que formato sai o vídeo?"
+  opcoes: ["as duas: vertical 9:16 e horizontal 16:9", "só vertical 9:16", "só horizontal 16:9"]
+  padrao: "as duas: vertical 9:16 e horizontal 16:9"
+  literal: null
+  valor: null             # V | H | ambas
+
+motion_fps:
+  pergunta: "O desenho do motion anda em quantos quadros por segundo?"
+  opcoes: ["12 qps, o passo de colagem da motion-vox", "24 qps, mais liso"]
+  padrao: "12 qps, o passo de colagem da motion-vox"
+  literal: null
+  valor: null             # inteiro; o padrão é 12 (o desenho segura em degraus de 1/12 s; grão e flash seguem a cadência do vídeo)
+
+densidade:
+  pergunta: "Quanto do vídeo leva motion?"
+  opcoes: ["bastante: 65–75% do vídeo com motion, nenhuma cena parada", "moderado: só as frases-chave", "pouco: só nomes e números"]
+  padrao: "bastante: 65–75% do vídeo com motion, nenhuma cena parada"
+  literal: null
+  valor: null             # doutrina_motion_vox (= 65–75%) ou [mín, máx] em fração do vídeo
+
+prints_oficiais:
+  pergunta: "Quando a fala cita uma marca, entra o logo oficial dela?"
+  opcoes: ["sim, o logo oficial da marca citada", "não, só o nome escrito"]
+  padrao: "sim, o logo oficial da marca citada"
+  literal: null
+  valor: null             # logos_sim | logos_nao (baixar o logo sempre pede o "pode" do usuário, projeto a projeto)
+
+fim_de_cena:
+  pergunta: "Como cada cena de motion sai da tela?"
+  opcoes: ["com flash curto, o padrão da motion-vox", "sem flash, corte seco", "quero decidir vendo"]
+  padrao: "com flash curto, o padrão da motion-vox"
+  literal: null
+  valor: null             # flash | sem_flash | decidir_vendo
+
+estilo:
+  # Regras de estilo do motion. Não são perguntas: são a régua que o plano (F4), a criação (F5) e o Diretor
+  # (C4, D1–D5) conferem cena por cena. Valem para todo projeto; mudar uma regra é editar a régua do usuário.
+  regras:
+    - id: E1
+      regra: "12 qps no desenho, grão por cima, RGB (aberração cromática) mínimo, assets texturizados e bonitos"
+    - id: E2
+      regra: "tudo com Turbulent Displace leve (o boil da motion-vox), bem leve: a edição parece viva, nunca tremida"
+    - id: E3
+      regra: "toda cena faz sentido com a fala: o elemento representa O QUE DE FATO É o que foi dito"
+    - id: E4
+      regra: "marca citada → logo oficial daquela marca; nunca um ícone genérico no lugar"
+    - id: E5
+      regra: "proibido abstrato: círculo vazio, forma geométrica sem referente, ícone de 'ideia' genérico"
+    - id: E6
+      regra: "situação com pessoas → a pessoa aparece (corpo, mãos, figura): negociação = duas mãos apertando; nunca só palavra"
+    - id: E7
+      regra: "palavra escrita só para coisas específicas (título, nome, número); título vem acompanhado de um elemento que faz parte dele"
+    - id: E8
+      regra: "toda cena com bastante motion design; nada estático, nada clichê"
+    - id: E9
+      regra: "assets sob medida: cada cena ganha o objeto da própria fala, no mesmo mundo do kit; nada de repetir os mesmos assets em toda cena"

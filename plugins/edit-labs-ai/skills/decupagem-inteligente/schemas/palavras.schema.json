@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "di-palavras/1",
+  "type": "object",
+  "required": [
+    "schema",
+    "engine",
+    "modelo",
+    "palavras"
+  ],
+  "properties": {
+    "schema": {
+      "const": "di-palavras/1"
+    },
+    "palavras": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "i",
+          "w",
+          "t",
+          "e",
+          "p",
+          "seg"
+        ],
+        "properties": {
+          "i": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "w": {
+            "type": "string"
+          },
+          "t": {
+            "type": "number"
+          },
+          "e": {
+            "type": "number"
+          },
+          "p": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "seg": {
+            "type": "integer"
+          },
+          "spk": {
+            "type": "string"
+          },
+          "ambigua": {
+            "type": "boolean"
+          },
+          "sugerido": {
+            "type": "string"
+          },
+          "w_confirmado": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

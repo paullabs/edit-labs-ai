@@ -1,0 +1,5 @@
+# explicador-vox — as mesmas versões do motor de colagem e da motion-vox (render igual pixel a pixel).
+# Também precisa do ffmpeg no PATH (prévia e som). A transcrição palavra a palavra usa o faster-whisper da motion-vox.
+numpy==2.0.2
+opencv-python==4.10.0.84
+Pillow==11.3.0

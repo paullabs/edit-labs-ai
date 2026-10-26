@@ -1,0 +1,753 @@
+{
+  "versao": 1,
+  "atualizado": "2026-10-26",
+  "nota": "Fonte única do banco. CATALOGO.md é gerado daqui por ferramentas/refs.py. Profundidade: a-fundo (quadros do vídeo, texto e medidas), vista (abri a página ou vi quadros, sem estudo completo), citada (só apareceu em busca ou artigo; não confie nos detalhes). Licença: a declarada pela fonte; tudo de terceiros é referência de estudo: abrir o link, nunca copiar nem redistribuir imagem, vídeo ou áudio.",
+  "vocabulario": {
+    "tema": [
+      "anatomia",
+      "corpo",
+      "ciencia",
+      "dados",
+      "historia",
+      "documento",
+      "geral"
+    ],
+    "tipo": [
+      "video",
+      "projeto",
+      "livro",
+      "acervo",
+      "tutorial",
+      "pin",
+      "interno"
+    ],
+    "mecanica": [
+      "personagem-foto-recortada",
+      "cor-em-degrade",
+      "grade-de-figuras",
+      "entrada-em-fila",
+      "troca-no-lugar",
+      "grafico-como-objeto",
+      "textura-nos-dados",
+      "marca-texto",
+      "anotacao-manuscrita",
+      "papel-vazio",
+      "documento-fotocopiado",
+      "gravura-animada",
+      "camadas-de-papel",
+      "aba-que-levanta",
+      "recorte-articulado",
+      "treme-leve",
+      "confete",
+      "mapa",
+      "etiqueta-presa",
+      "vida-sutil",
+      "paleta-minima",
+      "moldura-de-titulo",
+      "colagem-barroca",
+      "meio-tom",
+      "ritmo-de-recorte",
+      "tecnica-after-effects",
+      "pack-de-fontes",
+      "objeto-volta-transformado",
+      "foto-pb-granulada",
+      "moldura-de-negativo",
+      "palavra-que-entra",
+      "mancha-de-tinta",
+      "tarja-de-scanner",
+      "janela-de-foto-sobre-papel",
+      "deriva-de-camera",
+      "tremor-por-quadro",
+      "corte-a-cada-3s"
+    ],
+    "estilo": [
+      "vox-clean",
+      "gravura-bw-acento",
+      "papel-cortado-camadas",
+      "flap-book-abas",
+      "colagem-barroca",
+      "colagem-documental",
+      "recorte-ritmo-textura",
+      "documentario-dramatico"
+    ]
+  },
+  "refs": [
+    {
+      "id": "R03-mariano-two-parties-vox",
+      "titulo": "Two Parties – Vox (série política da Vox)",
+      "autor": "Lucas Mariano (animação e design); direção de arte Joey Sendaydiego",
+      "ano": 2024,
+      "plataforma": "Behance + YouTube",
+      "url": "https://www.behance.net/gallery/194823195/Two-Parties-Vox",
+      "url_video": "https://www.youtube.com/watch?v=bqWwV3xk9Qk",
+      "tipo": "video",
+      "tema": [
+        "dados",
+        "geral"
+      ],
+      "estilo": [
+        "vox-clean"
+      ],
+      "mecanica": [
+        "personagem-foto-recortada",
+        "cor-em-degrade",
+        "grade-de-figuras",
+        "entrada-em-fila",
+        "troca-no-lugar",
+        "grafico-como-objeto",
+        "textura-nos-dados",
+        "marca-texto",
+        "anotacao-manuscrita",
+        "papel-vazio",
+        "documento-fotocopiado",
+        "treme-leve",
+        "confete",
+        "mapa",
+        "paleta-minima",
+        "moldura-de-titulo",
+        "meio-tom"
+      ],
+      "profundidade": "a-fundo",
+      "licenca": "todos os direitos reservados (Vox e autor)",
+      "ferramentas": "After Effects, Photoshop",
+      "analise": "analises/R03_two-parties-vox_ANALISE.md",
+      "paleta": "vox-two-parties",
+      "nota": "A referência mais clean. Pessoa sem rosto: B&W com cabeça colorida em degradê. 86% de papel vazio."
+    },
+    {
+      "id": "R11-fromsquare-longevity-hackers",
+      "titulo": "Longevity Hackers, animação 2D (10+ min, Apple TV+ e Prime Video)",
+      "autor": "Fromsquare Studio: Alicja Piotrowska (storyboard, ilustração, animação), Kuba Piechota (gestão, ilustração), Ania Wójtowicz (animação)",
+      "ano": 2025,
+      "plataforma": "Behance + Vimeo",
+      "url": "https://www.behance.net/gallery/217443579/Longevity-Hackers-Motion-Design",
+      "url_video": "https://player.vimeo.com/video/1050711682",
+      "tipo": "video",
+      "tema": [
+        "anatomia",
+        "ciencia",
+        "corpo"
+      ],
+      "estilo": [
+        "gravura-bw-acento"
+      ],
+      "mecanica": [
+        "gravura-animada",
+        "meio-tom",
+        "papel-vazio",
+        "paleta-minima"
+      ],
+      "profundidade": "vista",
+      "licenca": "estúdio e produtores do documentário",
+      "paleta": null,
+      "nota": "Mais próxima de anatomia em gravura animada: cérebro em gravura, seringa, tubo, diagramas, preto e branco com grão. Vi 1 quadro e o texto; falta estudar o vídeo inteiro (Vimeo)."
+    },
+    {
+      "id": "R12-fromsquare-colagens-educativas",
+      "titulo": "A series of educational collage animations (6 animações, Universidade Jaguelônica)",
+      "autor": "Fromsquare Studio",
+      "ano": 2026,
+      "plataforma": "Behance + Vimeo",
+      "url": "https://www.behance.net/gallery/242244369/A-series-of-educational-collage-animations",
+      "url_video": "https://player.vimeo.com/video/1156081738",
+      "tipo": "video",
+      "tema": [
+        "ciencia",
+        "historia",
+        "geral"
+      ],
+      "estilo": [
+        "colagem-documental"
+      ],
+      "mecanica": [
+        "personagem-foto-recortada",
+        "documento-fotocopiado",
+        "etiqueta-presa",
+        "colagem-barroca"
+      ],
+      "profundidade": "vista",
+      "licenca": "estúdio",
+      "paleta": null,
+      "nota": "Colagem mista profissional: foto B&W recortada, papel rasgado, acento verde-limão e salmão, DNA e microscópio. Tom mais lúdico."
+    },
+    {
+      "id": "R02-mariano-epigenetics-vox",
+      "titulo": "Epigenetics – Vox (piloto de série; produtor Joss Fong)",
+      "autor": "Lucas Mariano (animação e design)",
+      "ano": 2023,
+      "plataforma": "Behance + Vimeo",
+      "url": "https://www.behance.net/gallery/176695925/Epigenetics-Vox",
+      "tipo": "video",
+      "tema": [
+        "corpo",
+        "ciencia"
+      ],
+      "estilo": [
+        "vox-clean",
+        "colagem-documental"
+      ],
+      "mecanica": [
+        "marca-texto",
+        "etiqueta-presa",
+        "documento-fotocopiado"
+      ],
+      "profundidade": "vista",
+      "licenca": "Vox / autor",
+      "paleta": null,
+      "nota": "Mesmo autor do Two Parties, tom mais escuro e texturizado (cartões de papel, DNA em cartão preto, etiqueta amarela). Falta analisar como o corpo e o DNA são animados."
+    },
+    {
+      "id": "R13-gildersleeve-body-machine",
+      "titulo": "My Amazing Body Machine (50 obras de anatomia em papel cortado em camadas)",
+      "autor": "Owen Gildersleeve (Londres); texto de Lord Robert Winston",
+      "ano": 2017,
+      "plataforma": "Creative Boom",
+      "url": "https://www.creativeboom.com/work/my-amazing-body-machine-incredible-paper-cut-artworks-of-the-human-anatomy/",
+      "tipo": "livro",
+      "tema": [
+        "anatomia",
+        "corpo"
+      ],
+      "estilo": [
+        "papel-cortado-camadas"
+      ],
+      "mecanica": [
+        "camadas-de-papel",
+        "paleta-minima"
+      ],
+      "profundidade": "citada",
+      "licenca": "autor",
+      "paleta": null,
+      "nota": "Camadas de papel e blocos de cor, feitas à mão, com consultoria científica. Li o artigo; NÃO vi as imagens. Prioridade para olhar."
+    },
+    {
+      "id": "R06-duke-flap-books",
+      "titulo": "Anatomy Exhibit: Loop of Flap Book Videos",
+      "autor": "Duke University Libraries (exposição Animated Anatomies, 2011)",
+      "ano": 2011,
+      "plataforma": "YouTube",
+      "url": "https://www.youtube.com/watch?v=7p6T2s5GyyM",
+      "tipo": "acervo",
+      "tema": [
+        "anatomia",
+        "historia"
+      ],
+      "estilo": [
+        "flap-book-abas"
+      ],
+      "mecanica": [
+        "aba-que-levanta",
+        "camadas-de-papel",
+        "gravura-animada"
+      ],
+      "profundidade": "vista",
+      "licenca": "Duke Libraries; obras originais em domínio público",
+      "paleta": null,
+      "nota": "Mãos levantando abas sobre corpo gravado (Vesalius e outros). A referência física do nosso 'camadas que levantam': peso, dobra e o que a aba revela."
+    },
+    {
+      "id": "R07-royalsociety-flap-book",
+      "titulo": "Turning the Pages of the Royal Society's 17th century flap book",
+      "autor": "The Royal Society",
+      "ano": 2022,
+      "plataforma": "YouTube",
+      "url": "https://www.youtube.com/watch?v=OOz1FPpksqU",
+      "tipo": "acervo",
+      "tema": [
+        "anatomia",
+        "historia"
+      ],
+      "estilo": [
+        "flap-book-abas"
+      ],
+      "mecanica": [
+        "aba-que-levanta"
+      ],
+      "profundidade": "citada",
+      "licenca": "Royal Society",
+      "nota": "Livro de abas do século XVII, página a página."
+    },
+    {
+      "id": "R08-iowa-remmelin-1661",
+      "titulo": "1661 edition of Remmelin's Catoptrum microcosmicum",
+      "autor": "University of Iowa Libraries",
+      "ano": 2024,
+      "plataforma": "YouTube",
+      "url": "https://www.youtube.com/watch?v=j8RR18e9t5Y",
+      "tipo": "acervo",
+      "tema": [
+        "anatomia",
+        "historia"
+      ],
+      "estilo": [
+        "flap-book-abas"
+      ],
+      "mecanica": [
+        "aba-que-levanta"
+      ],
+      "profundidade": "citada",
+      "licenca": "Iowa Libraries; obra em domínio público",
+      "nota": "Abas do Remmelin em movimento, 17 s."
+    },
+    {
+      "id": "R01-tdorje-anatomia-reanimada",
+      "titulo": "Reanimated Anatomy Series (Breathing Thorax, Living Heart, Beating Blossoms, Botanical Man, Aquamouth)",
+      "autor": "T. Dorje (Toronto)",
+      "ano": 2020,
+      "plataforma": "Behance",
+      "url": "https://www.behance.net/gallery/94868709/Breathing-Thorax",
+      "tipo": "projeto",
+      "tema": [
+        "anatomia",
+        "corpo"
+      ],
+      "estilo": [
+        "colagem-barroca"
+      ],
+      "mecanica": [
+        "colagem-barroca",
+        "vida-sutil",
+        "camadas-de-papel"
+      ],
+      "profundidade": "vista",
+      "licenca": "todos os direitos reservados",
+      "nota": "Anatomia dissecada em gravura antiga com folhas, pássaros e flores; cada obra é uma animação em laço (vi o quadro estático)."
+    },
+    {
+      "id": "R04-naeem-city-captured-king",
+      "titulo": "The City That Captured a King (documentário em colagem, 65 s)",
+      "autor": "Ahmed Naeem",
+      "ano": 2026,
+      "plataforma": "Behance",
+      "url": "https://www.behance.net/gallery/256754113/The-City-That-Captured-a-King-Collage-Documentary",
+      "tipo": "video",
+      "tema": [
+        "historia",
+        "documento"
+      ],
+      "estilo": [
+        "colagem-documental"
+      ],
+      "mecanica": [
+        "gravura-animada",
+        "documento-fotocopiado",
+        "etiqueta-presa",
+        "mapa"
+      ],
+      "profundidade": "vista",
+      "licenca": "autor",
+      "nota": "Manuscritos do século XIV e gravuras de Doré em papel rasgado, tipografia de época."
+    },
+    {
+      "id": "R09-fakeplastictree-colagem",
+      "titulo": "Motion Graphic | Collage (1:09)",
+      "autor": "Fakeplastictree",
+      "ano": 2023,
+      "plataforma": "YouTube",
+      "url": "https://www.youtube.com/watch?v=CMqw9usH8-8",
+      "tipo": "video",
+      "tema": [
+        "geral"
+      ],
+      "estilo": [
+        "recorte-ritmo-textura"
+      ],
+      "mecanica": [
+        "ritmo-de-recorte",
+        "meio-tom",
+        "documento-fotocopiado"
+      ],
+      "profundidade": "vista",
+      "licenca": "autor",
+      "nota": "Retrato recortado, jornal rasgado, meio-tom, fundo preto. Não é anatomia; vale pela textura e pelo ritmo (2 mi de views)."
+    },
+    {
+      "id": "R10-gilliam-cutout",
+      "titulo": "Terry Gilliam sobre animação em recortes (BBC, 1974) e Story Time",
+      "autor": "Terry Gilliam / BBC Archive / Monty Python Museum",
+      "ano": 1974,
+      "plataforma": "YouTube",
+      "url": "https://www.youtube.com/watch?v=LaG_EiFX7a0",
+      "url_extra": [
+        "https://www.youtube.com/watch?v=qXW9b9O9S6A"
+      ],
+      "tipo": "acervo",
+      "tema": [
+        "historia",
+        "geral"
+      ],
+      "estilo": [
+        "recorte-ritmo-textura"
+      ],
+      "mecanica": [
+        "recorte-articulado",
+        "gravura-animada"
+      ],
+      "profundidade": "citada",
+      "licenca": "BBC e Monty Python",
+      "nota": "Origem do recorte de gravuras vitorianas articuladas; como se corta e se anima."
+    },
+    {
+      "id": "R05-calgaro-astp",
+      "titulo": "ASTP, digital collage explainer",
+      "autor": "Cyril Calgaro",
+      "ano": 2026,
+      "plataforma": "Behance",
+      "url": "https://www.behance.net/gallery/250893529/ASTP-Digital-Collage-Explainer",
+      "tipo": "projeto",
+      "tema": [
+        "geral"
+      ],
+      "estilo": [
+        "colagem-documental"
+      ],
+      "mecanica": [
+        "etiqueta-presa"
+      ],
+      "profundidade": "citada",
+      "licenca": "autor",
+      "nota": "Processo documentado (moodboard, estilo, animação); só abri o início."
+    },
+    {
+      "id": "R14-msf-insulin",
+      "titulo": "MSF, 100 years of insulin (1:42)",
+      "autor": "não confirmado (pin liga a Milk and Peppers)",
+      "ano": 2022,
+      "plataforma": "Pinterest + MSF",
+      "url": "https://msfaccess.org/100-years-insulin",
+      "tipo": "pin",
+      "tema": [
+        "corpo",
+        "ciencia"
+      ],
+      "estilo": [],
+      "mecanica": [
+        "paleta-minima"
+      ],
+      "profundidade": "citada",
+      "licenca": "MSF",
+      "nota": "2D motion vibrante sobre corpo e medicina. Autoria NÃO confirmada: não creditar."
+    },
+    {
+      "id": "R15-tving-abertura",
+      "titulo": "Tving 스터디그룹, Opening Sequence (0:45)",
+      "autor": "sem fonte no pin",
+      "plataforma": "Pinterest",
+      "url": "https://br.pinterest.com/pin/789607747204219432/",
+      "tipo": "pin",
+      "tema": [
+        "geral"
+      ],
+      "estilo": [],
+      "mecanica": [],
+      "profundidade": "citada",
+      "licenca": "desconhecido",
+      "nota": "Abertura em colagem; só o título do pin."
+    },
+    {
+      "id": "R16-bedelgeuse",
+      "titulo": "Colagens de anatomia com fontes de domínio público",
+      "autor": "Travis Bedel (Bedelgeuse)",
+      "plataforma": "Nashville Review",
+      "url": "https://as.vanderbilt.edu/nashvillereview/archives/13473",
+      "tipo": "projeto",
+      "tema": [
+        "anatomia"
+      ],
+      "estilo": [
+        "colagem-barroca"
+      ],
+      "mecanica": [
+        "colagem-barroca"
+      ],
+      "profundidade": "citada",
+      "licenca": "autor",
+      "nota": "Mostra a prática de montar sobre livros antigos de medicina em domínio público."
+    },
+    {
+      "id": "R17-kate-norris",
+      "titulo": "Wallpaper collages sobre ilustração médica (Conundrum, Henrietta)",
+      "autor": "Kate Norris",
+      "plataforma": "bakerartist.org",
+      "url": "https://bakerartist.org/portfolios/kate-norris/perception",
+      "tipo": "projeto",
+      "tema": [
+        "anatomia"
+      ],
+      "estilo": [
+        "colagem-barroca"
+      ],
+      "mecanica": [
+        "colagem-barroca"
+      ],
+      "profundidade": "citada",
+      "licenca": "autora",
+      "nota": "Cabeça e tronco dissecados cheios de flores e bichos; inspiração de composição, estática."
+    },
+    {
+      "id": "R18-guo-skillshare",
+      "titulo": "Stop Motion in After Effects: Collage Style Explainer Videos",
+      "autor": "Hongshu Guo",
+      "plataforma": "Skillshare",
+      "url": "https://www.skillshare.com/en/classes/Stop-Motion-In-After-Effects-Animate-Collage-Style-Explainer-Videos/713475182",
+      "tipo": "tutorial",
+      "tema": [
+        "geral"
+      ],
+      "estilo": [],
+      "mecanica": [
+        "tecnica-after-effects"
+      ],
+      "profundidade": "citada",
+      "licenca": "curso pago",
+      "nota": "Roteiro de produção: storyboard, preparo no Photoshop, animação no After Effects."
+    },
+    {
+      "id": "R19-james-cut-and-collage",
+      "titulo": "Cut and Collage: A Treasury of Vintage Anatomy Images",
+      "autor": "Kale James",
+      "plataforma": "livro",
+      "url": "https://www.eslite.com/product/1001294887223275",
+      "tipo": "livro",
+      "tema": [
+        "anatomia"
+      ],
+      "estilo": [],
+      "mecanica": [
+        "pack-de-fontes"
+      ],
+      "profundidade": "citada",
+      "licenca": "verificar a licença antes de usar",
+      "nota": "Pranchas antigas de cérebro, crânio, coluna e olho com verso em padrões que servem de textura."
+    },
+    {
+      "id": "R20-behance-human-eye",
+      "titulo": "The anatomy of the human eye (colagem digital com desenhos antigos)",
+      "autor": "não anotado",
+      "plataforma": "Behance",
+      "url": "https://behance.net/gallery/108771607/The-anatomy-of-the-human-eye",
+      "tipo": "projeto",
+      "tema": [
+        "anatomia"
+      ],
+      "estilo": [
+        "colagem-barroca"
+      ],
+      "mecanica": [
+        "colagem-barroca"
+      ],
+      "profundidade": "citada",
+      "licenca": "autor",
+      "nota": "Não abri."
+    },
+    {
+      "id": "R21-adam-ruins-anatomia",
+      "titulo": "Adam Ruins Everything: why anatomy was taught incorrectly for 1000 years",
+      "autor": "truTV",
+      "ano": 2017,
+      "plataforma": "YouTube",
+      "url": "https://www.youtube.com/watch?v=Rr31EjCEuek",
+      "tipo": "video",
+      "tema": [
+        "anatomia",
+        "historia"
+      ],
+      "estilo": [],
+      "mecanica": [
+        "ritmo-de-recorte"
+      ],
+      "profundidade": "citada",
+      "licenca": "truTV",
+      "nota": "Só ritmo de humor; estética não serve."
+    },
+    {
+      "id": "R22-harris-colagem-documentario",
+      "titulo": "Johnny Harris (Shampoo is a Lie) e tutoriais de colagem (Denys Zhylin)",
+      "autor": "Johnny Harris; Denys Zhylin",
+      "plataforma": "YouTube",
+      "url": "https://www.youtube.com/watch?v=T-_HKFjxVl0",
+      "url_extra": [
+        "https://www.youtube.com/watch?v=DwTEZukgMmk"
+      ],
+      "tipo": "video",
+      "tema": [
+        "dados",
+        "geral"
+      ],
+      "estilo": [
+        "colagem-documental"
+      ],
+      "mecanica": [
+        "mapa",
+        "documento-fotocopiado",
+        "tecnica-after-effects"
+      ],
+      "profundidade": "citada",
+      "licenca": "autores",
+      "nota": "O estilo documentário em colagem popularizado pela Vox; os tutoriais mostram a técnica."
+    },
+    {
+      "id": "I01-manequim-1890",
+      "titulo": "Manequim de 1890 (a referência do estilo em camadas)",
+      "autor": "edit-labs-ai",
+      "plataforma": "interno",
+      "url": null,
+      "tipo": "interno",
+      "tema": [
+        "anatomia"
+      ],
+      "estilo": [
+        "papel-cortado-camadas",
+        "flap-book-abas"
+      ],
+      "mecanica": [
+        "camadas-de-papel",
+        "aba-que-levanta",
+        "treme-leve",
+        "vida-sutil"
+      ],
+      "profundidade": "a-fundo",
+      "licenca": "nosso; fotos do Wellcome em domínio público",
+      "nota": "Régua interna para qualquer vídeo em camadas: camadas registradas que levantam, mostram o que há embaixo e voltam.",
+      "onde": "vídeo de exemplo do manequim de 1890 (não vem no repositório); a técnica está na skill colagem-camadas"
+    },
+    {
+      "id": "I02-guia-vox-motions",
+      "titulo": "Guia de estilo Vox: matéria sob pressão (20 trechos analisados)",
+      "autor": "edit-labs-ai",
+      "plataforma": "interno",
+      "url": "analises/vox-guia-de-estilo.md",
+      "tipo": "interno",
+      "tema": [
+        "geral"
+      ],
+      "estilo": [
+        "vox-clean",
+        "colagem-documental"
+      ],
+      "mecanica": [
+        "objeto-volta-transformado"
+      ],
+      "profundidade": "a-fundo",
+      "licenca": "texto nosso; o vídeo analisado é da Vox (R24)",
+      "nota": "Mundo conectado, objeto que volta transformado, rótulo preso ao objeto. Os 20 trechos com tempo e link estão em analises/vox-squeezing-trechos.json.",
+      "analise": "analises/vox-guia-de-estilo.md"
+    },
+    {
+      "id": "I03-estudo-vox-porsche",
+      "titulo": "Style Bible do estilo Vox explainer e referências da skill motion-vox",
+      "autor": "edit-labs-ai",
+      "plataforma": "interno",
+      "url": "../skills/motion-vox/referencias/",
+      "tipo": "interno",
+      "tema": [
+        "geral"
+      ],
+      "estilo": [
+        "vox-clean"
+      ],
+      "mecanica": [
+        "treme-leve",
+        "paleta-minima"
+      ],
+      "profundidade": "a-fundo",
+      "licenca": "texto nosso; os quadros da Vox que a originaram não vêm no repositório",
+      "nota": "Registros, legenda, hierarquia, boil e armadilhas da skill motion-vox; a Style Bible (pesos, paleta, tipografia, tempos) está em analises/vox-style-bible.md. O estudo Porsche é o R25.",
+      "analise": "analises/vox-style-bible.md"
+    },
+    {
+      "id": "R23-miraruido-new-promised-land-cap3",
+      "titulo": "The New Promised Land. Chapter 3. (capítulo 3 de 3, documentário web sobre refugiados sírios)",
+      "autor": "MiraRuido (Vimeo)",
+      "ano": 2016,
+      "plataforma": "Vimeo",
+      "url": "https://vimeo.com/159601006",
+      "tipo": "video",
+      "tema": [
+        "historia",
+        "documento",
+        "anatomia"
+      ],
+      "estilo": [
+        "documentario-dramatico"
+      ],
+      "mecanica": [
+        "anotacao-manuscrita",
+        "corte-a-cada-3s",
+        "deriva-de-camera",
+        "documento-fotocopiado",
+        "foto-pb-granulada",
+        "gravura-animada",
+        "janela-de-foto-sobre-papel",
+        "mancha-de-tinta",
+        "meio-tom",
+        "moldura-de-negativo",
+        "palavra-que-entra",
+        "tarja-de-scanner",
+        "tremor-por-quadro",
+        "troca-no-lugar"
+      ],
+      "profundidade": "a-fundo",
+      "licenca": "não verificado; tratar como todos os direitos reservados",
+      "analise": "analises/R23_miraruido-new-promised-land-cap3_ANALISE.md",
+      "paleta": "documentario-new-promised-land",
+      "nota": "Drama documental medido em movimento: corte a cada ~2,75 s, entrada de foto ~1 s, deriva de câmera ~40 a 50 px/s para a câmera ir para a direita, tremor a cada quadro. Foto P&B granulada em moldura de negativo, papel de jornal, um vermelho só para anotação. Gravura de nervos com mapa de faculdades em vermelho = ponte direta para o corpo. Áudio não ouvido. Tarja horizontal fixa descartada."
+    },
+    {
+      "id": "R24-vox-keep-squeezing",
+      "titulo": "Something weird happens when you keep squeezing",
+      "autor": "Vox",
+      "plataforma": "YouTube",
+      "url": "https://www.youtube.com/watch?v=NqabT21d8VM",
+      "tipo": "video",
+      "tema": [
+        "ciencia",
+        "geral"
+      ],
+      "estilo": [
+        "vox-clean",
+        "colagem-documental"
+      ],
+      "mecanica": [
+        "objeto-volta-transformado",
+        "personagem-foto-recortada",
+        "grafico-como-objeto",
+        "camadas-de-papel"
+      ],
+      "profundidade": "a-fundo",
+      "licenca": "todos os direitos reservados (Vox Media)",
+      "analise": "analises/vox-guia-de-estilo.md",
+      "paleta": null,
+      "nota": "Colagem tátil em que o movimento revela como algo funciona; destaque para 7:11–7:42 (processo em camadas com laser). 304 imagens analisadas, sem medir curvas de animação nem ouvir o som."
+    },
+    {
+      "id": "R25-herasimova-porsche",
+      "titulo": "VOX-Style Animated Documentary | The History of Porsche",
+      "autor": "Hanna Herasimova (MOTION LADY)",
+      "plataforma": "Behance + YouTube",
+      "url": "https://www.behance.net/gallery/221556905",
+      "url_video": "https://www.youtube.com/watch?v=FwRtt4nhCDE",
+      "tipo": "video",
+      "tema": [
+        "historia",
+        "geral"
+      ],
+      "estilo": [
+        "vox-clean",
+        "colagem-documental"
+      ],
+      "mecanica": [
+        "treme-leve",
+        "marca-texto",
+        "documento-fotocopiado",
+        "anotacao-manuscrita",
+        "paleta-minima"
+      ],
+      "profundidade": "a-fundo",
+      "licenca": "todos os direitos reservados (autora)",
+      "analise": "../skills/motion-vox/referencias/estudos/vox-porsche/ESTUDO.md",
+      "paleta": null,
+      "nota": "Peça de portfólio no estilo Vox, 3:16, After Effects. Ritmo medido: desenho a 12 qps, 1,23 s por cena, 4,3 palavras por cena; capítulos marcados por ano."
+    }
+  ]
+}

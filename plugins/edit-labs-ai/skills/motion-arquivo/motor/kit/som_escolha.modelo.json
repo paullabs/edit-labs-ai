@@ -1,0 +1,10 @@
+{
+ "_leia": "MODELO. Copie para a pasta do projeto (ou para $EDITLABS_DATA/motion-arquivo/), troque os caminhos pelos da SUA pasta de sons (relativos a ela) e rode: mvpy ferramentas/som_biblioteca.py --escolha escolha.json. Papel que não estiver aqui é achado pelo nome do arquivo; papel sem arquivo usa o som sintetizado.",
+ "clique": "interface/clique_mouse.wav",
+ "baque": "impactos/soco_na_mesa.wav",
+ "obturador": "camera/obturador_antigo.wav",
+ "giz": "escrita/giz_no_quadro.wav",
+ "whoosh": "transicoes/whoosh_curto.wav",
+ "pop": "interface/pluck_curto.wav",
+ "impacto": "impactos/golpe_grave.wav"
+}

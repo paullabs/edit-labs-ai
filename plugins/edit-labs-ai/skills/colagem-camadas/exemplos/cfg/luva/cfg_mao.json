@@ -1,0 +1,56 @@
+{
+ "modelo": "{TRABALHO}/luva/mao.blend",
+ "saida": "{TRABALHO}/luva/vistas_mao",
+ "vistas": 1,
+ "res": [
+  1300,
+  3500
+ ],
+ "lente": 0,
+ "elevacao": 0,
+ "ajuste": "caixa",
+ "caixa_mundo": [
+  -0.4,
+  -1.3,
+  -0.16,
+  -0.65
+ ],
+ "motor": "WORKBENCH",
+ "cor_tipo": "MATERIAL",
+ "passes": [
+  "cor",
+  "luz"
+ ],
+ "camadas": {
+  "luva": [
+   "^luva__"
+  ],
+  "pele": [
+   "^pele__"
+  ],
+  "osso_braco": [
+   "^osso__(Radius|Ulna)"
+  ],
+  "ossos_mao": [
+   "^osso__(?!(Radius|Ulna))"
+  ],
+  "quinto": [
+   "^osso__Fifth metacarpal"
+  ],
+  "osso": [
+   "^osso__"
+  ]
+ },
+ "marcos": {
+  "quinto_cabeca": [
+   -0.243,
+   0.03,
+   -0.787
+  ],
+  "quinto_base": [
+   -0.243,
+   0.03,
+   -0.832
+  ]
+ }
+}

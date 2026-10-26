@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "di-verificacao/1",
+  "type": "object",
+  "required": [
+    "fase",
+    "checks",
+    "valid",
+    "source"
+  ],
+  "properties": {
+    "source": {
+      "const": "deterministic"
+    },
+    "valid": {
+      "type": "boolean"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "ok",
+          "severidade"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^V[0-9]"
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "severidade": {
+            "enum": [
+              "BLOCKER",
+              "HIGH",
+              "MEDIUM",
+              "LOW",
+              "aviso",
+              "info"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

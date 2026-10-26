@@ -1,0 +1,23 @@
+# Régua do projeto (copiada para <projeto>/config.yaml por di preparar).
+# Campos de motion ficam SEM valor até o usuário responder (ou herdar da régua dele). Nunca régua "provisória".
+saida: null              # V | H | ambas — perguntado em F0 só se a régua do usuário não tiver
+engine: auto             # mlx se importar, senão faster-whisper
+emendas: punch_in        # decisão #6, padrão A assumido e gravado (punch_in | seco)
+pausa_max_s: 0.35        # solo 0,35 · podcast 1,0
+silencio_min_s: 0.12
+bloco_gap_s: 3.0         # vão que separa blocos de assunto
+crop_vertical: null      # medido em F3 pelo rosto (YuNet); nunca o valor do piloto
+folga_palavra_s: 0.15    # = erro conhecido do Whisper; sem piso menor
+folga_silencio_s: 0.06
+residuo_s: [0.30, 0.35]  # a calibrar ouvindo as juntas do piloto
+energia_db: 15           # RMS 40 ms de cada lado ≥ 15 dB abaixo da palavra vizinha
+punch_in:
+  escala: 1.035
+  min_entre_trocas_s: 1.2
+  push_max: 0.04
+motion:
+  densidade: null
+  fim_de_cena: null
+  motion_fps: null
+  prints_oficiais: null
+  min_rosto_s: null

@@ -117,7 +117,7 @@ def checar_python() -> None:
 
 
 def checar_agentes() -> None:
-    secao("Subagentes em ~/.claude/agents/")
+    secao(f"Subagentes em {AGENTS_HOME}")
     fontes = sorted((ROOT / "agentes").glob("*.md"))
     if not fontes:
         linha(FALHA, "agentes/", "pacote sem agentes — instalacao corrompida")
