@@ -1,0 +1,14 @@
+{
+ "_leia": "MODELO do catálogo medido por ferramentas/catalogar_efeitos.py (o de verdade fica em $EDITLABS_DATA/motion-arquivo/som_catalogo.json). Nada é copiado: só caminho relativo, medidas e etiquetas tiradas do nome. forma: transiente | tom | impacto | whoosh | riser | laço | ambiente | textura.",
+ "biblioteca": "<a sua pasta de sons ($EDITLABS_SONS)>",
+ "sons": [
+  {"dur": 0.42, "dur_ativa": 0.38, "pico_db": -3.1, "ataque_ms": 10, "cauda_ms": 300, "golpes": 1, "pico_em": 0.05,
+   "centroide_hz": 2950, "grave": 0.02, "agudo": 0.21, "planura": 0.08, "tonal": 0.12, "estab_db": 9.5,
+   "arquivo": "interface/clique_mouse.wav", "pasta": "interface", "descricao": "clique_mouse",
+   "etiquetas": ["clique", "mouse"], "forma": "transiente"},
+  {"dur": 1.6, "dur_ativa": 1.4, "pico_db": -6.0, "ataque_ms": 420, "cauda_ms": 380, "golpes": 1, "pico_em": 0.48,
+   "centroide_hz": 1850, "grave": 0.05, "agudo": 0.09, "planura": 0.31, "tonal": 0.04, "estab_db": 7.2,
+   "arquivo": "transicoes/whoosh_curto.wav", "pasta": "transicoes", "descricao": "whoosh_curto",
+   "etiquetas": ["whoosh"], "forma": "whoosh"}
+ ]
+}

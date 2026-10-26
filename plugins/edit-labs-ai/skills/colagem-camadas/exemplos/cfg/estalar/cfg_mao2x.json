@@ -1,0 +1,36 @@
+{
+ "modelo": "{TRABALHO}/luva/mao.blend",
+ "saida": "{TRABALHO}/estalar/mao/vistas",
+ "vistas": 1,
+ "res": [
+  2400,
+  4400
+ ],
+ "lente": 0,
+ "elevacao": 0,
+ "ajuste": "caixa",
+ "caixa_mundo": [
+  -0.4,
+  -1.1,
+  -0.16,
+  -0.66
+ ],
+ "motor": "WORKBENCH",
+ "cor_tipo": "MATERIAL",
+ "passes": [
+  "cor",
+  "luz"
+ ],
+ "camadas": {
+  "pele": [
+   "^pele__"
+  ]
+ },
+ "marcos": {
+  "junta": [
+   -0.2957,
+   0.0372,
+   -0.769
+  ]
+ }
+}

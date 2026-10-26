@@ -1,0 +1,40 @@
+{
+ "modelo": "{TRABALHO}/terra/terra.blend",
+ "saida": "{TRABALHO}/terra/vistas",
+ "vistas": 36,
+ "res": [
+  1200,
+  1200
+ ],
+ "camadas": {
+  "fechada": [
+   ".*"
+  ],
+  "aberta": [
+   "^(nucleo|manto|crosta)"
+  ],
+  "fatia": [
+   "^fatia_"
+  ],
+  "s_crosta": [
+   "^crosta$"
+  ],
+  "s_manto": [
+   "^manto$"
+  ],
+  "s_nucleo_externo": [
+   "^nucleo_externo$"
+  ],
+  "s_nucleo_interno": [
+   "^nucleo_interno$"
+  ]
+ },
+ "elevacao": 16,
+ "lente": 70,
+ "motor": "WORKBENCH",
+ "cor_tipo": "VERTEX",
+ "passes": [
+  "cor",
+  "luz"
+ ]
+}

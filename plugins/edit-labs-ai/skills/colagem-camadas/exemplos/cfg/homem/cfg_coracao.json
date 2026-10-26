@@ -1,0 +1,26 @@
+{
+ "modelo": "{TRABALHO}/homem2/homem2.blend",
+ "saida": "{TRABALHO}/homem3/coracao/vistas_coracao",
+ "vistas": 36,
+ "res": [
+  1100,
+  1100
+ ],
+ "lente": 0,
+ "elevacao": 0,
+ "motor": "WORKBENCH",
+ "cor_tipo": "MATERIAL",
+ "passes": [
+  "cor",
+  "luz"
+ ],
+ "camadas": {
+  "coracao": [
+   "^cor__"
+  ]
+ },
+ "enquadrar": [
+  "coracao"
+ ],
+ "giro_inicial": -22.0
+}

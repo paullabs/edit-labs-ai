@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# decupagem-inteligente: do bruto ao master (preparar, digest, edl, render, auditar, portao, mv, entregar…).
+# Roda no ambiente da corte-viral (venv-corte); o kit de motion roda no venv-motion (MV_PY). Ex.: di portao status
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+[ -x "$CV_PY" ] || precisa_setup
+DI_SKILL="$ROOT/skills/decupagem-inteligente"
+export EDITLABS_DATA CV_PY MV_PY
+export DI_ROOT="$DI_SKILL"
+export PYTHONPATH="$DI_SKILL/scripts${PYTHONPATH:+:$PYTHONPATH}"
+exec "$CV_PY" "$DI_SKILL/scripts/di.py" "$@"

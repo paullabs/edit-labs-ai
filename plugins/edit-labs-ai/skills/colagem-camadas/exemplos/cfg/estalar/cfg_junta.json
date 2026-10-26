@@ -1,0 +1,80 @@
+{
+ "modelo": "{TRABALHO}/estalar/junta/junta.blend",
+ "saida": "{TRABALHO}/estalar/junta/vistas",
+ "vistas": 1,
+ "res": [
+  1200,
+  1200
+ ],
+ "lente": 0,
+ "elevacao": 0,
+ "ajuste": "caixa",
+ "caixa_mundo": [
+  -0.035,
+  -0.031,
+  0.035,
+  0.039
+ ],
+ "motor": "WORKBENCH",
+ "cor_tipo": "MATERIAL",
+ "passes": [
+  "cor",
+  "luz"
+ ],
+ "quadros": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "camadas": {
+  "capsula": [
+   "^capsula"
+  ],
+  "liquido": [
+   "^liquido"
+  ],
+  "meta": [
+   "^osso__Second"
+  ],
+  "falange": [
+   "^osso__Proximal"
+  ],
+  "bolha": [
+   "^bolha"
+  ]
+ },
+ "marcos": {
+  "junta": [
+   0,
+   0,
+   0
+  ]
+ }
+}

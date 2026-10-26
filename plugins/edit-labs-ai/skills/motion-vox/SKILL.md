@@ -13,7 +13,7 @@ description: >-
 
 # Motion editorial sobre footage
 
-Insere cenas de motion no estilo `VOX-EXPLAINER-LABS` dentro de um clipe vertical que
+Insere cenas de motion no estilo Vox explainer dentro de um clipe vertical que
 **já existe**. A fala e seus tempos são preservados: não reescrever ou cortar palavras
 para encaixar motion. Efeitos sonoros pedidos entram em uma camada separada, com seleção,
 recorte e ganho por evento; ver `referencias/som-local.md`.

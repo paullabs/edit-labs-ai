@@ -1,0 +1,6 @@
+# time-motion — dependências Python das ferramentas (o editlabs-setup instala no ambiente do plugin).
+numpy>=1.24,<2.3
+faster-whisper>=1.1        # transcrever.py
+Pillow>=10.0               # montar.py (medida da tinta do texto)
+fonttools>=4.40            # montar.py (métrica da fonte)
+# Fora do pip: ffmpeg no PATH (transcrever, ilhas_fala, medir_niveis). A montagem usa o conector do invideo.

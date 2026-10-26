@@ -1,4 +1,4 @@
-# Identidade visual — VOX-EXPLAINER-LABS
+# Identidade visual — estilo Vox explainer
 
 Extrato operacional da identidade: o que o kit aplica em toda cena.
 

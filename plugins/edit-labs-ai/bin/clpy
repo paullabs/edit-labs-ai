@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Python do motor de colagem (estilos colagem-camadas, colagem-historia, explicador-vox, motion-arquivo).
+# Rode da pasta do projeto: clpy cena.py --quadros   (o motor já fica importável por EDITLABS_MOTOR)
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+if [ ! -x "$CL_PY" ]; then
+  echo "O motor de colagem ainda não foi preparado. Rode:  editlabs-setup --colagem" >&2; exit 3
+fi
+export PYTHONPATH="$EDITLABS_MOTOR${PYTHONPATH:+:$PYTHONPATH}"
+exec "$CL_PY" "$@"

@@ -1,0 +1,494 @@
+{
+ "titulo": "Hedy (regressao: os 32 s so com tipos genericos; textos reescritos em portugues)",
+ "audio": "audio/narracao.mp4",
+ "planos": [
+  {
+   "tipo": "gancho_digitado",
+   "inicio": 0,
+   "fim": 20,
+   "texto": "TODOS"
+  },
+  {
+   "tipo": "cartao_rotulo",
+   "inicio": 20,
+   "fim": 32,
+   "foto": "hedy_1940_clarence_bull.jpg",
+   "base": "corda_veludo.png",
+   "rotulo": "her beauty",
+   "lado": "dir",
+   "camera": {
+    "zoom": [
+     1.0,
+     0.976
+    ],
+    "dx": [
+     0,
+     -73
+    ]
+   }
+  },
+  {
+   "tipo": "cartao_rotulo",
+   "inicio": 32,
+   "fim": 47,
+   "foto": "hedy_1940_clarence_bull.jpg",
+   "base": "corda_veludo.png",
+   "rotulo": "her beauty",
+   "lado": "esq",
+   "camera": {
+    "zoom": [
+     1.42,
+     1.42
+    ],
+    "dx": [
+     40,
+     40
+    ],
+    "dy": [
+     300,
+     300
+    ]
+   }
+  },
+  {
+   "tipo": "figura_e_palavras",
+   "inicio": 47,
+   "fim": 92,
+   "figura": "multidao.png",
+   "palavras": [
+    {
+     "texto": "quase",
+     "quadro": 50,
+     "x": 285
+    },
+    {
+     "texto": "ninguém",
+     "quadro": 62,
+     "x": 502
+    },
+    {
+     "texto": "percebe",
+     "quadro": 74,
+     "x": 735
+    }
+   ]
+  },
+  {
+   "tipo": "documento_digitado",
+   "inicio": 92,
+   "fim": 140,
+   "documento": "patente_pag6.jpg",
+   "ponto_doc": [
+    0.491,
+    0.674
+   ],
+   "frase": "ELA AJUDOU A CRIAR A TECNOLOGIA",
+   "destaque": "TECNOLOGIA",
+   "quadro_digitar": 96,
+   "quadro_selecao": 116,
+   "quadro_zoom": 116
+  },
+  {
+   "tipo": "objeto_revela",
+   "inicio": 140,
+   "fim": 170,
+   "objeto": "roteador.png",
+   "legenda": {
+    "palavras": [
+     {
+      "texto": "POR TRÁS",
+      "t": 140.5
+     },
+     {
+      "texto": "DO SEU",
+      "t": 145.6
+     },
+     {
+      "texto": "WI-FI.",
+      "t": 148.7
+     }
+    ],
+    "maiuscula": 55,
+    "tracking": -4.4,
+    "x": 543,
+    "y": 741
+   },
+   "ponto_objeto": [
+    389,
+    533.5
+   ]
+  },
+  {
+   "tipo": "foto_pullout",
+   "inicio": 170,
+   "fim": 209,
+   "foto": "g02_ww2_caminhoes.png",
+   "ponto": [
+    760,
+    1344
+   ],
+   "zoom": [
+    1.78,
+    1.3
+   ],
+   "potencia": 1.3,
+   "deriva": [
+    [
+     -72,
+     72
+    ],
+    [
+     59,
+     -59
+    ]
+   ],
+   "ganho": [
+    0.875,
+    0.857,
+    0.925
+   ],
+   "texto": {
+    "texto": "Na 2ª Guerra",
+    "quadro": 173,
+    "largura": 440,
+    "esquerda": 320,
+    "yc": 950
+   }
+  },
+  {
+   "tipo": "foto_pullout",
+   "inicio": 209,
+   "fim": 248,
+   "foto": "hedy_ziegfeld_1941.jpg",
+   "pb": true,
+   "ponto": [
+    1014,
+    1250
+   ],
+   "zoom": [
+    1.08,
+    1.045
+   ],
+   "deriva": [
+    [
+     -120,
+     120
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "ganho": 0.69
+  },
+  {
+   "tipo": "palavras_e_figura",
+   "inicio": 248,
+   "fim": 359,
+   "quadro_figura": 296,
+   "figura": "torre_asas.png",
+   "altura_figura": 1920,
+   "pos_figura": [
+    0,
+    0
+   ],
+   "palavras": [
+    {
+     "texto": "não estava",
+     "quadro": 251,
+     "ate": 260
+    },
+    {
+     "texto": "só",
+     "quadro": 260,
+     "ate": 266
+    },
+    {
+     "texto": "fazendo",
+     "quadro": 266,
+     "ate": 278
+    },
+    {
+     "texto": "filmes",
+     "quadro": 278,
+     "ate": 296
+    }
+   ],
+   "rotulo_pequeno": {
+    "texto": "projetou um",
+    "quadro": 302
+   },
+   "titulo": {
+    "texto": "Sistema de Comunicação",
+    "largura": 675,
+    "partes": [
+     {
+      "texto": "Sistema de",
+      "quadro": 320
+     },
+     {
+      "texto": "Sistema de Comunicação",
+      "quadro": 335
+     }
+    ]
+   }
+  },
+  {
+   "tipo": "foto_pullout",
+   "inicio": 359,
+   "fim": 407,
+   "foto": "g03_ww2_soldados.png",
+   "ponto": [
+    760,
+    1344
+   ],
+   "zoom": [
+    1.08,
+    1.075
+   ],
+   "curva": "linear",
+   "deriva": [
+    [
+     0,
+     0
+    ],
+    [
+     21,
+     -21
+    ]
+   ],
+   "ganho": [
+    0.914,
+    0.869,
+    0.955
+   ]
+  },
+  {
+   "tipo": "queda_objeto",
+   "inicio": 407,
+   "fim": 449,
+   "objeto": "torpedo.png",
+   "rotulo": "jamming torpedoes"
+  },
+  {
+   "tipo": "amassar_lixeira",
+   "inicio": 449,
+   "fim": 503,
+   "lixeira": "lixeira_salao.png",
+   "folha": "folha_torre.png",
+   "ganho": [
+    0.675,
+    0.767,
+    0.711
+   ]
+  },
+  {
+   "tipo": "odometro",
+   "inicio": 503,
+   "fim": 536,
+   "de": 1940,
+   "ate": 1990
+  },
+  {
+   "tipo": "objeto_na_parede",
+   "inicio": 536,
+   "fim": 566,
+   "objeto": "lousa_giz.png"
+  },
+  {
+   "tipo": "palavra_no_papel",
+   "inicio": 566,
+   "fim": 617,
+   "palavras": [
+    {
+     "texto": "Virou",
+     "quadro": 563,
+     "ate": 572
+    },
+    {
+     "texto": "a",
+     "quadro": 572,
+     "ate": 578
+    },
+    {
+     "texto": "base",
+     "quadro": 578,
+     "ate": 593
+    },
+    {
+     "texto": "das",
+     "quadro": 593,
+     "ate": 596
+    },
+    {
+     "texto": "tecnologias",
+     "quadro": 599,
+     "ate": 617
+    }
+   ]
+  },
+  {
+   "tipo": "lista_ui",
+   "inicio": 617,
+   "fim": 698,
+   "saida_desde": 650,
+   "itens": [
+    {
+     "texto": "Wi-Fi",
+     "quadro": 620,
+     "x": 327.0,
+     "y": 745.0
+    },
+    {
+     "texto": "Bluetooth",
+     "quadro": 647,
+     "x": 331.5,
+     "y": 907.0
+    },
+    {
+     "texto": "GPS",
+     "quadro": 668,
+     "x": 354.0,
+     "y": 1067.0
+    }
+   ]
+  },
+  {
+   "tipo": "foto_pullout",
+   "inicio": 698,
+   "fim": 728,
+   "foto": "hedy_samson_delilah_1949.png",
+   "ponto": [
+    1180,
+    760
+   ],
+   "zoom": [
+    1.0,
+    1.049
+   ],
+   "curva": "linear",
+   "ganho": 0.7,
+   "saturacao": 0.8
+  },
+  {
+   "tipo": "foto_pullout",
+   "inicio": 728,
+   "fim": 758,
+   "foto": "hedy_1944_cor.jpg",
+   "ponto": [
+    334,
+    400
+   ],
+   "zoom": [
+    1.288,
+    1.12
+   ],
+   "curva": "entrada",
+   "potencia": 3.0,
+   "ganho": 0.62,
+   "saturacao": 0.55,
+   "desfoque_saida": {
+    "de": 749,
+    "sigma": 14
+   }
+  },
+  {
+   "tipo": "moldura_legenda",
+   "inicio": 758,
+   "fim": 824,
+   "foto": "hedy_1944_cor.jpg",
+   "ponto": [
+    340,
+    340
+   ],
+   "zoom_foto": 1.195,
+   "ganho": 0.62,
+   "saturacao": 0.55,
+   "legenda": [
+    [
+     {
+      "texto": "a história",
+      "quadro": 770
+     },
+     {
+      "texto": "lembra",
+      "quadro": 773
+     }
+    ],
+    [
+     {
+      "texto": "dela",
+      "quadro": 776
+     },
+     {
+      "texto": "pelo",
+      "quadro": 779
+     },
+     {
+      "texto": "seu",
+      "quadro": 785
+     },
+     {
+      "texto": "cérebro.",
+      "quadro": 788
+     }
+    ]
+   ]
+  },
+  {
+   "tipo": "foto_pullout",
+   "inicio": 824,
+   "fim": 845,
+   "foto": "g08_editor.png",
+   "ponto": [
+    760,
+    1300
+   ],
+   "zoom": [
+    1.15,
+    1.045
+   ],
+   "potencia": 1.6,
+   "ganho": 1.3,
+   "texto": {
+    "texto": "Editores",
+    "quadro": 827,
+    "letras_inicio": 1,
+    "letras_por_degrau": 2,
+    "largura": 250,
+    "esquerda": 415,
+    "yc": 945
+   }
+  },
+  {
+   "tipo": "icone_cursor",
+   "inicio": 845,
+   "fim": 905,
+   "icone": "ae_aep_icone.png",
+   "cursor": "cursor_mao_macos.png",
+   "cor_icone": [
+    [
+     0.726,
+     10.1
+    ],
+    [
+     0.84,
+     11.6
+    ],
+    [
+     0.82,
+     5.1
+    ]
+   ]
+  },
+  {
+   "tipo": "site_url",
+   "inicio": 905,
+   "fim": 960,
+   "url": "seusite.com",
+   "quadro_digitar": 912,
+   "desfoque": 3.2,
+   "ganho": 0.58
+  }
+ ]
+}

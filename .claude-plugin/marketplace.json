@@ -3,13 +3,13 @@
   "owner": {
     "name": "edit-labs-ai"
   },
-  "description": "Edit Labs AI: edição completa com o Claude Code, do link do podcast ao vertical pronto (corte, motion, B-roll, legenda, verificação).",
+  "description": "Edit Labs AI: edição de vídeo vertical com o Claude Code, em vários estilos (cortes de podcast, colagem em camadas, curiosidade histórica, explicador Vox, documentário de arquivo, decupagem).",
   "plugins": [
     {
       "name": "edit-labs-ai",
       "source": "./plugins/edit-labs-ai",
-      "description": "Do link do podcast ao vertical pronto, com o Claude Code: 3 skills (edit-labs-ai, corte-viral, motion-vox), 5 agentes e os comandos de apoio. Exige o Higgsfield conectado.",
-      "version": "1.0.0"
+      "description": "Edição de vídeo vertical com o Claude Code: 9 skills (porta de entrada, cortes, motion, colagem em camadas, curiosidade histórica, explicador Vox, documentário de arquivo, time de motion, decupagem), 11 agentes, motor de colagem e banco de referências. Exige o Higgsfield conectado.",
+      "version": "2.0.0"
     }
   ]
 }

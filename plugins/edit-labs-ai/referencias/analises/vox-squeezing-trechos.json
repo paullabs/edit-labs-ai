@@ -1,0 +1,208 @@
+{
+  "video": "Something weird happens when you keep squeezing (Vox)",
+  "url": "https://www.youtube.com/watch?v=NqabT21d8VM",
+  "licenca": "todos os direitos reservados (Vox Media); aqui só o texto da nossa análise e o link de cada trecho",
+  "nota": "start/end em segundos. 'observed' = o que se vê; 'application' = como transferir a lógica para um vídeo nosso. Abra o 'source' para ver o trecho.",
+  "trechos": [
+    {
+      "id": "01",
+      "title": "Seringa e prensa",
+      "start": 10,
+      "end": 22,
+      "category": "Objeto e força",
+      "observed": "Colagem do objeto sobre papel claro, grade em losango e prensa construída em camadas.",
+      "application": "Transformar uma ação da fala em força visível aplicada a um objeto.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=10s"
+    },
+    {
+      "id": "02",
+      "title": "Do objeto ao planeta",
+      "start": 25,
+      "end": 39,
+      "category": "Escala e transição",
+      "observed": "Terra e Sol em corte, aproximação até o interior e integração do apresentador.",
+      "application": "Conservar um ponto de referência durante mudanças grandes de escala.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=25s"
+    },
+    {
+      "id": "03",
+      "title": "Vinheta tipográfica",
+      "start": 55,
+      "end": 70,
+      "category": "Tipografia",
+      "observed": "Letras dispersas, contraste de formas e reunião em uma assinatura curta.",
+      "application": "Reservar a animação tipográfica mais livre para vinhetas e títulos.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=55s"
+    },
+    {
+      "id": "04",
+      "title": "Celular, área e pressão",
+      "start": 74,
+      "end": 97,
+      "category": "Diagrama",
+      "observed": "Mão recortada, telefone, grade, fórmula e seta sobre a atmosfera.",
+      "application": "Partir de um objeto conhecido e revelar a variável que interessa.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=74s"
+    },
+    {
+      "id": "05",
+      "title": "Analogia com recortes humanos",
+      "start": 97,
+      "end": 117,
+      "category": "Colagem",
+      "observed": "Personagens duplicados ao redor do apresentador tornam a pressão concreta.",
+      "application": "Usar repetição e arranjo espacial para explicar quantidade e direção.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=97s"
+    },
+    {
+      "id": "06",
+      "title": "Apresentação das três amostras",
+      "start": 119,
+      "end": 132,
+      "category": "Comparação",
+      "observed": "Hidrogênio, sódio e água apresentados com nomes, massas e grade comum.",
+      "application": "Estabelecer personagens visuais que voltarão transformados.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=119s"
+    },
+    {
+      "id": "07",
+      "title": "Descida pelo oceano",
+      "start": 132,
+      "end": 194,
+      "category": "Jornada",
+      "observed": "Cenário em camadas, apresentador recortado, régua superior, marcos, feixe de luz e inserto anatômico da baleia.",
+      "application": "Mover o ambiente mantendo um guia visual e acrescentar marcos só quando alcançados.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=132s"
+    },
+    {
+      "id": "08",
+      "title": "Comparar o visível e o molecular",
+      "start": 193,
+      "end": 224,
+      "category": "Comparação",
+      "observed": "Elefantes sobre telefone, três amostras, split-screen e moléculas de papel amassado.",
+      "application": "Mostrar resultado e mecanismo lado a lado, com códigos visuais constantes.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=193s"
+    },
+    {
+      "id": "09",
+      "title": "Crosta, manto e temperatura",
+      "start": 224,
+      "end": 257,
+      "category": "Jornada",
+      "observed": "Camadas rochosas quentes, termômetro, régua de pressão, estruturas de carbono.",
+      "application": "Acrescentar um segundo indicador quando a explicação introduzir uma segunda variável.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=224s"
+    },
+    {
+      "id": "10",
+      "title": "Mudança de estado e fonte",
+      "start": 257,
+      "end": 278,
+      "category": "Transformação",
+      "observed": "Água translúcida vira sólido; arranjo molecular muda; artigo aparece em página clara.",
+      "application": "Manter identidade e posição do material enquanto sua propriedade muda.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=257s"
+    },
+    {
+      "id": "11",
+      "title": "Petroleiro e núcleo",
+      "start": 278,
+      "end": 309,
+      "category": "Escala e transição",
+      "observed": "Escala extrema comparada ao telefone e retorno ao corte da Terra.",
+      "application": "Usar um denominador visual recorrente para comparar ordens de grandeza.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=278s"
+    },
+    {
+      "id": "12",
+      "title": "Títulos e anotação documental",
+      "start": 320,
+      "end": 348,
+      "category": "Tipografia",
+      "observed": "Títulos grandes sobre imagens reais; aproximação da agenda e marcação manual.",
+      "application": "Usar nomes reais e destacar a evidência exata.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=320s"
+    },
+    {
+      "id": "13",
+      "title": "Do equipamento real ao alvo",
+      "start": 391,
+      "end": 431,
+      "category": "Real e diagrama",
+      "observed": "Percurso por instrumentos reais, seta de dimensão, maquete da câmara e alvo minúsculo.",
+      "application": "Fazer a passagem concreto → localização → detalhe → esquema.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=391s"
+    },
+    {
+      "id": "14",
+      "title": "Laser, camadas e onda de choque",
+      "start": 431,
+      "end": 462,
+      "category": "Processo causal",
+      "observed": "Esquema gira, fundo escurece, laser violeta entra pela direita, plasma aparece e faixa atravessa a amostra.",
+      "application": "Apresentar partes, ativar entrada, mostrar reação, propagação e saída em ordem.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=431s"
+    },
+    {
+      "id": "15",
+      "title": "Gelo e reorganização molecular",
+      "start": 476,
+      "end": 504,
+      "category": "Transformação",
+      "observed": "Amostra entre diamantes, impacto, moléculas vermelhas e claras reorganizadas, título do novo estado.",
+      "application": "Reorganizar as mesmas unidades visuais; nomear o resultado após a mudança.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=476s"
+    },
+    {
+      "id": "16",
+      "title": "Sódio: de opaco a transparente",
+      "start": 504,
+      "end": 545,
+      "category": "Transformação",
+      "observed": "Objeto sobre grade e aproximação até átomos amarelos, elétrons e ondas de luz.",
+      "application": "Explicar uma propriedade externa mostrando uma mudança interna.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=504s"
+    },
+    {
+      "id": "17",
+      "title": "Terra, planetas e Sol",
+      "start": 545,
+      "end": 601,
+      "category": "Escala e transição",
+      "observed": "Corpos celestes crescem em sequência, corte interno e régua comum; analogia de Manhattan.",
+      "application": "Manter o sistema de medição enquanto o universo representado aumenta.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=545s"
+    },
+    {
+      "id": "18",
+      "title": "Fusão e liberação de energia",
+      "start": 601,
+      "end": 630,
+      "category": "Processo causal",
+      "observed": "Núcleos como bolas de papel, aproximação, encontro, explosão radial e identificação do resultado.",
+      "application": "Usar impacto e expansão luminosa apenas na consequência do evento.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=601s"
+    },
+    {
+      "id": "19",
+      "title": "Fontes e viagem de volta",
+      "start": 630,
+      "end": 665,
+      "category": "Fechamento",
+      "observed": "Artigos, Sol, retorno através da Terra ao laboratório e ao alvo.",
+      "application": "Fechar a trajetória retomando lugares e objetos já apresentados.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=630s"
+    },
+    {
+      "id": "20",
+      "title": "Créditos com sistema visual",
+      "start": 665,
+      "end": 695,
+      "category": "Fechamento",
+      "observed": "Moléculas texturizadas continuam em movimento sobre fundos coloridos e faixa de créditos.",
+      "application": "Reutilizar o vocabulário visual também no encerramento.",
+      "source": "https://www.youtube.com/watch?v=NqabT21d8VM&t=665s"
+    }
+  ]
+}

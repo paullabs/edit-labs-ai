@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Baixa os pacotes grandes (pranchas antigas, modelos 3D de anatomia) da release do GitHub para a pasta de dados
+# do usuário (~/.local/share/edit-labs-ai/colagem/), fora do plugin. Cada pacote traz um LEIA.md com origem,
+# licença e crédito. Mostre nome, tamanho e licença ao usuário e espere o "pode" antes de baixar.
+#   editlabs-assets                 # lista os pacotes e o que já está baixado
+#   editlabs-assets <pacote> ...    # baixa e descompacta (ex.: editlabs-assets colagem-pranchas)
+#   editlabs-assets --todos
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+REPO="paullabs/edit-labs-ai"; TAG="${EDITLABS_ASSETS_TAG:-assets-v2}"
+URL="https://github.com/$REPO/releases/download/$TAG"
+LISTA="$ROOT/skills/colagem-camadas/assets/PACOTES.txt"
+DEST="$EDITLABS_DATA/colagem"; MARCA="$DEST/.pacotes"
+mkdir -p "$MARCA"
+if [ $# -eq 0 ]; then
+  echo "Pacotes da release $TAG (destino: $DEST):"
+  grep -v '^#' "$LISTA" | while read -r nome tam desc; do
+    [ -n "${nome:-}" ] || continue
+    estado="—"; [ -f "$MARCA/$nome" ] && estado="baixado"
+    printf "  %-26s %6s  %-8s %s\n" "$nome" "$tam" "$estado" "$desc"
+  done
+  echo "Baixar: editlabs-assets <pacote>   (ou --todos)"; exit 0
+fi
+PEDIDOS=("$@"); [ "$1" = "--todos" ] && PEDIDOS=($(grep -v '^#' "$LISTA" | awk 'NF{print $1}'))
+for nome in "${PEDIDOS[@]}"; do
+  grep -q "^$nome[[:space:]]" "$LISTA" || { echo "Pacote desconhecido: $nome (veja: editlabs-assets)" >&2; exit 2; }
+  echo "Baixando $nome…"
+  tmp="$(mktemp -d)"; curl -fL --progress-bar -o "$tmp/$nome.zip" "$URL/$nome.zip"
+  unzip -oq "$tmp/$nome.zip" -d "$DEST"; rm -rf "$tmp"; date > "$MARCA/$nome"
+  echo "  ✓ $nome em $DEST  (licença e crédito no LEIA.md do pacote)"
+done

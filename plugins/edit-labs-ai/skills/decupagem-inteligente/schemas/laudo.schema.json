@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "laudo do Diretor (C/D) e do Revisor Leigo (L) — front matter",
+  "type": "object",
+  "required": [
+    "laudo",
+    "alvo",
+    "fase",
+    "tentativa",
+    "isolamento",
+    "escopo",
+    "nao_visto",
+    "veredito",
+    "achados"
+  ],
+  "properties": {
+    "laudo": {
+      "type": "string",
+      "pattern": "^(C[1-4]|D[1-5]|L|L1|L2)$"
+    },
+    "tentativa": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "isolamento": {
+      "enum": [
+        "processo",
+        "subagente",
+        "passe",
+        "chat_novo"
+      ]
+    },
+    "veredito": {
+      "enum": [
+        "APROVADO",
+        "APROVADO_COM_CORRECAO",
+        "REPROVADO"
+      ]
+    },
+    "achados": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "severidade"
+        ],
+        "properties": {
+          "severidade": {
+            "enum": [
+              "BLOCKER",
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          },
+          "tipo": {
+            "enum": [
+              "corte",
+              "conteudo",
+              "pendencia"
+            ]
+          },
+          "corrigido": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

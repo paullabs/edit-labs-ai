@@ -1,9 +1,10 @@
 # Referências visuais — abra ANTES de compor
 
 > **Não vêm com o plugin:** os quadros e vídeos de terceiros que servem de referência ao kit (os 32 quadros do
-> estudo Porsche, a Style Bible e o manual visual com os quadros da Vox, o vídeo de referência da legenda). O que
+> estudo Porsche, o PDF com os quadros da Vox anotados, o vídeo de referência da legenda). O que
 > eles ensinam está escrito nos `.md` desta pasta e medido em números — as faixas que `lib/medir.py` imprime como
-> "faixa Bible" vêm da Style Bible. Para compor olhando, monte a sua pasta de referência (ver **Monte as suas
+> "faixa Bible" vêm da Style Bible do estilo Vox explainer, que vem só em texto em
+> `${CLAUDE_PLUGIN_ROOT}/referencias/analises/vox-style-bible.md` (os "§" citados no código são dela). Para compor olhando, monte a sua pasta de referência (ver **Monte as suas
 > referências**, no fim desta página) e troque as referências das tabelas pelas suas.
 
 
@@ -20,7 +21,7 @@ escura 3–7% e acento 0,1–0,8%**; a referência Porsche tem **15% e 5,0%**, e
 | Fonte | Caminho | Formato |
 | --- | --- | --- |
 | Estudo Porsche (MOTION LADY) | quadros bf01–bf32 (não incluídos; `estudos/vox-porsche/ESTUDO.md` cita os principais e traz a URL de origem) | 32 frames 1280×720 + laudo em `ESTUDO.md` |
-| Style Bible — 10 frames da Vox | o manual visual do kit (PDF, não incluído) | páginas 8–16, anotadas |
+| Style Bible — 10 frames da Vox | PDF com os quadros anotados (não incluído); o texto está em `${CLAUDE_PLUGIN_ROOT}/referencias/analises/vox-style-bible.md` | páginas 8–16, anotadas |
 | Legenda (talking head, medida frame a frame) | um vídeo de referência de terceiros (não incluído) | vídeo 720×1280 |
 
 ## Por registro — onde olhar

@@ -1,0 +1,87 @@
+{
+  "nota": "Cores em hex. 'medida' = extraída de quadros de vídeo (YouTube, ±3 níveis por compressão). 'nossa' = constantes de motor/colagem/pecas.py (RGB). Papel vazio e acentos são papéis distintos: cada acento deve ter um significado fixo no vídeo.",
+  "vox-two-parties": {
+    "origem": "R03, 11 quadros do vídeo; 24 cores mais frequentes (agrupadas em 16 níveis por canal)",
+    "medida": true,
+    "papel": [
+      "#F7F6ED",
+      "#F9F7F1"
+    ],
+    "papel_cobertura_pct": 86,
+    "tinta": [
+      "#181717",
+      "#272627"
+    ],
+    "cinzas": [
+      "#393838",
+      "#484748",
+      "#575758",
+      "#676768",
+      "#787778",
+      "#888788",
+      "#99999A",
+      "#A6A5A6",
+      "#B8B7B7",
+      "#D9D9D7"
+    ],
+    "acentos": {
+      "vermelho": "#FD3719",
+      "azul": "#54B8FE",
+      "rosa": "#FF87C2",
+      "roxo": "#BC77BD"
+    },
+    "marca_texto": "amarelo (não medido; ~#F5E04A pelo olho)",
+    "uso": "papel quase vazio, preto e cinza para o objeto, 1 a 4 acentos com significado fixo"
+  },
+  "nossa-colagem-atual": {
+    "origem": "motor/colagem/pecas.py",
+    "medida": false,
+    "papel": [
+      "#E9DDC0",
+      "#F1E8D2"
+    ],
+    "tinta": [
+      "#2B231C"
+    ],
+    "acentos": {
+      "vermelho": "#AC2E26"
+    },
+    "uso": "papel bege envelhecido, tinta marrom, um vermelho de caneta; mais quente e escuro que o Vox"
+  },
+  "comparacao": "O papel do Vox (#F7F6ED = 247, 246, 237) é mais claro e bem menos amarelado que o nosso (#E9DDC0 = 233, 221, 192): +14 no vermelho, +25 no verde e +45 no azul. Para o estilo vox-clean no corpo humano, usar o papel e os acentos do Vox e manter o grão só nos objetos.",
+  "documentario-new-promised-land": {
+    "origem": "R23, 19 quadros de 480×270 para tons e 5 quadros para o vermelho; ±3 níveis por compressão do Vimeo",
+    "medida": true,
+    "papel": [
+      "#E7D6B9",
+      "#D8C7A9",
+      "#F4E4C9"
+    ],
+    "tinta": [
+      "#181D23",
+      "#1D2228",
+      "#24282B"
+    ],
+    "cinzas": [
+      "#877A69",
+      "#978978",
+      "#A79986"
+    ],
+    "acentos": {
+      "vermelho_anotacao": "#C35853"
+    },
+    "saturacao_pct": {
+      "quase_cinza": 8,
+      "baixa": 39,
+      "media": 44,
+      "saturada": 9
+    },
+    "luminancia_pct": {
+      "escuro": 34,
+      "medio": 38,
+      "claro": 28
+    },
+    "vermelho_pixels_pct": 0.32,
+    "uso": "papel quente e amarelado, sombra fria azulada, um vermelho só para anotação e carimbo; mais denso e escuro que o Two Parties"
+  }
+}

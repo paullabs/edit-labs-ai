@@ -1,0 +1,299 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "di-decisoes/1 — o único JSON que o Editor escreve",
+ "type": "object",
+ "required": [
+  "bloco",
+  "padrao",
+  "manter"
+ ],
+ "properties": {
+  "bloco": {
+   "type": "string",
+   "minLength": 1
+  },
+  "titulo": {
+   "type": "string"
+  },
+  "padrao": {
+   "enum": [
+    "remover",
+    "manter"
+   ]
+  },
+  "manter": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "motivo"
+    ],
+    "properties": {
+     "frase": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "grupo": {
+      "type": "string",
+      "pattern": "^G[0-9]{2,}$"
+     },
+     "tomada": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "de_palavra": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "ate_palavra": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "motivo": {
+      "type": "string",
+      "minLength": 1
+     },
+     "entrada": {
+      "enum": [
+       "voz_sustentada"
+      ],
+      "description": "entra na voz que se sustenta; ignora estalo ou respiro curto antes da fala"
+     },
+     "concorrentes": {
+      "type": "array",
+      "items": {
+       "type": "integer",
+       "minimum": 0
+      },
+      "description": "frases fora de grupo que dizem o mesmo (outra versão); aparecem em MARCAS"
+     },
+     "repeticao_intencional": {
+      "type": "boolean",
+      "description": "tomada que repete outra de propósito (fecho de CTA); o motivo diz por quê; vira V15b para o Diretor"
+     }
+    },
+    "oneOf": [
+     {
+      "required": [
+       "frase"
+      ]
+     },
+     {
+      "required": [
+       "grupo",
+       "tomada"
+      ]
+     },
+     {
+      "required": [
+       "de_palavra",
+       "ate_palavra"
+      ]
+     }
+    ]
+   }
+  },
+  "remover": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "motivo"
+    ],
+    "properties": {
+     "frase": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "de_palavra": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "ate_palavra": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "motivo": {
+      "type": "string",
+      "minLength": 1
+     }
+    },
+    "oneOf": [
+     {
+      "required": [
+       "frase"
+      ]
+     },
+     {
+      "required": [
+       "de_palavra",
+       "ate_palavra"
+      ]
+     }
+    ]
+   }
+  },
+  "pausas_preservar": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "apos_palavra",
+     "funcao"
+    ],
+    "properties": {
+     "apos_palavra": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "funcao": {
+      "type": "string",
+      "minLength": 1
+     }
+    }
+   }
+  },
+  "pausas_colapsar_intra": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "apos_palavra",
+     "motivo"
+    ],
+    "properties": {
+     "apos_palavra": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "motivo": {
+      "type": "string",
+      "minLength": 1
+     }
+    }
+   }
+  },
+  "fillers_vetados": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "palavra"
+    ],
+    "properties": {
+     "palavra": {
+      "type": "integer",
+      "minimum": 0
+     }
+    }
+   }
+  },
+  "emendas_seco": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "apos_palavra",
+     "motivo"
+    ],
+    "properties": {
+     "apos_palavra": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "motivo": {
+      "type": "string",
+      "minLength": 1
+     }
+    }
+   }
+  },
+  "ambiguas": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "palavra",
+     "ouvido",
+     "provavel",
+     "status"
+    ],
+    "properties": {
+     "palavra": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "ouvido": {
+      "type": "string",
+      "minLength": 1
+     },
+     "provavel": {
+      "type": "string",
+      "minLength": 1
+     },
+     "status": {
+      "enum": [
+       "a confirmar",
+       "confirmada"
+      ]
+     }
+    }
+   }
+  },
+  "saida_no_vale": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "apos_palavra",
+     "motivo"
+    ],
+    "properties": {
+     "apos_palavra": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "motivo": {
+      "type": "string",
+      "minLength": 1
+     }
+    }
+   }
+  },
+  "cortar_trecho": {
+   "type": "array",
+   "description": "Corte dentro do que o Whisper deu como palavras vizinhas: a fala abandonada entre #apos_palavra e a seguinte foi engolida numa palavra esticada. Tempos do bruto, medidos (armadilhas 60).",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "apos_palavra",
+     "abandona_de",
+     "abandona_ate",
+     "retoma_em",
+     "motivo"
+    ],
+    "properties": {
+     "apos_palavra": {
+      "type": "integer"
+     },
+     "abandona_de": {
+      "type": "number"
+     },
+     "abandona_ate": {
+      "type": "number"
+     },
+     "retoma_em": {
+      "type": "number"
+     },
+     "motivo": {
+      "type": "string",
+      "minLength": 10
+     }
+    }
+   }
+  }
+ },
+ "additionalProperties": false
+}

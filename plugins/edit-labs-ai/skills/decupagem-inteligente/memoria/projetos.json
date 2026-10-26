@@ -1,0 +1,4 @@
+{
+ "_sobre": "MODELO VAZIO. A lista real de projetos do usuário fica fora do plugin, em $EDITLABS_DATA/decupagem-inteligente/projetos.json (padrão ~/.local/share/edit-labs-ai/decupagem-inteligente/projetos.json), escrita por `di preparar` e `di portao`. Cada item: caminho (pasta do projeto), bruto, fase (ex.: 'F3 CORTE BASE'), data (ISO), host, estado (ativo | entregue). A retomada usa essa lista quando o usuário não diz o caminho.",
+ "projetos": []
+}

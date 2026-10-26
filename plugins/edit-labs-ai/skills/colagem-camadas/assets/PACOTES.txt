@@ -1,0 +1,4 @@
+# Pacotes grandes da release (baixe com: editlabs-assets <pacote>). Formato: nome  tamanho  descrição
+colagem-pranchas            207MB  pranchas antigas com abas (manequim de 1890, Witkowski, Albinus) — domínio público e CC BY 4.0
+colagem-zanatomy-camadas    33MB   camadas 3D de anatomia do Z-Anatomy (pele, músculos, órgãos, esqueleto, crânio, coração, mão) — CC BY-SA 4.0
+colagem-bodyparts3d         68MB   cérebro e partes do BodyParts3D alinhados ao Z-Anatomy — CC BY-SA 2.1 JP

@@ -1,0 +1,17 @@
+{
+ "titulo": "Teste do pipeline (voz sintetica do macOS so para tempo)",
+ "audio": "audio/narracao.wav",
+ "planos": [
+  {"tipo": "gancho_digitado", "inicio": 0, "fim": 35, "texto": "NINGUÉM"},
+  {"tipo": "palavra_no_papel", "inicio": 35, "fim": 134,
+   "palavras": [{"texto": "cada", "quadro": 47}, {"texto": "palavra", "quadro": 56}, {"texto": "dita", "quadro": 71},
+                {"texto": "vira", "quadro": 83}, {"texto": "um evento", "quadro": 95}, {"texto": "na tela.", "quadro": 110}]},
+  {"tipo": "odometro", "inicio": 134, "fim": 233, "de": 1980, "ate": 2020, "duracao": 63},
+  {"tipo": "palavra_no_papel", "inicio": 233, "fim": 290,
+   "palavras": [{"texto": "o arquivo", "quadro": 242}, {"texto": "virou", "quadro": 254}, {"texto": "movimento.", "quadro": 263}]},
+  {"tipo": "lista_ui", "inicio": 290, "fim": 347, "saida_desde": 335,
+   "itens": [{"texto": "Ícone", "quadro": 290}, {"texto": "Cursor", "quadro": 308}, {"texto": "Site", "quadro": 326}]},
+  {"tipo": "icone_cursor", "inicio": 347, "fim": 410, "icone": "icone_adobe_after_effects_2026_aep.png",
+   "cursor": "cursor_pointinghand.png"}
+ ]
+}

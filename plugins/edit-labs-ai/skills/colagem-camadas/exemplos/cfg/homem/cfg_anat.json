@@ -1,0 +1,80 @@
+{
+ "modelo": "{TRABALHO}/homem2/homem2.blend",
+ "vistas": 1,
+ "res": [
+  2496,
+  2886
+ ],
+ "lente": 0,
+ "elevacao": 0,
+ "ajuste": "caixa",
+ "caixa_mundo": [
+  -0.32,
+  0.82,
+  0.32,
+  1.56
+ ],
+ "motor": "WORKBENCH",
+ "cor_tipo": "MATERIAL",
+ "passes": [
+  "cor",
+  "luz"
+ ],
+ "saida": "{TRABALHO}/homem3/anat/vistas_anat",
+ "quadros": [
+  1
+ ],
+ "camadas": {
+  "musc": [
+   "^musc__"
+  ],
+  "costelas": [
+   "^osso__.*(\\brib\\b|sternum|xiphoid)"
+  ],
+  "osso_resto": [
+   "^osso__(?!.*(\\brib\\b|sternum|xiphoid))"
+  ],
+  "org": [
+   "^org__"
+  ],
+  "pul": [
+   "^pul__"
+  ],
+  "cor": [
+   "^cor__"
+  ]
+ },
+ "giro_inicial": -22.0,
+ "marcos": {
+  "jugular": [
+   0.0,
+   -0.05,
+   1.44
+  ],
+  "ombro_R": [
+   -0.172,
+   0.03,
+   1.378
+  ],
+  "ombro_L": [
+   0.172,
+   0.03,
+   1.378
+  ],
+  "umbigo": [
+   0.0,
+   -0.1,
+   1.07
+  ],
+  "topo": [
+   0.0,
+   0.0,
+   1.75
+  ],
+  "coracao": [
+   0.03,
+   -0.02,
+   1.27
+  ]
+ }
+}

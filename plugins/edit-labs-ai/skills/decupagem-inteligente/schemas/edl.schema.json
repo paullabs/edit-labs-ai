@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "di-edl/1 — um arquivo por <id>",
+  "type": "object",
+  "required": [
+    "schema",
+    "fonte",
+    "fps",
+    "id",
+    "segmentos",
+    "palavras_mantidas",
+    "duracao",
+    "frames_total"
+  ],
+  "properties": {
+    "schema": {
+      "const": "di-edl/1"
+    },
+    "fps": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "segmentos": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "n",
+          "source_in",
+          "source_out",
+          "timeline_in_f",
+          "timeline_out_f",
+          "frames",
+          "palavra_in",
+          "palavra_out",
+          "escala",
+          "junta_in",
+          "junta_out"
+        ],
+        "properties": {
+          "frames": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "escala": {
+            "type": "number",
+            "minimum": 1.0,
+            "maximum": 1.1
+          },
+          "junta_in": {
+            "type": "object",
+            "required": [
+              "tipo"
+            ],
+            "properties": {
+              "tipo": {
+                "enum": [
+                  "inicio",
+                  "A",
+                  "B"
+                ]
+              },
+              "residuo": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "cobertura": {
+                "enum": [
+                  "punch_in",
+                  "seco",
+                  "cutaway"
+                ]
+              }
+            }
+          },
+          "junta_out": {
+            "type": "object",
+            "required": [
+              "tipo"
+            ],
+            "properties": {
+              "tipo": {
+                "enum": [
+                  "fim",
+                  "A",
+                  "B"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "frames_total": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

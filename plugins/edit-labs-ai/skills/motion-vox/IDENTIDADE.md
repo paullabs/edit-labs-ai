@@ -7,7 +7,7 @@ parecido: as fontes e os assets viajam junto.
 identidade: MOTION-VOX
 versao: 1
 canvas: 1080x1920
-base: Vox Explainer LABS (gramática editorial dos explicativos da Vox)
+base: estilo Vox explainer (gramática editorial dos explicativos da Vox)
 ```
 
 ## O que faz esta identidade ser esta identidade

@@ -1,0 +1,3414 @@
+{
+ "fps": 24,
+ "fim": 718,
+ "voz_fim": 694,
+ "tela": [
+  1080,
+  1920
+ ],
+ "mundo_escala": 2,
+ "convencoes": {
+  "mundo_tela": "mundo:true anda com a câmera; mundo:false fica parado na tela",
+  "camera": "z = escala do mundo; (cx, cy) = ponto do mundo no centro da tela (540, 960)",
+  "posicao": "x, y = onde fica a âncora da camada (centro do arquivo, ou o ponto [x, y] em px planejados)",
+  "rotacao": "graus, positivo = horário na tela",
+  "escala": "1.0 = tamanho planejado; o PNG da peça é feito em 2x esse tamanho",
+  "curva": "vale do quadro da chave até a chave seguinte; 'segura' = degrau",
+  "degrau": "o desenho anda em degraus de 2 quadros (12 qps); toda chave em quadro par",
+  "ordem": "camadas de baixo para cima, acima dos fundos; 'grupo' é só para a conta do orçamento"
+ },
+ "camera": {
+  "z": [
+   [
+    0,
+    1.0,
+    "segura"
+   ],
+   [
+    22,
+    1.0,
+    "out"
+   ],
+   [
+    34,
+    1.3,
+    "segura"
+   ],
+   [
+    70,
+    1.0,
+    "segura"
+   ],
+   [
+    242,
+    1.0,
+    "io"
+   ],
+   [
+    262,
+    1.12,
+    "segura"
+   ],
+   [
+    286,
+    1.12,
+    "io"
+   ],
+   [
+    298,
+    1.0,
+    "segura"
+   ],
+   [
+    336,
+    1.0,
+    "out"
+   ],
+   [
+    346,
+    1.15,
+    "segura"
+   ],
+   [
+    406,
+    1.15,
+    "io"
+   ],
+   [
+    414,
+    1.0,
+    "segura"
+   ],
+   [
+    488,
+    1.0,
+    "out"
+   ],
+   [
+    508,
+    2.0,
+    "segura"
+   ],
+   [
+    650,
+    1.0,
+    "segura"
+   ]
+  ],
+  "cx": [
+   [
+    0,
+    540,
+    "segura"
+   ],
+   [
+    22,
+    540,
+    "out"
+   ],
+   [
+    34,
+    523,
+    "segura"
+   ],
+   [
+    70,
+    540,
+    "segura"
+   ],
+   [
+    336,
+    540,
+    "out"
+   ],
+   [
+    346,
+    470,
+    "segura"
+   ],
+   [
+    406,
+    470,
+    "io"
+   ],
+   [
+    414,
+    540,
+    "segura"
+   ]
+  ],
+  "cy": [
+   [
+    0,
+    960,
+    "segura"
+   ],
+   [
+    22,
+    960,
+    "out"
+   ],
+   [
+    34,
+    705,
+    "segura"
+   ],
+   [
+    70,
+    960,
+    "segura"
+   ],
+   [
+    242,
+    960,
+    "io"
+   ],
+   [
+    262,
+    900,
+    "segura"
+   ],
+   [
+    286,
+    900,
+    "io"
+   ],
+   [
+    298,
+    960,
+    "segura"
+   ],
+   [
+    336,
+    960,
+    "out"
+   ],
+   [
+    346,
+    900,
+    "segura"
+   ],
+   [
+    406,
+    900,
+    "io"
+   ],
+   [
+    414,
+    960,
+    "segura"
+   ],
+   [
+    488,
+    960,
+    "out"
+   ],
+   [
+    508,
+    900,
+    "segura"
+   ],
+   [
+    650,
+    860,
+    "segura"
+   ]
+  ]
+ },
+ "camadas": [
+  {
+   "nome": "VINHETA",
+   "arquivo": "vinheta",
+   "mundo": false,
+   "ini": 182,
+   "fim": 718,
+   "tamanho": [
+    1080,
+    1920
+   ],
+   "ancora": "centro",
+   "grupo": "fundo",
+   "sombra": null,
+   "boil": null,
+   "descricao": "vinheta radial: centro transparente, bordas #121212",
+   "chaves": {
+    "x": [
+     [
+      182,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      182,
+      960,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      182,
+      0,
+      "lin"
+     ],
+     [
+      212,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "GRADE_PAPEL",
+   "arquivo": "grade_papel",
+   "mundo": true,
+   "ini": 70,
+   "fim": 212,
+   "tamanho": [
+    2000,
+    3000
+   ],
+   "ancora": "centro",
+   "grupo": "fundo",
+   "sombra": null,
+   "boil": null,
+   "descricao": "grade em losango, linha 2 px #6F6E6B, célula 60 px",
+   "chaves": {
+    "x": [
+     [
+      70,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      70,
+      960,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      70,
+      100,
+      "segura"
+     ],
+     [
+      182,
+      100,
+      "lin"
+     ],
+     [
+      212,
+      0,
+      "segura"
+     ]
+    ]
+   },
+   "previa_reduz": 2
+  },
+  {
+   "nome": "GRADE_ESCURO",
+   "arquivo": "grade_escuro",
+   "mundo": true,
+   "ini": 182,
+   "fim": 496,
+   "tamanho": [
+    2000,
+    3000
+   ],
+   "ancora": "centro",
+   "grupo": "fundo",
+   "sombra": null,
+   "boil": null,
+   "descricao": "grade em losango, linha 2 px #4C4C4C, célula 60 px",
+   "chaves": {
+    "x": [
+     [
+      182,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      182,
+      960,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      182,
+      0,
+      "lin"
+     ],
+     [
+      212,
+      100,
+      "segura"
+     ],
+     [
+      488,
+      100,
+      "lin"
+     ],
+     [
+      494,
+      0,
+      "segura"
+     ]
+    ]
+   },
+   "previa_reduz": 2
+  },
+  {
+   "nome": "FOTO_GANCHO",
+   "arquivo": "foto_gancho",
+   "mundo": true,
+   "ini": 0,
+   "fim": 70,
+   "tamanho": [
+    900,
+    740
+   ],
+   "ancora": "centro",
+   "grupo": "foto",
+   "sombra": [
+    11,
+    24,
+    0.25
+   ],
+   "boil": null,
+   "descricao": "foto de arquivo de 1897 (domínio público) impressa como cartão com margem #F1ECE0",
+   "chaves": {
+    "x": [
+     [
+      0,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      0,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      0,
+      -2,
+      "segura"
+     ]
+    ],
+    "s": [
+     [
+      0,
+      1.03,
+      "out"
+     ],
+     [
+      4,
+      1.0,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      0,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "PRETO_FOTO",
+   "arquivo": null,
+   "mundo": true,
+   "ini": 0,
+   "fim": 70,
+   "tamanho": [
+    860,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "ajuste",
+   "sombra": null,
+   "boil": null,
+   "descricao": "retângulo #111111 do tamanho da foto, sem a margem",
+   "chaves": {
+    "x": [
+     [
+      0,
+      539,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      0,
+      870,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      0,
+      -2,
+      "segura"
+     ]
+    ],
+    "s": [
+     [
+      0,
+      1.03,
+      "out"
+     ],
+     [
+      4,
+      1.0,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      0,
+      0,
+      "segura"
+     ],
+     [
+      32,
+      15,
+      "segura"
+     ],
+     [
+      34,
+      30,
+      "segura"
+     ],
+     [
+      36,
+      45,
+      "segura"
+     ],
+     [
+      38,
+      58,
+      "segura"
+     ],
+     [
+      40,
+      70,
+      "segura"
+     ],
+     [
+      42,
+      78,
+      "segura"
+     ],
+     [
+      44,
+      85,
+      "segura"
+     ]
+    ]
+   },
+   "forma": {
+    "tipo": "rectangle",
+    "cor": "#111111"
+   },
+   "luz_linear": true
+  },
+  {
+   "nome": "OMBROS",
+   "arquivo": "ombros_cima",
+   "mundo": true,
+   "ini": 70,
+   "fim": 496,
+   "tamanho": [
+    900,
+    380
+   ],
+   "ancora": "centro",
+   "grupo": "pessoa",
+   "sombra": [
+    6,
+    14,
+    0.18
+   ],
+   "boil": "obj",
+   "descricao": "pessoa genérica gerada, vista de cima, só o tronco, com borda de papel",
+   "chaves": {
+    "x": [
+     [
+      70,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      70,
+      1030,
+      "segura"
+     ],
+     [
+      134,
+      1030,
+      "lin"
+     ],
+     [
+      136,
+      1042,
+      "lin"
+     ],
+     [
+      138,
+      1057,
+      "lin"
+     ],
+     [
+      140,
+      1069,
+      "lin"
+     ],
+     [
+      142,
+      1079,
+      "lin"
+     ],
+     [
+      144,
+      1086,
+      "lin"
+     ],
+     [
+      146,
+      1089,
+      "lin"
+     ],
+     [
+      148,
+      1090,
+      "segura"
+     ],
+     [
+      168,
+      1090,
+      "lin"
+     ],
+     [
+      170,
+      1078,
+      "lin"
+     ],
+     [
+      172,
+      1060,
+      "lin"
+     ],
+     [
+      174,
+      1043,
+      "lin"
+     ],
+     [
+      176,
+      1034,
+      "lin"
+     ],
+     [
+      178,
+      1030,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      70,
+      100,
+      "segura"
+     ],
+     [
+      488,
+      100,
+      "lin"
+     ],
+     [
+      494,
+      0,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "CRANIO",
+   "arquivo": "cranio_cima",
+   "mundo": true,
+   "ini": 488,
+   "fim": 652,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "interior",
+   "sombra": null,
+   "boil": "paper",
+   "descricao": "anel do crânio de uma gravura anatômica CC BY 4.0, tingido de osso; a nuca refeita em arco",
+   "chaves": {
+    "x": [
+     [
+      488,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      488,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      488,
+      0,
+      "segura"
+     ],
+     [
+      562,
+      -8,
+      "lin"
+     ],
+     [
+      564,
+      -17,
+      "lin"
+     ],
+     [
+      566,
+      -25,
+      "lin"
+     ],
+     [
+      568,
+      -32,
+      "lin"
+     ],
+     [
+      570,
+      -37,
+      "lin"
+     ],
+     [
+      572,
+      -40,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      488,
+      100,
+      "segura"
+     ],
+     [
+      644,
+      100,
+      "lin"
+     ],
+     [
+      650,
+      0,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "CEREBRO",
+   "arquivo": "cerebro_cima",
+   "mundo": true,
+   "ini": 488,
+   "fim": 608,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "interior",
+   "sombra": null,
+   "boil": "obj",
+   "descricao": "o cérebro da mesma gravura, separado do crânio, 10% menor (folga para atrasar)",
+   "chaves": {
+    "x": [
+     [
+      488,
+      540,
+      "segura"
+     ],
+     [
+      508,
+      550,
+      "segura"
+     ],
+     [
+      512,
+      533,
+      "segura"
+     ],
+     [
+      516,
+      544,
+      "segura"
+     ],
+     [
+      520,
+      540,
+      "segura"
+     ],
+     [
+      524,
+      542,
+      "segura"
+     ],
+     [
+      528,
+      538,
+      "segura"
+     ],
+     [
+      532,
+      542,
+      "segura"
+     ],
+     [
+      536,
+      538,
+      "segura"
+     ],
+     [
+      540,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      488,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      488,
+      0,
+      "segura"
+     ],
+     [
+      508,
+      3,
+      "segura"
+     ],
+     [
+      512,
+      -2,
+      "segura"
+     ],
+     [
+      516,
+      1,
+      "segura"
+     ],
+     [
+      520,
+      0,
+      "segura"
+     ],
+     [
+      562,
+      0,
+      "lin"
+     ],
+     [
+      566,
+      -2,
+      "lin"
+     ],
+     [
+      572,
+      -3,
+      "lin"
+     ],
+     [
+      582,
+      -4,
+      "lin"
+     ],
+     [
+      590,
+      -5,
+      "lin"
+     ],
+     [
+      598,
+      -6,
+      "lin"
+     ],
+     [
+      604,
+      -8,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      488,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "CEREBRO_TORCIDO_1",
+   "arquivo": "cerebro_torcido_1",
+   "mundo": true,
+   "ini": 608,
+   "fim": 610,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "interior",
+   "sombra": null,
+   "boil": "obj",
+   "descricao": "o mesmo cérebro, torção 50% (borda +6°, miolo 0°)",
+   "chaves": {
+    "x": [
+     [
+      608,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      608,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      608,
+      -8,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      608,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "CEREBRO_TORCIDO_2",
+   "arquivo": "cerebro_torcido_2",
+   "mundo": true,
+   "ini": 610,
+   "fim": 652,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "interior",
+   "sombra": null,
+   "boil": "obj",
+   "descricao": "torção 100% (borda +12°) e 8 fibras finas no vermelho da luva",
+   "chaves": {
+    "x": [
+     [
+      610,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      610,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      610,
+      -8,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      610,
+      100,
+      "segura"
+     ],
+     [
+      644,
+      100,
+      "lin"
+     ],
+     [
+      650,
+      0,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "CABECA",
+   "arquivo": "cabeca_cima",
+   "mundo": true,
+   "ini": 70,
+   "fim": 502,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "pessoa",
+   "sombra": [
+    6,
+    14,
+    0.18
+   ],
+   "boil": "obj",
+   "descricao": "a cabeça da mesma pessoa, nariz para o topo; o pivô P no centro do arquivo",
+   "chaves": {
+    "x": [
+     [
+      70,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      70,
+      900,
+      "segura"
+     ],
+     [
+      134,
+      900,
+      "lin"
+     ],
+     [
+      136,
+      920,
+      "lin"
+     ],
+     [
+      138,
+      945,
+      "lin"
+     ],
+     [
+      140,
+      965,
+      "lin"
+     ],
+     [
+      142,
+      982,
+      "lin"
+     ],
+     [
+      144,
+      993,
+      "lin"
+     ],
+     [
+      146,
+      999,
+      "lin"
+     ],
+     [
+      148,
+      1000,
+      "segura"
+     ],
+     [
+      168,
+      1000,
+      "lin"
+     ],
+     [
+      170,
+      980,
+      "lin"
+     ],
+     [
+      172,
+      950,
+      "lin"
+     ],
+     [
+      174,
+      922,
+      "lin"
+     ],
+     [
+      176,
+      906,
+      "lin"
+     ],
+     [
+      178,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      70,
+      0,
+      "segura"
+     ],
+     [
+      318,
+      -10,
+      "lin"
+     ],
+     [
+      320,
+      -22,
+      "lin"
+     ],
+     [
+      322,
+      -32,
+      "lin"
+     ],
+     [
+      324,
+      -39,
+      "lin"
+     ],
+     [
+      326,
+      -43,
+      "lin"
+     ],
+     [
+      328,
+      -45,
+      "lin"
+     ],
+     [
+      330,
+      -47,
+      "lin"
+     ],
+     [
+      332,
+      -45,
+      "segura"
+     ],
+     [
+      416,
+      -36,
+      "lin"
+     ],
+     [
+      418,
+      -27,
+      "lin"
+     ],
+     [
+      420,
+      -18,
+      "lin"
+     ],
+     [
+      422,
+      -9,
+      "lin"
+     ],
+     [
+      424,
+      -3,
+      "lin"
+     ],
+     [
+      426,
+      0,
+      "segura"
+     ],
+     [
+      444,
+      -5,
+      "lin"
+     ],
+     [
+      446,
+      -11,
+      "lin"
+     ],
+     [
+      448,
+      -15,
+      "lin"
+     ],
+     [
+      450,
+      -10,
+      "lin"
+     ],
+     [
+      452,
+      -4,
+      "lin"
+     ],
+     [
+      454,
+      0,
+      "segura"
+     ],
+     [
+      464,
+      -12,
+      "lin"
+     ],
+     [
+      466,
+      -24,
+      "lin"
+     ],
+     [
+      468,
+      -33,
+      "lin"
+     ],
+     [
+      470,
+      -39,
+      "lin"
+     ],
+     [
+      472,
+      -43,
+      "lin"
+     ],
+     [
+      474,
+      -45,
+      "lin"
+     ],
+     [
+      476,
+      -47,
+      "lin"
+     ],
+     [
+      478,
+      -45,
+      "segura"
+     ],
+     [
+      482,
+      -36,
+      "lin"
+     ],
+     [
+      484,
+      -24,
+      "lin"
+     ],
+     [
+      486,
+      -12,
+      "lin"
+     ],
+     [
+      488,
+      -4,
+      "lin"
+     ],
+     [
+      490,
+      0,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      70,
+      100,
+      "segura"
+     ],
+     [
+      494,
+      100,
+      "lin"
+     ],
+     [
+      500,
+      0,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "FITA_25",
+   "arquivo": "fita_25",
+   "mundo": true,
+   "ini": 346,
+   "fim": 348,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "fita",
+   "sombra": null,
+   "boil": null,
+   "descricao": "fita métrica gerada, estado por máscara",
+   "chaves": {
+    "x": [
+     [
+      346,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      346,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      346,
+      -45,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      346,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "FITA_50",
+   "arquivo": "fita_50",
+   "mundo": true,
+   "ini": 348,
+   "fim": 350,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "fita",
+   "sombra": null,
+   "boil": null,
+   "descricao": "fita métrica gerada, estado por máscara",
+   "chaves": {
+    "x": [
+     [
+      348,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      348,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      348,
+      -45,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      348,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "FITA_75",
+   "arquivo": "fita_75",
+   "mundo": true,
+   "ini": 350,
+   "fim": 352,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "fita",
+   "sombra": null,
+   "boil": null,
+   "descricao": "fita métrica gerada, estado por máscara",
+   "chaves": {
+    "x": [
+     [
+      350,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      350,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      350,
+      -45,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      350,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "FITA_50_VOLTA",
+   "arquivo": "fita_50",
+   "mundo": true,
+   "ini": 396,
+   "fim": 398,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "fita",
+   "sombra": null,
+   "boil": null,
+   "descricao": "fita métrica gerada, estado por máscara",
+   "chaves": {
+    "x": [
+     [
+      396,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      396,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      396,
+      -45,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      396,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "FITA_100",
+   "arquivo": "fita_100",
+   "mundo": true,
+   "ini": 352,
+   "fim": 396,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "fita",
+   "sombra": [
+    3,
+    6,
+    0.2
+   ],
+   "boil": null,
+   "descricao": "fita inteira: do pino até o queixo (240 px)",
+   "chaves": {
+    "x": [
+     [
+      352,
+      540,
+      "segura"
+     ],
+     [
+      360,
+      536,
+      "segura"
+     ],
+     [
+      362,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      352,
+      900,
+      "segura"
+     ],
+     [
+      360,
+      896,
+      "segura"
+     ],
+     [
+      362,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      352,
+      -45,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      352,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "CHAVE",
+   "arquivo": "chave",
+   "mundo": true,
+   "ini": 396,
+   "fim": 438,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "chave",
+   "sombra": [
+    8,
+    14,
+    0.25
+   ],
+   "boil": null,
+   "descricao": "chave estrela CC0: a boca abraça o pino, o cabo vai até o queixo",
+   "chaves": {
+    "x": [
+     [
+      396,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      396,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      396,
+      -45,
+      "segura"
+     ],
+     [
+      416,
+      -36,
+      "lin"
+     ],
+     [
+      418,
+      -27,
+      "lin"
+     ],
+     [
+      420,
+      -18,
+      "lin"
+     ],
+     [
+      422,
+      -9,
+      "lin"
+     ],
+     [
+      424,
+      -3,
+      "lin"
+     ],
+     [
+      426,
+      0,
+      "segura"
+     ]
+    ],
+    "s": [
+     [
+      396,
+      1.35,
+      "lin"
+     ],
+     [
+      398,
+      1.12,
+      "lin"
+     ],
+     [
+      400,
+      1.03,
+      "lin"
+     ],
+     [
+      402,
+      1.0,
+      "segura"
+     ],
+     [
+      404,
+      1.02,
+      "lin"
+     ],
+     [
+      406,
+      1.0,
+      "segura"
+     ],
+     [
+      432,
+      1.0,
+      "lin"
+     ],
+     [
+      434,
+      1.12,
+      "lin"
+     ],
+     [
+      436,
+      1.25,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      396,
+      0,
+      "lin"
+     ],
+     [
+      398,
+      60,
+      "lin"
+     ],
+     [
+      400,
+      100,
+      "segura"
+     ],
+     [
+      432,
+      100,
+      "lin"
+     ],
+     [
+      434,
+      50,
+      "lin"
+     ],
+     [
+      436,
+      0,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "PINO",
+   "arquivo": "pino",
+   "mundo": true,
+   "ini": 262,
+   "fim": 502,
+   "tamanho": [
+    44,
+    44
+   ],
+   "ancora": "centro",
+   "grupo": "pessoa",
+   "sombra": [
+    4,
+    6,
+    0.3
+   ],
+   "boil": null,
+   "descricao": "colchete bailarina de latão gerado, de cima: a articulação do boneco de papel = o eixo",
+   "chaves": {
+    "x": [
+     [
+      262,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      262,
+      900,
+      "segura"
+     ]
+    ],
+    "s": [
+     [
+      262,
+      1.6,
+      "lin"
+     ],
+     [
+      264,
+      1.15,
+      "lin"
+     ],
+     [
+      266,
+      1.0,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      262,
+      100,
+      "segura"
+     ],
+     [
+      494,
+      100,
+      "lin"
+     ],
+     [
+      500,
+      0,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "LUVA_RETA",
+   "arquivo": "luva",
+   "mundo": true,
+   "ini": 74,
+   "fim": 162,
+   "tamanho": [
+    300,
+    820
+   ],
+   "ancora": [
+    150,
+    670
+   ],
+   "grupo": "luva",
+   "sombra": [
+    20,
+    32,
+    0.22
+   ],
+   "boil": "obj",
+   "descricao": "luva vermelha abafada gerada, sem marca, apontando para baixo, com o antebraço",
+   "chaves": {
+    "x": [
+     [
+      74,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      74,
+      -300,
+      "lin"
+     ],
+     [
+      76,
+      -60,
+      "lin"
+     ],
+     [
+      78,
+      160,
+      "lin"
+     ],
+     [
+      80,
+      320,
+      "lin"
+     ],
+     [
+      82,
+      410,
+      "segura"
+     ],
+     [
+      84,
+      395,
+      "lin"
+     ],
+     [
+      86,
+      380,
+      "segura"
+     ],
+     [
+      106,
+      430,
+      "lin"
+     ],
+     [
+      108,
+      470,
+      "lin"
+     ],
+     [
+      110,
+      500,
+      "lin"
+     ],
+     [
+      112,
+      510,
+      "segura"
+     ],
+     [
+      134,
+      510,
+      "lin"
+     ],
+     [
+      136,
+      530,
+      "lin"
+     ],
+     [
+      138,
+      555,
+      "lin"
+     ],
+     [
+      140,
+      575,
+      "lin"
+     ],
+     [
+      142,
+      592,
+      "lin"
+     ],
+     [
+      144,
+      603,
+      "lin"
+     ],
+     [
+      146,
+      609,
+      "lin"
+     ],
+     [
+      148,
+      610,
+      "segura"
+     ],
+     [
+      150,
+      600,
+      "lin"
+     ],
+     [
+      152,
+      560,
+      "lin"
+     ],
+     [
+      154,
+      470,
+      "lin"
+     ],
+     [
+      156,
+      330,
+      "lin"
+     ],
+     [
+      158,
+      120,
+      "lin"
+     ],
+     [
+      160,
+      -160,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      74,
+      0,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      74,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "LUVA_GANCHO",
+   "arquivo": "luva",
+   "mundo": true,
+   "ini": 182,
+   "fim": 336,
+   "tamanho": [
+    300,
+    820
+   ],
+   "ancora": [
+    150,
+    670
+   ],
+   "grupo": "luva",
+   "sombra": [
+    20,
+    32,
+    0.12
+   ],
+   "boil": "obj",
+   "descricao": "luva vermelha abafada gerada, sem marca, apontando para baixo, com o antebraço",
+   "chaves": {
+    "x": [
+     [
+      182,
+      1400,
+      "lin"
+     ],
+     [
+      184,
+      1260,
+      "lin"
+     ],
+     [
+      186,
+      1140,
+      "lin"
+     ],
+     [
+      188,
+      1060,
+      "lin"
+     ],
+     [
+      190,
+      1010,
+      "segura"
+     ],
+     [
+      204,
+      1030,
+      "segura"
+     ],
+     [
+      216,
+      1010,
+      "segura"
+     ],
+     [
+      218,
+      940,
+      "lin"
+     ],
+     [
+      220,
+      870,
+      "lin"
+     ],
+     [
+      222,
+      815,
+      "lin"
+     ],
+     [
+      224,
+      787,
+      "segura"
+     ],
+     [
+      300,
+      779,
+      "segura"
+     ],
+     [
+      318,
+      760,
+      "lin"
+     ],
+     [
+      320,
+      740,
+      "segura"
+     ],
+     [
+      324,
+      790,
+      "lin"
+     ],
+     [
+      326,
+      880,
+      "lin"
+     ],
+     [
+      328,
+      990,
+      "lin"
+     ],
+     [
+      330,
+      1120,
+      "lin"
+     ],
+     [
+      332,
+      1280,
+      "lin"
+     ],
+     [
+      334,
+      1450,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      182,
+      400,
+      "lin"
+     ],
+     [
+      184,
+      470,
+      "lin"
+     ],
+     [
+      186,
+      520,
+      "lin"
+     ],
+     [
+      188,
+      550,
+      "lin"
+     ],
+     [
+      190,
+      560,
+      "segura"
+     ],
+     [
+      204,
+      545,
+      "segura"
+     ],
+     [
+      216,
+      560,
+      "segura"
+     ],
+     [
+      218,
+      610,
+      "lin"
+     ],
+     [
+      220,
+      660,
+      "lin"
+     ],
+     [
+      222,
+      690,
+      "lin"
+     ],
+     [
+      224,
+      700,
+      "segura"
+     ],
+     [
+      300,
+      700,
+      "segura"
+     ],
+     [
+      318,
+      698,
+      "lin"
+     ],
+     [
+      320,
+      695,
+      "segura"
+     ],
+     [
+      324,
+      680,
+      "lin"
+     ],
+     [
+      326,
+      640,
+      "lin"
+     ],
+     [
+      328,
+      590,
+      "lin"
+     ],
+     [
+      330,
+      530,
+      "lin"
+     ],
+     [
+      332,
+      460,
+      "lin"
+     ],
+     [
+      334,
+      400,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      182,
+      40,
+      "lin"
+     ],
+     [
+      184,
+      42,
+      "lin"
+     ],
+     [
+      186,
+      44,
+      "lin"
+     ],
+     [
+      188,
+      45,
+      "lin"
+     ],
+     [
+      190,
+      45,
+      "segura"
+     ],
+     [
+      204,
+      42,
+      "segura"
+     ],
+     [
+      216,
+      45,
+      "segura"
+     ],
+     [
+      218,
+      60,
+      "lin"
+     ],
+     [
+      220,
+      75,
+      "lin"
+     ],
+     [
+      222,
+      86,
+      "lin"
+     ],
+     [
+      224,
+      90,
+      "segura"
+     ],
+     [
+      300,
+      90,
+      "segura"
+     ],
+     [
+      318,
+      92,
+      "lin"
+     ],
+     [
+      320,
+      92,
+      "segura"
+     ],
+     [
+      324,
+      85,
+      "lin"
+     ],
+     [
+      326,
+      70,
+      "lin"
+     ],
+     [
+      328,
+      55,
+      "lin"
+     ],
+     [
+      330,
+      45,
+      "lin"
+     ],
+     [
+      332,
+      40,
+      "lin"
+     ],
+     [
+      334,
+      40,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      182,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "LUVA_ALAVANCA",
+   "arquivo": "luva",
+   "mundo": true,
+   "ini": 438,
+   "fim": 480,
+   "tamanho": [
+    300,
+    820
+   ],
+   "ancora": [
+    150,
+    670
+   ],
+   "grupo": "luva",
+   "sombra": [
+    20,
+    32,
+    0.12
+   ],
+   "boil": "obj",
+   "descricao": "luva vermelha abafada gerada, sem marca, apontando para baixo, com o antebraço",
+   "chaves": {
+    "x": [
+     [
+      438,
+      1300,
+      "lin"
+     ],
+     [
+      440,
+      1100,
+      "lin"
+     ],
+     [
+      442,
+      950,
+      "lin"
+     ],
+     [
+      444,
+      846,
+      "segura"
+     ],
+     [
+      446,
+      900,
+      "lin"
+     ],
+     [
+      448,
+      1000,
+      "lin"
+     ],
+     [
+      450,
+      1050,
+      "lin"
+     ],
+     [
+      452,
+      1050,
+      "lin"
+     ],
+     [
+      454,
+      1050,
+      "segura"
+     ],
+     [
+      456,
+      1080,
+      "lin"
+     ],
+     [
+      458,
+      1110,
+      "segura"
+     ],
+     [
+      460,
+      960,
+      "lin"
+     ],
+     [
+      462,
+      850,
+      "lin"
+     ],
+     [
+      464,
+      787,
+      "lin"
+     ],
+     [
+      466,
+      765,
+      "lin"
+     ],
+     [
+      468,
+      760,
+      "segura"
+     ],
+     [
+      470,
+      840,
+      "lin"
+     ],
+     [
+      472,
+      960,
+      "lin"
+     ],
+     [
+      474,
+      1100,
+      "lin"
+     ],
+     [
+      476,
+      1260,
+      "lin"
+     ],
+     [
+      478,
+      1420,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      438,
+      800,
+      "lin"
+     ],
+     [
+      440,
+      800,
+      "lin"
+     ],
+     [
+      442,
+      800,
+      "lin"
+     ],
+     [
+      444,
+      800,
+      "segura"
+     ],
+     [
+      446,
+      800,
+      "lin"
+     ],
+     [
+      448,
+      800,
+      "lin"
+     ],
+     [
+      450,
+      780,
+      "lin"
+     ],
+     [
+      452,
+      740,
+      "lin"
+     ],
+     [
+      454,
+      700,
+      "segura"
+     ],
+     [
+      456,
+      700,
+      "lin"
+     ],
+     [
+      458,
+      700,
+      "segura"
+     ],
+     [
+      460,
+      700,
+      "lin"
+     ],
+     [
+      462,
+      700,
+      "lin"
+     ],
+     [
+      464,
+      700,
+      "lin"
+     ],
+     [
+      466,
+      698,
+      "lin"
+     ],
+     [
+      468,
+      698,
+      "segura"
+     ],
+     [
+      470,
+      720,
+      "lin"
+     ],
+     [
+      472,
+      760,
+      "lin"
+     ],
+     [
+      474,
+      800,
+      "lin"
+     ],
+     [
+      476,
+      840,
+      "lin"
+     ],
+     [
+      478,
+      880,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      438,
+      90,
+      "lin"
+     ],
+     [
+      440,
+      90,
+      "lin"
+     ],
+     [
+      442,
+      90,
+      "lin"
+     ],
+     [
+      444,
+      90,
+      "segura"
+     ],
+     [
+      446,
+      90,
+      "lin"
+     ],
+     [
+      448,
+      90,
+      "lin"
+     ],
+     [
+      450,
+      90,
+      "lin"
+     ],
+     [
+      452,
+      90,
+      "lin"
+     ],
+     [
+      454,
+      90,
+      "segura"
+     ],
+     [
+      456,
+      90,
+      "lin"
+     ],
+     [
+      458,
+      90,
+      "segura"
+     ],
+     [
+      460,
+      90,
+      "lin"
+     ],
+     [
+      462,
+      90,
+      "lin"
+     ],
+     [
+      464,
+      90,
+      "lin"
+     ],
+     [
+      466,
+      92,
+      "lin"
+     ],
+     [
+      468,
+      92,
+      "segura"
+     ],
+     [
+      470,
+      90,
+      "lin"
+     ],
+     [
+      472,
+      90,
+      "lin"
+     ],
+     [
+      474,
+      90,
+      "lin"
+     ],
+     [
+      476,
+      90,
+      "lin"
+     ],
+     [
+      478,
+      90,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      438,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "OMBROS_F",
+   "arquivo": "ombros_cima",
+   "mundo": true,
+   "ini": 650,
+   "fim": 718,
+   "tamanho": [
+    900,
+    380
+   ],
+   "ancora": "centro",
+   "grupo": "pessoa",
+   "sombra": [
+    6,
+    14,
+    0.18
+   ],
+   "boil": "obj",
+   "descricao": "",
+   "chaves": {
+    "x": [
+     [
+      650,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      650,
+      1030,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      650,
+      0,
+      "lin"
+     ],
+     [
+      656,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "CABECA_F",
+   "arquivo": "cabeca_cima",
+   "mundo": true,
+   "ini": 650,
+   "fim": 718,
+   "tamanho": [
+    640,
+    640
+   ],
+   "ancora": "centro",
+   "grupo": "pessoa",
+   "sombra": [
+    6,
+    14,
+    0.18
+   ],
+   "boil": "obj",
+   "descricao": "",
+   "chaves": {
+    "x": [
+     [
+      650,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      650,
+      900,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      650,
+      0,
+      "segura"
+     ],
+     [
+      678,
+      -10,
+      "lin"
+     ],
+     [
+      680,
+      -22,
+      "lin"
+     ],
+     [
+      682,
+      -32,
+      "lin"
+     ],
+     [
+      684,
+      -39,
+      "lin"
+     ],
+     [
+      686,
+      -43,
+      "lin"
+     ],
+     [
+      688,
+      -46,
+      "lin"
+     ],
+     [
+      690,
+      -45,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      650,
+      0,
+      "lin"
+     ],
+     [
+      656,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "PINO_F",
+   "arquivo": "pino",
+   "mundo": true,
+   "ini": 650,
+   "fim": 718,
+   "tamanho": [
+    44,
+    44
+   ],
+   "ancora": "centro",
+   "grupo": "pessoa",
+   "sombra": [
+    4,
+    6,
+    0.3
+   ],
+   "boil": null,
+   "descricao": "",
+   "chaves": {
+    "x": [
+     [
+      650,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      650,
+      900,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      650,
+      0,
+      "lin"
+     ],
+     [
+      656,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  },
+  {
+   "nome": "ARTIGO",
+   "arquivo": "artigo_0",
+   "mundo": false,
+   "ini": 640,
+   "fim": 682,
+   "tamanho": [
+    860,
+    600
+   ],
+   "ancora": "centro",
+   "grupo": "artigo",
+   "sombra": [
+    11,
+    24,
+    0.3
+   ],
+   "boil": null,
+   "descricao": "citação tipografada do artigo-fonte (título, autores, revista, ano, doi)",
+   "chaves": {
+    "x": [
+     [
+      640,
+      540,
+      "segura"
+     ]
+    ],
+    "y": [
+     [
+      640,
+      2300,
+      "lin"
+     ],
+     [
+      642,
+      1250,
+      "lin"
+     ],
+     [
+      644,
+      820,
+      "lin"
+     ],
+     [
+      646,
+      826,
+      "lin"
+     ],
+     [
+      648,
+      820,
+      "segura"
+     ],
+     [
+      674,
+      820,
+      "lin"
+     ],
+     [
+      676,
+      900,
+      "lin"
+     ],
+     [
+      678,
+      1150,
+      "lin"
+     ],
+     [
+      680,
+      1700,
+      "lin"
+     ],
+     [
+      682,
+      2400,
+      "segura"
+     ]
+    ],
+    "rot": [
+     [
+      640,
+      -6,
+      "lin"
+     ],
+     [
+      642,
+      -4,
+      "lin"
+     ],
+     [
+      644,
+      -3,
+      "segura"
+     ]
+    ],
+    "op": [
+     [
+      640,
+      100,
+      "segura"
+     ]
+    ]
+   }
+  }
+ ],
+ "fundos": [
+  {
+   "nome": "PAPEL",
+   "arquivo": "fundo_papel",
+   "cor": "#DEDBCB",
+   "ini": 0,
+   "fim": 212,
+   "op": [
+    [
+     0,
+     100,
+     "segura"
+    ],
+    [
+     182,
+     100,
+     "lin"
+    ],
+    [
+     212,
+     0,
+     "segura"
+    ]
+   ]
+  },
+  {
+   "nome": "CARVAO",
+   "arquivo": "fundo_carvao",
+   "cor": "#232325",
+   "ini": 182,
+   "fim": 718,
+   "op": [
+    [
+     182,
+     0,
+     "lin"
+    ],
+    [
+     212,
+     100,
+     "segura"
+    ]
+   ]
+  }
+ ],
+ "sons": [
+  {
+   "id": "e01",
+   "efeito": "abre_papel",
+   "quadro": 2,
+   "classe": "papel",
+   "acao": "o cartão da foto pousa"
+  },
+  {
+   "id": "e02",
+   "efeito": "soco_ar",
+   "quadro": 108,
+   "classe": "ar",
+   "acao": "o reto desce pela linha do meio"
+  },
+  {
+   "id": "e03",
+   "efeito": "soco_baque",
+   "quadro": 112,
+   "classe": "acento",
+   "acao": "o reto encosta no nariz"
+  },
+  {
+   "id": "e04",
+   "efeito": "empurra",
+   "quadro": 136,
+   "classe": "ar",
+   "acao": "a cabeça é empurrada para trás"
+  },
+  {
+   "id": "e05",
+   "efeito": "gancho_ar",
+   "quadro": 220,
+   "classe": "ar",
+   "acao": "o arco do gancho, da direita"
+  },
+  {
+   "id": "e06",
+   "efeito": "soco_baque",
+   "quadro": 224,
+   "classe": "acento",
+   "acao": "o gancho acerta o queixo"
+  },
+  {
+   "id": "e08",
+   "efeito": "gira",
+   "quadro": 320,
+   "classe": "ar",
+   "acao": "a cabeça gira 45° no pino"
+  },
+  {
+   "id": "e09",
+   "efeito": "alavanca",
+   "quadro": 400,
+   "classe": "papel",
+   "acao": "a chave pousa no pino"
+  },
+  {
+   "id": "e10",
+   "efeito": "mais_giro",
+   "quadro": 466,
+   "classe": "ar",
+   "acao": "o toque longe: giro de 45°"
+  },
+  {
+   "id": "e11",
+   "efeito": "mergulho",
+   "quadro": 500,
+   "classe": "acento",
+   "acao": "o mergulho: a cabeça vira crânio"
+  },
+  {
+   "id": "e12",
+   "efeito": "gira",
+   "quadro": 564,
+   "classe": "ar",
+   "acao": "o crânio gira 40° (rima com o e08)"
+  },
+  {
+   "id": "e13",
+   "efeito": "estica",
+   "quadro": 610,
+   "classe": "longo",
+   "acao": "o cérebro fica para trás e torce"
+  },
+  {
+   "id": "e14",
+   "efeito": "cartao",
+   "quadro": 648,
+   "classe": "papel",
+   "acao": "o cartão da fonte assenta"
+  },
+  {
+   "id": "e15",
+   "efeito": "giro_final",
+   "quadro": 682,
+   "classe": "acento",
+   "acao": "a cabeça gira e o título entra"
+  }
+ ],
+ "legenda": [
+  {
+   "texto": "Por que um soco no queixo",
+   "ini": 2,
+   "fim": 36,
+   "y": 440,
+   "cor": "#29292B",
+   "sombra": false,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "apaga uma pessoa?",
+   "ini": 36,
+   "fim": 72,
+   "y": 440,
+   "cor": "#29292B",
+   "sombra": false,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "Um soco reto,",
+   "ini": 76,
+   "fim": 104,
+   "y": 1372,
+   "cor": "#29292B",
+   "sombra": false,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "no meio do rosto,",
+   "ini": 104,
+   "fim": 134,
+   "y": 1372,
+   "cor": "#29292B",
+   "sombra": false,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "só empurra a cabeça para trás.",
+   "ini": 134,
+   "fim": 182,
+   "y": 1372,
+   "cor": "#29292B",
+   "sombra": false,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "Já o gancho,",
+   "ini": 186,
+   "fim": 210,
+   "y": 1372,
+   "cor": "#29292B",
+   "sombra": false,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "de lado no queixo,",
+   "ini": 210,
+   "fim": 244,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "passa longe do eixo.",
+   "ini": 244,
+   "fim": 286,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "A cabeça não recua,",
+   "ini": 288,
+   "fim": 322,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "gira.",
+   "ini": 322,
+   "fim": 344,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "O queixo fica longe do eixo.",
+   "ini": 346,
+   "fim": 398,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "Vira alavanca.",
+   "ini": 398,
+   "fim": 430,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "Quanto mais longe,",
+   "ini": 430,
+   "fim": 458,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "mais giro.",
+   "ini": 458,
+   "fim": 490,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "E o cérebro está solto lá dentro.",
+   "ini": 490,
+   "fim": 548,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "Quando o crânio gira,",
+   "ini": 552,
+   "fim": 584,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "ele fica para trás e estica.",
+   "ini": 584,
+   "fim": 640,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  },
+  {
+   "texto": "Não é a força,",
+   "ini": 640,
+   "fim": 672,
+   "y": 1372,
+   "cor": "#F2EEE6",
+   "sombra": true,
+   "corpo": 50,
+   "peso": 600
+  }
+ ],
+ "titulo": [
+  {
+   "texto": "É O GIRO",
+   "ini": 682,
+   "fim": 718,
+   "x": 540,
+   "y": 640,
+   "peso": 800,
+   "corpo": 96,
+   "maiuscula_px": 68,
+   "cor": "#F2EEE6",
+   "op": [
+    [
+     682,
+     0,
+     "lin"
+    ],
+    [
+     684,
+     33,
+     "lin"
+    ],
+    [
+     686,
+     66,
+     "lin"
+    ],
+    [
+     688,
+     100,
+     "segura"
+    ]
+   ]
+  }
+ ],
+ "sincronia": [
+  {
+   "palavra": "queixo",
+   "n": 1,
+   "quadro": 22,
+   "evento": "empurrão até o contato da foto"
+  },
+  {
+   "palavra": "apaga",
+   "n": 1,
+   "quadro": 32,
+   "evento": "a foto apaga"
+  },
+  {
+   "palavra": "um",
+   "n": 2,
+   "quadro": 74,
+   "evento": "a luva reta entra"
+  },
+  {
+   "palavra": "rosto",
+   "n": 1,
+   "quadro": 112,
+   "evento": "contato do reto"
+  },
+  {
+   "palavra": "empurra",
+   "n": 1,
+   "quadro": 134,
+   "evento": "empurrão"
+  },
+  {
+   "palavra": "já",
+   "n": 1,
+   "quadro": 182,
+   "evento": "o gancho entra e o fundo escurece"
+  },
+  {
+   "palavra": "queixo",
+   "n": 2,
+   "quadro": 218,
+   "evento": "arco do gancho"
+  },
+  {
+   "palavra": "eixo",
+   "n": 1,
+   "quadro": 262,
+   "evento": "o pino desce"
+  },
+  {
+   "palavra": "cabeça",
+   "n": 2,
+   "quadro": 286,
+   "evento": "a câmera volta"
+  },
+  {
+   "palavra": "recua",
+   "n": 1,
+   "quadro": 300,
+   "evento": "a luva aperta"
+  },
+  {
+   "palavra": "gira",
+   "n": 1,
+   "quadro": 318,
+   "evento": "a cabeça gira"
+  },
+  {
+   "palavra": "queixo",
+   "n": 3,
+   "quadro": 346,
+   "evento": "a fita desenrola"
+  },
+  {
+   "palavra": "longe",
+   "n": 2,
+   "quadro": 360,
+   "evento": "a ponteira"
+  },
+  {
+   "palavra": "vira",
+   "n": 1,
+   "quadro": 396,
+   "evento": "a chave desce"
+  },
+  {
+   "palavra": "giro",
+   "n": 1,
+   "quadro": 464,
+   "evento": "toque longe e giro"
+  },
+  {
+   "palavra": "cérebro",
+   "n": 1,
+   "quadro": 488,
+   "evento": "mergulho"
+  },
+  {
+   "palavra": "solto",
+   "n": 1,
+   "quadro": 508,
+   "evento": "o cérebro balança"
+  },
+  {
+   "palavra": "gira",
+   "n": 2,
+   "quadro": 562,
+   "evento": "o crânio gira"
+  },
+  {
+   "palavra": "ele",
+   "n": 1,
+   "quadro": 582,
+   "evento": "o cérebro atrasa"
+  },
+  {
+   "palavra": "estica",
+   "n": 1,
+   "quadro": 608,
+   "evento": "torção"
+  },
+  {
+   "palavra": "não",
+   "n": 2,
+   "quadro": 640,
+   "evento": "o cartão sobe"
+  },
+  {
+   "palavra": "giro",
+   "n": 2,
+   "quadro": 678,
+   "evento": "a cabeça gira"
+  },
+  {
+   "palavra": "giro",
+   "n": 2,
+   "quadro": 682,
+   "evento": "o título entra"
+  }
+ ]
+}

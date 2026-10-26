@@ -1,5 +1,5 @@
 {
   "name": "edit-labs-ai",
-  "version": "1.0.0",
-  "description": "Edit Labs AI — edição completa de vídeo longo (podcast, live, entrevista) até verticais prontos para Reels, TikTok e Shorts: baixar, achar os momentos, cortar com a borda conferida pelo ouvido, vertical com o rosto rastreado, motion design no estilo do kit, B-roll em vídeo, legenda queimada, render e verificação. Exige o Higgsfield conectado."
+  "version": "2.0.0",
+  "description": "Edit Labs AI — edição de vídeo vertical (Reels, TikTok, Shorts) com o Claude Code, em vários estilos: cortes editados de podcast/live/entrevista (corte, vertical, motion, B-roll, legenda), explicador em colagem com camadas (corpo humano e objetos por dentro), reel de curiosidade histórica em colagem, explicador Vox curto com voz, documentário de arquivo em papel e decupagem do bruto ao master. Faz poucas perguntas, valida um quadro antes de montar e põe a legenda por último. Exige o Higgsfield conectado."
 }

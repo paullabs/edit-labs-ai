@@ -1,0 +1,5 @@
+# A skill colagem-historia só usa o motor de colagem do plugin (motor/colagem): as dependências vêm de lá
+# (editlabs-setup --colagem cria o ambiente; o comando clpy usa esse Python).
+numpy
+Pillow
+opencv-python-headless

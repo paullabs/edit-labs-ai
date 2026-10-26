@@ -1,0 +1,379 @@
+{
+"palavras": [
+{
+"palavra": "Por",
+"ini": 0.12,
+"fim": 0.24
+},
+{
+"palavra": "que",
+"ini": 0.3,
+"fim": 0.34
+},
+{
+"palavra": "um",
+"ini": 0.34,
+"fim": 0.54
+},
+{
+"palavra": "soco",
+"ini": 0.54,
+"fim": 0.92
+},
+{
+"palavra": "no",
+"ini": 0.92,
+"fim": 1.06
+},
+{
+"palavra": "queixo",
+"ini": 1.17,
+"fim": 1.5
+},
+{
+"palavra": "apaga",
+"ini": 1.5,
+"fim": 1.98
+},
+{
+"palavra": "uma",
+"ini": 1.98,
+"fim": 2.12
+},
+{
+"palavra": "pessoa?",
+"ini": 2.12,
+"fim": 2.54
+},
+{
+"palavra": "Um",
+"ini": 3.24,
+"fim": 3.34
+},
+{
+"palavra": "soco",
+"ini": 3.34,
+"fim": 3.62
+},
+{
+"palavra": "reto,",
+"ini": 3.62,
+"fim": 4.14
+},
+{
+"palavra": "no",
+"ini": 4.34,
+"fim": 4.4
+},
+{
+"palavra": "meio",
+"ini": 4.4,
+"fim": 4.68
+},
+{
+"palavra": "do",
+"ini": 4.68,
+"fim": 4.82
+},
+{
+"palavra": "rosto,",
+"ini": 4.82,
+"fim": 5.26
+},
+{
+"palavra": "só",
+"ini": 5.59,
+"fim": 5.74
+},
+{
+"palavra": "empurra",
+"ini": 5.74,
+"fim": 6.22
+},
+{
+"palavra": "a",
+"ini": 6.22,
+"fim": 6.3
+},
+{
+"palavra": "cabeça",
+"ini": 6.3,
+"fim": 6.6
+},
+{
+"palavra": "para",
+"ini": 6.6,
+"fim": 6.78
+},
+{
+"palavra": "trás.",
+"ini": 6.78,
+"fim": 7.12
+},
+{
+"palavra": "Já",
+"ini": 7.77,
+"fim": 7.92
+},
+{
+"palavra": "o",
+"ini": 7.92,
+"fim": 8.12
+},
+{
+"palavra": "gancho,",
+"ini": 8.12,
+"fim": 8.62
+},
+{
+"palavra": "de",
+"ini": 8.78,
+"fim": 8.94
+},
+{
+"palavra": "lado",
+"ini": 8.94,
+"fim": 9.28
+},
+{
+"palavra": "no",
+"ini": 9.28,
+"fim": 9.44
+},
+{
+"palavra": "queixo,",
+"ini": 9.52,
+"fim": 9.86
+},
+{
+"palavra": "passa",
+"ini": 10.24,
+"fim": 10.48
+},
+{
+"palavra": "longe",
+"ini": 10.48,
+"fim": 10.92
+},
+{
+"palavra": "do",
+"ini": 10.92,
+"fim": 11.12
+},
+{
+"palavra": "eixo.",
+"ini": 11.12,
+"fim": 11.48
+},
+{
+"palavra": "A",
+"ini": 12.0,
+"fim": 12.06
+},
+{
+"palavra": "cabeça",
+"ini": 12.06,
+"fim": 12.44
+},
+{
+"palavra": "não",
+"ini": 12.44,
+"fim": 12.64
+},
+{
+"palavra": "recua,",
+"ini": 12.64,
+"fim": 13.1
+},
+{
+"palavra": "gira.",
+"ini": 13.46,
+"fim": 13.88
+},
+{
+"palavra": "O",
+"ini": 14.44,
+"fim": 14.54
+},
+{
+"palavra": "queixo",
+"ini": 14.62,
+"fim": 14.94
+},
+{
+"palavra": "fica",
+"ini": 14.94,
+"fim": 15.2
+},
+{
+"palavra": "longe",
+"ini": 15.2,
+"fim": 15.64
+},
+{
+"palavra": "do",
+"ini": 15.64,
+"fim": 15.82
+},
+{
+"palavra": "eixo.",
+"ini": 15.82,
+"fim": 16.2
+},
+{
+"palavra": "Vira",
+"ini": 16.64,
+"fim": 16.88
+},
+{
+"palavra": "alavanca.",
+"ini": 16.88,
+"fim": 17.5
+},
+{
+"palavra": "Quanto",
+"ini": 17.93,
+"fim": 18.12
+},
+{
+"palavra": "mais",
+"ini": 18.12,
+"fim": 18.5
+},
+{
+"palavra": "longe,",
+"ini": 18.5,
+"fim": 18.9
+},
+{
+"palavra": "mais",
+"ini": 19.16,
+"fim": 19.52
+},
+{
+"palavra": "giro.",
+"ini": 19.52,
+"fim": 19.92
+},
+{
+"palavra": "E",
+"ini": 20.46,
+"fim": 20.52
+},
+{
+"palavra": "o",
+"ini": 20.52,
+"fim": 20.64
+},
+{
+"palavra": "cérebro",
+"ini": 20.64,
+"fim": 21.1
+},
+{
+"palavra": "está",
+"ini": 21.1,
+"fim": 21.32
+},
+{
+"palavra": "solto",
+"ini": 21.32,
+"fim": 21.88
+},
+{
+"palavra": "lá",
+"ini": 21.88,
+"fim": 22.02
+},
+{
+"palavra": "dentro.",
+"ini": 22.02,
+"fim": 22.38
+},
+{
+"palavra": "Quando",
+"ini": 23.06,
+"fim": 23.18
+},
+{
+"palavra": "o",
+"ini": 23.18,
+"fim": 23.3
+},
+{
+"palavra": "crânio",
+"ini": 23.33,
+"fim": 23.62
+},
+{
+"palavra": "gira,",
+"ini": 23.62,
+"fim": 24.04
+},
+{
+"palavra": "ele",
+"ini": 24.4,
+"fim": 24.52
+},
+{
+"palavra": "fica",
+"ini": 24.52,
+"fim": 24.74
+},
+{
+"palavra": "para",
+"ini": 24.74,
+"fim": 24.94
+},
+{
+"palavra": "trás",
+"ini": 24.94,
+"fim": 25.38
+},
+{
+"palavra": "e",
+"ini": 25.38,
+"fim": 25.66
+},
+{
+"palavra": "estica.",
+"ini": 25.66,
+"fim": 26.2
+},
+{
+"palavra": "Não",
+"ini": 26.74,
+"fim": 26.88
+},
+{
+"palavra": "é",
+"ini": 26.88,
+"fim": 27.0
+},
+{
+"palavra": "a",
+"ini": 27.0,
+"fim": 27.14
+},
+{
+"palavra": "força,",
+"ini": 27.14,
+"fim": 27.52
+},
+{
+"palavra": "é",
+"ini": 28.04,
+"fim": 28.1
+},
+{
+"palavra": "o",
+"ini": 28.1,
+"fim": 28.3
+},
+{
+"palavra": "giro.",
+"ini": 28.3,
+"fim": 28.66
+}
+]
+}

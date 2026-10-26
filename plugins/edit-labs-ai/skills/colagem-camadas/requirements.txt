@@ -1,0 +1,2 @@
+# colagem-camadas: usa o motor de colagem (numpy, opencv-python, Pillow nas versões de referência).
+-r ../../motor/colagem/requirements.txt

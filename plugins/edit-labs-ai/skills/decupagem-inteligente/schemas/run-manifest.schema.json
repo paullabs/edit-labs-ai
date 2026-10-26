@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "di-manifest/1",
+  "type": "object",
+  "required": [
+    "schema",
+    "projeto",
+    "host",
+    "modo",
+    "fase_atual",
+    "fases",
+    "respostas",
+    "autorizacoes",
+    "pendencias",
+    "decisoes_travadas",
+    "artefatos",
+    "jobs"
+  ],
+  "properties": {
+    "schema": {
+      "const": "di-manifest/1"
+    },
+    "modo": {
+      "enum": [
+        "portoes",
+        "ate_o_fim",
+        "so_corte"
+      ]
+    },
+    "fase_atual": {
+      "enum": [
+        "F0",
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F6",
+        "F7"
+      ]
+    },
+    "host": {
+      "enum": [
+        "claude",
+        "codex"
+      ]
+    }
+  }
+}
