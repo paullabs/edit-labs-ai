@@ -105,3 +105,18 @@ fechados.
 - Folha de quadros a cada 1,5 s respondendo: o espectador entende o que vê? há algo estranho? algo pequeno demais?
   algo cortado na margem? o plano tem ação? a ordem conta a história?
 - Erro encontrado vira linha na tabela "causa → regra → como conferir" do projeto.
+
+## 11. Design de quadro
+
+O detalhe, com números, fonte de cada regra e limites, está em
+`${CLAUDE_PLUGIN_ROOT}/referencias/fichas-de-estilo/regras-de-design.md`. O resumo:
+
+- **"Poluído" é peso igual em tudo**, não "coisa demais". Um sujeito nítido e colorido por plano; o resto cinza,
+  desaturado ou desfocado; no máximo 3 cores vivas.
+- **Texto:** até 2 por plano, até 3 palavras, sempre preso a um objeto (etiqueta, fita, placa, papel). Maiúscula de
+  36–48 px em 1080 de largura (mínimo 32). Três papéis de fonte: serifa pesada, grotesca pesada, manuscrito em caixa
+  alta. Palavra gigante só como camada entre o fundo e o sujeito.
+- **Margem:** texto, número e rosto dentro da zona segura; papel, fita e objetos de primeiro plano podem sangrar.
+- **Camadas:** fundo em cinza de baixo contraste, sujeito nítido, primeiro plano desfocado e cortado pela borda;
+  sombra curta sempre da mesma direção; paralaxe; troca por camada, não por corte seco.
+- **Conferir por quadro, a olho:** "tem fundo, sujeito e primeiro plano? quantos textos? quantas cores vivas?"

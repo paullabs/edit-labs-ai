@@ -32,3 +32,5 @@ Imagens com alfa e chaves com `hold`; marca-texto como forma retangular com `tri
 - Sem rosto: bom para dados, **ruim para emoção** (não usar quando a pessoa precisa ser reconhecida).
 - Muito vazio: exige que **cada cena tenha um centro óbvio**; se o objeto for pequeno demais ele some (regra: herói ≥ 600 px).
 - O Vox é da Vox: **aprender o sistema, não copiar as imagens**.
+
+> **Design de quadro:** margem, texto, fonte, densidade e camadas em `regras-de-design.md`.

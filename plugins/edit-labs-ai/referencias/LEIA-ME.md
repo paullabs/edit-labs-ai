@@ -11,7 +11,8 @@ O banco guarda **só texto**: título, autor, link, licença declarada e a nossa
 | Catálogo legível | `CATALOGO.md` | gerado do JSON, por estilo, por mecânica e por tema |
 | **Fichas de estilo** | `fichas-de-estilo/*.md` | a receita de cada estilo: papel, cor, tipografia, composição, textura, movimento, **como fazer no motor e no invideo**, riscos |
 | Paletas | `paletas/paletas.json` | cores **medidas** (Vox e outras) e as do motor de colagem, lado a lado |
-| Análises a fundo | `analises/` | estudos de uma obra (R03, R23, guia Vox, Style Bible) |
+| Análises a fundo | `analises/` | estudos de uma obra (R03, R23, guia Vox, Style Bible) e de peças profissionais (`vox-profissionais-2026.md`) |
+| **Regras de design** | `fichas-de-estilo/regras-de-design.md` | margem, texto, fonte, densidade e camadas, medidos em peças profissionais |
 | Modelo de brief | `modelo/BRIEF_DE_ESTILO_modelo.md` | o que preencher **antes** de cada vídeo novo |
 | Ferramenta | `ferramentas/refs.py` | `listar`, `ver`, `estilo`, `mecanica`, `adicionar`, `validar`, `gerar` |
 
