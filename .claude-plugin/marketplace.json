@@ -9,7 +9,7 @@
       "name": "edit-labs-ai",
       "source": "./plugins/edit-labs-ai",
       "description": "Edição de vídeo vertical com o Claude Code: 9 skills (porta de entrada, cortes, motion, colagem em camadas, curiosidade histórica, explicador Vox, documentário de arquivo, time de motion, decupagem), 11 agentes, motor de colagem e banco de referências. Exige o Higgsfield conectado.",
-      "version": "2.0.0"
+      "version": "2.1.0"
     }
   ]
 }
