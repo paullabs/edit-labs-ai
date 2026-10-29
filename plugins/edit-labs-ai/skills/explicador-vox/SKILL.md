@@ -5,6 +5,8 @@ description: Explicador curto no estilo Vox (30, 45 ou 60 s, 9:16) que responde 
 
 # Explicador Vox — uma pergunta, um mecanismo, 30 segundos
 
+> **Caminhos e comandos (Claude Code e Codex).** CLAUDE_SKILL_DIR é a pasta desta skill (a do `SKILL.md`) e CLAUDE_PLUGIN_ROOT é a pasta do plugin. O Claude Code troca as duas variáveis pelo caminho antes de você ler este texto. Se os caminhos desta skill ainda mostram uma delas escrita com cifrão e chaves, ela não foi preenchida (Codex e outros agentes): a pasta da skill é onde está este `SKILL.md`, e a raiz do plugin é a pasta duas acima dela (a que tem `bin/` e `agents/`). Os comandos `vch`, `cvpy`, `mvpy`, `editlabs-*`, `cv-*` e `mv-*` ficam em `bin/` da raiz do plugin, e o Claude Code os põe no PATH. Se `command -v vch` não achar nada, chame cada um pelo caminho completo (`<raiz do plugin>/bin/vch`).
+
 Um explicador curto que mostra **a coisa acontecendo**: o objeto real entra, a força age, a consequência aparece, e
 a conclusão fecha numa frase. Tudo é motion; não há rosto nem filmagem própria.
 

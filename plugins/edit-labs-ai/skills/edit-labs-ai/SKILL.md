@@ -5,10 +5,18 @@ description: Edit Labs AI — porta de entrada da edição de vídeo vertical (R
 
 # Edit Labs AI — porta de entrada
 
+> **Caminhos e comandos (Claude Code e Codex).** CLAUDE_SKILL_DIR é a pasta desta skill (a do `SKILL.md`) e CLAUDE_PLUGIN_ROOT é a pasta do plugin. O Claude Code troca as duas variáveis pelo caminho antes de você ler este texto. Se os caminhos desta skill ainda mostram uma delas escrita com cifrão e chaves, ela não foi preenchida (Codex e outros agentes): a pasta da skill é onde está este `SKILL.md`, e a raiz do plugin é a pasta duas acima dela (a que tem `bin/` e `agents/`). Os comandos `vch`, `cvpy`, `mvpy`, `editlabs-*`, `cv-*` e `mv-*` ficam em `bin/` da raiz do plugin, e o Claude Code os põe no PATH. Se `command -v vch` não achar nada, chame cada um pelo caminho completo (`<raiz do plugin>/bin/vch`).
+
 Esta skill **pergunta pouco, escolhe o estilo e passa a bola** para a skill do estilo. As regras que valem para
 todos os estilos estão em `${CLAUDE_PLUGIN_ROOT}/REGRAS.md`: leia antes do primeiro projeto da sessão.
 
 ## Antes de começar
+
+**O plugin está instalado para todas as pastas?** Se a pessoa instalou só para uma pasta, ele some quando ela abre o Claude Code em outra. Confira antes de qualquer etapa, sem instalar nada ainda:
+
+1. **Claude Code:** rode `claude plugin list --json` e procure o item `edit-labs-ai@edit-labs-ai`. Com `"scope": "user"` e `"enabled": true`, está **global**: siga. Só com `"scope": "project"` ou `"local"` (vem junto o `projectPath`): **não está global**; diga isso numa frase e ofereça `claude plugin install edit-labs-ai@edit-labs-ai --scope user`, que só roda com o sim da pessoa. Se não aparece, o plugin foi carregado de uma pasta avulsa: diga que **não está instalado** e mostre os comandos do `README.md`.
+2. **Codex:** rode `codex plugin list` e procure `edit-labs-ai@edit-labs-ai`: tem de dizer `installed, enabled`. Se não disser, ofereça `codex plugin add edit-labs-ai@edit-labs-ai`.
+3. Se o comando `claude` ou `codex` não existir, ignore aquele item.
 
 **O Higgsfield é obrigatório.** Imagens, remoção de fundo e B-roll em vídeo são gerados pelo Higgsfield, pelo
 conector dele no Claude. Antes de qualquer etapa, confira se as ferramentas do Higgsfield estão disponíveis nesta

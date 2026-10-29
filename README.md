@@ -29,7 +29,9 @@ brew install ffmpeg yt-dlp deno python@3.12
 /plugin install edit-labs-ai@edit-labs-ai
 ```
 
-Pelo terminal: `claude plugin marketplace add paullabs/edit-labs-ai` e `claude plugin install edit-labs-ai@edit-labs-ai`.
+Pelo terminal: `claude plugin marketplace add paullabs/edit-labs-ai` e `claude plugin install edit-labs-ai@edit-labs-ai --scope user`.
+Se o Claude perguntar o escopo, escolha o de usuário (`user`): é o que vale para todas as suas pastas. Para conferir, `claude plugin list` tem de mostrar `Scope: user`. Se mostrar `project` ou `local`, o plugin só vale naquela pasta: rode o `install` de novo com `--scope user`.
+No Codex: `codex plugin marketplace add paullabs/edit-labs-ai` e `codex plugin add edit-labs-ai@edit-labs-ai`; `codex plugin list` tem de mostrar `installed, enabled`. Os subagentes do plugin (`edit-labs-ai:context-mapper` e os outros) são do Claude Code.
 Sem GitHub, a partir de uma pasta com este repositório: `/plugin marketplace add /caminho/para/a/pasta`.
 
 **3. Reinicie o Claude Code** e peça: *"roda o editlabs-setup"* (para os estilos de colagem e o explicador Vox:

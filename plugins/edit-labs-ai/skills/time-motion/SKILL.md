@@ -11,6 +11,8 @@ description: >-
 
 # Time de Motion
 
+> **Caminhos e comandos (Claude Code e Codex).** CLAUDE_SKILL_DIR é a pasta desta skill (a do `SKILL.md`) e CLAUDE_PLUGIN_ROOT é a pasta do plugin. O Claude Code troca as duas variáveis pelo caminho antes de você ler este texto. Se os caminhos desta skill ainda mostram uma delas escrita com cifrão e chaves, ela não foi preenchida (Codex e outros agentes): a pasta da skill é onde está este `SKILL.md`, e a raiz do plugin é a pasta duas acima dela (a que tem `bin/` e `agents/`). Os comandos `vch`, `cvpy`, `mvpy`, `editlabs-*`, `cv-*` e `mv-*` ficam em `bin/` da raiz do plugin, e o Claude Code os põe no PATH. Se `command -v vch` não achar nada, chame cada um pelo caminho completo (`<raiz do plugin>/bin/vch`).
+
 Quatro agentes trabalham ao mesmo tempo, cada um com uma tarefa definida, para uma edição mais profissional:
 referências medidas, poucas batidas bem ilustradas, **nunca lotar a tela**, insets reais (a foto real da pessoa
 citada, o logo da marca citada) e geração só do que não existe.
