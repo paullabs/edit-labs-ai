@@ -44,7 +44,7 @@ pessoa; só o que não existe no mundo é gerado por IA. Real primeiro, sempre.
    - resolução e tamanho em MB (pela página ou pelos cabeçalhos; nunca baixando);
    - por que é o certo para aquela fala;
    - uma alternativa.
-4. **O que não existir no mundo** vira pedido de geração (Higgsfield, o gerador do plugin; ou a IA do invideo, se o
+4. **O que não existir no mundo** vira pedido de geração (o gerador conectado, se houver; ou a IA do invideo, se o
    projeto já vive lá). Para cada pedido:
    - prompt pronto: objeto isolado, sem texto, sem rosto de pessoa real;
    - modelo;

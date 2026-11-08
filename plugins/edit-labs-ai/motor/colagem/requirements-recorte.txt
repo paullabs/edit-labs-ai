@@ -1,0 +1,3 @@
+# Recorte local do sujeito, sem assinatura e sem rede depois do primeiro uso (roda em macOS, Linux e Windows).
+# Instala com:  editlabs-setup --recorte   (o modelo, ~170 MB, baixa uma vez em ~/.u2net na primeira execução)
+rembg[cpu]>=2.0.57

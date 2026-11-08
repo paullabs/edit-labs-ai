@@ -8,8 +8,8 @@
     {
       "name": "edit-labs-ai",
       "source": "./plugins/edit-labs-ai",
-      "description": "Edição de vídeo vertical com o Claude Code: 9 skills (porta de entrada, cortes, motion, colagem em camadas, curiosidade histórica, explicador Vox, documentário de arquivo, time de motion, decupagem), 11 agentes, motor de colagem e banco de referências. Exige o Higgsfield conectado.",
-      "version": "2.1.1"
+      "description": "Edição de vídeo vertical com o Claude Code: 9 skills (porta de entrada, cortes, motion, colagem em camadas, curiosidade histórica, explicador Vox, documentário de arquivo, time de motion, decupagem), 11 agentes, motor de colagem e banco de referências. Funciona no Mac, no Windows e no Linux, sem assinatura de nenhum gerador: se a sessão tiver um conector de imagem ou de vídeo (Higgsfield, OpenArt…), ele entra como opcional.",
+      "version": "2.2.0"
     }
   ]
 }

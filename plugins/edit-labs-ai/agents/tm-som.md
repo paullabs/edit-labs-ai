@@ -39,7 +39,7 @@ reprovação mais comum; som faltando na troca de cena é a segunda. Você não 
    - em média até 1 efeito por segundo, com picos de 2.
 3. **Nível medido.** Recorte cada efeito (o `prova_efeitos.py` da motion-arquivo exporta os recortes) e meça com a
    ferramenta da skill (EBU R128):
-   `python3 ${CLAUDE_PLUGIN_ROOT}/skills/time-motion/ferramentas/medir_niveis.py <corte> <efeitos...> --abaixo 17 --saida time/niveis.json`
+   `cvpy ${CLAUDE_PLUGIN_ROOT}/skills/time-motion/ferramentas/medir_niveis.py <corte> <efeitos...> --abaixo 17 --saida time/niveis.json`
    - momentâneo máximo de cada efeito **15–19 dB abaixo** do momentâneo mediano da voz;
    - acentos (obturador, mergulho) no limite de cima;
    - som longo e de banda larga (giz, whoosh) precisa de mais corte que um clique.

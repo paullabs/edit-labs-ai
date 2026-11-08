@@ -6,7 +6,7 @@ description: >-
   chicote de saída), cada palavra dita vira um evento na tela (palavra serifada no papel, gancho digitado letra a
   letra, caixas de interface, odômetro, folha que amassa) e o corte se esconde no movimento. Cobre o projeto inteiro:
   voz e batidas ancoradas na fala, um plano por batida a partir de um catálogo de tipos, assets reais primeiro
-  (ícone do app instalado, cursor do sistema, acervo licenciado, print do site), geração no Higgsfield só do que
+  (ícone do app instalado, cursor do sistema, acervo licenciado, print do site), geração (se houver gerador conectado) só do que
   falta, trípticos com laudo do Diretor, som e render. Use para "estilo documentário de arquivo", "família A",
   "história escondida", "aplica esse padrão de edição nesse roteiro/narração", reels de curiosidade, origem de
   produto, biografia, história, ciência, dinheiro ou saúde, e para reproduzir uma referência desse tipo com a mesma
@@ -44,8 +44,8 @@ tudo numa run quando o usuário pedir ("vai até o fim").
 1. **O que você tem?** a) a narração gravada · b) o roteiro em texto (precisa de voz) · c) um vídeo com fala ·
    d) um vídeo de referência para reproduzir.
 2. **Para onde vai?** a) Reels/TikTok/Shorts 9:16 (recomendado) · b) outro.
-3. **Gerar imagem no Higgsfield está liberado?** a) sim, com a lista e o custo antes (recomendado) · b) só material
-   real e o que o motor desenha.
+3. **Gerar imagem está liberado?** a) sim, no gerador conectado, com a lista e o custo antes · b) só material
+   real e o que o motor desenha (recomendado se a sessão não tiver gerador).
 4. **Som:** a) a minha pasta de efeitos e músicas (me diga onde) · b) só os sons sintetizados do plugin.
 
 O resto (fps, grade, níveis, margens) é decisão técnica: não pergunte.
@@ -63,7 +63,7 @@ virar plano (`gramatica.md` §9 tem o mapa).
 
 **3. Real primeiro.** O que existe no mundo vem do mundo: ícone do app instalado, cursor do sistema, documento,
 foto licenciada, print do site. O motor desenha só o que é do estilo (texto, caixa, seta, anel, odômetro, papel,
-onda). Gerar no Higgsfield só o que falta — com lista e custo antes — e nunca rosto de pessoa real
+onda). Gerar (só com gerador conectado) só o que falta — com lista e custo antes — e nunca rosto de pessoa real
 (`referencias/assets.md`).
 
 **4. Texto no meio, nada embaixo da interface.** Texto em y 560–1360, fora da coluna de botões e do pé da tela

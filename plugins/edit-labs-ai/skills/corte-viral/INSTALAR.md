@@ -7,6 +7,9 @@ Esta skill vem dentro do plugin `edit-labs-ai`. Não copie nada para `~/.claude/
 3. Peça ao Claude: "roda o editlabs-setup". Ele confere ffmpeg, yt-dlp, Deno e Python 3.10–3.12, cria os ambientes
    Python em `~/.local/share/edit-labs-ai/` (fora do plugin, para sobreviver a atualizações) e verifica tudo.
 
+No Windows os comandos rodam no Git Bash (o shell do Claude Code) e a instalação dos programas é por `winget`: veja
+`docs/WINDOWS.md` na raiz do plugin.
+
 Comandos do plugin (no PATH do Claude): `vch` (este motor), `cvpy` (o Python deste ambiente), `cv-checar-cortes`,
 `cv-ajustar-cortes`, `cv-testar-borda`, `cv-respiro`, `cv-preview`, `cv-retranscrever`, `editlabs-verificar`.
 

@@ -1,0 +1,31 @@
+# Fim de linha: o Windows (Git for Windows, autocrlf) converte LF em CRLF no checkout e quebra os scripts bash
+# ("bash\r: No such file") e os .py com heredoc. Aqui tudo que é texto fica em LF em qualquer sistema.
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# binários: nunca converter
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.icns binary
+*.mp3 binary
+*.m4a binary
+*.wav binary
+*.mp4 binary
+*.mov binary
+*.zip binary
+*.onnx binary
+*.npy binary
+*.ttf binary
+*.otf binary
+*.ttc binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+*.glb binary
+*.blend binary

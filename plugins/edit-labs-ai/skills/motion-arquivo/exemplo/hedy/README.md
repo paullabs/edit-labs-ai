@@ -23,7 +23,7 @@ Assets (não vêm no plugin; o projeto baixa ou gera):
 
 - fotos da Hedy em domínio público/CC0 (Wikimedia Commons): `mvpy ${CLAUDE_SKILL_DIR}/ferramentas/buscar_assets.py
   commons "Hedy Lamarr 1940"`, depois `baixar_asset.py`, que registra a origem em `assets/FONTES.md`;
-- objetos sem pessoa real gerados no Higgsfield (roteador, torpedo, lixeira, lousa...); a moldura dourada e o papel
+- objetos sem pessoa real gerados por IA de imagem (roteador, torpedo, lixeira, lousa...); a moldura dourada e o papel
   amassado já estão em `motor/kit/`;
 - ícone do app e cursor de mão reais tirados da máquina (`ferramentas/assets_locais.py`).
 - a narração não vem: o `plano.json` espera `audio/narracao.mp4` na pasta do projeto.

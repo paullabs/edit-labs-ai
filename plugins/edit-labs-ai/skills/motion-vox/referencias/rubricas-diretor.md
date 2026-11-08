@@ -34,13 +34,13 @@ As dez perguntas de aprovação do estilo:
 1. Entendo a ideia em menos de 1 segundo?
 2. Existe uma evidência dominante?
 3. A anotação aponta algo específico?
-4. O vazio ajuda a leitura? — **meça**: `python3 lib/medir.py <frame>` (vazio, massa escura)
+4. O vazio ajuda a leitura? — **meça**: `mvpy lib/medir.py <frame>` (vazio, massa escura)
 5. Os materiais parecem físicos?
 6. A cor de destaque tem função? — **meça**: acento 3–7% do quadro (`medir.py`); abaixo de 1% o acento não existe
 7. Poderia existir na mesma mesa das outras cenas?
 8. Há profundidade por sobreposição e sombra de contato?
 9. **Legível a 300px de largura?** — renderize e olhe, não estime
-9b. **Todo texto sobre imagem foi MEDIDO?** — `python3 lib/legibilidade.py com.png sem.png`.
+9b. **Todo texto sobre imagem foi MEDIDO?** — `mvpy lib/legibilidade.py com.png sem.png`.
     Interno < 3,0 = a tinta some no fundo dela. Externo < 3,0 **e** croma < 28 = o bloco
     some na imagem. Qualquer um dos dois reprova. Sobre footage, sem scrim não passa
 10. Tirar qualquer elemento pioraria a explicação?

@@ -10,8 +10,8 @@ Guia completo: `LEIA-ME.md`. Catálogo legível: `CATALOGO.md`.
 1. Escolha o estilo pela tabela "Escolher o estilo" do `LEIA-ME.md` (um principal, no máximo um de apoio).
 2. Veja as referências e a ficha do estilo:
    ```
-   python3 -I ${CLAUDE_PLUGIN_ROOT}/referencias/ferramentas/refs.py estilo vox-clean
-   python3 -I ${CLAUDE_PLUGIN_ROOT}/referencias/ferramentas/refs.py ver R03-mariano-two-parties-vox
+   cvpy -I ${CLAUDE_PLUGIN_ROOT}/referencias/ferramentas/refs.py estilo vox-clean
+   cvpy -I ${CLAUDE_PLUGIN_ROOT}/referencias/ferramentas/refs.py ver R03-mariano-two-parties-vox
    ```
 3. Leia a ficha (`fichas-de-estilo/<estilo>.md`) e a análise das referências `a-fundo` (`analises/`).
 4. Copie `modelo/BRIEF_DE_ESTILO_modelo.md` para a pasta do vídeo, preencha e peça a aprovação do usuário antes do
@@ -19,7 +19,7 @@ Guia completo: `LEIA-ME.md`. Catálogo legível: `CATALOGO.md`.
 
 ## Adicionar uma referência
 ```
-python3 -I ${CLAUDE_PLUGIN_ROOT}/referencias/ferramentas/refs.py adicionar \
+cvpy -I ${CLAUDE_PLUGIN_ROOT}/referencias/ferramentas/refs.py adicionar \
   --id R26-autor-obra --titulo "..." --autor "..." --url https://... --tipo video --prof vista \
   --tema geral --estilo vox-clean --mecanica marca-texto --licenca "todos os direitos reservados" --nota "o que ensina"
 ```

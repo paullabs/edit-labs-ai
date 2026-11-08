@@ -51,8 +51,8 @@ Depois:
 - Transcrição palavra a palavra, com a correção das palavras depois de pausa (ilhas de fala):
 
 ```bash
-python3 ${CLAUDE_SKILL_DIR}/ferramentas/transcrever.py <corte.mp4> <projeto>/time/01_transcricao/palavras_whisper.json pt
-python3 ${CLAUDE_SKILL_DIR}/ferramentas/ilhas_fala.py <corte.mp4> <projeto>/time/01_transcricao/palavras_whisper.json \
+cvpy ${CLAUDE_SKILL_DIR}/ferramentas/transcrever.py <corte.mp4> <projeto>/time/01_transcricao/palavras_whisper.json pt
+cvpy ${CLAUDE_SKILL_DIR}/ferramentas/ilhas_fala.py <corte.mp4> <projeto>/time/01_transcricao/palavras_whisper.json \
         <projeto>/time/01_transcricao/palavras.json
 ```
 
@@ -69,7 +69,7 @@ Ao Som, diga também onde está a pasta de sons do usuário (`EDITLABS_SONS`), s
 real, corta o que ficou sem objeto bom e escreve o `ancoras.json` (evento → palavra). Então:
 
 ```bash
-python3 ${CLAUDE_SKILL_DIR}/ferramentas/tempos.py <projeto>/time/01_transcricao/palavras.json \
+cvpy ${CLAUDE_SKILL_DIR}/ferramentas/tempos.py <projeto>/time/01_transcricao/palavras.json \
         <projeto>/time/ancoras.json <projeto>/trabalho/tempos.json --fps 24
 ```
 
@@ -96,9 +96,9 @@ Ordem fixa: **insets e peças → motion → som → legenda por último → exp
   clipe curto, ids criados, faixas).
   - Escreva o `elementos.py` do projeto (modelo na ajuda de `montar.py`) e rode por etapas:
     ```bash
-    python3 ${CLAUDE_SKILL_DIR}/ferramentas/montar.py <projeto>/trabalho/elementos.py lotes <tl> A
-    python3 ${CLAUDE_SKILL_DIR}/ferramentas/montar.py <projeto>/trabalho/elementos.py ops <tl> A 0   # -> edit_timeline
-    python3 ${CLAUDE_SKILL_DIR}/ferramentas/montar.py <projeto>/trabalho/elementos.py reg <tl> A 0 '<created>'
+    cvpy ${CLAUDE_SKILL_DIR}/ferramentas/montar.py <projeto>/trabalho/elementos.py lotes <tl> A
+    cvpy ${CLAUDE_SKILL_DIR}/ferramentas/montar.py <projeto>/trabalho/elementos.py ops <tl> A 0   # -> edit_timeline
+    cvpy ${CLAUDE_SKILL_DIR}/ferramentas/montar.py <projeto>/trabalho/elementos.py reg <tl> A 0 '<created>'
     ```
     Etapa A cria os clipes, B ajusta estáticos e cria as faixas, C põe as chaves. Registre os ids depois de cada lote.
   - Composições aninhadas (uma por "mundo" do motion); degraus de 2 quadros por pares de chaves; o rosto fica liso
@@ -124,7 +124,7 @@ Ordem fixa: **insets e peças → motion → som → legenda por último → exp
   estúdio, sem relação com a fala.
 - **Real primeiro:** pessoa citada = foto real licenciada, com crédito; marca citada = logo oficial (salvo
   proibição do brief); fato = vídeo ou print da fonte. Gerar só o que não existe, nunca rosto de pessoa real, sem
-  texto na imagem (gerador do plugin: Higgsfield; se o projeto já vive no invideo, a IA dele serve).
+  texto na imagem (o gerador conectado, se houver; se o projeto já vive no invideo, a IA dele serve; sem gerador, vira a lista "O que falta").
 - **Som:** efeitos 15–19 dB abaixo da voz (LUFS medido), poucos, só onde a imagem mostra a ação. Master a −14 LUFS
   e ≤ −1 dBTP.
 - **Rapidez:** os quatro em paralelo; **uma** revisão só. Rodadas de revisão em cascata atrasam a entrega e não

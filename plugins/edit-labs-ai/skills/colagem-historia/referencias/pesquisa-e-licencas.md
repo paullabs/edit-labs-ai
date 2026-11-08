@@ -65,9 +65,9 @@ antigos, lugares) e de 4 a 7 objetos (de preferência isolados, com fundo liso e
 - **Antes de baixar, mostre a lista** (arquivo, origem, licença, tamanho) e espere o "pode" (REGRAS.md §9).
 - Cada arquivo numa **pasta nova e vazia**: `baixados/<id>/arquivo.ext`. Use a versão de ~2000 px, ou o original se
   tiver menos de 15 MB. Leia com `clpy -I` e nunca execute nada que foi baixado.
-- **Recorte local** (macOS 14+, sem rede e sem crédito):
-  `swift "${CLAUDE_PLUGIN_ROOT}/motor/colagem/recorte.swift" baixados/<id>/arquivo.jpg pecas/<id>.png`.
-  Fora do macOS, use a remoção de fundo do Higgsfield (com "pode").
+- **Recorte local** (sem rede e sem crédito; Mac, Windows e Linux):
+  `clpy "${CLAUDE_PLUGIN_ROOT}/motor/colagem/recorte.py" baixados/<id>/arquivo.jpg pecas/<id>.png`.
+  No Mac usa o Vision; nos outros sistemas usa o `rembg` (`editlabs-setup --recorte`, uma vez).
 - **Confira cada recorte** sobre fundo azul. Se ele pegar moldura, pedestal ou gente a mais, corte a entrada antes e
   refaça. Para tirar pedestal ou moldura embaixo, use `PC.recorte(..., corte_base=0.74)`. Um recorte ruim é pior que
   nenhum: descarte e diga.

@@ -4,7 +4,7 @@ Foto: "Photographic postcard of an unidentified man in a suit", 1926–1940s, NM
 Access, CC0): https://nmaahc.si.edu/object/nmaahc_2013.46.29.86 (arquivo NMAAHC-2013_46_29_86_001.jpg; confira a
 licença CC0 na página e baixe você mesmo).
 O recorte pronto vem no pacote colagem-homem3 da release (assets/homem3/recorte/foto3_recorte.png). Para outra foto:
-recorte com motor/colagem/recorte.swift (macOS) ou removendo o fundo no Higgsfield e salve o PNG com alfa em
+recorte com `clpy motor/colagem/recorte.py` (macOS, Windows e Linux) ou removendo o fundo em qualquer ferramenta e salve o PNG com alfa em
 <trabalho>/homem3/recorte/foto3_recorte.png (o seu vale mais que o do pacote).
 
 Peças (no px do recorte, que é o da foto deslocado pela caixa do recorte):

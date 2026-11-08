@@ -1,3 +1,4 @@
 # Opcional, só Apple Silicon: transcrição ~10x mais rápida que o faster-whisper em CPU.
 # Instale no venv-corte:  $EDITLABS_DATA/venv-corte/bin/python -m pip install -r requirements-mlx.txt
+# (macOS/Linux; no Windows não existe mlx: use o faster-whisper, que já vem no ambiente)
 mlx-whisper>=0.4

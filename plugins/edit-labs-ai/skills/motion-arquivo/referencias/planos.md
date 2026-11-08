@@ -452,7 +452,7 @@ Máscara do sujeito: `swift ferramentas/recorte.swift <foto> assets/prontos/<fot
   interpolar), com `sat` 0,82, vinheta 0,28 e empurrão de câmera `zoom: [1.0, 1.06]`. Parâmetros: `clip`, `ss` (segundo inicial),
   `vel`, `zoom`, `ponto`, `sat`, `ganho`, `vinheta`. Congela no último quadro se o plano passar do clipe. Aceita `palavras_grandes`
   (com sombra) e `rodape`. No montador da série: `clipe(inicio, fim, "nome", ss=0, palavras=[(texto, quadro, y, corpo)])`.
-- **Gerar o clipe:** no Higgsfield (o gerador do plugin), 9:16, 4–5 s, sem áudio; mostre o custo antes e espere o "pode"
+- **Gerar o clipe:** no gerador de vídeo conectado (se houver), 9:16, 4–5 s, sem áudio; mostre o custo antes e espere o "pode"
   (`${CLAUDE_PLUGIN_ROOT}/REGRAS.md`). Prompt: "Vertical documentary landscape. <cena>. Muted desaturated film colors, fine film grain. No people in close-up, no text, no logos."
 - **Cuidado:** a IA coloca placas quase legíveis; conferir. Conteúdo de IA se avisa na legenda.
 - **Filmagem real 16:9 no vertical (v12.6):** quando a notícia é um evento filmado (o salto do Roadster), o gancho é o

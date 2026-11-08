@@ -8,7 +8,7 @@
 | --- | --- |
 | **áudio da narração** (wav, mp3, m4a) | é a fonte do tempo; copia para `audio/` |
 | **vídeo** com a fala (talking head, aula, podcast) | o áudio sai dele; a imagem pode virar `foto_pullout`/insert, mas o estilo é o da narração em arquivo |
-| **roteiro em texto** | precisa de voz: gravação dele (preferida) ou TTS. `say -v Luciana` do macOS só serve para testar tempo — nunca para entrega |
+| **roteiro em texto** | precisa de voz: gravação dele (preferida) ou TTS. TTS do sistema (`say -v Luciana` no Mac, SAPI no Windows) só serve para testar tempo — nunca para entrega |
 | **um vídeo de referência para reproduzir** | é o caso Hedy: medir antes (`referencias/medir-referencia.md`) |
 
 ## Pasta

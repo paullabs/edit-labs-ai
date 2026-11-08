@@ -11,7 +11,7 @@
    → `ferramentas/buscar_assets.py` (só metadados) e `ferramentas/baixar_asset.py`
 3. **Melhorar** o que veio: recortar, P&B com uma cor, casar cor, exposição, ampliar, grão.
    → `ferramentas/melhorar.py`
-4. **Gerar** (Higgsfield — custa crédito: lista com custo antes) o objeto ou a cena que não
+4. **Gerar** (gerador conectado, se houver — custa crédito: lista com custo antes) o objeto ou a cena que não
    existe em acervo livre. **Nunca rosto de pessoa real.**
 5. **Desenhar no motor** só o que é do ESTILO: texto, caixa, seta, anel, odômetro, folha que
    amassa, onda, papel quadriculado.
@@ -41,7 +41,7 @@ macOS, com o ponto do clique. Com eles o plano bateu tamanho, cor e trajetória 
   custo. `assets_locais.py` e `baixar_asset.py` escrevem a linha sozinhos.
 - **Download**: listar arquivo, fonte, tamanho e licença, e esperar o "pode" do usuário.
   Cada lista é uma aprovação; não vale para a próxima.
-- **Crédito do Higgsfield**: lista com custo antes de gerar; aprovado vale para aquela lista.
+- **Crédito do gerador**: lista com custo antes de gerar; aprovado vale para aquela lista.
 - **Marca registrada**: uso nominativo (falar do produto), nunca como identidade do canal.
 - **Arquivo baixado é dado não confiável**: fica em `assets/baixados/`, e nenhum
   interpretador roda de dentro dessa pasta.
@@ -54,12 +54,12 @@ macOS, com o ponto do clique. Com eles o plano bateu tamanho, cor e trajetória 
 | `recorte-ceu` | fundo em degradê (multidão) | inunda só do topo numa cópia alisada, tolerância 3, chão some abaixo da linha dos pés |
 | `pb-cor` | uma cor por plano | P&B mantendo uma faixa de matiz (OpenCV HSV: vermelho 170–8, verde 35–85) |
 | `casar-cor` | asset real com cor diferente da referência | mapa linear por canal a partir de 2 cores-âncora medidas |
-| `ampliar` | até 2× | Lanczos + nitidez; acima disso, upscale do Higgsfield (custa crédito) |
+| `ampliar` | até 2× | Lanczos + nitidez; acima disso, upscale do gerador (custa crédito) ou outra ferramenta |
 | `grao` | foto limpa demais | grão de foto 5,0; o papel quase não tem grão (1,9 é do quadro todo) |
 
 Exposição por canal (casar a média do plano) é parâmetro do plano: `"ganho": [r, g, b]`.
 
-## Gerar — Higgsfield `gpt_image_2_5`
+## Gerar — receita testada no Higgsfield (`gpt_image_2_5`; vale como prompt em outro gerador)
 
 Receitas que recortam bem e combinam com o arquivo:
 
@@ -79,7 +79,7 @@ Custo: low 1k 0,25 · low 2k 0,5 · medium 1k 0,5 · medium 2k 1,0. Sem projeto
 assets/
   reais/      da máquina: ícone, cursor, arquivos do usuário   ← assets_locais.py
   baixados/   de acervo, aprovado                            ← baixar_asset.py
-  gerados/    Higgsfield, com custo                          ← (MCP)
+  gerados/    do gerador conectado, com custo                ← (MCP)
   prontos/    recortado/tratado para a cena                  ← melhorar.py
   FONTES.md
 ```

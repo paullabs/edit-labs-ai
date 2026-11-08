@@ -1,4 +1,4 @@
-"""Poses do tchau geradas por IA de imagem (ex.: GPT Image no Higgsfield, com a própria foto como referência e o prompt
+"""Poses do tchau geradas por IA de imagem (ex.: GPT Image em um gerador conectado, com a própria foto como referência e o prompt
 "mude SÓ o braço"), coladas sobre a FOTO original.
 
 Por quê: girar o recorte do braço vira um palito em V, completar com a textura da foto deixa o braço fino e usar a mão

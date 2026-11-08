@@ -7,7 +7,7 @@ description: >-
   e entrega o master em V e H. Use para "edita", "decupa", "limpa esse bruto", "monta esse vídeo",
   "do bruto ao master", vídeo solo gravado com erros ou podcast; e para retomar: "continua",
   "retoma", "onde parou", "segue". Clipes curtos de podcast são da corte-viral; o kit de motion é
-  a motion-vox. Exige o Higgsfield conectado para gerar imagens do motion.
+  a motion-vox. Gerar imagens do motion é opcional: usa o gerador conectado, se houver; sem ele, usa foto real e as imagens do usuário.
 allowed-tools:
   - Agent
   - Read

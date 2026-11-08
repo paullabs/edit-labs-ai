@@ -101,8 +101,8 @@ com `FOTO_*` a biblioteca recusa o registro.
 1. `cutout.py --sweep NOME_v1` → platô → `cutout.py NOME_v1 NOME_v2 …`
 2. `checar_asset.py NOME_v1 …` — as medidas da §3 dentro da faixa; tiles a 100 % sem texto de IA.
 3. D1 do Diretor escolhe a variante (cita `07_assets/qa/`). Reprovou: uma alteração no prompt, até 3 vezes.
-4. **Biblioteca:** o aprovado vai para `biblioteca/` com `python3 lib/biblioteca.py registrar 07_assets/cutout/NOME_v1.png --o-que "…" --tags "…" --prompt-arquivo 00_brief/PROMPTS.md`.
-   Antes de gerar, procure: `python3 lib/biblioteca.py buscar "manual"`. Usar do acervo: `python3 lib/biblioteca.py usar NOME`
+4. **Biblioteca:** o aprovado vai para `biblioteca/` com `mvpy lib/biblioteca.py registrar 07_assets/cutout/NOME_v1.png --o-que "…" --tags "…" --prompt-arquivo 00_brief/PROMPTS.md`.
+   Antes de gerar, procure: `mvpy lib/biblioteca.py buscar "manual"`. Usar do acervo: `mvpy lib/biblioteca.py usar NOME`
    (copia para `07_assets/cutout/` e anota o uso — é o que impede o mesmo asset em vídeos seguidos).
 
 ## 7. Por que isto existe

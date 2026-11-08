@@ -21,7 +21,7 @@ de baixar ou gerar antes do "pode".
 | plano | asset | origem (nível) | licença | custo |
 | --- | --- | --- | --- | --- |
 | 3 | foto do inventor | Commons, PD (acervo — download) | domínio público | — |
-| 7 | celular | gerar (Higgsfield low 1k) | — | 0,25 crédito |
+| 7 | celular | gerar (gerador conectado, low 1k) | — | 0,25 crédito |
 | 11 | ícone do app | app instalado (real local) | uso nominativo | — |
 
 Níveis na ordem de `referencias/assets.md`: real local → acervo → melhorar → gerar → motor.

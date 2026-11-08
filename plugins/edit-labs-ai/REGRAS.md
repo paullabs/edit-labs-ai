@@ -64,8 +64,9 @@ fechados.
   chapada atrás de imagem chapada é slide.
 - **Pessoa real e nomeada: só foto real licenciada.** Nunca gere nem "recrie" rosto de alguém real. Pessoa
   anônima pode ser gerada, de preferência sem rosto.
-- Imagem que falta (textura, objeto, paisagem): gere no Higgsfield com fundo transparente em vez de recortar foto
-  à mão. Textura natural (gelo, água, pedra) se pede como **fotografia real**, não como ilustração.
+- Imagem que falta (textura, objeto, paisagem): se houver gerador na sessão (Higgsfield, OpenArt…), gere com fundo
+  liso ou transparente em vez de recortar foto à mão; sem gerador, use foto real licenciada, as imagens do usuário
+  e o recorte local (`clpy recorte.py`). Textura natural (gelo, água, pedra) se pede como **fotografia real**, não como ilustração.
 - **Toda imagem tem origem e licença anotadas** (`CREDITOS.md` do projeto) e entra nos créditos quando a licença
   pede.
 
