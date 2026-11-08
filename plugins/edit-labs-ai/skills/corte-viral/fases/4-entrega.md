@@ -49,7 +49,7 @@ Organizado por `primary_context`, em `<workspace>/<run-id>/output/`.
 
 A pasta da run tem nome de run e numeração de artefato: serve ao pipeline, não
 a quem vai publicar. **Copie os verticais aprovados para uma pasta de entrega
-com nome descritivo** e abra no Finder:
+com nome descritivo** e abra a pasta (Finder no Mac, Explorer no Windows):
 
 ```bash
 mkdir -p <PROJETO>/clipes-verticais

@@ -68,12 +68,22 @@ def _checar_libass(ffmpeg: str) -> None:
         avisos.append("ffmpeg sem libass (queima de legenda indisponivel)")
 
 
+def _instala(pacote: str) -> str:
+    """Comando de instalacao no sistema de quem roda (macOS, Windows ou Linux)."""
+    if sys.platform == "win32":
+        ids = {"ffmpeg": "Gyan.FFmpeg", "yt-dlp": "yt-dlp.yt-dlp"}
+        return f"winget install --id {ids[pacote]} -e"
+    if sys.platform == "darwin":
+        return f"brew install {pacote}"
+    return {"ffmpeg": "sudo apt install ffmpeg", "yt-dlp": "pipx install yt-dlp"}[pacote]
+
+
 def checar_binarios() -> None:
     secao("Binarios")
     for nome, obrigatorio, como in [
-        ("ffmpeg", True, "brew install ffmpeg"),
-        ("ffprobe", True, "brew install ffmpeg"),
-        ("yt-dlp", False, "brew install yt-dlp — so para puxar legenda do YouTube"),
+        ("ffmpeg", True, _instala("ffmpeg")),
+        ("ffprobe", True, _instala("ffmpeg")),
+        ("yt-dlp", False, _instala("yt-dlp") + " — so para puxar legenda do YouTube"),
     ]:
         caminho = shutil.which(nome)
         if caminho:

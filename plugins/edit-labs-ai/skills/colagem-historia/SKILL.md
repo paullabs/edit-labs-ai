@@ -100,7 +100,7 @@ Cada fase termina num resultado conferível. As fases com 👤 param e esperam o
 - **Carimbo** só na batida, com uma explosão de traços curta. Etiquetas e carimbos ficam com ≥ 50–58 px na tela
   (`M.ajustar_texto` corrige sozinho e lista o que mudou).
 - **Fotos reais.** Pessoa real é foto real de época, nunca gerada. Um objeto histórico específico (o chapéu dele, a
-  régua do rei) também é foto real. Só um objeto genérico sem foto livre pode ser gerado no Higgsfield com fundo
+  régua do rei) também é foto real. Só um objeto genérico sem foto livre pode ser gerado (se houver gerador conectado) com fundo
   transparente, com "pode", e marcado como gerado no `CREDITOS.md`.
 - **Mundo em escala real:** o tamanho na tela conta a história (a régua, a sola no chão, o mapa de verdade).
 - **Câmera:** um foco por batida. A câmera chega antes da legenda, com deriva lenta (×1,02–1,04 por plano). Borrão só

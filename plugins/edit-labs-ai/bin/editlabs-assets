@@ -26,6 +26,7 @@ for nome in "${PEDIDOS[@]}"; do
   grep -q "^$nome[[:space:]]" "$LISTA" || { echo "Pacote desconhecido: $nome (veja: editlabs-assets)" >&2; exit 2; }
   echo "Baixando $nome…"
   tmp="$(mktemp -d)"; curl -fL --progress-bar -o "$tmp/$nome.zip" "$URL/$nome.zip"
-  unzip -oq "$tmp/$nome.zip" -d "$DEST"; rm -rf "$tmp"; date > "$MARCA/$nome"
+  PYBIN="$(py_qualquer || true)"; [ -n "$PYBIN" ] || { echo "Falta o Python (rode editlabs-setup)." >&2; exit 3; }
+  "$PYBIN" -m zipfile -e "$(caminho_nativo "$tmp")/$nome.zip" "$DEST"; rm -rf "$tmp"; date > "$MARCA/$nome"
   echo "  ✓ $nome em $DEST  (licença e crédito no LEIA.md do pacote)"
 done

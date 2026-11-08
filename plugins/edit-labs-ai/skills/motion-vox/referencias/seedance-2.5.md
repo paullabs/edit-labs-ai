@@ -1,4 +1,4 @@
-# B-roll e inserts em vídeo (Seedance, pelo Higgsfield)
+# B-roll e inserts em vídeo (Seedance, em qualquer gerador de vídeo conectado)
 
 Dois usos para vídeo gerado dentro de um clipe:
 
@@ -8,8 +8,8 @@ Dois usos para vídeo gerado dentro de um clipe:
   encaixa), no mundo visual do kit.
 
 Nenhum dos dois é obrigatório em todo projeto. A composição por camadas continua preferível para interfaces reais,
-logos, texto exato, gráficos e setas sincronizadas. Tudo aqui passa pelo Higgsfield: sem ele conectado, a skill
-não começa (ver "Antes de começar" no `SKILL.md`).
+logos, texto exato, gráficos e setas sincronizadas. Gerar vídeo pede um gerador de vídeo conectado (Higgsfield, OpenArt…); sem ele, pule o B-roll gerado: o resto da skill
+roda igual (ver "Antes de começar" no `SKILL.md`).
 
 ## 1. Plano de B-roll
 

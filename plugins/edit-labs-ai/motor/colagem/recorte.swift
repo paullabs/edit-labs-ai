@@ -1,5 +1,5 @@
 // Recorte local do sujeito (Vision, só macOS 14+): swift recorte.swift entrada.jpg saida.png
-// Em outro sistema, recorte no Higgsfield (remover fundo) ou com outra ferramenta de recorte com alfa.
+// Em outro sistema use recorte.py (mesma pasta), que cai no rembg: clpy recorte.py entrada.jpg saida.png
 // Gera PNG com alfa só do(s) sujeito(s) em primeiro plano. Sem rede, sem crédito.
 import Foundation
 import Vision

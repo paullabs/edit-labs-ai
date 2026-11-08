@@ -83,6 +83,10 @@ def cursor(nome, proj, escala=12):
 
 
 if __name__ == "__main__":
+    if sys.platform != "darwin":
+        sys.exit("assets_locais.py usa os icones de aplicativo (.icns) e os cursores do macOS: so funciona no Mac.\n"
+                 "No Windows/Linux: baixe o icone do site oficial da marca (uso nominativo) ou use um cursor desenhado em "
+                 "codigo (motor/colagem), e registre a origem em assets/FONTES.md.")
     a = sys.argv[1:]
     if not a or a[0] == "apps":
         for p in _apps():

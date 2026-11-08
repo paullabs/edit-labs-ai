@@ -1,31 +1,48 @@
 #!/usr/bin/env bash
-# Prepara o Edit Labs AI neste computador: confere dependências, cria os dois ambientes Python FORA da pasta do
-# plugin (sobrevivem a atualização), copia a biblioteca de assets e verifica.
+# Prepara o Edit Labs AI neste computador (macOS, Linux ou Windows com Git Bash): confere dependências, cria os
+# ambientes Python FORA da pasta do plugin (sobrevivem a atualização), copia a biblioteca de assets e verifica.
 #   editlabs-setup                   # primeira vez, ou para conferir
 #   editlabs-setup --baixar-whisper  # já baixa o modelo do Whisper (~1,6 GB)
 #   editlabs-setup --refazer         # recria os ambientes do zero
 #   editlabs-setup --colagem         # também prepara o motor de colagem (estilos de colagem, explicador Vox, arquivo)
+#   editlabs-setup --recorte         # também instala o recorte local sem assinatura (rembg, ~400 MB com o modelo)
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
-BAIXAR=0; REFAZER=0; COLAGEM=0
-for a in "$@"; do case "$a" in --baixar-whisper) BAIXAR=1;; --refazer) REFAZER=1;; --colagem) COLAGEM=1;; esac; done
+BAIXAR=0; REFAZER=0; COLAGEM=0; RECORTE=0
+for a in "$@"; do case "$a" in --baixar-whisper) BAIXAR=1;; --refazer) REFAZER=1;; --colagem) COLAGEM=1;; --recorte) RECORTE=1; COLAGEM=1;; esac; done
 [ -x "$CL_PY" ] && COLAGEM=1
 ok() { printf "  ✓ %s\n" "$*"; }; ruim() { printf "  ✗ %s\n" "$*"; }
 
+echo "Sistema: $EDITLABS_OS"
 echo "1. Dependências"
 FALTA=()
 for c in ffmpeg ffprobe yt-dlp deno; do
   if command -v "$c" >/dev/null 2>&1; then ok "$c"; else ruim "$c ausente"; FALTA+=("$c"); fi
 done
-PY=""
-for c in python3.12 python3.11 python3.10 python3; do
-  p="$(command -v "$c" 2>/dev/null || true)"; [ -n "$p" ] || continue
-  if "$p" -c 'import sys; sys.exit(0 if (3,10) <= sys.version_info[:2] <= (3,12) else 1)' 2>/dev/null; then PY="$p"; break; fi
-done
-if [ -n "$PY" ]; then ok "Python $("$PY" -c 'import platform; print(platform.python_version())')"; else ruim "Python 3.10–3.12 ausente (o kit fixa numpy 2.0.2, sem pacote para 3.13+)"; FALTA+=("python@3.12"); fi
+
+versao_ok() { "$1" -c 'import sys; sys.exit(0 if (3,10) <= sys.version_info[:2] <= (3,12) else 1)' >/dev/null 2>&1; }
+achar_python() {
+  local c p v
+  for c in python3.12 python3.11 python3.10 python3 python; do
+    p="$(command -v "$c" 2>/dev/null || true)"; [ -n "$p" ] || continue
+    if versao_ok "$p"; then printf '%s' "$p"; return 0; fi        # o atalho da Microsoft Store falha aqui e é pulado
+  done
+  if [ "$EDITLABS_OS" = windows ] && command -v py >/dev/null 2>&1; then
+    for v in 3.12 3.11 3.10; do
+      p="$(py -"$v" -c 'import sys; print(sys.executable)' 2>/dev/null | tr -d '\r' || true)"
+      [ -n "$p" ] || continue
+      p="$(caminho_nativo "$p")"
+      if versao_ok "$p"; then printf '%s' "$p"; return 0; fi
+    done
+  fi
+  return 1
+}
+PY="$(achar_python || true)"
+if [ -n "$PY" ]; then ok "Python $("$PY" -c 'import platform; print(platform.python_version())')"
+else ruim "Python 3.10–3.12 ausente (o kit fixa numpy 2.0.2, sem pacote para 3.13+)"; FALTA+=("python"); fi
 if [ ${#FALTA[@]} -gt 0 ]; then
-  p="${FALTA[*]}"; p="${p//ffprobe/}"
-  echo; echo "Falta instalar: brew install $p   (sem Homebrew: https://brew.sh). Depois rode editlabs-setup de novo."
+  echo; echo "Falta instalar:"; dica_instalar "${FALTA[@]}" | sed 's/^/  /'
+  echo "Depois rode editlabs-setup de novo."
   exit 1
 fi
 
@@ -52,7 +69,19 @@ if [ "$COLAGEM" = 1 ]; then
     "$CL_PY" -m pip install -q -r "$ROOT/motor/colagem/requirements.txt"
   fi
   ok "motor de colagem: $EDITLABS_DATA/venv-colagem"
-  if command -v blender >/dev/null 2>&1 || [ -x /Applications/Blender.app/Contents/MacOS/Blender ]; then ok "Blender (renders 3D em camadas)"
+  if [ "$RECORTE" = 1 ]; then
+    echo "  instalando o recorte local (rembg)…"
+    "$CL_PY" -m pip install -q -r "$ROOT/motor/colagem/requirements-recorte.txt"
+  fi
+  if "$CL_PY" -c 'import rembg' >/dev/null 2>&1; then ok "recorte local sem assinatura (rembg)"
+  elif [ "$EDITLABS_OS" = mac ] && command -v swift >/dev/null 2>&1; then ok "recorte local no Mac (Vision); para Windows/Linux: editlabs-setup --recorte"
+  else printf "  · Recorte local ausente: rode  editlabs-setup --recorte  (grátis; baixa ~400 MB uma vez)\n"; fi
+  blender_ok=0
+  if command -v blender >/dev/null 2>&1 || [ -x /Applications/Blender.app/Contents/MacOS/Blender ]; then blender_ok=1; fi
+  if [ "$EDITLABS_OS" = windows ]; then
+    for b in "/c/Program Files/Blender Foundation"/Blender*/blender.exe; do [ -x "$b" ] && blender_ok=1; done
+  fi
+  if [ "$blender_ok" = 1 ]; then ok "Blender (renders 3D em camadas)"
   else printf "  · Blender ausente: só precisa para modelos 3D próprios (https://www.blender.org)\n"; fi
   printf "  · Modelos 3D e pranchas: rode editlabs-assets quando um estilo pedir\n"
 fi
@@ -67,9 +96,10 @@ if [ "$BAIXAR" = 1 ]; then
   ok "large-v3-turbo"
 fi
 
-echo "5. Higgsfield"
-echo "   O plugin exige o Higgsfield conectado ao Claude (claude.ai → Configurações → Conectores)."
-echo "   Sem conta? Crie por este link: https://higgsfield.ai/s/claude-opus-5-5-yt-canal-labs-RygxQf"
+echo "5. Gerador de imagem e de vídeo (opcional)"
+echo "   O plugin NÃO exige conta nem assinatura em nenhum gerador. Se a sua sessão tiver um conector de imagem ou de"
+echo "   vídeo (Higgsfield, OpenArt ou outro), ele é usado para o que faltar, com o custo mostrado antes. Sem ele,"
+echo "   o Claude usa foto real licenciada, as suas imagens, recorte local e cenas em código."
 
 echo "6. Verificação"
 exec "$ROOT/bin/editlabs-verificar"

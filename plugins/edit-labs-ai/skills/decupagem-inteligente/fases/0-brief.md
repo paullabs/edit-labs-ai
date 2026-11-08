@@ -8,11 +8,11 @@
 
 1. **Instalação.** `di verificar`. Se faltar ambiente ("ainda não foi preparado"): rode `editlabs-setup` ("preparando; o modelo do Whisper tem 1,5 GB, leva uns minutos"). Erro vira mensagem em português com o comando pronto para colar.
 2. **Host e gerador.** Você descobre o host pela ferramenta que tem, não por variável de ambiente:
-   - Claude Code com MCP de imagem (Higgsfield) → `--host claude --gerador higgsfield`;
-   - sem gerador na sessão → `--gerador nenhum` (o corte roda igual; na F5 o usuário conecta o Higgsfield ou manda as imagens).
+   - Claude Code com ferramenta de imagem de um conector (Higgsfield, OpenArt…) → `--host claude --gerador mcp`;
+   - sem gerador na sessão → `--gerador nenhum` (o padrão no Claude Code; o corte roda igual e, na F5, o usuário manda as imagens ou gera onde quiser).
 3. **Preparar.** Rode e volte na hora (a leitura segue em segundo plano):
    ```
-   di preparar "<BRUTO>" --host claude --gerador higgsfield
+   di preparar "<BRUTO>" --host claude --gerador <mcp|nenhum>
    ```
    Ele sonda com ffprobe, junta sequência de câmera, extrai o áudio a 16 kHz, cria o projeto e lança a leitura. A transcrição espera até 90 s pelo glossário.
 4. **Mensagem única ao usuário**, literal, no formato abaixo: no máximo 2 perguntas, de múltipla escolha, com o padrão marcado. Antes de montar, confira a régua (`di portao status` mostra `respostas[]`; `di preparar` já herda a saída da régua do usuário): **o que já foi respondido não entra na mensagem.** Nada de trabalho pesado antes dela.
@@ -30,7 +30,7 @@
 
 ```
 F0 BRIEF · tentativa 1 de 3 · aprovado até: nada · modo: portoes
-Feito: recebi <arquivo> · <duração> · <resolução> · <fps> quadros por segundo · <n> faixa(s) de áudio · pronto para cortar. Kit de motion encontrado. Gerador de imagem: <Higgsfield | nenhum nesta sessão>. Tempo estimado até o corte: ~<N> min.
+Feito: recebi <arquivo> · <duração> · <resolução> · <fps> quadros por segundo · <n> faixa(s) de áudio · pronto para cortar. Kit de motion encontrado. Gerador de imagem: <o conectado | nenhum nesta sessão (tudo bem: sigo com foto real e as suas imagens)>. Tempo estimado até o corte: ~<N> min.
 Onde: <pasta do projeto>
 Vou: ler → marcar → cortar (paro: você vê o corte) → plano de motion (paro: você aprova) → motion → legenda por último → vídeo completo (paro).
 Com "vai até o fim" paro 2 vezes: corte e entrega. "Só o corte": corte e entrega, sem motion.

@@ -7,5 +7,5 @@ st=0
 "$CV_PY" "$CV_SKILL/verificar.py" || st=1
 ( cd "$MV_SKILL" && "$MV_PY" verificar.py ) || st=1
 [ $st = 0 ] && echo "Edit Labs AI: tudo pronto." || echo "Edit Labs AI: veja os itens acima."
-echo "Lembrete: a geração de imagem usa o Higgsfield conectado ao Claude (claude.ai → Configurações → Conectores)."
+echo "Lembrete: gerador de imagem e de vídeo é opcional. Sem ele, o plugin usa foto real licenciada, as suas imagens e recorte local (clpy recorte.py)."
 exit $st

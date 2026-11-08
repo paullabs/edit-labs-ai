@@ -6,7 +6,7 @@
 
 ## Passos
 
-1. **Assets.** Antes, `biblioteca.py buscar` (o que já existe e é o objeto dito entra com `biblioteca.py usar NOME`). Gere só o que a lista G autorizou (Higgsfield conectado ao Claude), destino `07_assets/raw/<NOME>_v1..3.png`. Logos e fotos reais baixados com a permissão do usuário vão para `07_assets/raw/` e para `07_assets/reais.json` (`{"arquivos": [...]}`), com origem e licença em `07_assets/ATRIBUICOES.md`.
+1. **Assets.** Antes, `biblioteca.py buscar` (o que já existe e é o objeto dito entra com `biblioteca.py usar NOME`). Gere só o que a lista G autorizou (gerador conectado à sessão, se houver; sem ele, vira a lista "O que falta" para o usuário), destino `07_assets/raw/<NOME>_v1..3.png`. Logos e fotos reais baixados com a permissão do usuário vão para `07_assets/raw/` e para `07_assets/reais.json` (`{"arquivos": [...]}`), com origem e licença em `07_assets/ATRIBUICOES.md`.
 2. **Recorte:** `di mv <id> cutout.py --sweep NOME` → platô → `di mv <id> cutout.py NOME …` (receita da motion-vox §4). Logo: `qlmanage` + chroma do branco, proporção intocada.
 3. **D1** sobre `07_assets/qa/` (tiles, bordas, alfa): asset liso, vetorial, 3D ou com glow reprova (E1: texturizado e bonito). Regenerar = uma alteração no prompt, até 3 vezes.
 4. **Compor** `compose.py`, abrindo antes o frame de referência de cada cena (coluna Referência). Regras:

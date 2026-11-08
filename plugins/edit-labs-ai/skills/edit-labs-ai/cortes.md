@@ -125,7 +125,7 @@ referências que ele manda ler antes de compor.
 4. **Portão:** autorizar downloads e créditos; confirmar grafias em dúvida; palavrão (padrão: mascarado).
 5. **Assets**:
    - provas reais da Wikimedia Commons, registradas em `ATRIBUICOES.md`;
-   - geração no Higgsfield: `gpt_image_2`, 1:1, 2k, high, fundo liso #8A8A8A, sem texto, sem sombra; em lote
+   - geração, se houver gerador (receita testada no Higgsfield): `gpt_image_2`, 1:1, 2k, high, fundo liso #8A8A8A, sem texto, sem sombra; em lote
      (`generate_image_batch` + `jobs_wait`);
    - recorte com `cutout.py --sweep` → `cutout.py NOME --cfg '{"tol":…}'`; sem platô, remoção de fundo por IA;
    - `checar_asset.py`: saturação ≤ 110, anel de alfa 215–235.

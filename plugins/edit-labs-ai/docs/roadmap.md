@@ -1,8 +1,7 @@
 # Roadmap do processo
 
 - **Desenho editável**: `roadmap-processo.excalidraw` (excalidraw.com → Abrir).
-- **Requisito**: Higgsfield conectado ao Claude (imagens, remoção de fundo, B-roll). Sem conta:
-  https://higgsfield.ai/s/claude-opus-5-5-yt-canal-labs-RygxQf
+- **Gerador de imagem e de vídeo**: opcional (Higgsfield, OpenArt…). Sem ele, o plugin usa foto real, as suas imagens e recorte local.
 
 ## As sete etapas
 
@@ -12,8 +11,8 @@
 | 2 | Achar | transcrição compacta → context-mapper + clip-hunter → lista com tempo e citação | corte-viral | escolhe |
 | 3 | Cortar | clip-builder; borda conferida pelo ouvido (Whisper em 3 s); respiro por script; preview | ferramentas da corte-viral | aprova o preview |
 | 4 | Vertical | edit-director; rosto de quem fala rastreado (YuNet) e conferido dentro do corte; um crop só, nunca tela dividida; QR da transmissão fora do quadro; render limpo | corte-viral | |
-| 5 | Motion | ouvir o clipe e conferir emendas; plano frase a frase; fotos reais (Commons) e geração (Higgsfield); cenas em código ancoradas na palavra; travas por script; pranchas | motion-vox | autoriza créditos, aprova pranchas |
-| 6 | B-roll | plano de B-rolls de 3–5 s; imagens de partida; vídeos Seedance; revisão de cada vídeo; beat de vídeo no motor; conferência dentro do master | motion-vox, Higgsfield | aprova imagens, autoriza vídeos |
+| 5 | Motion | ouvir o clipe e conferir emendas; plano frase a frase; fotos reais (Commons) e geração (se houver gerador); cenas em código ancoradas na palavra; travas por script; pranchas | motion-vox | autoriza créditos, aprova pranchas |
+| 6 | B-roll | plano de B-rolls de 3–5 s; imagens de partida; vídeos Seedance; revisão de cada vídeo; beat de vídeo no motor; conferência dentro do master | motion-vox, gerador de vídeo (opcional) | aprova imagens, autoriza vídeos |
 | 7 | Fechar | legenda (correções + palavrão mascarado); render 12 fps (24 dentro do B-roll) em master do fps da fonte; verificação por conteúdo e áudio | motion-vox | publica |
 
 ## Princípios

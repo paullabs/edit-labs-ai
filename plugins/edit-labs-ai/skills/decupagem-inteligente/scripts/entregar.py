@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import shutil
 import subprocess
+import sys
 import time
 from pathlib import Path
 
@@ -35,8 +36,10 @@ def entregar(projeto: Path, vid: str, saidas: list[str]) -> list[Path]:
         C.append(check("V76_entrega", ok, "BLOCKER", medido=str(dst), esperado="sha256 da cópia = master", video=vid, saida=s))
         feitos.append(dst)
     registrar_checks(projeto, "F7", C)
-    if shutil.which("open"):   # macOS: mostra o arquivo no Finder
+    if sys.platform == "darwin" and shutil.which("open"):      # mostra o arquivo no Finder
         subprocess.run(["open", "-R", str(feitos[0])], check=False)
+    elif sys.platform == "win32":                               # mostra o arquivo no Explorer
+        subprocess.run(["explorer", "/select,", str(feitos[0])], check=False)
     ver = [f"{s}: {config(projeto).get('motion', {}).get('fps', 12)} fps" for s in saidas]
     gravar_texto(projeto / "entrega" / "RESUMO.md", "\n".join([
         f"# Entrega — {vid}", "",

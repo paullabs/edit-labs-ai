@@ -1,6 +1,6 @@
 ---
 name: edit-labs-ai
-description: Edit Labs AI — porta de entrada da edição de vídeo vertical (Reels, TikTok, Shorts) com o Claude Code. Faz poucas perguntas fáceis, escolhe o estilo certo e conduz o projeto do começo à entrega — cortes editados de podcast/live/entrevista (corte, vertical, motion, B-roll, legenda), explicador em colagem com camadas (corpo humano e objetos por dentro, como o manequim de 1890 e a luva de boxe), reel de curiosidade histórica em colagem (como o do Napoleão), explicador Vox curto com voz (como o "soco no queixo"), documentário de arquivo em papel, ou do bruto ao master com portões. Use quando o usuário pedir "edição completa", "Edit Labs AI", mandar um link ou vídeo para editar, ou pedir um vídeo explicativo, um reel de história ou de anatomia, mesmo sem dizer o estilo. Exige o Higgsfield conectado.
+description: Edit Labs AI — porta de entrada da edição de vídeo vertical (Reels, TikTok, Shorts) com o Claude Code. Faz poucas perguntas fáceis, escolhe o estilo certo e conduz o projeto do começo à entrega — cortes editados de podcast/live/entrevista (corte, vertical, motion, B-roll, legenda), explicador em colagem com camadas (corpo humano e objetos por dentro, como o manequim de 1890 e a luva de boxe), reel de curiosidade histórica em colagem (como o do Napoleão), explicador Vox curto com voz (como o "soco no queixo"), documentário de arquivo em papel, ou do bruto ao master com portões. Use quando o usuário pedir "edição completa", "Edit Labs AI", mandar um link ou vídeo para editar, ou pedir um vídeo explicativo, um reel de história ou de anatomia, mesmo sem dizer o estilo.
 ---
 
 # Edit Labs AI — porta de entrada
@@ -18,16 +18,19 @@ todos os estilos estão em `${CLAUDE_PLUGIN_ROOT}/REGRAS.md`: leia antes do prim
 2. **Codex:** rode `codex plugin list` e procure `edit-labs-ai@edit-labs-ai`: tem de dizer `installed, enabled`. Se não disser, ofereça `codex plugin add edit-labs-ai@edit-labs-ai`.
 3. Se o comando `claude` ou `codex` não existir, ignore aquele item.
 
-**O Higgsfield é obrigatório.** Imagens, remoção de fundo e B-roll em vídeo são gerados pelo Higgsfield, pelo
-conector dele no Claude. Antes de qualquer etapa, confira se as ferramentas do Higgsfield estão disponíveis nesta
-sessão (`generate_image`, `generate_video`, `balance`). Se não estiverem, pare e responda ao usuário, com o link
-exatamente assim:
+**Gerador de imagem e de vídeo: opcional.** O plugin não exige conta nem assinatura em serviço nenhum e roda no
+Mac, no Windows e no Linux. Olhe o que a sessão tem, diga em **uma frase** na primeira vez e siga:
 
-> Esta skill usa o Higgsfield para gerar as imagens e os vídeos. Crie sua conta por este link:
-> https://higgsfield.ai/s/claude-opus-5-5-yt-canal-labs-RygxQf
-> Depois conecte o Higgsfield no Claude (Configurações → Conectores) e me peça de novo.
-
-Não siga sem ele e não troque por outro gerador.
+1. **Há um gerador conectado** (ferramenta de imagem ou de vídeo de um conector, como Higgsfield, OpenArt ou outro;
+   no Codex, `image_gen`)? Use-o só para o que faltar: objeto genérico, textura, imagem de partida, B-roll em vídeo.
+   Gerar gasta crédito: lista com custo antes e o "pode" do usuário (`REGRAS.md` §9). Tire o fundo com o recorte
+   local (`clpy recorte.py`) antes de gastar crédito com isso.
+2. **Não há gerador?** Não pare, **não peça conta e não mande link**. Siga com material real e com o que o usuário
+   trouxer: foto real licenciada (Commons, NASA, Smithsonian, Pexels), as imagens dele, recorte local (`clpy
+   recorte.py`, grátis) e cenas em código. O que ficaria para gerar vira uma lista curta **"O que falta"** (objeto,
+   enquadramento, fundo liso, sem texto) que o usuário gera onde quiser e põe na pasta do projeto. B-roll em vídeo,
+   sem gerador de vídeo, fica de fora ou usa vídeo livre com licença.
+3. Use o gerador que o usuário já tem conectado; não troque por outro sem avisar.
 
 Se algum comando disser que o ambiente não foi preparado, rode `editlabs-setup` (e `editlabs-setup --colagem`
 para os estilos de colagem com 3D).

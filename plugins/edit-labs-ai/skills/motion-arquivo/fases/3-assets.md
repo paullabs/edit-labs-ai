@@ -16,7 +16,7 @@ Na ordem — e só o que a lista aprovada da fase 2 permite:
    mvpy ${CLAUDE_SKILL_DIR}/ferramentas/baixar_asset.py <url> <projeto> --nome x.jpg --licenca "PD" --pagina <url>
    ```
    Print de site: navegador (screenshot da página real), salvar em `assets/reais/`.
-3. **Gerar** — Higgsfield, só a lista aprovada, receitas em `referencias/assets.md`.
+3. **Gerar** — no gerador conectado (se não houver, vira a lista "O que falta"), só a lista aprovada, receitas em `referencias/assets.md`.
    Nunca rosto de pessoa real. Registrar o custo em FONTES.md.
 4. **Melhorar** — `ferramentas/melhorar.py` (recorte, P&B com uma cor, casar cor, ampliar, grão).
 5. **Conferir**: abrir cada `prontos/` sobre fundo magenta (recorte vazando aparece na hora).

@@ -100,8 +100,8 @@ Pule o que o pedido já respondeu. Depois disso, nada técnico: fps, nível de s
 | **B. 3D próprio em camadas** | o objeto não existe em camadas, ou o volume importa | Blender ortográfico, mesma câmera e mesmos px/m em todas as camadas; `papelizar(luz=...)` vira gravura de papel | crânio, mão, Terra, bloco geológico, refinaria |
 | **C. Híbrido (o melhor, quase sempre)** | volume e mecânica em 3D, com uma foto real dentro da cena | 3D para o corpo; foto real recortada como peça (presa com fita, recorte que viaja) | o homem de terno de foto com a anatomia encaixada |
 
-Pessoa real: só foto real licenciada; o rosto nunca é gerado (`REGRAS.md`). Imagem que falta: gere no Higgsfield com
-fundo transparente.
+Pessoa real: só foto real licenciada; o rosto nunca é gerado (`REGRAS.md`). Imagem que falta: gere no gerador conectado
+(se houver) com fundo liso; sem gerador, use foto real licenciada, as imagens do usuário e o recorte local (`clpy recorte.py`).
 
 ## 3. Mecânicas do motor (`camadas.py`, importado como `K`)
 

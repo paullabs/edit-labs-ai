@@ -9,6 +9,9 @@
 # estão título, canal e descrição — de onde saem os nomes dos participantes).
 # Precisa de yt-dlp e de um runtime JavaScript (Deno) — o yt-dlp usa para o YouTube.
 set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/comum.sh"
+PYBIN="$(py_qualquer || true)"
+[ -n "$PYBIN" ] || { echo "Falta o Python (rode editlabs-setup)." >&2; exit 3; }
 
 LINK="${1:?uso: editlabs-baixar \"<link>\" <pasta-destino> [idioma]}"
 DEST="${2:-00_fonte}"
@@ -18,7 +21,7 @@ mkdir -p "$DEST"
 echo "== consulta (sem baixar)"
 INFO="$(mktemp)"
 yt-dlp --dump-single-json --skip-download --no-warnings "$LINK" > "$INFO"
-python3 - "$INFO" "$IDIOMA" <<'PY'
+"$PYBIN" - "$(caminho_nativo "$INFO")" "$IDIOMA" <<'PY'
 import json, sys
 d = json.load(open(sys.argv[1], encoding="utf-8"))
 idioma = sys.argv[2]

@@ -212,7 +212,7 @@ Cada uma é um retrabalho evitável. Confira antes de renderizar.
     perfeitamente contra a faixa que tem por tras (interno 8,9) e o bloco inteiro sumir
     na foto (externo 1,0). O primeiro decide se da pra LER; o segundo, se da pra NOTAR.
     Corrigir a cor do texto nao resolve o segundo — o que resolve e separar o bloco da
-    imagem. Meca os dois: `python3 lib/legibilidade.py com.png sem.png`.
+    imagem. Meca os dois: `mvpy lib/legibilidade.py com.png sem.png`.
 
 59. **Legenda sobre footage precisa de scrim, e sombra nao basta.** Legenda creme com
     sombra projetada sobre carroceria vermelha mede contraste externo de **1,02** —

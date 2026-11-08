@@ -12,13 +12,13 @@ no máximo 3 perguntas de múltipla escolha e escolhe o estilo. As regras que va
 O roadmap do processo está em `docs/roadmap.md` e o desenho em `docs/roadmap-processo.excalidraw` (abra em
 excalidraw.com → Abrir).
 
-## Requisito: Higgsfield
+## Sem assinatura, em qualquer sistema
 
-O plugin exige o Higgsfield conectado ao Claude (claude.ai → Configurações → Conectores): imagens, remoção de fundo
-e B-roll em vídeo saem dele. Sem conta? Crie por este link:
-**https://higgsfield.ai/s/claude-opus-5-5-yt-canal-labs-RygxQf**
-
-O Claude confere o conector no começo de cada projeto e, se ele não estiver ligado, para e manda esse link.
+O plugin roda no **Mac, no Windows e no Linux** e **não exige conta em nenhum gerador de imagem ou de vídeo**.
+Sem gerador, o Claude usa foto real licenciada, as suas imagens, recorte local (`clpy recorte.py`, grátis) e cenas
+em código; o que ficaria para gerar vira uma lista curta "O que falta". Com um gerador conectado à sessão
+(Higgsfield, OpenArt ou outro), ele gera só o que faltar, com o custo antes e o seu "pode". Guia do Windows:
+`docs/WINDOWS.md`.
 
 ## Os estilos
 
@@ -49,12 +49,13 @@ A revisão é sua: o plugin não usa revisor de IA no meio do processo.
 
 ## Instalar
 
-Ver o `README.md` da raiz do marketplace: conta no Higgsfield → `brew install ffmpeg yt-dlp deno python@3.12` →
-`/plugin marketplace add …` → `/plugin install edit-labs-ai@edit-labs-ai` → reiniciar → *"roda o editlabs-setup"* →
-conectar o Higgsfield.
+Ver o `README.md` da raiz do marketplace: programas (`brew install ffmpeg yt-dlp deno python@3.12` no Mac;
+`winget install Git.Git Python.Python.3.12 Gyan.FFmpeg yt-dlp.yt-dlp DenoLand.Deno` no Windows) →
+`/plugin marketplace add …` → `/plugin install edit-labs-ai@edit-labs-ai` → reiniciar → *"roda o editlabs-setup"*.
 
 Para os estilos de colagem e o explicador Vox, rode também `editlabs-setup --colagem` (cria o ambiente do motor;
-o Blender só é preciso para modelos 3D próprios).
+o Blender só é preciso para modelos 3D próprios). Para recortar fotos sem assinatura em qualquer
+sistema, acrescente `--recorte` (instala o `rembg`; no Mac o recorte já usa o Vision, sem instalar nada).
 
 ## Usar o estilo de cortes: sete pedidos, cinco decisões
 
@@ -66,8 +67,8 @@ Abra o Claude Code numa **pasta vazia** (vai ser a pasta do projeto) e peça, um
 | 2 | "Acha os melhores momentos" (ou `/edit-labs-ai:edit-labs-ai`) | prepara a transcrição, roda os agentes, escreve `MOMENTOS.md` | **escolhe os números** |
 | 3 | "Corta os momentos 1, 9 e 15" | monta os cortes, confere cada borda pelo ouvido, tira as pausas, gera o preview | **assiste e aprova** |
 | 4 | "Faz o vertical dos três" | enquadra pelo rosto de quem fala (nunca divide a tela), confere se não entrou QR da transmissão, renderiza e verifica | |
-| 5 | "Faz a motion dos clipes aprovados" | planeja, busca fotos reais, mostra o custo, gera, compõe, mede, mostra as pranchas | **autoriza os créditos e aprova as pranchas** |
-| 6 | "Coloca B-roll nos clipes" | planeja os B-rolls, gera as imagens de partida, propõe os vídeos com o custo, gera, revisa cada vídeo e monta | **aprova as imagens e autoriza os vídeos** |
+| 5 | "Faz a motion dos clipes aprovados" | planeja, busca fotos reais, mostra o custo, gera, compõe, mede, mostra as pranchas | **aprova as pranchas** (e autoriza créditos, se usar gerador) |
+| 6 | "Coloca B-roll nos clipes" | planeja os B-rolls, gera as imagens de partida, propõe os vídeos com o custo, gera, revisa cada vídeo e monta | **aprova as imagens** (e autoriza os vídeos, se usar gerador) |
 | 7 | "Renderiza, verifica e entrega" | legenda, render, verificação de sincronia e áudio, entrega com créditos | **assiste e publica** |
 
 ## Os combinados (o Claude já segue)
@@ -112,11 +113,15 @@ são sintetizados em código. Músicas e efeitos de bancos que proíbem redistri
 
 | Sintoma | Causa provável | Saída |
 | --- | --- | --- |
-| o Claude para e manda o link do Higgsfield | o conector do Higgsfield não está ligado nesta sessão | crie a conta pelo link, conecte em Configurações → Conectores e peça de novo |
+| o Claude diz que não tem gerador de imagem | nenhum conector de imagem ou vídeo na sessão (é normal) | nada a fazer: ele segue com foto real, as suas imagens e recorte local, e lista "O que falta". Para gerar, conecte um gerador (Higgsfield, OpenArt…) |
 | "O ambiente do Edit Labs AI ainda não foi preparado" | falta rodar o setup neste computador | peça "roda o editlabs-setup" |
 | o Claude não acha `vch`, `mvpy`… | plugin desativado ou Claude Code não reiniciado | `/plugin` → ative `edit-labs-ai`; reinicie |
-| yt-dlp não baixa do YouTube | falta o Deno, ou o yt-dlp está velho | `brew install deno` · `brew upgrade yt-dlp` |
-| pip falha no numpy | só há Python 3.13+ | `brew install python@3.12` e `editlabs-setup --refazer` |
+| yt-dlp não baixa do YouTube | falta o Deno, ou o yt-dlp está velho | Mac: `brew install deno` · `brew upgrade yt-dlp` — Windows: `winget install DenoLand.Deno` · `winget upgrade yt-dlp.yt-dlp` |
+| pip falha no numpy | só há Python 3.13+ | Mac: `brew install python@3.12` — Windows: `winget install Python.Python.3.12` — depois `editlabs-setup --refazer` |
+| (Windows) `bash\r: No such file or directory` | os scripts foram baixados com fim de linha do Windows (CRLF) | atualize o plugin (`/plugin update`): o repositório agora força LF. Se persistir: `git config --global core.autocrlf input` e reinstale |
+| (Windows) `python` abre a Microsoft Store, ou o setup diz "Python ausente" | só existe o atalho da Store | `winget install Python.Python.3.12`, feche e abra o Claude Code (ou desligue o atalho em Configurações → Aplicativos → Configurações avançadas → Aliases de execução) |
+| (Windows) o Claude não acha `clpy`, `vch`… | o PATH do Git Bash não foi atualizado | reinicie o Claude Code; confira `/plugin` → `edit-labs-ai` ativo |
+| recorte: "Sem motor de recorte" | Windows/Linux sem o `rembg` | `editlabs-setup --recorte` (grátis, baixa ~400 MB uma vez) |
 | "O motor de colagem ainda não foi preparado" | falta o ambiente da colagem | `editlabs-setup --colagem` |
 | um exemplo de colagem avisa que falta pacote | pranchas ou modelos 3D não baixados | `editlabs-assets` lista; `editlabs-assets colagem-pranchas` baixa (com o seu "pode") |
 | legenda sem palavras no começo ou no fim de um trecho | projeto criado com uma versão anterior do motor | `mv-novo-projeto . --forcar` na pasta do projeto |

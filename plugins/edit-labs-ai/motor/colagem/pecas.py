@@ -3,7 +3,7 @@
 Cada função devolve uma PIL RGBA pronta para virar Camada no motor:
     cartao(foto)          foto real impressa num cartão de borda clara, com fita
     fita(...)             tira de fita crepe (procedural; ou a sua imagem em $EDITLABS_DATA/colagem/kit/fita.png)
-    recorte(png_alfa)     pessoa/objeto recortado (recorte.swift), com a borda branca da tesoura
+    recorte(png_alfa)     pessoa/objeto recortado (feito antes com recorte.py ou recorte.swift), com a borda branca da tesoura
     etiqueta([linhas])    tira de papel com nome e data
     carimbo("TEXTO")      carimbo vermelho com falhas de tinta
     legenda("a *b*")      frase numa tira de papel (quebra com \\n, *trecho* em vermelho)

@@ -1,5 +1,5 @@
 {
   "name": "edit-labs-ai",
-  "version": "2.1.1",
-  "description": "Edit Labs AI — edição de vídeo vertical (Reels, TikTok, Shorts) com o Claude Code, em vários estilos: cortes editados de podcast/live/entrevista (corte, vertical, motion, B-roll, legenda), explicador em colagem com camadas (corpo humano e objetos por dentro), reel de curiosidade histórica em colagem, explicador Vox curto com voz, documentário de arquivo em papel e decupagem do bruto ao master. Faz poucas perguntas, valida um quadro antes de montar e põe a legenda por último. Exige o Higgsfield conectado."
+  "version": "2.2.0",
+  "description": "Edit Labs AI — edição de vídeo vertical (Reels, TikTok, Shorts) com o Claude Code, em vários estilos: cortes editados de podcast/live/entrevista (corte, vertical, motion, B-roll, legenda), explicador em colagem com camadas (corpo humano e objetos por dentro), reel de curiosidade histórica em colagem, explicador Vox curto com voz, documentário de arquivo em papel e decupagem do bruto ao master. Faz poucas perguntas, valida um quadro antes de montar e põe a legenda por último. Funciona no Mac, no Windows e no Linux, sem assinatura de nenhum gerador: se a sessão tiver um conector de imagem ou de vídeo (Higgsfield, OpenArt…), ele entra como opcional."
 }

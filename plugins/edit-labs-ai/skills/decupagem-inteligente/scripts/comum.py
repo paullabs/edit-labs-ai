@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import contextlib
 import datetime
-import fcntl
 import hashlib
 import json
 import os
@@ -16,8 +15,15 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 import unicodedata
 from pathlib import Path
+
+WINDOWS = sys.platform == "win32"
+if WINDOWS:
+    import msvcrt
+else:
+    import fcntl
 
 ROOT = Path(os.environ.get("DI_ROOT") or Path(__file__).resolve().parent.parent)   # <plugin>/skills/decupagem-inteligente
 PLUGIN_ROOT = ROOT.parent.parent                                                    # <plugin>
@@ -183,13 +189,38 @@ def gravar_json(p: Path | str, obj, indent: int | None = 1) -> Path:
 _TRAVA: dict = {"n": 0, "f": None}
 
 
+def _travar(f) -> None:
+    """Trava exclusiva do arquivo: flock no macOS/Linux, msvcrt.locking no Windows (que desiste após ~10 s: repete)."""
+    if not WINDOWS:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        return
+    f.seek(0)
+    while True:
+        try:
+            msvcrt.locking(f.fileno(), msvcrt.LK_LOCK, 1)
+            return
+        except OSError:
+            time.sleep(0.05)
+
+
+def _destravar(f) -> None:
+    if not WINDOWS:
+        fcntl.flock(f, fcntl.LOCK_UN)
+        return
+    f.seek(0)
+    try:
+        msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+    except OSError:
+        pass
+
+
 @contextlib.contextmanager
 def trava_manifest(projeto: Path):
     """Trava exclusiva (flock) em volta de ler→mudar→gravar o manifest: job que termina enquanto outro começa não
     apaga a mudança do outro. Reentrante no mesmo processo."""
     if _TRAVA["n"] == 0:
         f = open(Path(projeto) / ".manifest.lock", "a")
-        fcntl.flock(f, fcntl.LOCK_EX)
+        _travar(f)
         _TRAVA["f"] = f
     _TRAVA["n"] += 1
     try:
@@ -197,7 +228,7 @@ def trava_manifest(projeto: Path):
     finally:
         _TRAVA["n"] -= 1
         if _TRAVA["n"] == 0:
-            fcntl.flock(_TRAVA["f"], fcntl.LOCK_UN)
+            _destravar(_TRAVA["f"])
             _TRAVA["f"].close()
             _TRAVA["f"] = None
 
@@ -330,6 +361,17 @@ def diario(projeto: Path, tipo: str, texto: str, quem: str = "skill") -> int:
 
 # ---------------------------------------------------------------- jobs desanexados
 def _vivo(pid: int) -> bool:
+    if WINDOWS:   # os.kill(pid, 0) no Windows chama TerminateProcess: nunca use para "perguntar se vive"
+        import ctypes
+        k32 = ctypes.windll.kernel32
+        h = k32.OpenProcess(0x1000, False, int(pid))          # PROCESS_QUERY_LIMITED_INFORMATION
+        if not h:
+            return False
+        try:
+            codigo = ctypes.c_ulong()
+            return bool(k32.GetExitCodeProcess(h, ctypes.byref(codigo))) and codigo.value == 259   # STILL_ACTIVE
+        finally:
+            k32.CloseHandle(h)
     try:
         os.kill(pid, 0)
         return True
@@ -357,9 +399,11 @@ def lancar_job(projeto: Path, nome: str, argv: list[str]) -> int:
     with open(log, "a", encoding="utf-8") as f:
         f.write(f"\n===== {agora()} di {' '.join(argv)}\n")
         f.flush()
+        desanexar = ({"creationflags": 0x00000200 | 0x00000008} if WINDOWS   # NEW_PROCESS_GROUP | DETACHED_PROCESS
+                     else {"start_new_session": True})
         p = subprocess.Popen([sys.executable, str(ROOT / "scripts" / "di.py"), *argv, "--projeto", str(projeto)],
                              stdout=f, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
-                             cwd=str(projeto), env=env, start_new_session=True)
+                             cwd=str(projeto), env=env, **desanexar)
     with trava_manifest(projeto):
         m = carregar(projeto)
         m.setdefault("jobs", {})[nome] = {"pid": p.pid, "status": "rodando", "log": str(log.relative_to(projeto)),

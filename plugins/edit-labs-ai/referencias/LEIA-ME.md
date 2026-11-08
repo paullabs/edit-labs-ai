@@ -42,14 +42,14 @@ Referências **internas** (texto nosso, não cópia de ninguém): `I01` manequim
 **Regra:** um estilo principal, **no máximo um** de apoio. `colagem-barroca` e `vox-clean` brigam (um enfeita, o outro esvazia): não juntar.
 
 ## Como usar num vídeo novo (4 passos)
-1. **Consultar:** `python3 -I ${CLAUDE_PLUGIN_ROOT}/referencias/ferramentas/refs.py estilo <nome>` e ler a ficha.
+1. **Consultar:** `cvpy -I ${CLAUDE_PLUGIN_ROOT}/referencias/ferramentas/refs.py estilo <nome>` e ler a ficha.
 2. **Brief:** copiar `modelo/BRIEF_DE_ESTILO_modelo.md` para a pasta do vídeo e preencher (estilo, paleta, regras de clean, refs usadas). O usuário aprova **antes** do roteiro.
 3. **Construir** com o motor, seguindo "No nosso motor" da ficha.
 4. **Depois de pronto**, se o vídeo ensinou algo, **atualizar a ficha** e a profundidade das referências.
 
 ## Como acrescentar uma referência
 ```
-python3 -I ferramentas/refs.py adicionar --id R26-autor-obra --titulo "..." --autor "..." --url https://... \
+cvpy -I ferramentas/refs.py adicionar --id R26-autor-obra --titulo "..." --autor "..." --url https://... \
   --tipo video --prof vista --tema anatomia --estilo vox-clean --mecanica marca-texto \
   --licenca "todos os direitos reservados" --nota "o que ensina"
 ```

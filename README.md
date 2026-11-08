@@ -5,22 +5,31 @@ enquadramento, motion, B-roll, legenda), **explicador em colagem com camadas** (
 dentro), **curiosidade histórica** em colagem, **explicador Vox** com voz, **documentário de arquivo** e
 **decupagem do bruto ao master**. O Claude Code faz o trabalho, pergunta pouco e você decide nos portões.
 
-## Antes de instalar: Higgsfield
+Roda no **Mac, no Windows e no Linux**, e **não exige assinatura de nenhum serviço**.
 
-O plugin **exige uma conta no Higgsfield** conectada ao Claude: é por ela que saem as imagens, a remoção de fundo
-e os B-rolls em vídeo. Crie a sua por este link:
+## Gerador de imagem e de vídeo: opcional
 
-**https://higgsfield.ai/s/claude-opus-5-5-yt-canal-labs-RygxQf**
+Nenhuma conta é necessária. O plugin trabalha com foto real licenciada (Wikimedia Commons, NASA, Smithsonian,
+Pexels…), com as imagens que você mandar, com recorte local e com cenas em código. **Se** a sua sessão do Claude já
+tiver um gerador de imagem ou de vídeo conectado (Higgsfield, OpenArt ou outro), o Claude o usa para o que faltar,
+mostrando o custo antes e esperando o seu "pode". Sem gerador, ele lista o que faltaria ("O que falta") e segue.
 
-Depois conecte o Higgsfield no Claude: claude.ai → Configurações → Conectores.
+Opcional, para quem quiser gerar dentro do Claude: Higgsfield, em
+https://higgsfield.ai/s/claude-opus-5-5-yt-canal-labs-RygxQf (Claude → Configurações → Conectores).
 
 ## Instalar (uma vez por computador)
 
-**1. Programas** (Mac, com Homebrew):
+**1. Programas.** O plugin precisa de `ffmpeg`, `yt-dlp`, `deno` e Python 3.10–3.12.
 
-```bash
-brew install ffmpeg yt-dlp deno python@3.12
-```
+| Sistema | Comando |
+| --- | --- |
+| **Mac** (Homebrew) | `brew install ffmpeg yt-dlp deno python@3.12` |
+| **Windows** (PowerShell) | `winget install Git.Git Python.Python.3.12 Gyan.FFmpeg yt-dlp.yt-dlp DenoLand.Deno` |
+| **Linux** (Debian/Ubuntu) | `sudo apt install ffmpeg python3.12 python3.12-venv` · `pipx install yt-dlp` · deno: https://deno.com |
+
+No Windows, o Claude Code usa o **Git Bash** (vem com o Git for Windows): é nele que os comandos do plugin
+rodam. Depois de instalar, **feche e abra o Claude Code de novo** para o PATH novo valer. Detalhes e problemas
+comuns: `plugins/edit-labs-ai/docs/WINDOWS.md`.
 
 **2. O plugin**, dentro do Claude Code (o repositório é público: não precisa de conta no GitHub):
 
@@ -32,14 +41,12 @@ brew install ffmpeg yt-dlp deno python@3.12
 Pelo terminal: `claude plugin marketplace add paullabs/edit-labs-ai` e `claude plugin install edit-labs-ai@edit-labs-ai --scope user`.
 Se o Claude perguntar o escopo, escolha o de usuário (`user`): é o que vale para todas as suas pastas. Para conferir, `claude plugin list` tem de mostrar `Scope: user`. Se mostrar `project` ou `local`, o plugin só vale naquela pasta: rode o `install` de novo com `--scope user`.
 No Codex: `codex plugin marketplace add paullabs/edit-labs-ai` e `codex plugin add edit-labs-ai@edit-labs-ai`; `codex plugin list` tem de mostrar `installed, enabled`. Os subagentes do plugin (`edit-labs-ai:context-mapper` e os outros) são do Claude Code.
-Sem GitHub, a partir de uma pasta com este repositório: `/plugin marketplace add /caminho/para/a/pasta`.
+Sem GitHub, a partir de uma pasta com este repositório: `/plugin marketplace add /caminho/para/a/pasta` (no Windows, `C:/caminho/para/a/pasta`).
 
 **3. Reinicie o Claude Code** e peça: *"roda o editlabs-setup"* (para os estilos de colagem e o explicador Vox:
-*"roda o editlabs-setup --colagem"*). Ele confere os programas, cria os ambientes
-Python em `~/.local/share/edit-labs-ai/`, fora do plugin para sobreviverem às atualizações, e verifica tudo.
-
-**4. Confira o Higgsfield**: o Claude checa o conector no começo de cada projeto e, se ele não estiver ligado,
-para e manda o link acima.
+*"roda o editlabs-setup --colagem"*; para recortar imagens sem assinatura em qualquer sistema: acrescente
+`--recorte`). Ele confere os programas, cria os ambientes Python em `~/.local/share/edit-labs-ai/` (no Windows,
+`C:\Users\<você>\.local\share\edit-labs-ai\`), fora do plugin para sobreviverem às atualizações, e verifica tudo.
 
 ## Usar
 
@@ -52,8 +59,8 @@ Para cortes de um vídeo longo, peça, um por vez:
 2. "Acha os melhores momentos" → **você escolhe**
 3. "Corta os momentos 1, 9 e 15" → **você assiste o preview e aprova**
 4. "Faz o vertical dos três"
-5. "Faz a motion dos clipes aprovados" → **você autoriza os créditos e aprova as pranchas**
-6. "Coloca B-roll nos clipes" → **você aprova as imagens e autoriza os vídeos**
+5. "Faz a motion dos clipes aprovados" → **você aprova as pranchas** (e, se houver gerador, autoriza os créditos)
+6. "Coloca B-roll nos clipes" → **você aprova as imagens** (B-roll em vídeo só com gerador de vídeo ou vídeo livre)
 7. "Renderiza, verifica e entrega" → **você assiste e publica**
 
 Detalhes e combinados: `plugins/edit-labs-ai/README.md`.
@@ -63,4 +70,4 @@ Detalhes e combinados: `plugins/edit-labs-ai/README.md`.
 - Atualizar: `/plugin update edit-labs-ai@edit-labs-ai` e reinicie. Os ambientes Python e a biblioteca de assets
   ficam em `~/.local/share/edit-labs-ai/` e não se perdem.
 - Remover: `/plugin uninstall edit-labs-ai@edit-labs-ai`. Para apagar também os ambientes:
-  `rm -rf ~/.local/share/edit-labs-ai`.
+  `rm -rf ~/.local/share/edit-labs-ai` (no Git Bash do Windows, o mesmo comando serve).

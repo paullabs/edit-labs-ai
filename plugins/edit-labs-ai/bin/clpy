@@ -6,5 +6,5 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/c
 if [ ! -x "$CL_PY" ]; then
   echo "O motor de colagem ainda não foi preparado. Rode:  editlabs-setup --colagem" >&2; exit 3
 fi
-export PYTHONPATH="$EDITLABS_MOTOR${PYTHONPATH:+:$PYTHONPATH}"
+pythonpath_somar "$EDITLABS_MOTOR"
 exec "$CL_PY" "$@"

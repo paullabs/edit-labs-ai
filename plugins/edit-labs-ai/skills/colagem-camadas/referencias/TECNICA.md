@@ -172,7 +172,7 @@ textura da própria foto (o braço continua fino); usar a mão de outra fonte, c
 O que funciona (`homem3_poses_ia.py`):
 1. **Calcular as juntas.** Marcar ombro, cotovelo e punho e conferir com as proporções humanas (Drillis & Contini:
    braço 0,186·H, antebraço 0,146·H, mão 0,108·H, ombros 0,259·H). Um pivô fora do lugar denuncia o erro.
-2. **Gerar as poses da parte que mexe com IA de imagem, a partir da PRÓPRIA foto** (Higgsfield, com a foto como
+2. **Gerar as poses da parte que mexe com IA de imagem, a partir da PRÓPRIA foto** (no gerador conectado, ex. Higgsfield, com a foto como
    referência e "mude SÓ o braço", mesma pessoa, roupa, luz e grão). Duas poses bastam ("meio" e "alto");
    alternadas, já são o aceno.
 3. **Compor sobre a original:** registro por SIFT + RANSAC só no rosto e no tronco; tom casado por quantis no corpo

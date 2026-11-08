@@ -47,7 +47,7 @@ escura 3–7% e acento 0,1–0,8%**; a referência Porsche tem **15% e 5,0%**, e
 1. Etapa 2 (escolher frases): decida o registro de cada cena.
 2. **Antes da etapa 5**: `Read` nos quadros de referência do registro, na sua pasta de referência. Dois ou
    três bastam.
-3. Componha. Depois rode `python3 lib/medir.py 08_images/frames/M#_END.png` e compare
+3. Componha. Depois rode `mvpy lib/medir.py 08_images/frames/M#_END.png` e compare
    com a linha "Porsche" da tabela em `ESTUDO.md` §2.
 4. No laudo D2, cite **qual frame de referência** a cena está seguindo. Cena sem
    referência citada não passa.

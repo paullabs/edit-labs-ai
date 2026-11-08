@@ -1,7 +1,7 @@
 """F0 BRIEF: cria o projeto a partir do bruto e lança a leitura (F1) desanexada.
 
   di preparar BRUTO [BRUTO2…] [--projeto PASTA] [--glossario "a, b"] [--saida V|H|ambas]
-             [--modo portoes|ate_o_fim|so_corte] [--host claude|codex] [--gerador higgsfield|image_gen|nenhum]
+             [--modo portoes|ate_o_fim|so_corte] [--host claude|codex] [--gerador mcp|image_gen|nenhum]
              [--esperar N] [--sem-espera]
 
 Nunca decodifica o vídeo: só ffprobe e extração do áudio. Transcript primeiro, vídeo por último.
@@ -109,7 +109,7 @@ def preparar(a) -> Path:
                   "fingerprint": sha256_arquivo(brutos[0], parcial=True), "sequencia": len(brutos) > 1}
     gravar_json(projeto / "00_fonte" / "fonte.json", fonte_json)
     host = a.host or detectar_host()
-    gerador = a.gerador or ("image_gen" if host == "codex" else "higgsfield")
+    gerador = a.gerador or ("image_gen" if host == "codex" else "nenhum")   # gerador é opcional: ninguém precisa de assinatura
     import yaml
     tpl = Path(__file__).resolve().parent.parent / "memoria" / "templates" / "config.yaml"
     cfg = yaml.safe_load(tpl.read_text(encoding="utf-8")) if tpl.exists() else {}
@@ -238,7 +238,7 @@ def main(cmd: str, argv: list[str]) -> int:
     ap.add_argument("--saida", choices=["V", "H", "ambas"])
     ap.add_argument("--modo", default="portoes", choices=["portoes", "ate_o_fim", "so_corte"])
     ap.add_argument("--host", choices=["claude", "codex"])
-    ap.add_argument("--gerador", choices=["higgsfield", "image_gen", "nenhum"])
+    ap.add_argument("--gerador", choices=["mcp", "higgsfield", "image_gen", "nenhum"])
     ap.add_argument("--esperar", type=int, default=0)
     ap.add_argument("--sem-espera", action="store_true", help="não esperar 90 s pelo glossário")
     a = ap.parse_args(argv)

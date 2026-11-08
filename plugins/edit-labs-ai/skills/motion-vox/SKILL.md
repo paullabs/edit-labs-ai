@@ -8,7 +8,7 @@ description: >-
   motions ja feitos. Cobre o processo inteiro: escolher as frases pelo transcript, gerar e
   recortar assets PNG, compor as cenas em camadas com registros visuais variados, B-roll em
   video gerado, legendar, revisar e montar o master preservando a fala, com efeitos sonoros
-  quando pedidos. Recebe o vertical limpo da skill corte-viral. Exige o Higgsfield conectado.
+  quando pedidos. Recebe o vertical limpo da skill corte-viral.
 ---
 
 # Motion editorial sobre footage
@@ -26,18 +26,22 @@ recorte e ganho por evento; ver `referencias/som-local.md`.
 
 ## Antes de começar
 
-**O Higgsfield é obrigatório.** Os assets sob medida, as imagens de partida, a remoção de fundo por IA e o B-roll
-em vídeo são gerados pelo Higgsfield, pelo conector dele no Claude. No início de cada projeto, confira se as
-ferramentas do Higgsfield estão disponíveis nesta sessão (`generate_image`, `generate_video`, `balance`). Se não
-estiverem, pare e responda ao usuário, com o link exatamente assim:
+**Gerador de imagem e de vídeo: opcional.** Os assets sob medida, as imagens de partida e o B-roll em vídeo podem
+sair de um gerador conectado à sessão (Higgsfield, OpenArt ou outro); a skill **não exige conta nem assinatura**.
+No início do projeto, veja que ferramentas de imagem e de vídeo a sessão tem:
 
-> Esta skill usa o Higgsfield para gerar as imagens e os vídeos. Crie sua conta por este link:
-> https://higgsfield.ai/s/claude-opus-5-5-yt-canal-labs-RygxQf
-> Depois conecte o Higgsfield no Claude (Configurações → Conectores) e me peça de novo.
+- **Com gerador:** use-o só para o que falta, com custo aprovado antes (veja "Crédito só com autorização").
+- **Sem gerador:** siga igual. Assets = foto real licenciada, imagens do usuário, a `biblioteca/`, recorte local
+  (`clpy recorte.py`, grátis) e cenas em código. O que faltar vira uma lista **"O que falta"** (objeto, enquadramento,
+  fundo liso, sem texto) para o usuário gerar onde quiser e pôr em `07_assets/raw/`. B-roll em vídeo fica de fora
+  ou usa vídeo livre com licença.
 
-Não siga sem ele e não troque por outro gerador.
+Diga isso em uma frase, sem link e sem pedir conta.
 
 **Instalação:** `editlabs-verificar` antes do primeiro projeto (e `editlabs-setup` se o ambiente não estiver pronto).
+
+**Nomes de ferramenta.** `generate_image_batch`, `generate_video_batch`, `jobs_wait` e `get_cost` (neste arquivo e em
+`referencias/`) são os do Higgsfield; em outro gerador use o equivalente. Nada disso vale sem gerador conectado.
 
 **Crédito só com autorização.** Antes de qualquer geração, consulte o preço na própria ferramenta (`get_cost: true`,
 com os mesmos parâmetros que vão ser usados) e mostre ao usuário quantas gerações são e o total. Gere só depois
@@ -54,7 +58,7 @@ Estas regras valem por cima do que o resto deste arquivo disser:
 | --- | --- | --- |
 | 1 · ancorar | transcreva o **clipe final**; depois **confira cada emenda** numa janela isolada. O Whisper no clipe inteiro inventa palavra na emenda | `transcrever.py` → `conferir_emendas.py` |
 | 2 · frases | **gente da história é pessoa**, não palavra nem boneco de palito: pessoa anônima = pessoa fictícia gerada (rosto escondido quando fizer sentido); pessoa real e nomeada = **só foto real licenciada**, nunca rosto gerado. Planeje já com **≥ 1 s de rosto entre cutaways** e meça a cobertura no plano (meta 65–75%); use **overlay** por cima do rosto (seta, rótulo, foto pequena) nos intervalos | — |
-| 3–4 · assets | quando o sweep do `cutout.py` não tem platô (roupa da cor do fundo), use a **remoção de fundo por IA** do Higgsfield sobre o job da geração, em vez de gerar de novo | `cutout.py` · `checar_asset.py` |
+| 3–4 · assets | quando o sweep do `cutout.py` não tem platô (roupa da cor do fundo), use o **recorte local** (`clpy recorte.py`, grátis) ou, se houver gerador conectado, a remoção de fundo dele sobre o job da geração, em vez de gerar de novo | `cutout.py` · `checar_asset.py` |
 | 5 · compor | peças prontas: âncora por palavra (`tp`), disco, pouso, etiqueta, troca de insert, cartela de nome, **santinho** (pessoa + cargo) e **pessoa recortada em cor**; motor por dados com beat de vídeo para B-roll | `cenas.py` · `cenas_plano.py` |
 | 5 · travas | **hold ≥ 8 quadros** antes da saída (a prancha não mostra isso) e medição; o usuário aprova as **pranchas** | `checar_hold.py` · `medir.py` · `prancha.py` (ou `prancha_simples.py`, folha única com a cartela) |
 | 6 · B-roll | plano → imagens de partida aprovadas → proposta com custo → autorização → vídeos → revisão de cada vídeo inteiro → beat `video=` → conferência dentro do master | `broll_revisar.py` · `broll_no_master.py` |
@@ -88,7 +92,7 @@ Quem instalar reproduz **este** visual, não um parecido.
 | `python3` + `Pillow`, `numpy`, `opencv-python` | composição e recorte | nada roda |
 | `ffmpeg` | montagem do master | os frames saem, o vídeo não |
 | `faster-whisper` | transcript palavra a palavra | sem ancoragem e sem legenda |
-| Higgsfield conectado ao Claude | assets sob medida, remoção de fundo, B-roll | a skill não começa (ver "Antes de começar") |
+| gerador de imagem/vídeo conectado (opcional) | assets sob medida, B-roll | sem ele: foto real, imagens do usuário, recorte local; B-roll fica de fora |
 
 **Transcript.** Insumo sem substituto — motion ancorado e legenda em corte seco dependem
 de saber em que frame cada palavra foi dita. Gere com:
@@ -159,8 +163,8 @@ Horizontal (1920×1080) tem motion também: `MV_CANVAS=H` escolhe o quadro, e a 
 
 Composição por camadas continua sendo o padrão para logos, prints, texto, setas e
 diagramas que exigem controle exato. IA de imagem cria objetos físicos genéricos,
-texturas e esboços, preservando o registro visual da cena. **B-roll em vídeo** (Seedance,
-pelo Higgsfield) entra onde a fala descreve ação, lugar ou gente fazendo algo — ver a seção
+texturas e esboços, preservando o registro visual da cena. **B-roll em vídeo** (gerado, ex.: Seedance,
+se houver gerador de vídeo conectado) entra onde a fala descreve ação, lugar ou gente fazendo algo — ver a seção
 "B-roll em vídeo" abaixo e `referencias/seedance-2.5.md`.
 
 Vídeo gerado tem trava própria: plano → imagem de partida → revisão → mostrar imagem
@@ -295,7 +299,7 @@ cena é o objeto da própria fala, gerado no mesmo mundo (DNA medido na §3 de l
 `biblioteca/` (`lib/biblioteca.py buscar …`) e registrado nela depois da rubrica D1. Herói do kit no máximo 1
 cena por vídeo, cartão A05 no máximo 2 (E9/E10 do verificador).
 
-Geração no Higgsfield: `gpt_image_2`, quadrado, 2k, qualidade alta, várias em lote (`generate_image_batch` e
+Geração, se houver gerador (receita testada no Higgsfield): `gpt_image_2`, quadrado, 2k, qualidade alta, várias em lote (`generate_image_batch` e
 `jobs_wait`), sempre com o custo aprovado antes. Um prompt por objeto. Templates completos em
 `referencias/prompts-asset.md` e, por família, em `referencias/assets-sob-medida.md` §4.
 
@@ -399,7 +403,7 @@ o mesmo prop voltando com outro estado.
 
 ## 7. B-roll em vídeo
 
-B-roll é vídeo gerado (Seedance, pelo Higgsfield) em tela cheia, de 3 a 5 s, mostrando o que a pessoa está
+B-roll é vídeo gerado (ex.: Seedance, em qualquer gerador de vídeo conectado; sem ele, vídeo livre com licença ou nada) em tela cheia, de 3 a 5 s, mostrando o que a pessoa está
 contando: a ação, o lugar, gente fazendo algo. Guia completo, com a geração e o encaixe: `referencias/seedance-2.5.md`.
 
 1. **Onde.** Primeiro troque cutaways paradas (foto ou recorte sem movimento) cuja fala descreve ação ou lugar.

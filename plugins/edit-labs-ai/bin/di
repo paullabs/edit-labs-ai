@@ -7,5 +7,5 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"; source "$ROOT/scripts/c
 DI_SKILL="$ROOT/skills/decupagem-inteligente"
 export EDITLABS_DATA CV_PY MV_PY
 export DI_ROOT="$DI_SKILL"
-export PYTHONPATH="$DI_SKILL/scripts${PYTHONPATH:+:$PYTHONPATH}"
+pythonpath_somar "$DI_SKILL/scripts"
 exec "$CV_PY" "$DI_SKILL/scripts/di.py" "$@"
